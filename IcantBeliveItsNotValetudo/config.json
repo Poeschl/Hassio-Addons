@@ -1,0 +1,52 @@
+{
+  "name": "ICantBelieveItsNotValetudo",
+  "version": "0.2.0",
+  "slug": "icantbelieveitsnotvaletudo",
+  "description": "This is a simple companion service for valetudo which generates the map pngs.",
+  "arch": [
+    "armhf",
+    "armv7",
+    "aarch64",
+    "amd64",
+    "i386"
+  ],
+  "startup": "system",
+  "boot": "auto",
+  "ports": {
+    "3000/tcp": "3000"
+  },
+  "schema": {
+    "identifier": "str",
+    "topicPrefix": "str",
+    "autoconfPrefix": "str",
+    "broker_url": "match(^mqtts?://\\w+:\\w+@.+$)",
+    "caPath": "str?",
+    "mapSettings": {
+      "drawPath": "bool",
+      "drawCharger": "bool",
+      "drawRobot": "bool",
+      "border": "int(0,)",
+      "scale": "int(0,)"
+    },
+    "mapDataTopic": "str",
+    "minMillisecondsBetweenMapUpdates": "int",
+    "publishMapImage": "bool"
+  },
+  "options": {
+    "identifier": "rockrobo",
+    "topicPrefix": "valetudo",
+    "autoconfPrefix": "homeassistant",
+    "broker_url": "mqtt://user:pass@foobar.example",
+    "caPath": "",
+    "mapSettings": {
+      "drawPath": true,
+      "drawCharger": true,
+      "drawRobot": true,
+      "border": 2,
+      "scale": 4
+    },
+    "mapDataTopic": "valetudo/rockrobo/map_data",
+    "minMillisecondsBetweenMapUpdates": 10000,
+    "publishMapImage": true
+  }
+}

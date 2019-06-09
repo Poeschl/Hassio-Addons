@@ -1,0 +1,9 @@
+{
+  "build_from": {
+    "armhf": "library/node:8.16.0-alpine",
+    "armv7": "library/node:8.16.0-alpine",
+    "aarch64": "library/node:8.16.0-alpine",
+    "amd64": "library/node:8.16.0-alpine",
+    "i386": "library/node:8.16.0-alpine"
+  }
+}
