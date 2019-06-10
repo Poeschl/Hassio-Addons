@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "slug": "icantbelieveitsnotvaletudo",
   "description": "This is a simple companion service for valetudo which generates the map pngs.",
-  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/IcantBeliveItsNotValetudo",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/ICantBelieveItsNotValetudo",
   "webui": "http://[HOST]:[PORT:3000]/api/map/image",
   "arch": [
     "armhf",
