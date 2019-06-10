@@ -17,11 +17,12 @@
   "ports": {
     "3000/tcp": "3000"
   },
+  "map": ["ssl"],
   "schema": {
     "identifier": "str",
     "topicPrefix": "str",
     "autoconfPrefix": "str",
-    "broker_url": "match(^mqtts?://\\w+:\\w+@.+$)",
+    "broker_url": "match(^mqtts?://.+:.+@.+$)",
     "caPath": "str?",
     "mapSettings": {
       "drawPath": "bool",
