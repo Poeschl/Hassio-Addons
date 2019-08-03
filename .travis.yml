@@ -1,0 +1,17 @@
+language: minimal
+
+sudo: required
+
+services:
+  - docker
+
+env:
+  - ADDON="ICantBelieveItsNotValetudo"
+
+before_install:
+  - sudo apt-get install jq
+  - chmod +x .scripts/build.sh
+
+script:
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - ./.scripts/build.sh $ADDON 
