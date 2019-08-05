@@ -14,6 +14,7 @@
   ],
   "startup": "system",
   "boot": "auto",
+  "image": "poeschl/hassio-icantbelieveitsnotvaletudo-{arch}",
   "ports": {
     "3000/tcp": "3000"
   },
