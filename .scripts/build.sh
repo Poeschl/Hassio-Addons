@@ -4,7 +4,12 @@ archs="${ARCHS}"
 
 for addon in "$@"; do
 
-  if [ -z ${TRAVIS_COMMIT_RANGE} ] || git diff --name-only ${TRAVIS_COMMIT_RANGE} origin/${TRAVIS_BRANCH} | grep -q ${addon}; then
+  if [[ "$(jq -r '.image' ${addon}/config.json)" == 'null' ]]; then
+    echo "No build image set for ${addon}. Skip build!"
+    exit 0
+  fi
+
+  if [ -z ${TRAVIS_COMMIT_RANGE} ] || [ "$TRAVIS_BRANCH" == 'master' ] || git diff --name-only origin/master ${TRAVIS_COMMIT} origin/${TRAVIS_BRANCH} | grep -q ${addon}; then
     if [ -z "$archs" ]; then
       archs=$(jq -r '.arch // ["armv7", "armhf", "amd64", "aarch64", "i386"] | [.[] | "--" + .] | join(" ")' ${addon}/config.json)
     fi
