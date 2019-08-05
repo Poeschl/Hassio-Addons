@@ -1,9 +1,9 @@
 {
   "build_from": {
-    "armhf": "library/node:8.16.0-alpine",
-    "armv7": "library/node:8.16.0-alpine",
-    "aarch64": "library/node:8.16.0-alpine",
-    "amd64": "library/node:8.16.0-alpine",
-    "i386": "library/node:8.16.0-alpine"
+    "armhf": "homeassistant/armhf-base",
+    "armv7": "homeassistant/armv7-base",
+    "aarch64": "homeassistant/aarch64-base",
+    "amd64": "homeassistant/amd64-base",
+    "i386": "homeassistant/i386-base"
   }
 }
