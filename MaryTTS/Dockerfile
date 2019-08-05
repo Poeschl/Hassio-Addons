@@ -3,17 +3,15 @@ FROM $BUILD_FROM AS BUILD
 
 ENV MARYTTS_VERSION 5.2
 
-RUN apk add git maven openjdk8
-RUN git clone https://github.com/marytts/marytts.git -b "v${MARYTTS_VERSION}" /build && \
-    cd /build &&\
-    mvn install -Dmaven.test.skip=true && mv target/marytts-${MARYTTS_VERSION}/ target/marytts
-
+RUN apk add wget unzip
+RUN wget -q --show-progress "https://github.com/marytts/marytts/releases/download/v${MARYTTS_VERSION}/marytts-${MARYTTS_VERSION}.zip" &&\
+    unzip marytts-${MARYTTS_VERSION}.zip -d /app
 
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add openjdk8
 
-COPY --from=BUILD /build/target/marytts /app
+COPY --from=BUILD /app /app
 
 COPY run.sh /
 RUN chmod a+x /run.sh
