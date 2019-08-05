@@ -1,0 +1,9 @@
+{
+  "build_from": {
+    "armhf": "homeassistant/armhf-base",
+    "armv7": "homeassistant/armv7-base",
+    "aarch64": "homeassistant/aarch64-base",
+    "amd64": "homeassistant/amd64-base",
+    "i386": "homeassistant/i386-base"
+  }
+}

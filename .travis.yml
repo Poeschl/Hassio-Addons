@@ -2,11 +2,15 @@ language: minimal
 
 sudo: required
 
+git:
+  depth: false
+
 services:
   - docker
 
 env:
   - ADDON="ICantBelieveItsNotValetudo"
+  - ADDON="MaryTTS"
 
 before_install:
   - sudo apt-get install jq

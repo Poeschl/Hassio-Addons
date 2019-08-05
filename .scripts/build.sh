@@ -15,7 +15,7 @@ for addon in "$@"; do
     fi
 
     echo 'Changed files:'
-    git diff --name-only ${TRAVIS_COMMIT_RANGE} origin/${TRAVIS_BRANCH}
+    git diff --name-only origin/master ${TRAVIS_COMMIT} origin/${TRAVIS_BRANCH} origin/${TRAVIS_BRANCH}
 
     if [[ "$TRAVIS_BRANCH" != 'master' ]]; then
         test='--test'
@@ -25,6 +25,6 @@ for addon in "$@"; do
     echo "Building archs: ${archs}"
     docker run --rm --privileged -v ~/.docker:/root/.docker -v $(pwd)/${addon}:/data homeassistant/amd64-builder ${archs} -t /data ${test}
   else
-    echo "No change in commit range ${TRAVIS_COMMIT_RANGE} for ${addon}"
+    echo "No change from latest master for ${addon}"
   fi
 done
