@@ -5,7 +5,7 @@ ENV MARYTTS_VERSION 5.2
 
 RUN apk add wget unzip
 RUN wget -q --show-progress "https://github.com/marytts/marytts/releases/download/v${MARYTTS_VERSION}/marytts-${MARYTTS_VERSION}.zip" &&\
-    unzip marytts-${MARYTTS_VERSION}.zip -d /app
+    unzip marytts-${MARYTTS_VERSION}.zip -d / && mv /marytts-${MARYTTS_VERSION} /app
 
 FROM $BUILD_FROM AS RUNNING
 
