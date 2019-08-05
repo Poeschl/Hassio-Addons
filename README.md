@@ -5,3 +5,4 @@ My repository with plugins for the [Hass.io](https://www.home-assistant.io/hassi
 Plugins:
 
 * ICantBelieveItsNotValetudo - Valetudo Companion for map generation.
+* MaryTTS - A local Text-To-Speech system.
