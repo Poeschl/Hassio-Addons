@@ -2,6 +2,10 @@ language: minimal
 
 sudo: required
 
+branches:
+  only:
+  - master
+
 git:
   depth: false
 
