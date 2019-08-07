@@ -1,2 +1,1 @@
-py-picotts==0.1.2
-httpserver=1.1.0
+httpserver==1.1.0
