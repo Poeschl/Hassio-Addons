@@ -6,3 +6,4 @@ Plugins:
 
 * ICantBelieveItsNotValetudo - Valetudo Companion for map generation.
 * MaryTTS - A local Text-To-Speech system.
+* PicoTTS - Text to speech voice sinthesizer from SVox, included in Android AOSP.

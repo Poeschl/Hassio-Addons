@@ -15,6 +15,7 @@ services:
 env:
   - ADDON="ICantBelieveItsNotValetudo"
   - ADDON="MaryTTS"
+  - ADDON="picoTTS"
 
 before_install:
   - sudo apt-get install jq
