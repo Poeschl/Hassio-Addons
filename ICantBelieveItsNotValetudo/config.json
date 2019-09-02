@@ -1,6 +1,6 @@
 {
   "name": "ICantBelieveItsNotValetudo",
-  "version": "0.2.0",
+  "version": "0.2.0-1",
   "slug": "icantbelieveitsnotvaletudo",
   "description": "This is a simple companion service for valetudo which generates the map pngs.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/ICantBelieveItsNotValetudo",
@@ -16,8 +16,16 @@
   "boot": "auto",
   "image": "poeschl/hassio-icantbelieveitsnotvaletudo-{arch}",
   "ports": {
-    "3000/tcp": "3000"
+    "3000/tcp": null
   },
+  "ports_description": {
+    "3000/tcp": "Port serving the floor plan (Not required for Hass.io Ingress)"
+  },
+  "ingress": true,
+  "ingress_port": 3000,
+  "ingress_entry": "api/map/image",
+  "panel_title": "Valetudo Floorplan",
+  "panel_icon": "mdi:floor-plan",
   "map": ["ssl"],
   "schema": {
     "identifier": "str",
