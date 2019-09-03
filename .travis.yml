@@ -2,13 +2,6 @@ language: minimal
 
 sudo: required
 
-branches:
-  only:
-  - master
-
-git:
-  depth: false
-
 services:
   - docker
 
@@ -22,5 +15,4 @@ before_install:
   - chmod +x .scripts/build.sh
 
 script:
-  - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - ./.scripts/build.sh $ADDON 

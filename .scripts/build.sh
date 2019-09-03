@@ -8,18 +8,21 @@ for addon in "$@"; do
     echo "No build image set for ${addon}. Skip build!"
     exit 0
   fi
+  
+  changed_files=$(git diff --name-only --oneline "${TRAVIS_COMMIT_RANGE}" -- ${addon}/ | cat)
+  echo "Changed files in ${TRAVIS_COMMIT_RANGE} for ${addon}:"
+  echo "${changed_files}"
 
-  if [ -z ${TRAVIS_COMMIT_RANGE} ] || [ "$TRAVIS_BRANCH" == 'master' ] || git diff --name-only origin/master ${TRAVIS_COMMIT} origin/${TRAVIS_BRANCH} | grep -q ${addon}; then
+  if [ -z ${TRAVIS_COMMIT_RANGE} ] || [ ! -z "$changed_files" ]; then
     if [ -z "$archs" ]; then
       archs=$(jq -r '.arch // ["armv7", "armhf", "amd64", "aarch64", "i386"] | [.[] | "--" + .] | join(" ")' ${addon}/config.json)
     fi
 
-    echo 'Changed files:'
-    git diff --name-only origin/master ${TRAVIS_COMMIT} origin/${TRAVIS_BRANCH} origin/${TRAVIS_BRANCH}
-
     if [[ "$TRAVIS_BRANCH" != 'master' ]]; then
         test='--test'
         echo 'Prevent docker hub push, since its not the master!'
+    else 
+        docker login -u $DOCKER_USER -p $DOCKER_PASS
     fi
      
     echo "Building archs: ${archs}"
