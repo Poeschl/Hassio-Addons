@@ -2,11 +2,11 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from subprocess import Popen, PIPE, STDOUT
 from tempfile import NamedTemporaryFile
-from urllib.parse import urlparse, unquote
+from urllib.parse import urlparse, unquote, unquote_plus
 
 
 class PicoTTS:
-    VOICES = ['de-DE', 'en-GB', 'en-US', 'es-ES', 'fr-FR', 'it-IT']
+    LANGUAGES = ['de-DE', 'en-GB', 'en-US', 'es-ES', 'fr-FR', 'it-IT']
 
     @staticmethod
     def _exec_picotts(args):
@@ -22,8 +22,8 @@ class PicoTTS:
             print("pico2wave returned exit code: '" + str(process.returncode) + "'")
             exit(process.returncode)
 
-    def generate_wav_file(self, outfilename, voice, text):
-        self._exec_picotts(["-w", outfilename, "-l", voice, '"' + text + '"'])
+    def generate_wav_file(self, outfilename, lang, text):
+        self._exec_picotts(["-w", outfilename, "-l", lang, '"' + text + '"'])
         print("Create audio file '" + outfilename + "'")
 
 
@@ -50,12 +50,12 @@ class Handler(BaseHTTPRequestHandler):
         query = urlparse(self.path).query
         request_parameter = dict(qc.split("=") for qc in query.split("&"))
 
-        voice = str(request_parameter.get('voice', "en-US"))
-        text = unquote(str(request_parameter.get('text', "")))
+        lang = str(request_parameter.get('lang', "en-US"))
+        text = unquote_plus(unquote(str(request_parameter.get('text', ""))))
 
-        if voice in self.PICO_TTS.VOICES:
+        if lang in self.PICO_TTS.LANGUAGES:
             with NamedTemporaryFile(suffix='.wav') as tempFile:
-                self.PICO_TTS.generate_wav_file(tempFile.name, voice, text)
+                self.PICO_TTS.generate_wav_file(tempFile.name, lang, text)
 
                 with open(tempFile.name, 'rb') as audiofile:
                     wave_data = audiofile.read()
@@ -67,7 +67,7 @@ class Handler(BaseHTTPRequestHandler):
 
         else:
             self.send_response(400)
-            self.wfile.write("Invalid Voice")
+            self.wfile.write("Invalid Language")
 
 
 PORT = 59126
