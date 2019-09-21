@@ -4,6 +4,10 @@ The [naggety/picotts](https://github.com/naggety/picotts) as Hass.io addon. (Use
 
 This addon executes the seach engine behind a webservice. It provides support for all default languages.
 
+## Homeassistant Integration
+
+For easy integration I also published a [custom component for Home Assistant](https://github.com/Poeschl/ha-picoTTS_remote). This allow a easy integration on Hassio-based installations.
+
 ## Requests
 
 ### Ping
