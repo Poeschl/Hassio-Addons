@@ -13,7 +13,7 @@ for addon in "$@"; do
   echo "Changed files in ${TRAVIS_COMMIT_RANGE} for ${addon}:"
   echo "${changed_files}"
 
-  if [ -z ${TRAVIS_COMMIT_RANGE} ] || [ ! -z "$changed_files" ]; then
+  if [ -z ${TRAVIS_COMMIT_RANGE} ] || [ ! -z "$changed_files" ] || [[ "$TRAVIS_BRANCH" != 'master' ]]; then
     if [ -z "$archs" ]; then
       archs=$(jq -r '.arch // ["armv7", "armhf", "amd64", "aarch64", "i386"] | [.[] | "--" + .] | join(" ")' ${addon}/config.json)
     fi
@@ -28,6 +28,6 @@ for addon in "$@"; do
     echo "Building archs: ${archs}"
     docker run --rm --privileged -v ~/.docker:/root/.docker -v $(pwd)/${addon}:/data homeassistant/amd64-builder ${archs} -t /data ${test}
   else
-    echo "No change from latest master for ${addon}"
+    echo "No change for ${addon}"
   fi
 done
