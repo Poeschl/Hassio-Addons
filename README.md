@@ -7,6 +7,7 @@ Plugins:
 * ICantBelieveItsNotValetudo - Valetudo Companion for map generation.
 * MaryTTS - A local Text-To-Speech system.
 * PicoTTS - Text to speech voice sinthesizer from SVox, included in Android AOSP.
+* Mopidy - A media player with web interface.
 
 ### Licence  ![Licence](https://img.shields.io/github/license/Poeschl/Hassio-Addons)
 

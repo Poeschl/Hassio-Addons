@@ -9,6 +9,7 @@ env:
   - ADDON="ICantBelieveItsNotValetudo"
   - ADDON="MaryTTS"
   - ADDON="picoTTS"
+  - ADDON="mopidy"
 
 install:
   - export PATH="${HOME}/bin:${PATH}"
