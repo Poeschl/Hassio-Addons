@@ -11,3 +11,5 @@ Plugins:
 ### Licence ![GitHub](https://img.shields.io/github/license/Poeschl/Hassio-Addons)
 
 The licence of the repository is inherited by the plugins, if not stated different.
+
+[![Buy Me A Coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png)](https://www.buymeacoffee.com/Poeschl)
