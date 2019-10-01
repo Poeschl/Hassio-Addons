@@ -12,4 +12,4 @@ There might be the option to add a own voice pack via configuration. For now the
 
 The Demo-UI of MaryTTS can be accessed via `http://<hassio-address>:59125`.
 
-
+[![Buy Me A Coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png)](https://www.buymeacoffee.com/Poeschl)

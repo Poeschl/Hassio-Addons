@@ -24,3 +24,5 @@ http://ip:59126/speak?voice=<language>&text=<text>
 
 `language` can be one of those `de-DE, en-GB, en-US, es-ES, fr-FR, it-IT`. If not set it defaults to `en-US`.
 `text` is the text you want to have sinthesized (url-encoded).
+
+[![Buy Me A Coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png)](https://www.buymeacoffee.com/Poeschl)

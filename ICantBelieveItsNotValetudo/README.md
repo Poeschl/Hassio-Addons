@@ -12,3 +12,5 @@ Is the mqtt broker also on your hass.io instance (like the Mosquitto Addon), you
 ## PNG image
 
 The generated image will be served over the Hass.io Ingress feature. So the floor plan can be accessed via the build-in side panel or the auto-configured mqtt camera.
+
+[![Buy Me A Coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png)](https://www.buymeacoffee.com/Poeschl)
