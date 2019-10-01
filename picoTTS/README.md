@@ -1,4 +1,9 @@
 # PicoTTS (Hass.io Addon)
+![armhf image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-picotts-armhf?label=docker%20pulls%20%28armhf%29)
+![armv7 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-picotts-armv7?label=docker%20pulls%20%28armv7%29)
+![aarch64 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-picotts-aarch64?label=docker%20pulls%20%28aarch64%29)
+![amd64 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-picotts-amd64?label=docker%20pulls%20%28amd64%29)
+![i386 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-picotts-i386?label=docker%20pulls%20%28i386%29)
 
 The [naggety/picotts](https://github.com/naggety/picotts) as Hass.io addon. (Useable on Raspberry Pi 3-)
 
