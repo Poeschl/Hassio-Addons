@@ -1,7 +1,15 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM AS BUILD
 
-RUN apk add git make g++ automake autoconf libtool popt-dev
+RUN apk update && \
+    apk add --no-cache \
+			'git=2.22.0-r0' \
+			'make=4.2.1-r2' \
+			'g++=8.3.0-r0' \
+			'autoconf=2.69-r2' \
+			'libtool=2.4.6-r6' \
+			'popt-dev=1.16-r7' \
+			'automake=1.16.1-r0'
 
 ENV COMMIT_SHA '2f86050dc5da9ab68fc61510b594d8e6975c4d2d'
 RUN git clone https://github.com/naggety/picotts.git -b master /build && \
@@ -10,8 +18,11 @@ RUN git clone https://github.com/naggety/picotts.git -b master /build && \
 
 FROM $BUILD_FROM AS RUNNING
 
-RUN apk add python3 popt &&\
-    python3 -m ensurepip
+RUN apk update && \
+    apk add --no-cache \
+			'python3=3.7.4-r0' \
+			'popt=1.16-r7' && \
+	python3 -m ensurepip
 
 COPY --from=BUILD /usr/local/bin/pico2wave /usr/local/bin/pico2wave
 COPY --from=BUILD /usr/local/lib/libttspico.* /usr/local/lib/
