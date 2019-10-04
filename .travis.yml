@@ -11,14 +11,17 @@ env:
   - ADDON="picoTTS"
 
 install:
-  - export HADOLINT="${HOME}/hadolint"
+  - export PATH="${HOME}/bin:${PATH}"
   - sudo apt-get install jq
   - chmod +x .scripts/build.sh
-  - curl -L -o ${HADOLINT} "https://github.com/hadolint/hadolint/releases/download/v1.16.0/hadolint-$(uname -s)-$(uname -m)" && chmod 700 ${HADOLINT}
+  - curl -L -o hadolint "https://github.com/hadolint/hadolint/releases/download/v1.16.0/hadolint-$(uname -s)-$(uname -m)" && chmod 755 hadolint && mv hadolint ${HOME}/bin/ && hadolint --version
+  - curl -L "https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.$(uname -m).tar.xz" | tar -xJv && mv "shellcheck-stable/shellcheck" ${HOME}/bin/ && shellcheck --version
 
 before_script:
-  - violations=$(${HADOLINT} $ADDON/Dockerfile | tee /dev/stderr | wc -l)
-  - if [ $violations -gt 4 ]; then exit 2; fi
+  - docker_violations=$(hadolint $ADDON/Dockerfile | tee /dev/stderr | wc -l)
+  - if [ $docker_violations -gt 4 ]; then exit 2; fi
+  - shell_violations=$(shellcheck $ADDON/*.{sh,ksh,bash} | tee /dev/stderr | wc -l)
+  - if [ $shell_violations -gt 4 ]; then exit 2; fi
 
 script:
   - ./.scripts/build.sh $ADDON 
