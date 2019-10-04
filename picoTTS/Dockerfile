@@ -33,4 +33,5 @@ RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]
 
 COPY wrapper/ /app
-RUN cd app && pip3 install -r requirements.txt
+WORKDIR /app
+RUN pip3 install -r requirements.txt
