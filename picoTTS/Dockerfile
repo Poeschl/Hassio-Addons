@@ -9,8 +9,7 @@ RUN apk update && \
 			'autoconf=2.69-r2' \
 			'libtool=2.4.6-r6' \
 			'popt-dev=1.16-r7' \
-			'automake=1.16.1-r0' && \
-    rm -f /tmp/* /etc/apk/cache/* /var/cache/apk/*
+			'automake=1.16.1-r0'
 
 ENV COMMIT_SHA '2f86050dc5da9ab68fc61510b594d8e6975c4d2d'
 RUN git clone https://github.com/naggety/picotts.git -b master /build && \
@@ -23,7 +22,6 @@ RUN apk update && \
     apk add --no-cache \
 			'python3=3.7.4-r0' \
 			'popt=1.16-r7' && \
-    rm -f /tmp/* /etc/apk/cache/* /var/cache/apk/* && \
 	python3 -m ensurepip
 
 COPY --from=BUILD /usr/local/bin/pico2wave /usr/local/bin/pico2wave
