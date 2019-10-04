@@ -18,11 +18,11 @@ for addon in "$@"; do
       archs=$(jq -r '.arch // ["armv7", "armhf", "amd64", "aarch64", "i386"] | [.[] | "--" + .] | join(" ")' ${addon}/config.json)
     fi
 
-    if [[ "$TRAVIS_BRANCH" != 'master' ]]; then
+    if [[ "$TRAVIS_BRANCH" = 'master' ]] && [ -z ${TRAVIS_PULL_REQUEST_BRANCH} ]; then
+        docker login -u $DOCKER_USER -p $DOCKER_PASS
+    else 
         test='--test'
         echo 'Prevent docker hub push, since its not the master!'
-    else 
-        docker login -u $DOCKER_USER -p $DOCKER_PASS
     fi
      
     echo "Building archs: ${archs}"
