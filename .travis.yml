@@ -6,11 +6,12 @@ services:
   - docker
 
 env:
-  - ADDON="ICantBelieveItsNotValetudo" HADOLINT="${HOME}/hadolint"
-  - ADDON="MaryTTS" HADOLINT="${HOME}/hadolint"
-  - ADDON="picoTTS" HADOLINT="${HOME}/hadolint"
+  - ADDON="ICantBelieveItsNotValetudo"
+  - ADDON="MaryTTS"
+  - ADDON="picoTTS"
 
 install:
+  - export HADOLINT="${HOME}/hadolint"
   - sudo apt-get install jq
   - chmod +x .scripts/build.sh
   - curl -L -o ${HADOLINT} "https://github.com/hadolint/hadolint/releases/download/v1.16.0/hadolint-$(uname -s)-$(uname -m)" && chmod 700 ${HADOLINT}
