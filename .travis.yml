@@ -20,7 +20,7 @@ install:
 before_script:
   - docker_violations=$(hadolint $ADDON/Dockerfile | tee /dev/stderr | wc -l)
   - if [ $docker_violations -gt 4 ]; then exit 2; fi
-  - shellcheck $ADDON/*.{sh,ksh,bash}
+  - shellcheck $ADDON/*.sh
 
 script:
   - ./.scripts/build.sh $ADDON 
