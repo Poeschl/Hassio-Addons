@@ -12,4 +12,5 @@ RUN git clone https://github.com/Hypfer/ICantBelieveItsNotValetudo.git -b $ICANT
 COPY run.sh /
 RUN chmod a+x /run.sh
 
+WORKDIR /app
 CMD [ "/run.sh" ]

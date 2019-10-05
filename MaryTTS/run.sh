@@ -1,8 +1,4 @@
-echo Setup language packs
+#!/usr/bin/env bashio
 
-# Get specified language packs
-packs=$(cat '/data/options.json' | jq '.languagePacks')
-
-
-echo Start MaryTTS
-cd '/app' && bin/marytts-server
+bashio::log.info 'Start MaryTTS'
+bin/marytts-server
