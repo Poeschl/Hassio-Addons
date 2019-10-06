@@ -2,9 +2,10 @@
   "name": "pigpio",
   "version": "V71",
   "slug": "pigpio",
-  "description": "Control your pwm leds with pigpio on Hass.io.",
+  "description": "Control your pwm leds with pigpio on Hass.io",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/pigpio",
   "arch": [
+    "armhf",
     "armv7"
   ],
   "startup": "system",
