@@ -9,6 +9,6 @@ options=$(cat /data/options.json | jq -r 'if .options then [.options[] | "-o "+.
 config="/var/lib/mopidy/.config/mopidy/mopidy.conf"
 
 if  [ "$local_scan" == "true" ]; then
-    mopidy --config $config $options local scan
+    mopidy --config "$config" "$options" local scan
 fi
-mopidy --config $config $options
+mopidy --config "$config" "$options"
