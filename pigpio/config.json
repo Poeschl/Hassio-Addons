@@ -11,6 +11,8 @@
   "startup": "system",
   "boot": "auto",
   "gpio": true,
+  "privileged": ["SYS_RAWIO"],
+  "devices":["/dev/mem:/dev/mem:rwm", "/dev/vcio:/dev/vcio:rw"],
   "image": "poeschl/hassio-pigpio-{arch}",
   "ports": {
     "8888/tcp": "8888"

@@ -1,4 +1,4 @@
 #!/usr/bin/env bashio
 
-bashio::log.info  'Start pigpio'
+bashio::log.info  'Started pigpio'
 pigpiod -g
