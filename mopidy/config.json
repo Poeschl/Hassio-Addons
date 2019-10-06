@@ -1,0 +1,40 @@
+{
+  "name": "Mopidy",
+  "version": "2.2.3",
+  "slug": "mopidy",
+  "panel_icon": "mdi:music-circle",
+  "description": "Mopidy Music Server (P-Version)",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/mopidy",
+  "webui": "http://[HOST]:[PORT:6680]/iris",
+  "ingress": false,
+  "ingress_port": 6680,
+  "ingress_entry": "iris/",
+  "arch": [
+    "armv7",
+    "armhf",
+    "amd64",
+    "aarch64",
+    "i386"
+  ],
+  "startup": "application",
+  "boot": "auto",
+  "image": "poeschl/hassio-mopidy-{arch}",
+  "audio": true,
+  "map": ["share:rw"],
+  "ports": {
+    "6680/tcp": 6680,
+    "6600/tcp": 6600
+  },
+  "ports_description": {
+    "6680/tcp": "Web Frontend",
+    "6600/tcp": "MDP Connection"
+  },
+  "options": {
+    "local_scan": true,
+    "options": []
+  },
+  "schema": {
+    "local_scan": "bool?",
+    "options": [{"name": "str", "value": "str"}]
+  }
+}
