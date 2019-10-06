@@ -16,6 +16,18 @@ Mopidy listen on `6680` for http connection, and `6600` for mpd ones.
 The local media can be stored on `/share` (which allow an access through the samba addon).
 By default the directory for media is `/share/mopidy/media`. 
 
+## Panel integration
+
+Since Mopidy-Iris don't play well (at least out-of-the-box) with the ingress feature Mopidy can be added to the side-panel in the configuration with those lines:
+
+```yaml
+panel_iframe:
+  morpidy:
+    title: 'Morpidy'
+    icon: 'mdi:music-circle'
+    url: 'http://<homeassistant-address>:6680/iris'
+```
+
 ## Configuration
 
 ### local_scan (bool)
