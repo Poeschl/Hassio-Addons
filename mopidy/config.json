@@ -25,7 +25,7 @@
     "6600/tcp": 6600
   },
   "ports_description": {
-    "6080/tcp": "Web Frontend (Not required for Hass.io Ingress)",
+    "6680/tcp": "Web Frontend (Not required for Hass.io Ingress)",
     "6600/tcp": "MDP Connection"
   },
   "options": {
