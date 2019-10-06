@@ -3,15 +3,15 @@ FROM $BUILD_FROM
 
 ENV MOPIDY_VERSION='2.2.3-1'
 
-RUN apt-get update && apt-get install -y wget gnupg &&\
+RUN apt-get update && apt-get install -y wget=1.18-5+deb9u3 gnupg=2.1.18-8~deb9u4 &&\
     wget -q -O - https://apt.mopidy.com/mopidy.gpg | apt-key add - &&\
-    wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/buster.list &&\
+    debian_codename=$(dpkg --status tzdata|grep Provides|cut -f2 -d'-') &&\
+    wget -q -O /etc/apt/sources.list.d/mopidy.list "https://apt.mopidy.com/${debian_codename}.list" &&\
     apt-get update &&\
-    apt-get -y install jq mopidy=${MOPIDY_VERSION} python-pip gstreamer1.0-plugins-bad sudo &&\
+    apt-get -y install jq=1.5+dfsg-1.3 mopidy=${MOPIDY_VERSION} python-pip=9.0.1-2+deb9u1 gstreamer1.0-plugins-bad=1.10.4-1 sudo=1.8.19p1-2.1 &&\
     apt-get -y remove wget gnupg && apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN pip install Mopidy-YouTube youtube-dl pafy
-RUN pip install Mopidy-Iris 
+RUN pip install Mopidy-YouTube==2.0.2 youtube-dl==2019.9.28 pafy==0.5.4 Mopidy-Iris==3.40.0
 #Let mopidy run local scans
 RUN echo "mopidy ALL=NOPASSWD: /usr/local/lib/python2.7/dist-packages/mopidy_iris/system.sh" >> /etc/sudoers
 
