@@ -1,4 +1,9 @@
 # Mopidy (Hass.io Addon)
+![armhf image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-mopidy-armhf?label=docker%20pulls%20%28armhf%29)
+![armv7 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-mopidy-armv7?label=docker%20pulls%20%28armv7%29)
+![aarch64 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-mopidy-aarch64?label=docker%20pulls%20%28aarch64%29)
+![amd64 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-mopidy-amd64?label=docker%20pulls%20%28amd64%29)
+![i386 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-mopidy-i386?label=docker%20pulls%20%28i386%29)
 
 Mopidy with plugins for Hass.io. It enabled the host to play audio.
 This plugin is based on the [addon from _bestlibre_](https://github.com/bestlibre/hassio-addons/tree/master/mopidy).
@@ -72,3 +77,5 @@ protocols =
 [iris]
 
 ```
+
+[![Buy Me A Coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png)](https://www.buymeacoffee.com/Poeschl)
