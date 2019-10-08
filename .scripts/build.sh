@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 archs="${ARCHS}"
+buildimage_version='6.4'
 
 for addon in "$@"; do
 
@@ -26,7 +27,7 @@ for addon in "$@"; do
     fi
      
     echo "Building archs: ${archs}"
-    docker run --rm --privileged -v ~/.docker:/root/.docker -v $(pwd)/${addon}:/data homeassistant/amd64-builder ${archs} -t /data ${test}
+    docker run --rm --privileged -v ~/.docker:/root/.docker -v $(pwd)/${addon}:/data "homeassistant/amd64-builder:${buildimage_version}" ${archs} -t /data ${test}
   else
     echo "No change for ${addon}"
   fi
