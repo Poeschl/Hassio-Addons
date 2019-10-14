@@ -3,13 +3,6 @@ set -e
 archs="${ARCHS}"
 
 for addon in "$@"; do
-
-  #Skips release if nothing was build with build.sh
-  if [[ $NO_BUILD =~ (^|[[:space:]])$addon($|[[:space:]]) ]]; then
-    echo "No build. Skip release!"
-    exit 0
-  fi
-
   if [[ "$(jq -r '.image' ${addon}/config.json)" == 'null' ]]; then
     echo "No build image set for ${addon}. Skip release!"
     exit 0
@@ -22,19 +15,25 @@ for addon in "$@"; do
   plugin_version=$(jq -r '.version' "${addon}/config.json")
 
   # Check the existance of all images
-  error=0
+  sum=0
+  missing=0
   for arch in ${archs}; do
     image_name=${image_template/\{arch\}/$arch}
+    sum=$((sum + 1))
 
     if [[ "$(docker images -q "$image_name:$plugin_version" 2> /dev/null)" == "" ]]; then
-      echo "No local image for $image_name found. Aborting..."
-      error=1
+      echo "No local image for $image_name found."
+      missing=$((missing + 1))
     else
       echo "Local image $image_name found."
     fi
   done
-
-  if [ "$error" -gt "0" ]; then
+  
+  if [ "$missing" -eq "$sum" ]; then
+    echo 'Images for all architectures missing. Assuming no build and skip.'
+    exit 0
+  elif [ "$missing" -gt "0" ]; then
+    echo -e "${ANSI_RED}There are $missing architecture images missing. Release failed!${ANSI_CLEAR}"
     exit 1
   fi
 

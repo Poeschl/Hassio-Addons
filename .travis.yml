@@ -5,6 +5,11 @@ sudo: required
 services:
   - docker
 
+addons:
+  apt:
+    packages:
+    - jq
+
 env:
   - ADDON="ICantBelieveItsNotValetudo"
   - ADDON="MaryTTS"
@@ -13,7 +18,6 @@ env:
 
 install:
   - export PATH="${HOME}/bin:${PATH}"
-  - sudo apt-get install jq
   - chmod +x .scripts/build.sh
   - curl -L -o hadolint "https://github.com/hadolint/hadolint/releases/download/v1.16.0/hadolint-$(uname -s)-$(uname -m)" && chmod 755 hadolint && mv hadolint ${HOME}/bin/ && hadolint --version
   - curl -L "https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.$(uname -m).tar.xz" | tar -xJv && mv "shellcheck-stable/shellcheck" ${HOME}/bin/ && shellcheck --version
