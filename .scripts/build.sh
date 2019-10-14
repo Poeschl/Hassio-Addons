@@ -24,5 +24,6 @@ for addon in "$@"; do
       "homeassistant/amd64-builder:${buildimage_version}" ${archs} -t /data --test
   else
     echo "No change for ${addon}"
+    export "NO_BUILD=$NO_BUILD $addon"
   fi
 done

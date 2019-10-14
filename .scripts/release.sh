@@ -4,6 +4,12 @@ archs="${ARCHS}"
 
 for addon in "$@"; do
 
+  #Skips release if nothing was build with build.sh
+  if [ [[ $NO_BUILD =~ (^|[[:space:]])$addon($|[[:space:]]) ]] ]; then
+    echo "No build. Skip release!"
+    exit 0
+  fi
+
   if [[ "$(jq -r '.image' ${addon}/config.json)" == 'null' ]]; then
     echo "No build image set for ${addon}. Skip release!"
     exit 0
