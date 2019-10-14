@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 archs="${ARCHS}"
 buildimage_version='6.4'
@@ -18,16 +18,10 @@ for addon in "$@"; do
     if [ -z "$archs" ]; then
       archs=$(jq -r '.arch // ["armv7", "armhf", "amd64", "aarch64", "i386"] | [.[] | "--" + .] | join(" ")' ${addon}/config.json)
     fi
-
-    if [[ "$TRAVIS_BRANCH" = 'master' ]] && [ -z ${TRAVIS_PULL_REQUEST_BRANCH} ]; then
-        docker login -u $DOCKER_USER -p $DOCKER_PASS
-    else 
-        test='--test'
-        echo 'Prevent docker hub push, since its not the master!'
-    fi
      
     echo "Building archs: ${archs}"
-    docker run --rm --privileged -v ~/.docker:/root/.docker -v $(pwd)/${addon}:/data "homeassistant/amd64-builder:${buildimage_version}" ${archs} -t /data ${test}
+    docker run --rm --privileged -v /var/run/docker.sock:/var/run/docker.sock -v ~/.docker:/root/.docker -v $(pwd)/${addon}:/data \
+      "homeassistant/amd64-builder:${buildimage_version}" ${archs} -t /data --test
   else
     echo "No change for ${addon}"
   fi

@@ -25,3 +25,4 @@ before_script:
 
 script:
   - ./.scripts/build.sh $ADDON 
+  - ./.scripts/release.sh $ADDON 
