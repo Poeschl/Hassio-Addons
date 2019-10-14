@@ -5,7 +5,7 @@ archs="${ARCHS}"
 for addon in "$@"; do
 
   #Skips release if nothing was build with build.sh
-  if [ [[ $NO_BUILD =~ (^|[[:space:]])$addon($|[[:space:]]) ]] ]; then
+  if [[ $NO_BUILD =~ (^|[[:space:]])$addon($|[[:space:]]) ]]; then
     echo "No build. Skip release!"
     exit 0
   fi
