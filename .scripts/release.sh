@@ -16,16 +16,21 @@ for addon in "$@"; do
   plugin_version=$(jq -r '.version' "${addon}/config.json")
 
   # Check the existance of all images
+  error=0
   for arch in ${archs}; do
     image_name=${image_template/\{arch\}/$arch}
 
     if [[ "$(docker images -q "$image_name:$plugin_version" 2> /dev/null)" == "" ]]; then
-      echo "No local image for $image_name found. Aborting"
-      exit 2
+      echo "No local image for $image_name found. Aborting..."
+      error=1
     else
       echo "Local image $image_name found."
     fi
   done
+
+  if [ "$error" -gt "0" ]; then
+    exit 1
+  fi
 
   if [[ "$TRAVIS_BRANCH" = 'master' ]] && [ -z ${TRAVIS_PULL_REQUEST_BRANCH} ]; then
     # Push them
