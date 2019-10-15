@@ -14,7 +14,7 @@ for addon in "$@"; do
   echo "Changed files in ${TRAVIS_COMMIT_RANGE} for ${addon}:"
   echo "${changed_files}"
 
-  if [ -z ${TRAVIS_COMMIT_RANGE} ] || [ ! -z "$changed_files" ] || [[ "$TRAVIS_BRANCH" != 'master' ]]; then
+  if { [ -z ${TRAVIS_COMMIT_RANGE} ] || [ ! -z "$changed_files" ] || [[ "$TRAVIS_BRANCH" != 'master' ]]; } || [[ "$FORCE_PUSH" = "true" ]]; then
     if [ -z "$archs" ]; then
       archs=$(jq -r '.arch // ["armv7", "armhf", "amd64", "aarch64", "i386"] | [.[] | "--" + .] | join(" ")' ${addon}/config.json)
     fi

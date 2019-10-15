@@ -37,7 +37,7 @@ for addon in "$@"; do
     exit 1
   fi
 
-  if [[ "$TRAVIS_BRANCH" = 'master' ]] && [ -z ${TRAVIS_PULL_REQUEST_BRANCH} ]; then
+  if [[ "$FORCE_PUSH" = "true" ]] || { [[ "$TRAVIS_BRANCH" = 'master' ]] && [ -z ${TRAVIS_PULL_REQUEST_BRANCH} ]; }; then
     # Push them
     echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
     for arch in ${archs}; do
