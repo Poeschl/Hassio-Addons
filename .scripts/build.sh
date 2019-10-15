@@ -20,7 +20,7 @@ for addon in "$@"; do
     fi
      
     echo "Building archs: ${archs}"
-    docker run --rm --privileged -v /var/run/docker.sock:/var/run/docker.sock -v ~/.docker:/root/.docker -v $(pwd)/${addon}:/data \
+    docker run --rm --privileged -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/${addon}:/data \
       "homeassistant/amd64-builder:${buildimage_version}" ${archs} -t /data --test
   else
     echo "No change for ${addon}"
