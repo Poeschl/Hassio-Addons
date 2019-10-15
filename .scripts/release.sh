@@ -39,7 +39,7 @@ for addon in "$@"; do
 
   if [[ "$TRAVIS_BRANCH" = 'master' ]] && [ -z ${TRAVIS_PULL_REQUEST_BRANCH} ]; then
     # Push them
-    docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
+    echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
     for arch in ${archs}; do
       image_name=${image_template/{arch}/${arch}}
 
