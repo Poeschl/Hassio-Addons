@@ -1,4 +1,5 @@
 #!/usr/bin/env bashio
+set -e
 
 bashio::log.info 'Setup config'
 echo '{"mqtt":' > /app/config.json
