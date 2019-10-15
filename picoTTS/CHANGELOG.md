@@ -7,6 +7,9 @@
 ### Changed
 * Use alpine 3.9 as base image
 
+### Fixed
+* Fixed wrong log command in startup script, which was confusing HASS.io [#20](https://github.com/Poeschl/Hassio-Addons/issues/20).
+
 
 ## [1.0-2] - 2019-10-06
 
