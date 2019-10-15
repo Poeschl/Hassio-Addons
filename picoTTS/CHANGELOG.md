@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [1.0-3] - 2019-10-15
+
+### Changed
+* Use alpine 3.9 as base image
+
 
 ## [1.0-2] - 2019-10-06
 
