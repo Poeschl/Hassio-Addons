@@ -41,7 +41,7 @@ for addon in "$@"; do
     # Push them
     echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
     for arch in ${archs}; do
-      image_name=${image_template/{arch}/${arch}}
+      image_name=${image_template/\{arch\}/$arch}
 
       echo "Push $image_name..."
       docker push "$image_name:$plugin_version"
