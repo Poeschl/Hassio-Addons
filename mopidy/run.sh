@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bashio
 set -e
 
 mkdir -p /share/mopidy/media

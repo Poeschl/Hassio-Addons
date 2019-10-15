@@ -20,6 +20,7 @@
   "boot": "auto",
   "image": "poeschl/hassio-mopidy-{arch}",
   "audio": true,
+  "devices": ["/dev/snd:/dev/snd:rwm"],
   "map": ["share:rw"],
   "ports": {
     "6680/tcp": 6680,

@@ -1,14 +1,14 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-ENV MOPIDY_VERSION='2.2.3-1'
-
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get -y --no-install-recommends install wget=1.18-5+deb9u3 gnupg=2.1.18-8~deb9u4 &&\
     wget -q -O - https://apt.mopidy.com/mopidy.gpg | apt-key add - &&\
     debian_codename=$(dpkg --status tzdata | grep Provides | cut -f2 -d'-') &&\
     wget -q -O /etc/apt/sources.list.d/mopidy.list "https://apt.mopidy.com/${debian_codename}.list" &&\
     apt-get update &&\
+    if [ "$(uname -m)" = "aarch64" ]; then export MOPIDY_VERSION=2.1.0-1; \
+    else export MOPIDY_VERSION='2.2.3-1'; fi &&\
     apt-get -y --no-install-recommends install \
         mopidy=${MOPIDY_VERSION} \
         jq=1.5+dfsg-1.3 \
