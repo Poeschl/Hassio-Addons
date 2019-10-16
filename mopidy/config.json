@@ -1,6 +1,6 @@
 {
   "name": "Mopidy",
-  "version": "2.2.3",
+  "version": "1.0.0",
   "slug": "mopidy",
   "panel_icon": "mdi:music-circle",
   "description": "Mopidy Music Server (P-Version)",
@@ -32,7 +32,12 @@
   },
   "options": {
     "local_scan": true,
-    "options": []
+    "options": [
+      {
+        "name": "local/media_dir",
+        "value": "/share/mopidy/media"
+      }
+    ]
   },
   "schema": {
     "local_scan": "bool?",
