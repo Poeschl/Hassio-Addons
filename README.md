@@ -8,6 +8,7 @@ Plugins:
 * MaryTTS - A local Text-To-Speech system.
 * PicoTTS - Text to speech voice sinthesizer from SVox, included in Android AOSP.
 * Mopidy - A media player with web interface.
+* pigpio - The pigpio led control for the Raspberry as addon.
 
 ### Licence  ![Licence](https://img.shields.io/github/license/Poeschl/Hassio-Addons)
 

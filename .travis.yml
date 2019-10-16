@@ -15,6 +15,7 @@ env:
   - ADDON="MaryTTS"
   - ADDON="picoTTS"
   - ADDON="mopidy"
+  - ADDON="pigpio"
 
 install:
   - export PATH="${HOME}/bin:${PATH}"
