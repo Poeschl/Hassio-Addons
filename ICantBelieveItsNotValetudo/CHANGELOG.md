@@ -5,6 +5,12 @@
 ### Changed
 * own versioning for changes
 
+## [0.2.0-4] - 2019-10-19
+
+### Changed
+* Switch to current master instead of latest version (thanks @Nickerchen)
+
+
 ## [0.2.0-3] - 2019-10-15
 
 ### Changed
