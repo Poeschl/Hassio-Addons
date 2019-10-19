@@ -1,6 +1,6 @@
 {
   "name": "Mopidy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "slug": "mopidy",
   "panel_icon": "mdi:music-circle",
   "description": "Mopidy Music Server (P-Version)",
@@ -13,7 +13,6 @@
     "armv7",
     "armhf",
     "amd64",
-    "aarch64",
     "i386"
   ],
   "startup": "application",

@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+## [1.1.0] - 2019-10-19
+
+### Changed
+* Updated OS to debian buster (thanks @Nickerchen)
+
+### Removed
+* Removed aarch64 support
+
+
 ## [1.0.0] - 2019-10-16
 
 ### Changed
