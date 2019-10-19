@@ -13,7 +13,6 @@
     "armv7",
     "armhf",
     "amd64",
-    "aarch64",
     "i386"
   ],
   "startup": "application",
