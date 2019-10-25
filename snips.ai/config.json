@@ -1,0 +1,39 @@
+
+{
+  "name": "Snips.ai",
+  "version": "5.2",
+  "slug": "snips.ai",
+  "description": "A local voice controll platform. Now with some additional features.",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/snips.ai",
+  "arch": [
+    "armhf",
+    "armv7",
+    "aarch64",
+    "amd64"
+  ],
+  "startup": "system",
+  "boot": "auto",
+  "image": "poeschl/hassio-snipsai-{arch}",
+  "map": ["share:rw"],
+  "ports": {
+    "59125/tcp": "59125"
+  },
+  "schema": {
+    "mqtt": {
+      "host": "match(^([^/\\s])+(\\.[^/\\s]+)?$)",
+      "port": "port",
+      "user": "str",
+      "password": "str"
+    },
+    "assistant": "match(^.+\\.zip$)"
+  },
+  "options": {
+    "mqtt": {
+      "host": "localhost",
+      "port": 1883,
+      "user": "",
+      "password": ""
+    },
+    "assistant": "assistant.zip"
+  }
+}

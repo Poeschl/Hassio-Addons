@@ -1,0 +1,8 @@
+{
+  "build_from": {
+    "armhf": "homeassistant/armhf-base-debian:stretch",
+    "armv7": "homeassistant/armv7-base-debian:stretch",
+    "aarch64": "homeassistant/aarch64-base-debian:stretch",
+    "amd64": "homeassistant/amd64-base-debian:stretch"
+  }
+}
