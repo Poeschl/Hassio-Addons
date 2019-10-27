@@ -1,5 +1,6 @@
 #!/usr/bin/env bashio
 set -e
+set +u
 
 bashio::log.info "Setup Settings"
 
@@ -30,14 +31,18 @@ snips-template render
 
 pushd /var/lib/snips/skills
 
-
 for url in $(awk '$1=="url:" {print $2}' /usr/share/snips/assistant/Snipsfile.yaml); do
   git clone "$url"
 done
 
+mkdir /share
+
 find . -maxdepth 1 -type d -print0 | while IFS= read -r -d '' dir; do
     pushd "$dir" > /dev/null
     if [ -f setup.sh ]; then
+        python3 -m venv venv
+        source venv/bin/activate
+        pip3 install --upgrade pip setuptools wheel
         bashio::log.info "Run setup.sh for '$dir'"
         bash ./setup.sh
     fi

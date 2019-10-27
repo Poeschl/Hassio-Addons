@@ -11,13 +11,8 @@ RUN apt-get update && apt-get -y --no-install-recommends install dirmngr \
     mpg123 \
     git \
     gnupg \
-    python \
-    python-pip \
-    python-wheel \
     python3 \
-    python3-pip \
-    python3-venv \
-    python3-wheel &&\
+    python3-venv &&\
     apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN if [ "$(uname --m)" = 'aarch64' ]; then bash -c 'echo "deb https://raspbian.snips.ai/410c_linaro_buster stable main" > /etc/apt/sources.list.d/snips.list'; fi &&\
@@ -35,8 +30,6 @@ RUN if [ "$(uname --m)" = 'aarch64' ]; then bash -c 'echo "deb https://raspbian.
         snips-template \
         snips-watch &&\
     apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-RUN pip3 install --upgrade setuptools wheel virtualenv && pip2 install --upgrade setuptools wheel virtualenv
 
 COPY run.sh /
 RUN chmod a+x /run.sh
