@@ -5,6 +5,11 @@
 ### Changed
 * own versioning for changes
 
+## [0.2.0-5] - 2019-11-06
+
+### Changed
+* Added schema for optional cropping parameters
+
 ## [0.2.0-4] - 2019-10-19
 
 ### Changed
