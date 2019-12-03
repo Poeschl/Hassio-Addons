@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-ENV MOPIDY_VERSION='2.1.0-1'
+ENV MOPIDY_VERSION='2.2.2-1'
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get -y --no-install-recommends install wget=1.20.1-1.1 gnupg=2.2.12-1+deb10u1 &&\
