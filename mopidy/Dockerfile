@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-ENV MOPIDY_VERSION='2.2.2-1'
+ENV MOPIDY_VERSION='2.3.1-1'
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get -y --no-install-recommends install wget=1.20.1-1.1 gnupg=2.2.12-1+deb10u1 &&\
@@ -20,7 +20,9 @@ RUN apt-get update && apt-get -y --no-install-recommends install wget=1.20.1-1.1
         sudo=1.8.27-1+deb10u1 &&\
     apt-get -y remove wget gnupg && apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN pip install Mopidy-YouTube==2.0.2 youtube-dl==2019.9.28 pafy==0.5.4 Mopidy-Iris==3.40.0 Mopidy-Local-SQLite==1.0.0
+RUN pip install youtube-dl==2019.9.28 pafy==0.5.4 Mopidy-Iris==3.40.0 Mopidy-Local-SQLite==1.0.0
+# hadolint ignore=DL3013
+RUN pip install https://github.com/natumbri/mopidy-youtube/archive/develop.zip
 #Let mopidy run local scans
 RUN echo "mopidy ALL=NOPASSWD: /usr/local/lib/python2.7/dist-packages/mopidy_iris/system.sh" >> /etc/sudoers
 
