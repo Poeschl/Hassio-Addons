@@ -9,6 +9,7 @@ Plugins:
 * PicoTTS - Text to speech voice sinthesizer from SVox, included in Android AOSP.
 * Mopidy - A media player with web interface.
 * pigpio - The pigpio led control for the Raspberry as addon.
+* MPD - A small media player with minimalistic web ui.
 
 ### Licence  ![Licence](https://img.shields.io/github/license/Poeschl/Hassio-Addons)
 

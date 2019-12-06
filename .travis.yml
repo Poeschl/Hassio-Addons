@@ -16,6 +16,7 @@ env:
   - ADDON="picoTTS"
   - ADDON="mopidy"
   - ADDON="pigpio"
+  - ADDON="mpd"
 
 install:
   - export PATH="${HOME}/bin:${PATH}"
