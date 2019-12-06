@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+## [1.2.0] - 2019-12-06
+
+### Added
+* Use Youtube-Mopidy integration from [@natumbri](https://github.com/natumbri/mopidy-youtube)
+
+### Changed
+* Updated Mopidy to `2.3.1-1`
+* Updated youtube-dl to `2019.11.28`
+* Update certifi to same version as youtube-dl
+* More startup logging
+
+
 ## [1.1.0] - 2019-10-19
 
 ### Changed
