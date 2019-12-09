@@ -14,7 +14,7 @@
   ],
   "startup": "system",
   "boot": "auto",
-  "image": "Poeschl/hassio-valetudo-mapper-{arch}",
+  "image": "poeschl/hassio-valetudo-mapper-{arch}",
   "ports": {
     "3000/tcp": null
   },
