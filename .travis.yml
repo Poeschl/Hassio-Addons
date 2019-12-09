@@ -17,7 +17,7 @@ env:
   - ADDON="mopidy"
   - ADDON="pigpio"
   - ADDON="mpd"
-  - ADDON="valetuo-mapper"
+  - ADDON="valetudo-mapper"
 
 install:
   - export PATH="${HOME}/bin:${PATH}"
