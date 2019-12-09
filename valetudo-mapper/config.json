@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "slug": "valetudomapper",
   "description": "This is a simple companion service for valetudo which generates the map pngs.",
-  "url": "https://github.com/apoc4lyps/Hassio-Addons/tree/master/valetudo-mapper",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/valetudo-mapper",
   "webui": "http://[HOST]:[PORT:3000]/api/map/image",
   "arch": [
     "armhf",
@@ -14,7 +14,7 @@
   ],
   "startup": "system",
   "boot": "auto",
-  "image": "apoc4lyps/hassio-valetudo-mapper-{arch}",
+  "image": "Poeschl/hassio-valetudo-mapper-{arch}",
   "ports": {
     "3000/tcp": null
   },
@@ -46,7 +46,8 @@
     },
     "mapDataTopic": "str",
     "minMillisecondsBetweenMapUpdates": "int",
-    "publishMapImage": "bool"
+    "publishMapImage": "bool",
+    "publishMapData": "bool"
   },
   "options": {
     "identifier": "rockrobo",
@@ -63,6 +64,7 @@
     },
     "mapDataTopic": "valetudo/rockrobo/map_data",
     "minMillisecondsBetweenMapUpdates": 10000,
-    "publishMapImage": true
+    "publishMapImage": true,
+    "publishMapData": true
   }
 }
