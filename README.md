@@ -10,6 +10,7 @@ Plugins:
 * Mopidy - A media player with web interface.
 * pigpio - The pigpio led control for the Raspberry as addon.
 * MPD - A small media player with minimalistic web ui.
+* valetudo-mapper - Valetudo RE Companion for map generation
 
 ### Licence  ![Licence](https://img.shields.io/github/license/Poeschl/Hassio-Addons)
 

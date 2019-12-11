@@ -1,0 +1,70 @@
+{
+  "name": "Valetudo Mapper",
+  "version": "1.0.0",
+  "slug": "valetudomapper",
+  "description": "This is a simple companion service for Valetudo RE which generates the map pngs.",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/valetudo-mapper",
+  "webui": "http://[HOST]:[PORT:3000]/api/map/image",
+  "arch": [
+    "armhf",
+    "armv7",
+    "aarch64",
+    "amd64",
+    "i386"
+  ],
+  "startup": "system",
+  "boot": "auto",
+  "image": "poeschl/hassio-valetudo-mapper-{arch}",
+  "ports": {
+    "3000/tcp": null
+  },
+  "ports_description": {
+    "3000/tcp": "Port serving the floor plan (Not required for Hass.io Ingress)"
+  },
+  "ingress": true,
+  "ingress_port": 3000,
+  "ingress_entry": "api/map/image",
+  "panel_title": "Valetudo Floorplan",
+  "panel_icon": "mdi:floor-plan",
+  "map": ["ssl"],
+  "schema": {
+    "identifier": "str",
+    "topicPrefix": "str",
+    "autoconfPrefix": "str",
+    "broker_url": "match(^mqtts?://.+:.+@.+$)",
+    "caPath": "str?",
+    "mapSettings": {
+      "drawPath": "bool",
+      "drawCharger": "bool",
+      "drawRobot": "bool",
+      "border": "int(0,)",
+      "scale": "int(0,)",
+      "crop_x1": "int?",
+      "crop_x2": "int?",
+      "crop_y1": "int?",
+      "crop_y2": "int?"
+    },
+    "mapDataTopic": "str",
+    "minMillisecondsBetweenMapUpdates": "int",
+    "publishMapImage": "bool",
+    "publishMapData": "bool"
+  },
+  "options": {
+    "identifier": "rockrobo",
+    "topicPrefix": "valetudo",
+    "autoconfPrefix": "homeassistant",
+    "broker_url": "mqtt://user:pass@foobar.example",
+    "caPath": "",
+    "mapSettings": {
+      "drawPath": true,
+      "drawCharger": true,
+      "drawRobot": true,
+      "border": 2,
+      "scale": 4
+    },
+    "mapDataTopic": "valetudo/rockrobo/map_data",
+    "minMillisecondsBetweenMapUpdates": 10000,
+    "publishMapImage": true,
+    "publishMapData": true
+  }
+}
