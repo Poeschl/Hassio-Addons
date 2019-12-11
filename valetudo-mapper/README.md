@@ -1,6 +1,6 @@
 # Valetudo RE Mapper (Hass.io Addon)
 
-This is the adaption of [valetudo-mappe](https://github.com/rand256/valetudo-mapper) as a Hass.io addon.
+This is the adaption of [valetudo-mapper](https://github.com/rand256/valetudo-mapper) as a Hass.io addon.
 
 ## Config
 
