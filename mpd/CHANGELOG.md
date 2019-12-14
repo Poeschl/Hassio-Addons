@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [1.1.0] - 2019-12-14
+* Add `volume_normalization` option to addon
+
 ## [1.0.0] - 2019-12-x
 
 ### Added
