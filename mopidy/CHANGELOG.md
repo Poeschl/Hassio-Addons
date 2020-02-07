@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+
+## [1.2.1] - 2020.02.07
+
+### Changed
+* Dependency updates:
+  * youtube-dl `2020.1.24`
+
+
 ## [1.2.0] - 2019-12-06
 
 ### Added

@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 ENV MOPIDY_VERSION='2.3.1-1'
-ENV YOUTUBEDL_VERSION='2019.11.28'
+ENV YOUTUBEDL_VERSION='2020.1.24'
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get -y --no-install-recommends install wget=1.20.1-1.1 gnupg=2.2.12-1+deb10u1 &&\
