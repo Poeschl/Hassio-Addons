@@ -10,9 +10,9 @@ for addon in "$@"; do
     exit 0
   fi
   
-if [[ "$TRAVIS_EVENT_TYPE" == 'pull_request' ]]; then
+if [[ "$TRAVIS_EVENT_TYPE" == 'push' ]]; then
   changed_files=$(git diff --name-only --oneline "${TRAVIS_COMMIT_RANGE}" -- "${addon}"/ | cat)
-elif [[ "$TRAVIS_EVENT_TYPE" == 'push' ]]; then
+elif [[ "$TRAVIS_EVENT_TYPE" == 'pull_request' ]]; then
   git remote set-branches --add origin master
   git fetch
   TRAVIS_COMMIT_RANGE="origin/master...$TRAVIS_COMMIT"
