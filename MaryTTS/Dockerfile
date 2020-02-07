@@ -13,7 +13,7 @@ RUN wget -q --show-progress "https://github.com/marytts/marytts/releases/downloa
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk update && \
-    apk add --no-cache 'openjdk8=8.222.10-r0'
+    apk add --no-cache 'openjdk8=8.242.08-r0'
 
 COPY --from=BUILD /app /app
 
