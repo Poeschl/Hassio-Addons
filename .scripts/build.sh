@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 archs="${ARCHS}"
-buildimage_version='6.4'
+buildimage_version='6.9'
 
 for addon in "$@"; do
 
