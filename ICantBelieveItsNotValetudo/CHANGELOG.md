@@ -2,8 +2,16 @@
 
 ## [Unreleased]
 
+
+## [1.0.0] - 2020-02.07
+
 ### Changed
-* own versioning for changes
+* Own versioning for changes. Start with `1.0.0`
+* Updated Dependencies:
+  * alpine `3.11`
+  * git `2.24.1-r0`
+  * npm `12.15.0-r1`
+
 
 ## [0.2.0-5] - 2019-11-06
 
