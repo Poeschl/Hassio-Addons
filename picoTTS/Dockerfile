@@ -3,11 +3,11 @@ FROM $BUILD_FROM AS BUILD
 
 RUN apk update && \
     apk add --no-cache \
-		'git=2.20.1-r0' \
+		'git=2.24.1-r0' \
 		'make=4.2.1-r2' \
-		'g++=8.3.0-r0' \
+		'g++=9.2.0-r3' \
 		'autoconf=2.69-r2' \
-		'libtool=2.4.6-r5' \
+		'libtool=2.4.6-r7' \
 		'popt-dev=1.16-r7' \
 		'automake=1.16.1-r0'
 

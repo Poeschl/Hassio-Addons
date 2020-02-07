@@ -2,6 +2,17 @@
 
 ## [Unreleased]
 
+
+## [1.0.4] - 2020-02-07
+
+### Changed
+* Update dependencies:
+  * alpine `3.11`
+  * git `2.24.1-r0`
+  * g++ `9.2.0-r3`
+  * libtool `2.4.6-r7`
+
+
 ## [1.0-3] - 2019-10-15
 
 ### Changed
