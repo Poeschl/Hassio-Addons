@@ -6,6 +6,7 @@
 ## [1.2.1] - 2020.02.07
 
 ### Changed
+* Downgrade Mopidy to `2.2.2-1`
 * Dependency updates:
   * youtube-dl `2020.1.24`
 
