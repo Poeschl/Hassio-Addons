@@ -6,7 +6,7 @@ buildimage_version='6.9'
 for addon in "$@"; do
 
   if [[ "$(jq -r '.image' ${addon}/config.json)" == 'null' ]]; then
-    echo "No build image set for ${addon}. Skip build!"
+    echo -e "${ANSI_YELLOW}No build image set for ${addon}. Skip build!${ANSI_CLEAR}"
     exit 0
   fi
   
@@ -20,7 +20,7 @@ elif [[ "$TRAVIS_EVENT_TYPE" == 'pull_request' ]]; then
 fi
   
   echo "Changed files in ${TRAVIS_COMMIT_RANGE} for ${addon}:"
-  echo "${changed_files}"
+  echo -e "${ANSI_GREEN}${changed_files}${ANSI_CLEAR}"
 
   if { [ -z ${TRAVIS_COMMIT_RANGE} ] || [ ! -z "$changed_files" ]; } || [[ "$FORCE_PUSH" = "true" ]]; then
     if [ -z "$archs" ]; then
@@ -31,6 +31,6 @@ fi
     docker run --rm --privileged -v '/var/run/docker.sock:/var/run/docker.sock' -v "$(pwd)/${addon}:/data" \
       "homeassistant/amd64-builder:${buildimage_version}" ${archs} -t /data --test
   else
-    echo "No change for ${addon}"
+    echo -e "${ANSI_YELLOW}No change for ${addon}${ANSI_CLEAR}"
   fi
 done

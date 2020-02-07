@@ -22,10 +22,10 @@ for addon in "$@"; do
     sum=$((sum + 1))
 
     if [[ "$(docker images -q "$image_name:$plugin_version" 2> /dev/null)" == "" ]]; then
-      echo "No local image for $image_name found."
+      echo -e "${ANSI_RED}No local image for $image_name found.${ANSI_CLEAR}"
       missing=$((missing + 1))
     else
-      echo "Local image $image_name found."
+      echo -e "${ANSI_GREEN}Local image $image_name found.${ANSI_CLEAR}"
     fi
   done
   
