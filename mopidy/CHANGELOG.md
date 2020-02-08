@@ -7,6 +7,7 @@
 
 ### Changed
 * Downgrade Mopidy to `2.2.2-1`
+* Use mopidy-youtube `2.1.0`
 * Dependency updates:
   * youtube-dl `2020.1.24`
 

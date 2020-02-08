@@ -23,7 +23,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install wget=1.20.1-1.1
 
 RUN pip install youtube-dl=="$YOUTUBEDL_VERSION" certifi==2019.11.28 pafy==0.5.5 Mopidy-Iris==3.42.2 Mopidy-Local-SQLite==1.0.0 
 # hadolint ignore=DL3013
-RUN pip install https://github.com/natumbri/mopidy-youtube/archive/develop.zip
+RUN pip install https://github.com/natumbri/mopidy-youtube/archive/v2.1.0.zip
 #Let mopidy run local scans
 RUN echo "mopidy ALL=NOPASSWD: /usr/local/lib/python2.7/dist-packages/mopidy_iris/system.sh" >> /etc/sudoers
 
