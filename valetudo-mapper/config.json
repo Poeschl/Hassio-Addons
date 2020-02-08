@@ -34,6 +34,9 @@
     "broker_url": "match(^mqtts?://.+:.+@.+$)",
     "caPath": "str?",
     "mapSettings": {
+      "gradientBackground": "bool",
+      "drawForbiddenZones": "bool",
+      "drawVirtualWalls": "bool",
       "drawPath": "bool",
       "drawCharger": "bool",
       "drawRobot": "bool",
