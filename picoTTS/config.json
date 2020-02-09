@@ -1,7 +1,7 @@
 
 {
   "name": "PicoTTS",
-  "version": "1.0-3",
+  "version": "1.0.4",
   "slug": "picotts",
   "description": "Text to speech voice synthesizer from SVox, included in Android AOSP.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/picoTTS",
