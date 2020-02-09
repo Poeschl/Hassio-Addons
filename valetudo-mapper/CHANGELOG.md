@@ -3,6 +3,15 @@
 ## [Unreleased]
 
 
+## 1.2.0 - 2020-02-09
+
+## Added
+* Added new config settings (thanks @thundergreen)
+  * `drawForbiddenZones`
+  * `drawVirtualWalls`
+  * `gradientBackground`
+
+
 ## 1.1.1 - 2020-02-07
 
 ## Changed
