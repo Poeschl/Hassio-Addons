@@ -1,9 +1,12 @@
 # Changelog
 
-## [Unreleased]
+## 1.2.2 - 2020-02-09
+
+### Changed
+* Start mopidy as `system` startup
 
 
-## 1.2.1 - 2020.02.07
+## 1.2.1 - 2020-02-07
 
 ### Changed
 * Downgrade Mopidy to `2.2.2-1`

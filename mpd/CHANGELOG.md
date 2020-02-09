@@ -1,6 +1,9 @@
 # Changelog
 
-## [Unreleased]
+## 1.1.2 - 2020-02-09
+
+### Changed
+* Start mpd as `system` startup
 
 
 ## 1.1.1 - 2020-02-07

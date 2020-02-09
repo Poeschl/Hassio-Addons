@@ -1,6 +1,6 @@
 {
   "name": "Mopidy",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "slug": "mopidy",
   "panel_icon": "mdi:music-circle",
   "description": "Mopidy Music Server (P-Version)",
@@ -15,7 +15,7 @@
     "amd64",
     "i386"
   ],
-  "startup": "application",
+  "startup": "system",
   "boot": "auto",
   "image": "poeschl/hassio-mopidy-{arch}",
   "audio": true,
