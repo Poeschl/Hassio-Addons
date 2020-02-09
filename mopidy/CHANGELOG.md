@@ -3,7 +3,7 @@
 ## [Unreleased]
 
 
-## [1.2.1] - 2020.02.07
+## 1.2.1 - 2020.02.07
 
 ### Changed
 * Downgrade Mopidy to `2.2.2-1`
@@ -12,7 +12,7 @@
   * youtube-dl `2020.1.24`
 
 
-## [1.2.0] - 2019-12-06
+## 1.2.0 - 2019-12-06
 
 ### Added
 * Use Youtube-Mopidy integration from [@natumbri](https://github.com/natumbri/mopidy-youtube)
@@ -24,7 +24,7 @@
 * More startup logging
 
 
-## [1.1.0] - 2019-10-19
+## 1.1.0 - 2019-10-19
 
 ### Changed
 * Updated OS to debian buster (thanks @Nickerchen)
@@ -33,7 +33,7 @@
 * Removed aarch64 support
 
 
-## [1.0.0] - 2019-10-16
+## 1.0.0 - 2019-10-16
 
 ### Changed
 * Set mopidy version to `2.1.0-1`
@@ -44,7 +44,7 @@
 * ALSA not forwarding sound correctly
 
 
-## [2.2.3] - 2019-10-06 (Old versioning)
+## 2.2.3 - 2019-10-06 (Old versioning)
 
 ### Changed
 * Added device mapping for `/dev/snd`
