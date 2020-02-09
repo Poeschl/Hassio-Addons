@@ -2,6 +2,17 @@
 
 ## [Unreleased]
 
+## [1.0.4] - 2019-10-15
+
+### Changed
+* Use alpine `3.11`
+* Update dependencies
+  * git `2.24.1-r0`
+  * g++ `9.2.0-r3`
+  * libtool `2.4.6-r7`
+  * python3 `1.16-r7`
+
+
 ## [1.0-3] - 2019-10-15
 
 ### Changed
