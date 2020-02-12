@@ -14,21 +14,21 @@
     "amd64",
     "i386"
   ],
-  "startup": "service",
+  "startup": "services",
   "boot": "auto",
   "image": "poeschl/hassio-ympd-{arch}",
   "ports": {
     "6680/tcp": null
   },
   "ports_description": {
-    "6680/tcp": "Web Frontend (Not needed with ingress feature)",
+    "6680/tcp": "Web Frontend (Not needed with ingress feature)"
   },
   "options": {
     "host": "localhost",
-    "port": 6600 
+    "port": "6600"
   },
   "schema": {
-    "host": "string",
+    "host": "str",
     "port": "port"
   }
 }
