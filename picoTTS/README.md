@@ -5,13 +5,14 @@
 ![amd64 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-picotts-amd64?label=docker%20pulls%20%28amd64%29)
 ![i386 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-picotts-i386?label=docker%20pulls%20%28i386%29)
 
-The [naggety/picotts](https://github.com/naggety/picotts) as Hass.io addon. (Useable on Raspberry Pi 3-)
+The [naggety/picotts](https://github.com/naggety/picotts) as Home Assistant Supervisor addon. (Useable on Raspberry Pi 3-)
 
-This addon executes the seach engine behind a webservice. It provides support for all default languages.
+This addon executes the tts engine behind a webservice. It provides support for all default languages.
 
 ## Homeassistant Integration
 
-For easy integration I also published a [custom component for Home Assistant](https://github.com/Poeschl/ha-picoTTS_remote). This allow a easy integration on Hassio-based installations.
+For easy integration I also published a [custom component](https://github.com/Poeschl/Remote-PicoTTS).
+Its available on the HACS for easy integration.
 
 ## Requests
 
