@@ -13,8 +13,8 @@ Can be used to show your Home Assistant setup in public repositories.
 
 * Export Home Assistant configuration
 * Export ESPHome configurations
-* Check for plaintext secrets based on your `secrets.yaml` file.
-* Check for plaintext ip addresses in your config.
+* Check for plaintext secrets based on your `secrets.yaml` file and common patterns.
+* Check for plaintext ip and addresses in your config.
 
 # Configuration
 
@@ -25,12 +25,12 @@ repository:
   username: user
   password: pass
   pull_before_push: true
-  exclude:
-    - 'secrets.yaml'
-    - '__pycache__'
-    - '.storage'
-    - '*.log'
-    - '*.db'
+exclude:
+  - 'secrets.yaml'
+  - '__pycache__'
+  - '.storage'
+  - '*.log'
+  - '*.db'
 checks:
   check_for_secrets: true
   check_for_ips: true
@@ -46,9 +46,9 @@ checks:
 
 `exclude`: The files / folders which should be excluded from the export.
 
-`check_for_secrets`: Check the configuration for missed secrets from your secret file.
+`check_for_secrets`: Check the configuration for secrets from your secret file and some common patterns like `password` or `token`.
 
-`check_for_ips`: Check the configuration for ip values.
+`check_for_ips`: Check the configuration for ip or mac addresses.
 
 
 [![Buy Me A Coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png)](https://www.buymeacoffee.com/Poeschl)

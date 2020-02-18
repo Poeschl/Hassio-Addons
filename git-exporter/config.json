@@ -21,8 +21,8 @@
       "url": "",
       "username": "",
       "password": "",
-      "pull_before_push": true,
-      "exclude": [
+      "pull_before_push": true},
+    "exclude": [
         "*.db",
         "*.log",
         ".cloud/",
@@ -32,8 +32,7 @@
         "known_devices.yaml",
         "secrets.yaml",
         "tts/"
-      ]
-    },
+      ],
     "check": {
       "check_for_secrets": true,
       "check_for_ips": true
@@ -41,12 +40,11 @@
   },
   "schema": {
     "repository": {
-      "url": "match(https:\\\\.*)",
-      "username": "str(1,)",
+      "url": "match(https://.*)",
+      "username": "str",
       "password": "password",
-      "pull_before_push": "bool",
-      "exclude": ["str(1,)"]
-    },
+      "pull_before_push": "bool"},
+    "exclude": ["str"],
     "check": { 
       "check_for_secrets": "bool",
       "check_for_ips": "bool"
