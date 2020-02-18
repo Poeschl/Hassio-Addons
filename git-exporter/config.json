@@ -1,0 +1,35 @@
+
+{
+  "name": "Git Exporter",
+  "version": "1.0.0",
+  "slug": "git-exporter",
+  "description": "Export all of your Home Assistant configuration to a git repository of your choice.",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/git-exporter",
+  "arch": [
+    "armhf",
+    "armv7",
+    "aarch64",
+    "amd64",
+    "i386"
+  ],
+  "startup": "once",
+  "boot": "manual",
+  "image": "poeschl/hassio-git-exporter-{arch}",
+  "map": ["config"],
+  "options": {
+    "repository": "",
+    "username": "",
+    "password": "",
+    "pull_before_push": true,
+    "check_for_secrets": true,
+    "check_for_ips": true
+  },
+  "schema": {
+    "repository": "match(https:\\\\.*)",
+    "username": "str(1,)",
+    "password": "password",
+    "pull_before_push": "bool",
+    "check_for_secrets": "bool",
+    "check_for_ips": "bool"
+  }
+}
