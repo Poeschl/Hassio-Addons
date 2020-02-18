@@ -4,3 +4,4 @@
 
 ### Added
 * Started git exporter addon with basic git push functionality
+* Added excludes in config

@@ -20,9 +20,6 @@ RUN apk add --no-cache \
 
 COPY --from=BUILD /usr/local/bin/git-secrets /usr/local/bin/git-secrets
 
-RUN git config --global core.autocrlf input
-
 COPY run.sh /
-COPY exclude.txt /
 RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]

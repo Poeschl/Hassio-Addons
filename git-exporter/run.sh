@@ -1,13 +1,15 @@
 #!/usr/bin/env bashio
-set -e
+set -ex
 
 local_repository='/data/repository'
-repository="$(bashio::config 'repository')"
-username="$(bashio::config 'username')"
-password="$(bashio::config 'password')"
-pull_before_push="$(bashio::config 'pull_before_push')"
-check_for_secrets="$(bashio::config 'check_for_secrets')"
-check_for_ips="$(bashio::config 'config_folder')"
+repository="$(bashio::config 'repository.url')"
+username="$(bashio::config 'repository.username')"
+password="$(bashio::config 'repository.password')"
+pull_before_push="$(bashio::config 'repository.pull_before_push')"
+excludes=$(bashio::config 'repository.exclude')
+
+check_for_secrets="$(bashio::config 'check.check_for_secrets')"
+check_for_ips="$(bashio::config 'check.config_folder')"
 
 bashio::log.info 'Start git export'
 
@@ -36,9 +38,9 @@ if [ "$pull_before_push" == 'true' ]; then
 	git pull --rebase
 fi
 
-#TODO: make excludes configurable
 bashio::log.info 'Update local repository with running config'
-rsync -archive --checksum --exclude-from=/exclude.txt -q /config ${local_repository}
+exclude_args=$(printf -- '--exclude=%s ' ${excludes[@]})
+rsync -archive --checksum -q $exclude_args /config ${local_repository}
 
 bashio::log.info 'Commit changes and push to remote'
 git add .

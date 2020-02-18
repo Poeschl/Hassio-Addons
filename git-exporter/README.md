@@ -20,21 +20,31 @@ Can be used to show your Home Assistant setup in public repositories.
 
 Full configuration:
 ```yaml
-repository: <path to your repository>
-username: user
-password: pass
-pull_before_push: true
-check_for_secrets: true
-check_for_ips: true
+repository: 
+  url: <path to your repository>
+  username: user
+  password: pass
+  pull_before_push: true
+  exclude:
+    - 'secrets.yaml'
+    - '__pycache__'
+    - '.storage'
+    - '*.log'
+    - '*.db'
+checks:
+  check_for_secrets: true
+  check_for_ips: true
 ```
 
-`repository`: Any https url to your git repository. (For now _no_ SSH)
+`url`: Any https url to your git repository. (For now _no_ SSH)
 
 `username`: Your username for https authentication.
 
 `password`: Your password or __accesstoken__ for your repository.
 
 `pull_before_push`: Should the repository be pulled first and commit the new state on top?
+
+`exclude`: The files / folders which should be excluded from the export.
 
 `check_for_secrets`: Check the configuration for missed secrets from your secret file.
 

@@ -17,19 +17,39 @@
   "image": "poeschl/hassio-git-exporter-{arch}",
   "map": ["config"],
   "options": {
-    "repository": "",
-    "username": "",
-    "password": "",
-    "pull_before_push": true,
-    "check_for_secrets": true,
-    "check_for_ips": true
+    "repository": {
+      "url": "",
+      "username": "",
+      "password": "",
+      "pull_before_push": true,
+      "exclude": [
+        "*.db",
+        "*.log",
+        ".cloud/",
+        ".storage/",
+        "__pycache__",
+        "deps/",
+        "known_devices.yaml",
+        "secrets.yaml",
+        "tts/"
+      ]
+    },
+    "check": {
+      "check_for_secrets": true,
+      "check_for_ips": true
+    }
   },
   "schema": {
-    "repository": "match(https:\\\\.*)",
-    "username": "str(1,)",
-    "password": "password",
-    "pull_before_push": "bool",
-    "check_for_secrets": "bool",
-    "check_for_ips": "bool"
+    "repository": {
+      "url": "match(https:\\\\.*)",
+      "username": "str(1,)",
+      "password": "password",
+      "pull_before_push": "bool",
+      "exclude": ["str(1,)"]
+    },
+    "check": { 
+      "check_for_secrets": "bool",
+      "check_for_ips": "bool"
+    }
   }
 }
