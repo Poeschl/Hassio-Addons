@@ -7,6 +7,7 @@ RUN apk add --no-cache \
 		'git=2.24.1-r0' \
 		'make=4.2.1-r2'
 
+# hadolint ignore=DL3003
 RUN git config --global advice.detachedHead false && \
     git clone https://github.com/awslabs/git-secrets.git -b ${GIT_SECRET_VERSION} /git-secrets && \
     cd /git-secrets && make install

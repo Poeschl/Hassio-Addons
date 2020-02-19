@@ -18,6 +18,7 @@ env:
   - ADDON="mpd"
   - ADDON="valetudo-mapper"
   - ADDON="ympd"
+  - ADDON="git-exporter"
 
 install:
   - export PATH="${HOME}/bin:${PATH}"
