@@ -24,7 +24,7 @@ install:
   - export FORCE_PUSH=false
   - chmod +x .scripts/build.sh
   - curl -L -o hadolint "https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-$(uname -s)-$(uname -m)" && chmod 755 hadolint && mv hadolint ${HOME}/bin/ && hadolint --version
-  - curl -L "https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.$(uname -m).tar.xz" | tar -xJv && mv "shellcheck-stable/shellcheck" ${HOME}/bin/ && shellcheck --version
+  - curl -L "https://storage.googleapis.com/shellcheck/shellcheck-v0.7.0.linux.$(uname -m).tar.xz" | tar -xJv && mv "shellcheck-v0.7.0/shellcheck" ${HOME}/bin/ && shellcheck --version
 
 before_script:
   - docker_violations=$(hadolint $ADDON/Dockerfile | tee /dev/stderr | wc -l)
