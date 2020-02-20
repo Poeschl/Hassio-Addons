@@ -12,6 +12,7 @@ Can be used to show your Home Assistant setup in public repositories.
 # Functionality
 
 * Export Home Assistant configuration
+* Export Lovelace configuration
 * Export ESPHome configurations
 * Check for plaintext secrets based on your `secrets.yaml` file and common patterns.
 * Check for plaintext ip and addresses in your config.
@@ -26,9 +27,7 @@ repository:
   password: pass
   pull_before_push: true
 exclude:
-  - 'secrets.yaml'
   - '__pycache__'
-  - '.storage'
   - '*.log'
   - '*.db'
 checks:
@@ -44,11 +43,17 @@ checks:
 
 `pull_before_push`: Should the repository be pulled first and commit the new state on top?
 
-`exclude`: The files / folders which should be excluded from the export.
+`exclude`: The files / folders which should be excluded from the export. (see also default excludes below)
 
 `check_for_secrets`: Check the configuration for secrets from your secret file and some common patterns like `password` or `token`.
 
 `check_for_ips`: Check the configuration for ip or mac addresses.
 
+### Default excludes
+
+Following folders and files are excluded from the sync per default:
+* `secrets.yaml`
+* `.cloud`
+* `.storage`
 
 [![Buy Me A Coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png)](https://www.buymeacoffee.com/Poeschl)

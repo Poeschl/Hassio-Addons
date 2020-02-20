@@ -18,7 +18,9 @@ RUN apk add --no-cache \
 			'git=2.24.1-r0' \
 			'rsync=3.1.3-r2' \
 			'grep=3.3-r0' \
-			'sed=4.7-r0'
+			'sed=4.7-r0' \
+			'python3=3.8.1-r0' \
+			'py3-yaml=5.2-r0'
 
 COPY --from=BUILD /usr/local/bin/git-secrets /usr/local/bin/git-secrets
 

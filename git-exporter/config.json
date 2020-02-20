@@ -1,6 +1,6 @@
 
 {
-  "name": "Git Exporter",
+  "name": "Home Assistant Git Exporter",
   "version": "1.0.0",
   "slug": "git-exporter",
   "description": "Export all of your Home Assistant configuration to a git repository of your choice.",
@@ -25,12 +25,9 @@
     "exclude": [
         "*.db",
         "*.log",
-        ".cloud/",
-        ".storage/",
         "__pycache__",
         "deps/",
         "known_devices.yaml",
-        "secrets.yaml",
         "tts/"
       ],
     "check": {
