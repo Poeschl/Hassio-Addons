@@ -56,6 +56,7 @@ function check_secrets {
     git secrets --add "allowed_chat_ids:\s?[\'\"]?\w+[\'\"]?\n?"
     git secrets --add "latitude:\s?[\'\"]?\w+[\'\"]?\n?"
     git secrets --add "longitude:\s?[\'\"]?\w+[\'\"]?\n?"
+    git secrets --add "credential_secret:\s?[\'\"]?\w+[\'\"]?\n?"
 
     if [ "$(bashio::config 'check.check_for_secrets')" == 'true' ]; then
         git secrets --add-provider -- sed '/^$/d;/^#.*/d;/^&/d;s/^.*://g;s/\s//g' /config/secrets.yaml
@@ -81,27 +82,33 @@ bashio::log.info 'Start git export'
 setup_git
 
 excludes=$(bashio::config 'exclude')
-excludes=("secrets.yaml" ".storage" ".cloud" "esphome/" "${excludes[@]}")
+excludes=("secrets.yaml" ".storage" ".cloud" "esphome/" ".uuid" "${excludes[@]}")
 
-bashio::log.info 'Get Home Assistant config'
+bashio::log.info 'Get Home Assistant config'#
+# Cleanup existing esphome folder from config
+[ -d "${local_repository}/config/esphome" ] && rm -r "${local_repository}/config/esphome"
 # shellcheck disable=SC2068
 exclude_args=$(printf -- '--exclude=%s ' ${excludes[@]})
 # shellcheck disable=SC2086
-rsync -archive --compress --checksum --prune-empty-dirs -q $exclude_args /config ${local_repository}
+rsync -archive --compress --delete --checksum --prune-empty-dirs -q --include='.gitignore' $exclude_args /config ${local_repository}
 sed 's/:.*$/: ""/g' /config/secrets.yaml > ${local_repository}/config/secrets.yaml
+chmod 644 -R ${local_repository}/config
 
 if [ "$(bashio::config 'export.lovelace')" == 'true' ]; then
     bashio::log.info 'Get Lovelace config yaml'
     [ ! -d "${local_repository}/lovelace" ] && mkdir "${local_repository}/lovelace"
     python3 -c "import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin)['data']['config'], sys.stdout, default_flow_style=False)" \
         < /config/.storage/lovelace > "${local_repository}/lovelace/config.yaml"
+    chmod 644 -R ${local_repository}/lovelace
 fi
 
 if [ "$(bashio::config 'export.esphome')" == 'true' ] && [ -d '/config/esphome' ]; then
     bashio::log.info 'Get ESPHome configs'
-    rsync -archive --compress --checksum --prune-empty-dirs -q \
-         --exclude='.esphome*' --include='*/' --include='*.yaml' --include='*.disabled' --exclude='*' \
+    rsync -archive --compress --delete --checksum --prune-empty-dirs -q \
+         --exclude='.esphome*' --include='*/' --include='.gitignore' --include='*.yaml' --include='*.disabled' --exclude='secrets.yaml' --exclude='*' \
         /config/esphome ${local_repository}
+    [ -f /config/esphome/secrets.yaml ] && sed 's/:.*$/: ""/g' /config/esphome/secrets.yaml > ${local_repository}/esphome/secrets.yaml
+    chmod 644 -R ${local_repository}/esphome
 fi
 
 if [ "$(bashio::config 'export.addons')" == 'true' ]; then
@@ -115,6 +122,7 @@ if [ "$(bashio::config 'export.addons')" == 'true' ]; then
         python3 -c "import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin), sys.stdout, default_flow_style=False)" \
         < '/tmp/tmp.json' > "${local_repository}/addons/${addon}.yaml"
     done
+    chmod 644 -R ${local_repository}/addons
 fi
 
 if [ "$(bashio::config 'check.enabled')" == 'true' ]; then

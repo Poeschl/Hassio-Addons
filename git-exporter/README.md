@@ -18,6 +18,11 @@ Can be used to show your Home Assistant setup in public repositories.
 * Check for plaintext secrets based on your `secrets.yaml` file and common patterns.
 * Check for plaintext ip and addresses in your config.
 
+# Example
+
+For an example take a look at my own [Home Assistant configuration](https://github.com/Poeschl/home-assistant-config).
+The folders there are gettings synced with this addon.
+
 # Configuration
 
 Full configuration:
@@ -78,7 +83,7 @@ Following folders and files are excluded from the sync per default:
 
 # Badge
 
-If you export your config with this addon and want to help me spread it further. Here is a badge you can embedd in your readme.
+If you export your config with this addon and want to help me to spread it further. Here is a badge you can embedd in your readme.
 
 [![Home Assistant Git Exporter](https://img.shields.io/badge/Powered%20by-Home%20Assistant%20Git%20Exporter-%23d32f2f)](https://github.com/Poeschl/Hassio-Addons/tree/master/git-exporter)
 
