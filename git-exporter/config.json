@@ -23,7 +23,18 @@
       "url": "",
       "username": "",
       "password": "",
-    "pull_before_push": true},
+      "pull_before_push": true
+    },
+    "export": {
+      "lovelace": true,
+      "addons": true,
+      "esphome": true
+    },
+    "check": {
+      "enabled": true,
+      "check_for_secrets": true,
+      "check_for_ips": true
+    },
     "exclude": [
       "*.db",
       "*.log",
@@ -31,24 +42,25 @@
       "deps/",
       "known_devices.yaml",
       "tts/"
-    ],
-    "check": {
-      "enabled": true,
-      "check_for_secrets": true,
-      "check_for_ips": true
-    }
+    ]
   },
   "schema": {
     "repository": {
       "url": "match(https://.*)",
       "username": "str",
       "password": "password",
-    "pull_before_push": "bool"},
-    "exclude": ["str"],
+      "pull_before_push": "bool"
+    },
+    "export": {
+      "lovelace": "bool",
+      "addons": "bool",
+      "esphome": "bool"
+    },
     "check": { 
       "enabled": "bool",
       "check_for_secrets": "bool",
       "check_for_ips": "bool"
-    }
+    },
+    "exclude": ["str"]
   }
 }

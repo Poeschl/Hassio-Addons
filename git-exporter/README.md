@@ -27,6 +27,14 @@ repository:
   username: user
   password: pass
   pull_before_push: true
+export:
+  lovelace: true
+  addons: true
+  esphome: true
+checks:
+  enabled: true
+  check_for_secrets: true
+  check_for_ips: true
 exclude:
   - '*.db'
   - '*.log
@@ -34,10 +42,6 @@ exclude:
   - deps/
   - known_devices.yaml
   - tts/
-checks:
-  enabled: true
-  check_for_secrets: true
-  check_for_ips: true
 ```
 
 `repository.url`: Any https url to your git repository. (For now _no_ SSH)
@@ -48,13 +52,22 @@ checks:
 
 `repository.pull_before_push`: Should the repository be pulled first and commit the new state on top?
 
-`exclude`: The files / folders which should be excluded from the export. (see also default excludes below)
+
+`export.lovelace`: Enable / Disable the export for the lovelace config.
+
+`export.addons`: Enable / Disable the export for the supervisor addons config.
+
+`export.esphome`: Enable / Disable the export for the esphome config.
+
 
 `checks.enabled`: Enable / Disable the checks in the exported files.
 
 `checks.check_for_secrets`: Add your secret values to the check.
 
 `checks.check_for_ips`: Add pattern for ip and mac addresses to the search.
+
+
+`exclude`: The files / folders which should be excluded from the config export. (see also default excludes below)
 
 ### Default excludes
 
