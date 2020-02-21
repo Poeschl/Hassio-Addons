@@ -23,7 +23,8 @@
       "url": "",
       "username": "",
       "password": "",
-      "pull_before_push": true
+      "pull_before_push": true,
+      "commit_message": "Home Assistant Git Exporter"
     },
     "export": {
       "lovelace": true,
@@ -49,7 +50,8 @@
       "url": "match(https://.*)",
       "username": "str",
       "password": "password",
-      "pull_before_push": "bool"
+      "pull_before_push": "bool",
+      "commit_message": "str"
     },
     "export": {
       "lovelace": "bool",

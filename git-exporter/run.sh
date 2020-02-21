@@ -131,7 +131,7 @@ fi
 
 bashio::log.info 'Commit changes and push to remote'
 git add .
-git commit -m "Home Assistant Config Export"
+git commit -m "$(bashio::config 'repository.commit_message')"
 
 if [ ! "$pull_before_push" == 'true' ]; then
     git push --set-upstream origin master -f

@@ -32,6 +32,7 @@ repository:
   username: user
   password: pass
   pull_before_push: true
+  commit_message: 'Home Assistant Git Exporter'
 export:
   lovelace: true
   addons: true
@@ -56,6 +57,8 @@ exclude:
 `repository.password`: Your password or __accesstoken__ for your repository.
 
 `repository.pull_before_push`: Should the repository be pulled first and commit the new state on top?
+
+`repository.commit_message`: The commit message for the next commit.
 
 
 `export.lovelace`: Enable / Disable the export for the lovelace config.
