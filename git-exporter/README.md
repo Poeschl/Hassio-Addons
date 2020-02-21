@@ -14,6 +14,7 @@ Can be used to show your Home Assistant setup in public repositories.
 * Export Home Assistant configuration
 * Export Lovelace configuration
 * Export ESPHome configurations
+* Export Supervisor Addons config
 * Check for plaintext secrets based on your `secrets.yaml` file and common patterns.
 * Check for plaintext ip and addresses in your config.
 
@@ -27,32 +28,38 @@ repository:
   password: pass
   pull_before_push: true
 exclude:
-  - '__pycache__'
-  - '*.log'
   - '*.db'
+  - '*.log
+  - __pycache__
+  - deps/
+  - known_devices.yaml
+  - tts/
 checks:
+  enabled: true
   check_for_secrets: true
   check_for_ips: true
 ```
 
-`url`: Any https url to your git repository. (For now _no_ SSH)
+`repository.url`: Any https url to your git repository. (For now _no_ SSH)
 
-`username`: Your username for https authentication.
+`repository.username`: Your username for https authentication.
 
-`password`: Your password or __accesstoken__ for your repository.
+`repository.password`: Your password or __accesstoken__ for your repository.
 
-`pull_before_push`: Should the repository be pulled first and commit the new state on top?
+`repository.pull_before_push`: Should the repository be pulled first and commit the new state on top?
 
 `exclude`: The files / folders which should be excluded from the export. (see also default excludes below)
 
-`check_for_secrets`: Check the configuration for secrets from your secret file and some common patterns like `password` or `token`.
+`checks.enabled`: Enable / Disable the checks in the exported files.
 
-`check_for_ips`: Check the configuration for ip or mac addresses.
+`checks.check_for_secrets`: Add your secret values to the check.
+
+`checks.check_for_ips`: Add pattern for ip and mac addresses to the search.
 
 ### Default excludes
 
 Following folders and files are excluded from the sync per default:
-* `secrets.yaml`
+* `secrets.yaml` (secrets are cleared)
 * `.cloud`
 * `.storage`
 

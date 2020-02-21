@@ -15,22 +15,25 @@
   "startup": "once",
   "boot": "manual",
   "image": "poeschl/hassio-git-exporter-{arch}",
+  "hassio_api": true,
+  "hassio_role": "manager",
   "map": ["config"],
   "options": {
     "repository": {
       "url": "",
       "username": "",
       "password": "",
-      "pull_before_push": true},
+    "pull_before_push": true},
     "exclude": [
-        "*.db",
-        "*.log",
-        "__pycache__",
-        "deps/",
-        "known_devices.yaml",
-        "tts/"
-      ],
+      "*.db",
+      "*.log",
+      "__pycache__",
+      "deps/",
+      "known_devices.yaml",
+      "tts/"
+    ],
     "check": {
+      "enabled": true,
       "check_for_secrets": true,
       "check_for_ips": true
     }
@@ -40,9 +43,10 @@
       "url": "match(https://.*)",
       "username": "str",
       "password": "password",
-      "pull_before_push": "bool"},
+    "pull_before_push": "bool"},
     "exclude": ["str"],
     "check": { 
+      "enabled": "bool",
       "check_for_secrets": "bool",
       "check_for_ips": "bool"
     }

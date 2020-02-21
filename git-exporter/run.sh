@@ -19,11 +19,11 @@ function setup_git {
         fullurl="https://${username}:${password}@${repository##*https://}"
         if [ "$pull_before_push" == 'true' ]; then
             bashio::log.info 'Clone existing repository'
-            git clone $fullurl $local_repository
+            git clone "$fullurl" $local_repository
         else
             bashio::log.info 'Initialize new repository'
             git init $local_repository
-            git remote add origin $fullurl
+            git remote add origin "$fullurl"
         fi
         git config user.name "${username}"
         git config user.email 'git.exporter@hass.io'
@@ -42,10 +42,11 @@ function setup_git {
 }
 
 function check_secrets {
+    enabled=$(bashio::config 'check.enabled')
     check_for_secrets=$(bashio::config 'check.check_for_secrets')
     check_for_ips=$(bashio::config 'check.check_for_ips')
 
-    if [ "$check_for_secrets" == 'true' ]; then
+    if [ "$enabled" == 'true' ]; then
         bashio::log.info 'Add secrets pattern'
 
         # Allow !secret lines
@@ -61,7 +62,9 @@ function check_secrets {
         git secrets --add "latitude:\s?[\'\"]?\w+[\'\"]?\n?"
         git secrets --add "longitude:\s?[\'\"]?\w+[\'\"]?\n?"
 
-        git secrets --add-provider -- sed '/^$/d;/^#.*/d;/^&/d;s/^.*://g;s/\s//g' /config/secrets.yaml
+        if [ "$check_for_secrets" == 'true' ]; then
+            git secrets --add-provider -- sed '/^$/d;/^#.*/d;/^&/d;s/^.*://g;s/\s//g' /config/secrets.yaml
+        fi
 
         if [ "$check_for_ips" == 'true' ]; then
             git secrets --add '([0-9]{1,3}\.){3}[0-9]{1,3}'
@@ -73,6 +76,7 @@ function check_secrets {
         bashio::log.info "Prohibited patterns:\n${prohibited_patterns//\\n/\\\\n}"
 
         bashio::log.info 'Checking for secrets'
+        # shellcheck disable=SC2046
         git secrets --scan $(find $local_repository -name '*.yaml' -o -name '*.yml' -o -name '*.json' -o -name '*.disabled') \
         || bashio::log.error 'Found secrets in files!!! Fix them to be able to commit!'; exit 1
     fi
@@ -83,10 +87,12 @@ bashio::log.info 'Start git export'
 setup_git
 
 excludes=$(bashio::config 'exclude')
-excludes=("secrets.yaml" ".storage" ".cloud" "esphome" "${excludes[@]}")
+excludes=("secrets.yaml" ".storage" ".cloud" "esphome/" "${excludes[@]}")
 
 bashio::log.info 'Get Home Assistant config'
+# shellcheck disable=SC2068
 exclude_args=$(printf -- '--exclude=%s ' ${excludes[@]})
+# shellcheck disable=SC2086
 rsync -archive --checksum --prune-empty-dirs -q $exclude_args /config ${local_repository}
 sed 's/:.*$/: ""/g' /config/secrets.yaml > ${local_repository}/config/secrets.yaml
 
@@ -102,7 +108,16 @@ if [ -d '/config/esphome' ]; then
         /config/esphome ${local_repository}
 fi
 
-bashio::log.info 'Get addon configs'
+[ -d ${local_repository}/addons ] || mkdir -p ${local_repository}/addons
+addons_response=$(curl --silent -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" http://supervisor/addons)
+installed_addons=$(echo "$addons_response" | jq -r '.data.addons[] | select( .installed != null) | .slug')
+for addon in $installed_addons; do
+    bashio::log.info "Get ${addon} configs"
+    config_response=$(curl --silent -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" "http://supervisor/addons/${addon}/info")
+    echo "$config_response" | jq -r '.data.options' >  '/tmp/tmp.json'
+    python3 -c "import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin), sys.stdout, default_flow_style=False)" \
+    < '/tmp/tmp.json' > "${local_repository}/addons/${addon}.yaml"
+done
 
 check_secrets
 
