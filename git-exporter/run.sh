@@ -87,7 +87,7 @@ bashio::log.info 'Get Home Assistant config'
 # shellcheck disable=SC2068
 exclude_args=$(printf -- '--exclude=%s ' ${excludes[@]})
 # shellcheck disable=SC2086
-rsync -archive --checksum --prune-empty-dirs -q $exclude_args /config ${local_repository}
+rsync -archive --compress --checksum --prune-empty-dirs -q $exclude_args /config ${local_repository}
 sed 's/:.*$/: ""/g' /config/secrets.yaml > ${local_repository}/config/secrets.yaml
 
 if [ "$(bashio::config 'export.lovelace')" == 'true' ]; then
@@ -99,8 +99,8 @@ fi
 
 if [ "$(bashio::config 'export.esphome')" == 'true' ] && [ -d '/config/esphome' ]; then
     bashio::log.info 'Get ESPHome configs'
-    rsync -archive --checksum --prune-empty-dirs -q \
-        --exclude='.esphome/' --include="*/" --include='*.yaml' --include='*.disabled' --exclude='*' \
+    rsync -archive --compress --checksum --prune-empty-dirs -q \
+         --exclude='.esphome*' --include='*/' --include='*.yaml' --include='*.disabled' --exclude='*' \
         /config/esphome ${local_repository}
 fi
 
