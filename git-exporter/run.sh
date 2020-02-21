@@ -36,8 +36,8 @@ function setup_git {
 
     if [ "$pull_before_push" == 'true' ]; then
         bashio::log.info 'Pull latest'
-        git reset --hard
-        git pull -f --rebase
+        git fetch
+        git reset --hard origin/master
     fi
 }
 
