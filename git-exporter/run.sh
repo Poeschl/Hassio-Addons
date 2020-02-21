@@ -73,7 +73,7 @@ function check_secrets {
     bashio::log.info 'Checking for secrets'
     # shellcheck disable=SC2046
     git secrets --scan $(find $local_repository -name '*.yaml' -o -name '*.yml' -o -name '*.json' -o -name '*.disabled') \
-    || bashio::log.error 'Found secrets in files!!! Fix them to be able to commit!'; exit 1
+    || (bashio::log.error 'Found secrets in files!!! Fix them to be able to commit!' && exit 1)
 }
 
 bashio::log.info 'Start git export'
@@ -130,3 +130,4 @@ if [ ! "$pull_before_push" == 'true' ]; then
 else
     git push origin
 fi
+bashio::log.info 'Export finished'
