@@ -12,6 +12,8 @@ RUN wget -q --show-progress "https://github.com/marytts/marytts/releases/downloa
 
 FROM $BUILD_FROM AS RUNNING
 
+ENV MARYTTS_VERSION 5.2
+
 RUN apk update && \
     apk add --no-cache 'openjdk8=8.242.08-r0'
 

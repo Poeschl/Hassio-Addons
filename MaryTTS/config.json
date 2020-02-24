@@ -1,7 +1,7 @@
 
 {
   "name": "MaryTTS",
-  "version": "5.2-2",
+  "version": "5.2-3",
   "slug": "marytts",
   "description": "The Mary TTS speech engine as a Hassio-Addon.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/MaryTTS",
@@ -19,6 +19,11 @@
   "ports": {
     "59125/tcp": "59125"
   },
-  "schema": {},
-  "options": {}
+  "options": {
+    "language": "en"
+  },
+  "schema": {
+    "language": "list(de|en|fr|it|in|tu|lu)",
+    "voice": "match(^https?://.+\\.zip)?"
+  }
 }

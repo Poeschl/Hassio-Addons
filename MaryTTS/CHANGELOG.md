@@ -6,6 +6,12 @@
 * own versioning for changes
 
 
+## 5.2-3 - 2020-02-24
+
+### Added
+* Download voice packs according to language on demand
+
+
 ## 5.2-2 - 2020-02-07
 
 ### Changed
