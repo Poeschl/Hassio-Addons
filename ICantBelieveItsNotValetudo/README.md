@@ -9,10 +9,11 @@ This is the adaption of [ICantBelieveItsNotValetudo](https://github.com/Hypfer/I
 
 ## Config
 
-The config of the addon is identical to the `mqtt` section described in the README of ICantBelieveItsNotValetudo.
-The `webserver` section is fixed to `{ "enabled": true, "port": 3000 }`
+The config of the addon is identical to the `mqtt` section described in the [README of ICantBelieveItsNotValetudo](https://github.com/Hypfer/ICantBelieveItsNotValetudo/blob/master/README.md).
+The `webserver` section is fixed to `{ "enabled": true, "port": 3000 }`.
 
 Is the mqtt broker also on your hass.io instance (like the Mosquitto Addon), you might enter the ip or hostname of the hass.io machine as broker address.
+To use images as underlay, the `share` folder is mounted in the addon. Just start your path with `/stare` to access it (example `/share/valetudo/underlay.png`)
 
 ## PNG image
 
