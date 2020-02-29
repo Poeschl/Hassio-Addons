@@ -61,7 +61,7 @@
       "mapDataTopic": "str",
       "minMillisecondsBetweenMapUpdates": "int",
       "publishMapImage": "bool"
-    },
+    }
   },
   "options": {
     "mapSettings": {
@@ -79,6 +79,6 @@
       "mapDataTopic": "valetudo/rockrobo/map_data",
       "minMillisecondsBetweenMapUpdates": 10000,
       "publishMapImage": true
-    },
+    }
   }
 }
