@@ -1,6 +1,12 @@
 # Changelog
 
-## 1.0.0 - 2020-02.07
+## 2.0.0 - 2020-02-27
+
+## Changed
+* Updated ICantBelieveItsNotValetudo to latest commit `3cf4f8a`
+  * Adjusted to new config structure (__Make sure to migrate your existing config!__)
+
+## 1.0.0 - 2020-02-07
 
 ### Changed
 * Own versioning for changes. Start with `1.0.0`
