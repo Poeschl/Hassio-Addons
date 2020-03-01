@@ -12,6 +12,7 @@ RUN git clone https://github.com/Hypfer/ICantBelieveItsNotValetudo.git -b master
 WORKDIR /app
 RUN npm install
 
+COPY valetudo.jq /app/config-template.jq
 COPY run.sh /
 RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]

@@ -9,14 +9,17 @@ This is the adaption of [ICantBelieveItsNotValetudo](https://github.com/Hypfer/I
 
 ## Config
 
-The config of the addon is identical to the `mqtt` section described in the [README of ICantBelieveItsNotValetudo](https://github.com/Hypfer/ICantBelieveItsNotValetudo/blob/master/README.md).
-The `webserver` section is fixed to `{ "enabled": true, "port": 3000 }`.
+The configuration keys are identical to the [configuration of ICantBelieveItsNotValetudo](https://github.com/Hypfer/ICantBelieveItsNotValetudo/blob/master/README.md).
+Please get the meaning for them from there.
+Its normal that the structure of the addon differs from the official config file, this is nessesary because of the Supervisor Addon config structure.
+For my sanity the `webserver` section is fixed to `{ "enabled": true, "port": 3000 }`.
 
-Is the mqtt broker also on your Home Assistant instance (like the Mosquitto Addon), you might enter the ip or hostname of the Homeassistant machine as broker address.
-To use images as underlay, the `share` folder is mounted in the addon. Just start your path with `/stare` to access it (example `/share/valetudo/underlay.png`)
+If you use the Mosquitto Addon in Home Assistant `core_mosquitto` can be used as broker address.
+To use images as underlay or overlay, the `share` folder is mounted in the addon. Just start your path with `/stare` to access it (example `/share/valetudo/underlay.png`)
 
 ## PNG image
 
 The generated image will be served over the Supervisor Ingress feature. So the floor plan can be accessed via the build-in side panel or the auto-configured mqtt camera.
+(Make sure Autodiscovery is enabled!)
 
 [![Buy Me A Coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png)](https://www.buymeacoffee.com/Poeschl)
