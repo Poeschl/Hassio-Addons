@@ -5,6 +5,7 @@ ENV MPD_VERSION='0.21.16-r1'
 ENV YMPD_VERSION='1.3.0-r8'
 
 RUN apk add -Uu --no-cache --purge \
+        alsa-plugins-pulse=1.2.1-r0 \
         mpc=0.33-r0 \
         mpd=$MPD_VERSION \
         ympd=$YMPD_VERSION \

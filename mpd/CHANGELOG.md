@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0 - 2020-03-09
+
+### Added
+* Added `alsa-plugins-pulse` to be compatible with latest HassOS (> 3.11)
+
+
 ## 1.1.2 - 2020-02-09
 
 ### Changed
