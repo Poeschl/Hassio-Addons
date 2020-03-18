@@ -7,6 +7,7 @@
 
 ### Changed
 * Adjusted to the multiple lovelace interfaces
+* Updated to python `3.8.2-r0`
 
 ## 1.0 - 2020-02-21
 
