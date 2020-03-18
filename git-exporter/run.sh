@@ -99,7 +99,7 @@ if [ "$(bashio::config 'export.lovelace')" == 'true' ]; then
     [ ! -d "${local_repository}/lovelace" ] && mkdir "${local_repository}/lovelace"
     cd /config/.storage
     find . -name "lovelace*" -exec bash -c \
-        'name=${0:2}; python3 -c "import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin), sys.stdout, default_flow_style=False)" \
+        'name=${0:2}; python3 -c "import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin), sys.stdout, default_flow_style=False)" 
         < "/config/.storage/$name" > "${1}/lovelace/$name"' "{}" "${local_repository}" \;
     chmod 644 -R ${local_repository}/lovelace
     cd $local_repository
