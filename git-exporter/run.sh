@@ -84,7 +84,7 @@ setup_git
 excludes=$(bashio::config 'exclude')
 excludes=("secrets.yaml" ".storage" ".cloud" "esphome/" ".uuid" "${excludes[@]}")
 
-bashio::log.info 'Get Home Assistant config'#
+bashio::log.info 'Get Home Assistant config'
 # Cleanup existing esphome folder from config
 [ -d "${local_repository}/config/esphome" ] && rm -r "${local_repository}/config/esphome"
 # shellcheck disable=SC2068
@@ -97,9 +97,12 @@ chmod 644 -R ${local_repository}/config
 if [ "$(bashio::config 'export.lovelace')" == 'true' ]; then
     bashio::log.info 'Get Lovelace config yaml'
     [ ! -d "${local_repository}/lovelace" ] && mkdir "${local_repository}/lovelace"
-    python3 -c "import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin)['data']['config'], sys.stdout, default_flow_style=False)" \
-        < /config/.storage/lovelace > "${local_repository}/lovelace/config.yaml"
+    cd /config/.storage
+    find . -name "lovelace*" -exec bash -c \
+        'name=${0:2}; python3 -c "import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin), sys.stdout, default_flow_style=False)" 
+        < "/config/.storage/$name" > "${1}/lovelace/$name"' "{}" "${local_repository}" \;
     chmod 644 -R ${local_repository}/lovelace
+    cd $local_repository
 fi
 
 if [ "$(bashio::config 'export.esphome')" == 'true' ] && [ -d '/config/esphome' ]; then
@@ -129,13 +132,19 @@ if [ "$(bashio::config 'check.enabled')" == 'true' ]; then
     check_secrets
 fi
 
-bashio::log.info 'Commit changes and push to remote'
-git add .
-git commit -m "$(bashio::config 'repository.commit_message')"
 
-if [ ! "$pull_before_push" == 'true' ]; then
-    git push --set-upstream origin master -f
+if [ "$(bashio::config 'dry_run')" ]; then
+    git status
 else
-    git push origin
+    bashio::log.info 'Commit changes and push to remote'
+    git add .
+    git commit -m "$(bashio::config 'repository.commit_message')"
+
+    if [ ! "$pull_before_push" == 'true' ]; then
+        git push --set-upstream origin master -f
+    else
+        git push origin
+    fi
 fi
-bashio::log.info 'Export finished'
+
+bashio::log.info 'Exporter finished'

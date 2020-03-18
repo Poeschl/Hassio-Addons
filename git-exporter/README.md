@@ -48,6 +48,7 @@ exclude:
   - deps/
   - known_devices.yaml
   - tts/
+dry_run: false
 ```
 
 `repository.url`: Any https url to your git repository. (For now _no_ SSH)
@@ -76,6 +77,8 @@ exclude:
 
 
 `exclude`: The files / folders which should be excluded from the config export. (see also default excludes below)
+
+`dry_run`: Only show the changes and don't commit or push.
 
 ### Default excludes
 
