@@ -17,7 +17,7 @@
   "image": "poeschl/ha-syncthing-{arch}",
   "ports": {
     "8384/tcp": null,
-    "22000/tcp": 2200,
+    "22000/tcp": 22000,
     "21027/udp": 21027
   },
   "ports_description": {
