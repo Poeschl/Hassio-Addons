@@ -9,6 +9,13 @@
 
 Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers in real time, safely protected from prying eyes. Your data is your data alone and you deserve to choose where it is stored, whether it is shared with some third party, and how it's transmitted over the internet.
 
+# Folders available
+
+When using this addon to permanently hold your data, put the synced folder inside `/data`. Otherwise it will be deleted on container restart.
+
+Also the `/share`, `/confg`, `/backup` and `/addons` folders is mapped inside. Your can use them as persistant storage, too.
+They can also be used to backup the Home Assistant backups. 😉
+
 # Configuration
 
 The configuration is done via the web ui. Start the addon and configure it there.
