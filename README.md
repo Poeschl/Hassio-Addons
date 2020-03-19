@@ -13,6 +13,7 @@ Plugins:
 * valetudo-mapper - Valetudo RE Companion for map generation
 * ympd - A very lightweight Web interface for controlling MPD music servers. 
 * Git Exporter - Exports your Home Assistant config to any git repository (secrets check included) 
+* Syncthing - A de-centralized file syncronisation program. Focused on privacy.
 
 
 ### Licence  ![Licence](https://img.shields.io/github/license/Poeschl/Hassio-Addons)
