@@ -19,6 +19,7 @@ env:
   - ADDON="valetudo-mapper"
   - ADDON="ympd"
   - ADDON="git-exporter"
+  - ADDON="syncthing"
 
 install:
   - export PATH="${HOME}/bin:${PATH}"
