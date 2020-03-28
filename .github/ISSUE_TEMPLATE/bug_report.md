@@ -25,3 +25,9 @@ assignees: ''
 
 **Screenshots**
 <!-- If applicable, add screenshots to help explain your problem. -->
+
+**System**
+<!-- Those information can be found under the Supervisor page on the System tab. -->
+* Supervisor version: <!--Your Supervisor Version, eg. 209. -->
+* Host system version: <!--Your Home Assistant (former HASSIO) version, eg. HassOS 3.12 -->
+<!-- When using a beta or development version please also specify them here. -->
