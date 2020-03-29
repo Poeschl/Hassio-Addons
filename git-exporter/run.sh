@@ -80,12 +80,10 @@ function check_secrets {
 function export_lovelace {
     bashio::log.info 'Get Lovelace config yaml'
     [ ! -d "${local_repository}/lovelace" ] && mkdir "${local_repository}/lovelace"
-    cd /config/.storage
-    find . -name "lovelace*" -exec bash -c \
-        'name=${0:2}; python3 -c "import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin), sys.stdout, default_flow_style=False)" 
-        < "/config/.storage/$name" > "${1}/lovelace/$name"' "{}" "${local_repository}" \;
-    chmod 644 -R ${local_repository}/lovelace
-    cd $local_repository
+    find /config/.storage -name "lovelace*" -exec cp {} "${local_repository}/lovelace" \;
+    /utils/jsonToYaml.py "${local_repository}/lovelace"
+    find "${local_repository}/lovelace" -name "*.json" -exec rm {} \;
+    chmod 644 -R "${local_repository}/lovelace"
 }
 
 function export_esphome {
@@ -104,9 +102,9 @@ function export_addons {
     for addon in $installed_addons; do
         bashio::log.info "Get ${addon} configs"
         config_response=$(curl --silent -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" "http://supervisor/addons/${addon}/info")
-        echo "$config_response" | jq -r '.data.options' >  '/tmp/tmp.json'
-        python3 -c "import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin), sys.stdout, default_flow_style=False)" \
-        < '/tmp/tmp.json' > "${local_repository}/addons/${addon}.yaml"
+        echo "$config_response" | jq -r '.data.options' >  /tmp/tmp.json
+        /utils/jsonToYaml.py /tmp/tmp.json
+        mv /tmp/tmp.yaml "${local_repository}/addons/${addon}.yaml"
     done
     chmod 644 -R ${local_repository}/addons
 }

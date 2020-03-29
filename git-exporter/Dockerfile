@@ -20,11 +20,13 @@ RUN apk add --no-cache \
 			'grep=3.3-r0' \
 			'sed=4.7-r0' \
 			'python3=3.8.2-r0' \
-			'py3-yaml=5.2-r0' \
+			'py3-yaml=5.3.1-r0' \
 			'curl=7.67.0-r0'
 
 COPY --from=BUILD /usr/local/bin/git-secrets /usr/local/bin/git-secrets
 
 COPY run.sh /
-RUN chmod a+x /run.sh
+COPY utils /utils
+RUN chmod a+x /run.sh /utils/*
+RUN echo "{\"data\": \"value\", \"container\": {\"condata\": \"3\"}}" > /tmp/test.json && /utils/jsonToYaml.py /tmp/ && cat /tmp/test.yaml
 CMD [ "/run.sh" ]
