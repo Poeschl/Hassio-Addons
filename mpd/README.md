@@ -7,4 +7,4 @@
 [MPD](https://www.musicpd.org/) is a free and open source music player. It plays audio files, organizes playlists and maintains a music database. For interaction client software is needed.
 Inside this addon there is [ympd](https://ympd.org/), a simple web frontend for interacting.
 
-[![Buy Me A Coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png)](https://www.buymeacoffee.com/Poeschl)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white)](https://www.buymeacoffee.com/Poeschl)
