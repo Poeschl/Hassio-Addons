@@ -77,6 +77,40 @@ function check_secrets {
     || (bashio::log.error 'Found secrets in files!!! Fix them to be able to commit!' && exit 1)
 }
 
+function export_lovelace {
+    bashio::log.info 'Get Lovelace config yaml'
+    [ ! -d "${local_repository}/lovelace" ] && mkdir "${local_repository}/lovelace"
+    cd /config/.storage
+    find . -name "lovelace*" -exec bash -c \
+        'name=${0:2}; python3 -c "import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin), sys.stdout, default_flow_style=False)" 
+        < "/config/.storage/$name" > "${1}/lovelace/$name"' "{}" "${local_repository}" \;
+    chmod 644 -R ${local_repository}/lovelace
+    cd $local_repository
+}
+
+function export_esphome {
+    bashio::log.info 'Get ESPHome configs'
+    rsync -archive --compress --delete --checksum --prune-empty-dirs -q \
+         --exclude='.esphome*' --include='*/' --include='.gitignore' --include='*.yaml' --include='*.disabled' --exclude='secrets.yaml' --exclude='*' \
+        /config/esphome ${local_repository}
+    [ -f /config/esphome/secrets.yaml ] && sed 's/:.*$/: ""/g' /config/esphome/secrets.yaml > ${local_repository}/esphome/secrets.yaml
+    chmod 644 -R ${local_repository}/esphome
+}
+
+function export_addons {
+    [ -d ${local_repository}/addons ] || mkdir -p ${local_repository}/addons
+    addons_response=$(curl --silent -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" http://supervisor/addons)
+    installed_addons=$(echo "$addons_response" | jq -r '.data.addons[] | select( .installed != null) | .slug')
+    for addon in $installed_addons; do
+        bashio::log.info "Get ${addon} configs"
+        config_response=$(curl --silent -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" "http://supervisor/addons/${addon}/info")
+        echo "$config_response" | jq -r '.data.options' >  '/tmp/tmp.json'
+        python3 -c "import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin), sys.stdout, default_flow_style=False)" \
+        < '/tmp/tmp.json' > "${local_repository}/addons/${addon}.yaml"
+    done
+    chmod 644 -R ${local_repository}/addons
+}
+
 bashio::log.info 'Start git export'
 
 setup_git
@@ -95,37 +129,15 @@ sed 's/:.*$/: ""/g' /config/secrets.yaml > ${local_repository}/config/secrets.ya
 chmod 644 -R ${local_repository}/config
 
 if [ "$(bashio::config 'export.lovelace')" == 'true' ]; then
-    bashio::log.info 'Get Lovelace config yaml'
-    [ ! -d "${local_repository}/lovelace" ] && mkdir "${local_repository}/lovelace"
-    cd /config/.storage
-    find . -name "lovelace*" -exec bash -c \
-        'name=${0:2}; python3 -c "import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin), sys.stdout, default_flow_style=False)" 
-        < "/config/.storage/$name" > "${1}/lovelace/$name"' "{}" "${local_repository}" \;
-    chmod 644 -R ${local_repository}/lovelace
-    cd $local_repository
+    export_lovelace
 fi
 
 if [ "$(bashio::config 'export.esphome')" == 'true' ] && [ -d '/config/esphome' ]; then
-    bashio::log.info 'Get ESPHome configs'
-    rsync -archive --compress --delete --checksum --prune-empty-dirs -q \
-         --exclude='.esphome*' --include='*/' --include='.gitignore' --include='*.yaml' --include='*.disabled' --exclude='secrets.yaml' --exclude='*' \
-        /config/esphome ${local_repository}
-    [ -f /config/esphome/secrets.yaml ] && sed 's/:.*$/: ""/g' /config/esphome/secrets.yaml > ${local_repository}/esphome/secrets.yaml
-    chmod 644 -R ${local_repository}/esphome
+    export_esphome
 fi
 
 if [ "$(bashio::config 'export.addons')" == 'true' ]; then
-    [ -d ${local_repository}/addons ] || mkdir -p ${local_repository}/addons
-    addons_response=$(curl --silent -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" http://supervisor/addons)
-    installed_addons=$(echo "$addons_response" | jq -r '.data.addons[] | select( .installed != null) | .slug')
-    for addon in $installed_addons; do
-        bashio::log.info "Get ${addon} configs"
-        config_response=$(curl --silent -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" "http://supervisor/addons/${addon}/info")
-        echo "$config_response" | jq -r '.data.options' >  '/tmp/tmp.json'
-        python3 -c "import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin), sys.stdout, default_flow_style=False)" \
-        < '/tmp/tmp.json' > "${local_repository}/addons/${addon}.yaml"
-    done
-    chmod 644 -R ${local_repository}/addons
+    export_addons
 fi
 
 if [ "$(bashio::config 'check.enabled')" == 'true' ]; then
