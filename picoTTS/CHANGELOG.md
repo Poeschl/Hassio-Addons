@@ -4,6 +4,7 @@
 
 ### Changed
 * Update g++ to `9.2.0-r4`
+* Update python to `3.8.2-r0`
 
 
 ## 1.0.4 - 2019-10-15

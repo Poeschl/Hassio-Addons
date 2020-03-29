@@ -20,7 +20,7 @@ RUN git clone https://github.com/naggety/picotts.git -b master /build && \
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add --no-cache \
-			'python3=3.8.1-r0' \
+			'python3=3.8.2-r0' \
 			'popt=1.16-r7' && \
 	python3 -m ensurepip
 
