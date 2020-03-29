@@ -6,6 +6,12 @@
 * own versioning for changes
 
 
+## 5.2-4 - 2020-03-29
+
+### Changed
+* Update unzip to `6.0-r6`
+
+
 ## 5.2-3 - 2020-02-24
 
 ### Added
