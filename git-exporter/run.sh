@@ -77,12 +77,28 @@ function check_secrets {
     || (bashio::log.error 'Found secrets in files!!! Fix them to be able to commit!' && exit 1)
 }
 
+function export_ha_config {
+    bashio::log.info 'Get Home Assistant config'
+    excludes=$(bashio::config 'exclude')
+    excludes=("secrets.yaml" ".storage" ".cloud" "esphome/" ".uuid" "${excludes[@]}")
+
+    # Cleanup existing esphome folder from config
+    [ -d "${local_repository}/config/esphome" ] && rm -r "${local_repository}/config/esphome"
+    # shellcheck disable=SC2068
+    exclude_args=$(printf -- '--exclude=%s ' ${excludes[@]})
+    # shellcheck disable=SC2086
+    rsync -archive --compress --delete --checksum --prune-empty-dirs -q --include='.gitignore' $exclude_args /config ${local_repository}
+    sed 's/:.*$/: ""/g' /config/secrets.yaml > ${local_repository}/config/secrets.yaml
+    chmod 644 -R ${local_repository}/config
+}
+
 function export_lovelace {
     bashio::log.info 'Get Lovelace config yaml'
     [ ! -d "${local_repository}/lovelace" ] && mkdir "${local_repository}/lovelace"
-    find /config/.storage -name "lovelace*" -exec cp {} "${local_repository}/lovelace" \;
-    /utils/jsonToYaml.py "${local_repository}/lovelace"
-    find "${local_repository}/lovelace" -name "*.json" -exec rm {} \;
+    mkdir '/tmp/lovelace'
+    find /config/.storage -name "lovelace*" -exec cp {} '/tmp/lovelace' \;
+    /utils/jsonToYaml.py '/tmp/lovelace/' 'data'
+    rsync -archive --compress --delete --checksum --prune-empty-dirs  -q --include='*.yaml' /tmp/lovelace/ "${local_repository}/lovelace"
     chmod 644 -R "${local_repository}/lovelace"
 }
 
@@ -99,12 +115,14 @@ function export_addons {
     [ -d ${local_repository}/addons ] || mkdir -p ${local_repository}/addons
     addons_response=$(curl --silent -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" http://supervisor/addons)
     installed_addons=$(echo "$addons_response" | jq -r '.data.addons[] | select( .installed != null) | .slug')
+    mkdir '/tmp/addons/'
     for addon in $installed_addons; do
         bashio::log.info "Get ${addon} configs"
         config_response=$(curl --silent -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" "http://supervisor/addons/${addon}/info")
         echo "$config_response" | jq -r '.data.options' >  /tmp/tmp.json
         /utils/jsonToYaml.py /tmp/tmp.json
-        mv /tmp/tmp.yaml "${local_repository}/addons/${addon}.yaml"
+        mv /tmp/tmp.yaml "/tmp/addons/${addon}.yaml"
+        rsync -archive --compress --delete --checksum --prune-empty-dirs -q /tmp/addons/ ${local_repository}/addons
     done
     chmod 644 -R ${local_repository}/addons
 }
@@ -113,18 +131,7 @@ bashio::log.info 'Start git export'
 
 setup_git
 
-excludes=$(bashio::config 'exclude')
-excludes=("secrets.yaml" ".storage" ".cloud" "esphome/" ".uuid" "${excludes[@]}")
-
-bashio::log.info 'Get Home Assistant config'
-# Cleanup existing esphome folder from config
-[ -d "${local_repository}/config/esphome" ] && rm -r "${local_repository}/config/esphome"
-# shellcheck disable=SC2068
-exclude_args=$(printf -- '--exclude=%s ' ${excludes[@]})
-# shellcheck disable=SC2086
-rsync -archive --compress --delete --checksum --prune-empty-dirs -q --include='.gitignore' $exclude_args /config ${local_repository}
-sed 's/:.*$/: ""/g' /config/secrets.yaml > ${local_repository}/config/secrets.yaml
-chmod 644 -R ${local_repository}/config
+export_ha_config
 
 if [ "$(bashio::config 'export.lovelace')" == 'true' ]; then
     export_lovelace

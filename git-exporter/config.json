@@ -1,7 +1,7 @@
 
 {
   "name": "Home Assistant Git Exporter",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "slug": "git-exporter",
   "description": "Export all of your Home Assistant configuration to a git repository of your choice.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/git-exporter",
