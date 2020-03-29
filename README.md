@@ -1,8 +1,8 @@
-# Poeschl Hassio Addons  [![Travis master](https://img.shields.io/travis/Poeschl/Hassio-Addons/master.svg?maxAge=3600)](https://travis-ci.org/Poeschl/Hassio-Addons/)
+# Poeschl Home Assistant Supervisor Add-ons  [![Travis master](https://img.shields.io/travis/Poeschl/Hassio-Addons/master.svg?maxAge=3600)](https://travis-ci.org/Poeschl/Hassio-Addons/)
 
-My repository with plugins for the [Hass.io](https://www.home-assistant.io/hassio/) system
+My repository with Add-ons for the [Home Assistant (former Hass.io) system](https://www.home-assistant.io/hassio/) 
 
-Plugins:
+## Addons
 
 * ICantBelieveItsNotValetudo - Valetudo Companion for map generation.
 * MaryTTS - A local Text-To-Speech system.
@@ -15,6 +15,17 @@ Plugins:
 * Git Exporter - Exports your Home Assistant config to any git repository (secrets check included) 
 * Syncthing - A de-centralized file syncronisation program. Focused on privacy.
 
+More about the Add-ons can be found in their folders.
+
+## Installation
+
+To install those Add-ons add this repository in the Home Assistant Add-on store.
+
+Use the following URL to add this repository:
+
+```
+https://github.com/Poeschl/Hassio-Addons
+```
 
 ### Licence  ![Licence](https://img.shields.io/github/license/Poeschl/Hassio-Addons)
 
