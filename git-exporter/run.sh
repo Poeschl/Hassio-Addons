@@ -98,7 +98,7 @@ function export_lovelace {
     mkdir '/tmp/lovelace'
     find /config/.storage -name "lovelace*" -exec cp {} '/tmp/lovelace' \;
     /utils/jsonToYaml.py '/tmp/lovelace/' 'data'
-    rsync -archive --compress --delete --checksum --prune-empty-dirs  -q --include='*.yaml' /tmp/lovelace/ "${local_repository}/lovelace"
+    rsync -archive --compress --delete --checksum --prune-empty-dirs -q --include="*/" --include='*.yaml' --exclude='*' /tmp/lovelace/ "${local_repository}/lovelace"
     chmod 644 -R "${local_repository}/lovelace"
 }
 
