@@ -150,7 +150,7 @@ if [ "$(bashio::config 'check.enabled')" == 'true' ]; then
 fi
 
 
-if [ "$(bashio::config 'dry_run')" ]; then
+if [ "$(bashio::config 'dry_run')" == 'true' ]; then
     git status
 else
     bashio::log.info 'Commit changes and push to remote'

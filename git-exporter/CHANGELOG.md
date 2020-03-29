@@ -5,6 +5,7 @@
 ### Changed
 * Changed json2yaml conversion to own little script
 * Updated py3-yaml ot `5.3.1-r0`
+* Fixed permanent dry_run bug
 
 
 ## 1.1.0 - 2020-03-18
