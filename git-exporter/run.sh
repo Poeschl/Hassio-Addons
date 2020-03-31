@@ -1,5 +1,5 @@
 #!/usr/bin/env bashio
-set -e
+set -ex
 
 local_repository='/data/repository'
 pull_before_push="$(bashio::config 'repository.pull_before_push')"
@@ -95,10 +95,10 @@ function export_ha_config {
 function export_lovelace {
     bashio::log.info 'Get Lovelace config yaml'
     [ ! -d "${local_repository}/lovelace" ] && mkdir "${local_repository}/lovelace"
-    mkdir '/tmp/lovelace'
-    find /config/.storage -name "lovelace*" -exec cp {} '/tmp/lovelace' \;
+    mkdir -p '/tmp/lovelace'
+    find /config/.storage -name "lovelace*" -printf '%f\n' | xargs -I % cp /config/.storage/% /tmp/lovelace/%.json
     /utils/jsonToYaml.py '/tmp/lovelace/' 'data'
-    rsync -archive --compress --delete --checksum --prune-empty-dirs -q --include="*/" --include='*.yaml' --exclude='*' /tmp/lovelace/ "${local_repository}/lovelace"
+    rsync -archive --compress --delete --checksum --prune-empty-dirs -q --include='*.yaml' --exclude='*' /tmp/lovelace/ "${local_repository}/lovelace"
     chmod 644 -R "${local_repository}/lovelace"
 }
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.1 - 2020-03-30
+
+### Added
+* Add findutils at version `4.7.0-r0`
+
+### Changed
+* Fixed lovelace export
+
+
 ## 1.2.0 - 2020-03-29
 
 ### Changed

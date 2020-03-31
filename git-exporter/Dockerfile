@@ -20,7 +20,8 @@ RUN apk add --no-cache \
 			'grep=3.3-r0' \
 			'sed=4.7-r0' \
 			'python3=3.8.2-r0' \
-			'curl=7.67.0-r0'
+			'curl=7.67.0-r0' \
+			'findutils=4.7.0-r0'
 
 RUN pip3 install PyYAML==5.3.1 dotty-dict==1.2.1
 
