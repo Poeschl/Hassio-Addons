@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.2.1 - 2020-03-31
+## 1.2.1 - 2020-03-30
 
 ### Added
 * Add findutils at version `4.7.0-r0`
