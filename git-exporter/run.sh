@@ -117,8 +117,7 @@ function export_addons {
     mkdir '/tmp/addons/'
     for addon in $installed_addons; do
         bashio::log.info "Get ${addon} configs"
-        config_response=$(bashio::addon.options "$addon")
-        echo "$config_response" | jq -r '.data.options' >  /tmp/tmp.json
+        bashio::addon.options "$addon" >  /tmp/tmp.json
         /utils/jsonToYaml.py /tmp/tmp.json
         mv /tmp/tmp.yaml "/tmp/addons/${addon}.yaml"
         rsync -archive --compress --delete --checksum --prune-empty-dirs -q /tmp/addons/ ${local_repository}/addons
