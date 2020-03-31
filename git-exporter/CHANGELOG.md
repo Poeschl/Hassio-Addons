@@ -1,12 +1,16 @@
 # Changelog
 
-## 1.2.1 - 2020-03-30
+## 1.2.1 - 2020-03-31
 
 ### Added
 * Add findutils at version `4.7.0-r0`
 
 ### Changed
 * Fixed lovelace export
+* Get the addon information from bashio instead of self-requesting
+
+### Removed
+* Removed `curl`
 
 
 ## 1.2.0 - 2020-03-29

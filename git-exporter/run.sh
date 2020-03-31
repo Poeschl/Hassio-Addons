@@ -1,5 +1,5 @@
 #!/usr/bin/env bashio
-set -ex
+set -e
 
 local_repository='/data/repository'
 pull_before_push="$(bashio::config 'repository.pull_before_push')"
@@ -113,12 +113,11 @@ function export_esphome {
 
 function export_addons {
     [ -d ${local_repository}/addons ] || mkdir -p ${local_repository}/addons
-    addons_response=$(curl --silent -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" http://supervisor/addons)
-    installed_addons=$(echo "$addons_response" | jq -r '.data.addons[] | select( .installed != null) | .slug')
+    installed_addons=$(bashio::addons.installed)
     mkdir '/tmp/addons/'
     for addon in $installed_addons; do
         bashio::log.info "Get ${addon} configs"
-        config_response=$(curl --silent -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" "http://supervisor/addons/${addon}/info")
+        config_response=$(bashio::addon.options "$addon")
         echo "$config_response" | jq -r '.data.options' >  /tmp/tmp.json
         /utils/jsonToYaml.py /tmp/tmp.json
         mv /tmp/tmp.yaml "/tmp/addons/${addon}.yaml"
