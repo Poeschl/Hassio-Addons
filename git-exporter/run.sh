@@ -80,7 +80,7 @@ function check_secrets {
 function export_ha_config {
     bashio::log.info 'Get Home Assistant config'
     excludes=$(bashio::config 'exclude')
-    excludes=("secrets.yaml" ".storage" ".cloud" "esphome/" ".uuid" "${excludes[@]}")
+    excludes=("secrets.yaml" ".storage" ".cloud" "esphome/" ".uuid" "node-red/" "${excludes[@]}")
 
     # Cleanup existing esphome folder from config
     [ -d "${local_repository}/config/esphome" ] && rm -r "${local_repository}/config/esphome"
@@ -125,6 +125,14 @@ function export_addons {
     chmod 644 -R ${local_repository}/addons
 }
 
+function export_node-red {
+    bashio::log.info 'Get Node-RED flows'
+    rsync -archive --compress --delete --checksum --prune-empty-dirs -q \
+          --exclude='flows_cred.json' --include='flows.json' --include='settings.js' --exclude='*' \
+        /config/node-red/ ${local_repository}/node-red
+    chmod 644 -R ${local_repository}/node-red
+}
+
 bashio::log.info 'Start git export'
 
 setup_git
@@ -141,6 +149,10 @@ fi
 
 if [ "$(bashio::config 'export.addons')" == 'true' ]; then
     export_addons
+fi
+
+if [ "$(bashio::config 'export.node_red')" == 'true' ]; then
+    export_node-red
 fi
 
 if [ "$(bashio::config 'check.enabled')" == 'true' ]; then
