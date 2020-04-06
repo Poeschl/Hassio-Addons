@@ -29,5 +29,4 @@ COPY --from=BUILD /usr/local/bin/git-secrets /usr/local/bin/git-secrets
 COPY run.sh /
 COPY utils /utils
 RUN chmod a+x /run.sh /utils/*
-RUN echo "{\"data\": \"value\", \"container\": {\"condata\": {\"more\":\"test\"}}}" > /tmp/test && /utils/jsonToYaml.py /tmp/ container.condata && cat /tmp/test.yaml
 CMD [ "/run.sh" ]
