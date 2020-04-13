@@ -45,7 +45,7 @@ checks:
   check_for_ips: true
 exclude:
   - '*.db'
-  - '*.log
+  - '*.log'
   - __pycache__
   - deps/
   - known_devices.yaml
