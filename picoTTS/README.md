@@ -25,7 +25,7 @@ http://ip:59126/ping
 ### TTS
 
 ```
-http://ip:59126/speak?voice=<language>&text=<text>
+http://ip:59126/speak?lang=<language>&text=<text>
 ```
 
 `language` can be one of those `de-DE, en-GB, en-US, es-ES, fr-FR, it-IT`. If not set it defaults to `en-US`.
