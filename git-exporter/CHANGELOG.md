@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0 - 2020-04-16
+
+* Updated git to `2.24.2-r0`
+
+
 ## 1.3.0 - 2020-04-06
 
 * Add export support for node-red
