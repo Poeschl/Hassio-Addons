@@ -2,9 +2,9 @@ ARG BUILD_FROM
 FROM $BUILD_FROM AS BUILD
 
 ENV LANG C.UTF-8
-ENV COMMIT_SHA 'f9cb790d79d13ab835b437293d693ea5d863211b'
+ENV COMMIT_SHA '4bd62e23a56ca705856509f76ebccfa43bd15cc6'
 
-RUN apk add --no-cache git=2.24.1-r0 npm=12.15.0-r1
+RUN apk add --no-cache git=2.24.2-r0 npm=12.15.0-r1
 # hadolint ignore=DL3003
 RUN git clone https://github.com/rand256/valetudo-mapper -b master /app && \
     cd app && git checkout $COMMIT_SHA
