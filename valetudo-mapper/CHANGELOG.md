@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0 - 2020-04-16
+
+* Updated Valetudo-Mapper to commit `4bd62e2`
+
+
 ## 1.2.1 - 2020-04-16
 
 * Updated git to `2.24.2-r0`
