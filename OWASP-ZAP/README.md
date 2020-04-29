@@ -8,6 +8,8 @@
 The world's most popular free web security tool, now as Home Assistant addon.
 I personally use it to occasionally check data of IoT devices.
 
+More on the [official website](https://www.zaproxy.org/).
+
 ## Configuration
 
 ATM there is none on the addon itself. Settings can be adjusted over the ui of ZAP itself.

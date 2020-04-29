@@ -16,6 +16,7 @@ My repository with Add-ons for the [Home Assistant (former Hass.io) system](http
 * ympd - A very lightweight Web interface for controlling MPD music servers. 
 * Git Exporter - Exports your Home Assistant config to any git repository (secrets check included) 
 * Syncthing - A de-centralized file syncronisation program. Focused on privacy.
+* OWASP ZAP - A security testing tool with MITM funtionality.
 
 More about the Add-ons can be found in their folders.
 
