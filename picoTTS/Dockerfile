@@ -3,7 +3,7 @@ FROM $BUILD_FROM AS BUILD
 
 RUN apk update && \
     apk add --no-cache \
-		'git=2.24.2-r0' \
+		'git=2.24.3-r0' \
 		'make=4.2.1-r2' \
 		'g++=9.2.0-r4' \
 		'autoconf=2.69-r2' \

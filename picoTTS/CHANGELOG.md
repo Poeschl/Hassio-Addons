@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.7 - 2020-04-29
+
+* Updated git to `2.24.3-r0`
+
+
 ## 1.0.6 - 2020-04-16
 
 * Updated git to `2.24.2-r0`
