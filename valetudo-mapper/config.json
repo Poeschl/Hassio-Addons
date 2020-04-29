@@ -34,6 +34,18 @@
     "broker_url": "match(^mqtts?://.+:.+@.+$)",
     "caPath": "str?",
     "mapSettings": {
+      "colors": {
+        "background": "str",
+        "background2": "str",
+        "floor": "str",
+        "obstacle_strong": "str",
+        "path": "str",
+        "forbidden_marker": "str",
+        "forbidden_zone": "str",
+        "cleaned_marker": "str",
+        "cleaned_zone": "str",
+        "cleaned_block": "str"
+      },
       "drawPath": "bool",
       "drawCharger": "bool",
       "drawRobot": "bool",
@@ -62,6 +74,18 @@
     "broker_url": "mqtt://user:pass@foobar.example",
     "caPath": "",
     "mapSettings": {
+      "colors": {
+        "background": "#33a1f5",
+        "background2": "#046cd4",
+        "floor": "#56affc",
+        "obstacle_strong": "#a1dbff",
+        "path": "white",
+        "forbidden_marker": "red",
+        "forbidden_zone": "rgba(255, 0, 0, 0.38)",
+        "cleaned_marker": "rgba(53, 125, 46, 1.0)",
+        "cleaned_zone": "rgba(107, 244, 66, 0.3)",
+        "cleaned_block": "rgba(107, 244, 36, 0.34)"
+      },
       "drawPath": true,
       "drawCharger": true,
       "drawRobot": true,      
