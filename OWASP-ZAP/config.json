@@ -13,19 +13,20 @@
     "i386"
   ],
   "startup": "application",
-  "boot": "auto",
+  "boot": "manual",
   "image": "poeschl/ha-owasp-zap-{arch}",
-  "ingress": true,
+  "webui": "http://[HOST]:[PORT:8080]/zap",
+  "ingress": false,
   "ingress_port": 8080,
-  "ingress_entry": "/zap",
+  "ingress_entry": "zap/",
   "panel_title": "OWASP ZAP",
   "panel_icon": "mdi:flash-outline",
   "ports": {
-    "8080/tcp": null,
+    "8080/tcp": 8080,
     "8090/tcp": "8890"
   },
   "ports_description": {
-    "8080/tcp": "Port for the web interface (Not required for Supervisor Ingress)",
+    "8080/tcp": "Port for the web interface",
     "8090/tcp": "Proxy Port to accept requests which are traced."
   },
   "schema": {},
