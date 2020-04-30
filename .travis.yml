@@ -20,7 +20,7 @@ env:
   - ADDON="ympd"
   - ADDON="git-exporter"
   - ADDON="syncthing"
-  - ADDON="OWASP_ZAP"
+  - ADDON="OWASP-ZAP"
 
 install:
   - export PATH="${HOME}/bin:${PATH}"
