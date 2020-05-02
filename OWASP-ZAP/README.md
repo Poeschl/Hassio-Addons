@@ -9,7 +9,7 @@ More on the [official website](https://www.zaproxy.org/).
 
 ## Configuration
 
-ATM there is none on the addon itself. Settings can be adjusted over the ui of ZAP itself.
+At the moment there is none on the addon itself. Settings can be adjusted over the ui of ZAP itself.
 
 ### Raspberry Pi
 
