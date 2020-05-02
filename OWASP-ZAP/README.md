@@ -1,9 +1,6 @@
 # OWASP ZAP Home Assistant Addon
-![armhf image pulls](https://img.shields.io/docker/pulls/poeschl/ha-owasp-zap-armhf?label=docker%20pulls%20%28armhf%29)
 ![armv7 image pulls](https://img.shields.io/docker/pulls/poeschl/ha-owasp-zap-armv7?label=docker%20pulls%20%28armv7%29)
-![aarch64 image pulls](https://img.shields.io/docker/pulls/poeschl/ha-owasp-zap-aarch64?label=docker%20pulls%20%28aarch64%29)
 ![amd64 image pulls](https://img.shields.io/docker/pulls/poeschl/ha-owasp-zap-amd64?label=docker%20pulls%20%28amd64%29)
-![i386 image pulls](https://img.shields.io/docker/pulls/poeschl/ha-owasp-zap-i386?label=docker%20pulls%20%28i386%29)
 
 The world's most popular free web security tool, now as Home Assistant addon.
 I personally use it to occasionally check data of IoT devices.

@@ -6,11 +6,8 @@
   "description": "The OWASP Zed Attack Proxy (ZAP) is one of the world’s most popular free security tools and is actively maintained by a dedicated international team of volunteers.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/OWASP-ZAP",
   "arch": [
-    "armhf",
     "armv7",
-    "aarch64",
-    "amd64",
-    "i386"
+    "amd64"
   ],
   "startup": "application",
   "boot": "manual",
