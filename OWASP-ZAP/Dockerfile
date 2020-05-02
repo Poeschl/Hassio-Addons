@@ -13,6 +13,7 @@ ENV ZAP_VERSION '2.9.0'
 ENV WEBSWING_VERSION '2.5.10'
 
 #Download all needed repositories and archives
+# hadolint ignore=SC2016
 RUN git clone https://github.com/zaproxy/zaproxy.git -b "v${ZAP_VERSION}" /zap-repository \
     && sed -i 's| 2>> $LOG||;s| >> $LOG||' /zap-repository/docker/zap-webswing.sh
 
@@ -44,12 +45,13 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
 	python-wheel=0.32.3-2 \
 	python3-wheel=0.32.3-2
 
-RUN pip install --user --upgrade pip zapcli==0.10.0 python-owasp-zap-v2.4==0.0.14
-RUN pip3 install --user --upgrade pip zapcli==0.10.0 python-owasp-zap-v2.4==0.0.14
+RUN pip install --user --upgrade pip==20.1 zapcli==0.10.0 python-owasp-zap-v2.4==0.0.14
+RUN pip3 install --user --upgrade pip==20.1 zapcli==0.10.0 python-owasp-zap-v2.4==0.0.14
 
 
 FROM $BUILD_FROM AS RUNNING
 
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get -y --no-install-recommends install \
 	xmlstarlet=1.6.1-2 \
 	openbox=3.6.1-8 \
@@ -67,7 +69,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
 
 RUN wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add - \
 	&& add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ \
-	&& apt-get update && apt-get -y --no-install-recommends install adoptopenjdk-8-hotspot \
+	&& apt-get update && apt-get -y --no-install-recommends install adoptopenjdk-8-hotspot=8u252-b09-2 \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /zap
