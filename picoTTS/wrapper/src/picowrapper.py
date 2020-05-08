@@ -21,10 +21,24 @@ class PicoTTS:
         if process.returncode > 0:
             print("pico2wave returned exit code: '" + str(process.returncode) + "'")
             exit(process.returncode)
+    def _exec_lame(args):
+        cmd = ['lame']
+        cmd.extend(args)
 
+        print("Execute: " + " ".join(cmd))
+        process = Popen(cmd, stdout=PIPE, stderr=STDOUT, shell=False)
+        process.wait()
+        for out in process.stdout:
+            print(str(out))
+        if process.returncode > 0:
+            print("lame returned exit code: '" + str(process.returncode) + "'")
+            exit(process.returncode)
     def generate_wav_file(self, outfilename, lang, text):
         self._exec_picotts(["-w", outfilename, "-l", lang, '"' + text + '"'])
         print("Create audio file '" + outfilename + "'")
+    def generate_mp3_file(self, outfilename):
+        self._exec_lame(["-V3", outfilename, outfilename + '.mp3'])
+        print("Convert audio file to mp3 '" + outfilename + ".mp3'")
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -56,12 +70,13 @@ class Handler(BaseHTTPRequestHandler):
         if lang in self.PICO_TTS.LANGUAGES:
             with NamedTemporaryFile(suffix='.wav') as tempFile:
                 self.PICO_TTS.generate_wav_file(tempFile.name, lang, text)
+                self.PICO_TTS.generate_mp3_file(tempFile.name+'.mp3')
 
                 with open(tempFile.name, 'rb') as audiofile:
                     wave_data = audiofile.read()
 
                     self.send_response(200)
-                    self.send_header('Content-type', 'audio/wav')
+                    self.send_header('Content-type', 'audio/mp3')
                     self.end_headers()
                     self.wfile.write(wave_data)
 
