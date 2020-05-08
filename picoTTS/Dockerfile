@@ -9,7 +9,8 @@ RUN apk update && \
 		'autoconf=2.69-r2' \
 		'libtool=2.4.6-r7' \
 		'popt-dev=1.16-r7' \
-		'automake=1.16.1-r0'
+		'automake=1.16.1-r0' \
+		'lame=3.100-r0'
 
 ENV COMMIT_SHA '2f86050dc5da9ab68fc61510b594d8e6975c4d2d'
 # hadolint ignore=DL3003
