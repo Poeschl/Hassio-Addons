@@ -122,7 +122,7 @@ function export_addons {
         /utils/jsonToYaml.py /tmp/tmp.json
         mv /tmp/tmp.yaml "/tmp/addons/${addon}.yaml"
     done
-    bashio::log.info "Get ${addon} repositorys"
+    bashio::log.info "Get addon repositories"
     bashio::addons false 'addons.repositorys' '.repositories | map(select(.source != null)) | map({(.name): {source,maintainer,slug}}) | add' > /tmp/tmp.json
     /utils/jsonToYaml.py /tmp/tmp.json
     mv /tmp/tmp.yaml "/tmp/addons/repositories.yaml"
