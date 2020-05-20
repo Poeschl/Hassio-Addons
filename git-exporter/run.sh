@@ -8,6 +8,7 @@ function setup_git {
     repository=$(bashio::config 'repository.url')
     username=$(bashio::config 'repository.username')
     password=$(bashio::config 'repository.password')
+    commiter_mail=$(bashio::config 'repository.email')
 
     if [ ! -d $local_repository ]; then
         bashio::log.info 'Create local repository'
@@ -26,7 +27,7 @@ function setup_git {
             git remote add origin "$fullurl"
         fi
         git config user.name "${username}"
-        git config user.email 'git.exporter@home-assistant'
+        git config user.email "${commiter_mail:-git.exporter@home-assistant}"
     fi
 
     #Reset secrets if existing
@@ -120,8 +121,12 @@ function export_addons {
         bashio::addon.options "$addon" >  /tmp/tmp.json
         /utils/jsonToYaml.py /tmp/tmp.json
         mv /tmp/tmp.yaml "/tmp/addons/${addon}.yaml"
-        rsync -archive --compress --delete --checksum --prune-empty-dirs -q /tmp/addons/ ${local_repository}/addons
     done
+    bashio::log.info "Get ${addon} repositorys"
+    bashio::addons false 'addons.repositorys' '.repositories | map(select(.source != null)) | map({(.name): {source,maintainer,slug}}) | add' > /tmp/tmp.json
+    /utils/jsonToYaml.py /tmp/tmp.json
+    mv /tmp/tmp.yaml "/tmp/addons/repositories.yaml"
+    rsync -archive --compress --delete --checksum --prune-empty-dirs -q /tmp/addons/ ${local_repository}/addons
     chmod 644 -R ${local_repository}/addons
 }
 
@@ -151,7 +156,7 @@ if [ "$(bashio::config 'export.addons')" == 'true' ]; then
     export_addons
 fi
 
-if [ "$(bashio::config 'export.node_red')" == 'true' ]; then
+if [ "$(bashio::config 'export.node_red')" == 'true' ] && [ -d '/config/node-red' ]; then
     export_node-red
 fi
 
