@@ -151,7 +151,7 @@ if [ "$(bashio::config 'export.addons')" == 'true' ]; then
     export_addons
 fi
 
-if [ "$(bashio::config 'export.node_red')" == 'true' ]; then
+if [ "$(bashio::config 'export.node_red')" == 'true' ] && [ -d '/config/node-red' ]; then
     export_node-red
 fi
 
