@@ -120,8 +120,12 @@ function export_addons {
         bashio::addon.options "$addon" >  /tmp/tmp.json
         /utils/jsonToYaml.py /tmp/tmp.json
         mv /tmp/tmp.yaml "/tmp/addons/${addon}.yaml"
-        rsync -archive --compress --delete --checksum --prune-empty-dirs -q /tmp/addons/ ${local_repository}/addons
     done
+    bashio::log.info "Get ${addon} repositorys"
+    bashio::addons false 'addons.repositorys' '.repositories | map(select(.source != null)) | map({(.name): {source,maintainer,slug}}) | add' > /tmp/tmp.json
+    /utils/jsonToYaml.py /tmp/tmp.json
+    mv /tmp/tmp.yaml "/tmp/addons/repositories.yaml"
+    rsync -archive --compress --delete --checksum --prune-empty-dirs -q /tmp/addons/ ${local_repository}/addons
     chmod 644 -R ${local_repository}/addons
 }
 
