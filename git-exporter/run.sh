@@ -8,6 +8,7 @@ function setup_git {
     repository=$(bashio::config 'repository.url')
     username=$(bashio::config 'repository.username')
     password=$(bashio::config 'repository.password')
+    commiter_mail=$(bashio::config 'repository.email')
 
     if [ ! -d $local_repository ]; then
         bashio::log.info 'Create local repository'
@@ -26,7 +27,7 @@ function setup_git {
             git remote add origin "$fullurl"
         fi
         git config user.name "${username}"
-        git config user.email 'git.exporter@home-assistant'
+        git config user.email "${commiter_mail:-git.exporter@home-assistant}"
     fi
 
     #Reset secrets if existing
