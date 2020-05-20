@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.0 - 2020-05-20
+
+* Export addon repositories
+* Changed config documentation
+* Add Node-Red check
+* Add commiter email option
+
 ## 1.3.2 - 2020-04-29
 
 * Updated git to `2.24.3-r0`
