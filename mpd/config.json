@@ -1,6 +1,6 @@
 {
   "name": "MPD",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "slug": "mpd",
   "panel_icon": "mdi:music-circle",
   "description": "Music Player Daemon is a free and open source music player. It plays audio files, organizes playlists and maintains a music database",
@@ -32,6 +32,7 @@
     "volume_normalization": false
   },
   "schema": {
-    "volume_normalization": "bool"
+    "volume_normalization": "bool",
+    "custom_config": "match(/share/mpd/.+)?"
   }
 }
