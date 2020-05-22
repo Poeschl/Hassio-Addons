@@ -3,7 +3,7 @@ FROM $BUILD_FROM AS REPOSITORY
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get -y --no-install-recommends install \
-	git=1:2.20.1-2+deb10u1 \
+	git=1:2.20.1-2+deb10u3 \
 	wget=1.20.1-1.1 \
 	gnupg=2.2.12-1+deb10u1 \
 	unzip=6.0-23+deb10u1 \
