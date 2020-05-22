@@ -16,7 +16,7 @@ if [ "$(bashio::config 'custom_config')" != 'null' ]; then
 fi
 
 bashio::log.info  'Start MPD'
-mpd --stdout --no-daemon $CUSTOM_CONFIG & sleep 3
+mpd --stdout --no-daemon "$CUSTOM_CONFIG" & sleep 3
 
 bashio::log.info  'Start ympd'
 ympd -w 6680
