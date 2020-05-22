@@ -9,26 +9,4 @@ The [naggety/picotts](https://github.com/naggety/picotts) as Home Assistant Supe
 
 This addon executes the tts engine behind a webservice. It provides support for all default languages.
 
-## Homeassistant Integration
-
-For easy integration I also published a [custom component](https://github.com/Poeschl/Remote-PicoTTS).
-Its available on the HACS for easy integration.
-
-## Requests
-
-### Ping
-
-```
-http://ip:59126/ping
-```
-
-### TTS
-
-```
-http://ip:59126/speak?lang=<language>&text=<text>
-```
-
-`language` can be one of those `de-DE, en-GB, en-US, es-ES, fr-FR, it-IT`. If not set it defaults to `en-US`.
-`text` is the text you want to have sinthesized (url-encoded).
-
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white)](https://www.buymeacoffee.com/Poeschl)
