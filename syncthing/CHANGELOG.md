@@ -1,6 +1,7 @@
-## 1.1.1 - 2020-05-22
+## 1.2.0 - 2020-05-22
 
 * 🔨 Updated Changelog to new format
+* 🔼 Update syncthing to `1.5.0-r0`
 
 
 ## 1.1.0 - 2020-04-16
