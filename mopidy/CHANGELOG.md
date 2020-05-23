@@ -1,60 +1,46 @@
-# Changelog
+## 1.2.3 - 2020-05-22
+
+* 🔨 Updated Changelog to new format
+* 🕸️ Marked as deprecated
 
 ## 1.2.2 - 2020-02-09
 
 ### Changed
-* Start mopidy as `system` startup
+* 🔨 Start mopidy as `system` startup
 
 
 ## 1.2.1 - 2020-02-07
 
-### Changed
-* Downgrade Mopidy to `2.2.2-1`
-* Use mopidy-youtube `2.1.0`
-* Dependency updates:
-  * youtube-dl `2020.1.24`
+* 🔽 Downgrade Mopidy to `2.2.2-1`
+* 🔼 Use mopidy-youtube `2.1.0`
+* 🔼 Update youtube-dl to `2020.1.24`
 
 
 ## 1.2.0 - 2019-12-06
 
-### Added
-* Use Youtube-Mopidy integration from [@natumbri](https://github.com/natumbri/mopidy-youtube)
-
-### Changed
-* Updated Mopidy to `2.3.1-1`
-* Updated youtube-dl to `2019.11.28`
-* Update certifi to same version as youtube-dl
-* More startup logging
+* ➕ Use Youtube-Mopidy integration from [@natumbri](https://github.com/natumbri/mopidy-youtube)
+* 🔼 Updated Mopidy to `2.3.1-1`
+* 🔼 Updated youtube-dl to `2019.11.28`
+* 🔼 Update certifi to same version as youtube-dl
+* 🔨 More startup logging
 
 
 ## 1.1.0 - 2019-10-19
 
-### Changed
-* Updated OS to debian buster (thanks @Nickerchen)
-
-### Removed
-* Removed aarch64 support
+* 🔼 Updated OS to debian buster (thanks @Nickerchen)
+* ➖ Removed aarch64 support
 
 
 ## 1.0.0 - 2019-10-16
 
-### Changed
-* Set mopidy version to `2.1.0-1`
-* Own versioning starting with 1.0.0
-* Added example config setting for media dir
-
-### Fixed
-* ALSA not forwarding sound correctly
+* 🔨 Set mopidy version to `2.1.0-1`
+* ➕ Own versioning starting with 1.0.0
+* ➕ Added example config setting for media dir
+* 🐛 Fixed ALSA not forwarding sound correctly
 
 
 ## 2.2.3 - 2019-10-06 (Old versioning)
 
-### Changed
-* Added device mapping for `/dev/snd`
-
-### Fixed
-* Adjust mopidy version for aarch64 systems. It will be the version `2.1.0-1` on those systems. 
-
-
-### Added
-* Put mopidy 2.2.3-1 inside the addon.
+* ➕ Put mopidy 2.2.3-1 inside the addon.
+* 🔨 Added device mapping for `/dev/snd`
+* 🔨 Adjust mopidy version for aarch64 systems. It will be the version `2.1.0-1` on those systems. 

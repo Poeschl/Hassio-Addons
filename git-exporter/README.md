@@ -24,10 +24,6 @@ Can be used to show your Home Assistant setup in public repositories.
 For an example take a look at my own [Home Assistant configuration](https://github.com/Poeschl/home-assistant-config).
 The folders there are gettings synced with this addon.
 
-# Configuration
-
-The configuration is located under the Docs tab or [DOCS.md](https://github.com/Poeschl/Hassio-Addons/blob/master/git-exporter/DOCS.md).
-
 
 # Badge
 

@@ -1,6 +1,6 @@
 {
   "name": "pigpio",
-  "version": "V71-1",
+  "version": "V71-2",
   "slug": "pigpio",
   "description": "Control your pwm leds with pigpio on Hass.io",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/pigpio",

@@ -9,7 +9,6 @@ My repository with Add-ons for the [Home Assistant (former Hass.io) system](http
 * ICantBelieveItsNotValetudo - Valetudo Companion for map generation.
 * MaryTTS - A local Text-To-Speech system.
 * PicoTTS - Text to speech voice sinthesizer from SVox, included in Android AOSP.
-* Mopidy - A media player with web interface.
 * pigpio - The pigpio led control for the Raspberry as addon.
 * MPD - A small media player with minimalistic web ui.
 * valetudo-mapper - Valetudo RE Companion for map generation
@@ -19,6 +18,13 @@ My repository with Add-ons for the [Home Assistant (former Hass.io) system](http
 * OWASP ZAP - A security testing tool with MITM funtionality.
 
 More about the Add-ons can be found in their folders.
+
+### 🕸️ Depreciated 
+
+On thoes addons will be not developed anymore. Feel free to fork them.
+
+* Mopidy - A media player with web interface.
+
 
 ## Installation
 

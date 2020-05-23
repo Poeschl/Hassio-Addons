@@ -8,7 +8,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
         python3=3.7.3-1 \
         python-setuptools=40.8.0-1 \
         python3-setuptools=40.8.0-1 \
-        git=1:2.20.1-2+deb10u1 \
+        git=1:2.20.1-2+deb10u3 \
         build-essential=12.6
 # hadolint ignore=DL3003
 RUN git clone 'https://github.com/joan2937/pigpio.git' -b "V${VERSION}" /pigpio &&\
