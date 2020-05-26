@@ -1,3 +1,4 @@
+# 🕸️ Depreciated 🕸️
 # Mopidy (Hass.io Addon)
 ![armhf image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-mopidy-armhf?label=docker%20pulls%20%28armhf%29)
 ![armv7 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-mopidy-armv7?label=docker%20pulls%20%28armv7%29)

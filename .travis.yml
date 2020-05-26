@@ -13,7 +13,6 @@ env:
   - ADDON="ICantBelieveItsNotValetudo"
   - ADDON="MaryTTS"
   - ADDON="picoTTS"
-  - ADDON="mopidy"
   - ADDON="pigpio"
   - ADDON="mpd"
   - ADDON="valetudo-mapper"
