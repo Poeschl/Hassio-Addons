@@ -1,3 +1,7 @@
+## 1.3.1 - 2020-05-26
+
+* 🐛 Fixed startup without custom config file
+
 ## 1.3.0 - 2020-05-22
 
 * ➕ Added `custom_config` option for own mpd configuration file.

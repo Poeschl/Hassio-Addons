@@ -10,13 +10,13 @@ if [ "$(bashio::config 'volume_normalization')" == 'true' ]; then
     sed -i "/^#volume_normalization/s/^#//" /etc/mpd.conf
 fi
 
-CUSTOM_CONFIG=''
+CONFIG='/etc/mpd.conf'
 if [ "$(bashio::config 'custom_config')" != 'null' ]; then
-    CUSTOM_CONFIG=$(bashio::config 'custom_config')
+    CONFIG=$(bashio::config 'custom_config')
 fi
 
 bashio::log.info  'Start MPD'
-mpd --stdout --no-daemon "$CUSTOM_CONFIG" & sleep 3
+mpd --stdout --no-daemon "$CONFIG" & sleep 3
 
 bashio::log.info  'Start ympd'
 ympd -w 6680
