@@ -1,3 +1,7 @@
+## 2.1.0 - 2020-05-29
+
+* 🔼 🐛 Updated ICantBelieveItsNotValetudo to latest commit `9bcfc25`
+
 ## 2.0.3 - 2020-05-22
 
 * 🔨 Updated Changelog to new format
