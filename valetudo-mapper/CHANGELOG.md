@@ -5,7 +5,7 @@
 
 ### ⚠️ Breaks existing config
 
-More: [#82](https://github.com/Poeschl/Hassio-Addons/pull/82)
+More: see [#82](https://github.com/Poeschl/Hassio-Addons/pull/82)
 
 
 ## 1.3.2 - 2020-05-22
