@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM AS BUILD
 
 ENV LANG C.UTF-8
-ENV COMMIT_SHA '5dc26e1f7b018df12f23082bc7d606be3a9d6281'
+ENV COMMIT_SHA '9bcfc25096abe6f3e2d0ecf62feb5a140b5b246d'
 
 RUN apk add --no-cache git=2.24.3-r0 npm=12.15.0-r1
 # hadolint ignore=DL3003
