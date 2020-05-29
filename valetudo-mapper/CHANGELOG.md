@@ -1,3 +1,9 @@
+## 1.4.0 - 2020-05-29
+
+* 🔼 Updated Valetudo-Mapper to commit `8e23ac2`
+* ➕ Added all missing settings until now (__⚠️ Breaks existing config__)
+
+
 ## 1.3.2 - 2020-05-22
 
 * 🔨 Updated Changelog to new format
