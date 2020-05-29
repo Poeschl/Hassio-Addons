@@ -1,3 +1,13 @@
+## 1.4.0 - 2020-05-29
+
+* 🔼 Updated Valetudo-Mapper to commit `8e23ac2`
+* ➕ Added all missing settings until now 
+
+### ⚠️ Breaks existing config
+
+More: see [#82](https://github.com/Poeschl/Hassio-Addons/pull/82)
+
+
 ## 1.3.2 - 2020-05-22
 
 * 🔨 Updated Changelog to new format
