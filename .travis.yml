@@ -20,6 +20,7 @@ env:
   - ADDON="git-exporter"
   - ADDON="syncthing"
   - ADDON="OWASP-ZAP"
+  - ADDON="mitmproxy"
 
 install:
   - export PATH="${HOME}/bin:${PATH}"
