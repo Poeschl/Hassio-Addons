@@ -1,3 +1,8 @@
+## 1.3.0 - 2020-06-15
+
+* 🔼 Update syncthing to `1.6.1-r0`
+* 🔼 Update alpine to `3.12`
+
 ## 1.2.0 - 2020-05-22
 
 * 🔨 Updated Changelog to new format
