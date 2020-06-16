@@ -17,7 +17,7 @@
   "startup": "system",
   "boot": "auto",
   "image": "poeschl/ha-mitmproxy-{arch}",
-  "map": ["ssl"],
+  "map": ["ssl", "share:rw"],
   "ports": {
     "8081/tcp": null,
     "8080/tcp": 8080
@@ -27,7 +27,9 @@
     "8080/tcp": "Proxy listening port"
   },
   "options": {
+    "options": [{ "name": "anticache", "value": "true" }]
   },
   "schema": {
+    "options": [{ "name": "str", "value": "str" }]
   }
 }
