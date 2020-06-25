@@ -1,6 +1,20 @@
+## 1.4.2 - 2020-06-25
+
+* 🔼 Updated to alpine `3.12`
+* 🔼 Updated git to `2.26.2-r0`
+* 🔼 Updated make to `4.3-r0`
+* 🔼 Updated rsync to `3.1.3-r3`
+* 🔼 Updated grep to `3.4-r0`
+* 🔼 Updated sed to `4.8-r0`
+* 🔼 Updated python3 to `3.8.3-r0`
+* 🔼 Updated py3-pip to `20.1.1-re0`
+* 🔨 Added more default ignore patterns
+
+
 ## 1.4.1 - 2020-05-22
 
 * 🔨 Updated Changelog to new format
+
 
 ## 1.4.0 - 2020-05-20
 
@@ -8,6 +22,7 @@
 * 🔨 Changed config documentation
 * ➕ Add Node-Red check
 * ➕ Add commiter email option
+
 
 ## 1.3.2 - 2020-04-29
 
