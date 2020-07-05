@@ -21,18 +21,17 @@
   "map": ["ssl", "share:rw"],
   "ports": {
     "8081/tcp": 8081,
-    "8080/tcp": 8080,
-    "8082/tcp": 8082
+    "8080/tcp": 8080
   },
   "ports_description": {
     "8081/tcp": "Web Frontend",
-    "8080/tcp": "Proxy listening port",
-    "8082/tcp": "Onboarding Website port"
+    "8080/tcp": "Proxy listening port"
   },
   "options": {
     "options": [{ "name": "anticache", "value": "true" }]
   },
   "schema": {
-    "options": [{ "name": "str", "value": "str" }]
+    "options": [{ "name": "str", "value": "str" }],    
+    "custom_ca": "match(^/ssl/.*)?"
   }
 }
