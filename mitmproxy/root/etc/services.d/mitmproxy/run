@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bashio
+set -e
+OPTIONS=$(bashio::jq "${__BASHIO_ADDON_CONFIG}" '.options | map("\(.name)=\(.value|tostring)") | [.[] | "--set "  + .] |  join(" ")')
+
+bashio::log.info "Start mitmproxy with options: $OPTIONS"
+# shellcheck disable=SC2086
+mitmweb $OPTIONS \
+  --set 'web_host=0.0.0.0' \
+  --set 'web_port=9090' \
+  --set 'listen_port=8080' \
+  --set 'confdir=/data/mitmproxy' \
+  --set 'onboarding=false' \
+  --set 'web_open_browser=false'
+  --no-web-open-browser
