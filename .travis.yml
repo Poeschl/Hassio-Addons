@@ -32,7 +32,10 @@ install:
 before_script:
   - docker_violations=$(hadolint $ADDON/Dockerfile | tee /dev/stderr | wc -l)
   - if [ $docker_violations -gt 0 ]; then exit 2; fi
-  - shellcheck $ADDON/*.sh
+  - scriptcount=$(ls -1 $ADDON/*.sh 2>/dev/null | wc -l)
+  - if [ $scriptcount != 0 ]; then shellcheck $ADDON/*.sh; fi
+  - if [ -d "$ADDON/root/etc/cont-init.d" ]; then find "$ADDON/root/etc/cont-init.d" -exec shellcheck {} \;; fi
+  - if [ -d "$ADDON/root/etc/services.d" ]; then find "$ADDON/root/etc/services.d" --name 'run' -exec shellcheck {} \;; fi
 
 script:
   - ./.scripts/build.sh $ADDON 

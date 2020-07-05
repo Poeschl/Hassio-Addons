@@ -4,7 +4,7 @@ FROM $BUILD_FROM AS BUILD
 ENV mitmproxy_VERSION='5.1.1'
 
 RUN apk add -Uu --no-cache --purge \
-       	python3=3.8.3-r0  \
+        python3=3.8.3-r0  \
         python3-dev=3.8.3-r0 \
         py3-pip=20.1.1-r0 \
         py3-wheel=0.34.2-r1 \
@@ -31,7 +31,7 @@ RUN pip3 install --user --upgrade mitmproxy==5.1.1
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add -Uu --no-cache --purge \
-       	python3=3.8.3-r0 \
+        python3=3.8.3-r0 \
         ca-certificates=20191127-r3 \
         haproxy=2.1.4-r0 \
     && rm -rf /var/cache/apk/* /tmp/*
