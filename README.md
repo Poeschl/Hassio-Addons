@@ -16,6 +16,7 @@ My repository with Add-ons for the [Home Assistant (former Hass.io) system](http
 * Git Exporter - Exports your Home Assistant config to any git repository (secrets check included) 
 * Syncthing - A de-centralized file syncronisation program. Focused on privacy.
 * OWASP ZAP - A security testing tool with MITM funtionality.
+* mitmproxy - A simple MITM proxy to trace network requests.
 
 More about the Add-ons can be found in their folders.
 
