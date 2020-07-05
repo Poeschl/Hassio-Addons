@@ -15,4 +15,3 @@ mitmweb $OPTIONS \
   --set "onboarding_host=$HOST" \
   --set 'web_open_browser=false'
   --no-web-open-browser
-
