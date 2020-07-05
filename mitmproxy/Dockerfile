@@ -33,6 +33,7 @@ FROM $BUILD_FROM AS RUNNING
 RUN apk add -Uu --no-cache --purge \
        	python3=3.8.3-r0 \
         ca-certificates=20191127-r3 \
+        haproxy=2.1.4-r0 \
     && rm -rf /var/cache/apk/* /tmp/*
 
 COPY --from=BUILD /root/.local /root/.local
@@ -40,7 +41,4 @@ COPY --from=BUILD /usr/lib/python3.8/site-packages /usr/lib/python3.8/site-packa
 
 ENV PATH /root/.local/bin:$PATH
 
-COPY run.sh /
-RUN chmod a+x /run.sh
-
-CMD [ "/run.sh" ]
+COPY root /

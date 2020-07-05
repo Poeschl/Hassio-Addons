@@ -1,3 +1,8 @@
+# Web UI
+
+To access the web ui of mitmproxy, visit `http://<host-ip>:8081` (or the port you configured).
+Currently there is no other method. Will change when [#3234](https://github.com/mitmproxy/mitmproxy/issues/3234) is fixed completly.
+
 # Configuration
 
 The configuration for the mitmproxy can be done via the key-value pairs in the addon configuration.
@@ -17,13 +22,13 @@ The list with all possible settings can be found [here](https://docs.mitmproxy.o
 If you need to write into a file, the `/share` folder is mapped into the addon.
 
 
-### Certificates
+## Certificates
 
 To access also the certificates of Home Assistant the `/ssl` folder is mapped in read-only.
 Notice that mitmproxy requests the certificates as pem files.
 
 
-### Fixed Settings
+## Fixed Settings
 
 There are also a few settings which are fixed to their values. Those are:
 
@@ -31,3 +36,8 @@ There are also a few settings which are fixed to their values. Those are:
 * `web_port`
 * `listen_port`
 * `confdir`
+
+# Onboarding
+
+To install the mitmproxy ca as an trusted certificate authority the onboarding page can be accessed on `http://<host>:8082`.
+Notice that your trafic must be routed over mitmproxy to access the page.

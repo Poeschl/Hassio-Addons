@@ -5,7 +5,7 @@
   "panel_icon": "mdi:lan-connect",
   "description": "A free and open source interactive HTTPS proxy for intercepting and inspecting network traffic",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/mitmproxy",
-  "ingress": true,
+  "ingress": false,
   "ingress_port": 8081,
   "arch": [
     "armv7",
@@ -16,15 +16,18 @@
   ],
   "startup": "system",
   "boot": "auto",
+  "hassio_api": true,
   "image": "poeschl/ha-mitmproxy-{arch}",
   "map": ["ssl", "share:rw"],
   "ports": {
-    "8081/tcp": null,
-    "8080/tcp": 8080
+    "8081/tcp": 8081,
+    "8080/tcp": 8080,
+    "8082/tcp": 8082
   },
   "ports_description": {
-    "8081/tcp": "Web Frontend (Not needed with ingress feature)",
-    "8080/tcp": "Proxy listening port"
+    "8081/tcp": "Web Frontend",
+    "8080/tcp": "Proxy listening port",
+    "8082/tcp": "Onboarding Website port"
   },
   "options": {
     "options": [{ "name": "anticache", "value": "true" }]
