@@ -14,6 +14,7 @@ RUN apk add --no-cache \
 	pango-dev=1.44.7-r2 \
 	build-base=0.5-r2 \
 	libjpeg-turbo-dev=2.0.5-r0
+
 # hadolint ignore=DL3003
 RUN git clone https://github.com/Hypfer/ICantBelieveItsNotValetudo.git -b master /app && \
     cd app && git checkout $COMMIT_SHA
