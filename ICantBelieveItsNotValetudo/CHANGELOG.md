@@ -1,3 +1,13 @@
+## 2.2.0 - 2020-07-29
+
+* 🔼 Updated ICantBelieveItsNotValetudo to latest commit `30945f9` to use the new map data format
+* 🔼 Updated alpine image to `3.12`
+* 🔼 Updated git to `2.26.2-r0`
+* 🔼 Updated npm to `12.17.0-r0`
+* 🔨 Change build system to two-staged system for compiling needed npm packages outside of the running image
+* 🔨 Use S6 system
+
+
 ## 2.1.0 - 2020-05-29
 
 * 🔼 🐛 Updated ICantBelieveItsNotValetudo to latest commit `9bcfc25`
