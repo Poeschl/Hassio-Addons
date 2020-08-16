@@ -1,7 +1,7 @@
 # Syncthing Addon
 ![armhf image pulls](https://img.shields.io/docker/pulls/poeschl/ha-syncthing-armhf?label=docker%20pulls%20%28armhf%29)
 ![armv7 image pulls](https://img.shields.io/docker/pulls/poeschl/ha-syncthing-armv7?label=docker%20pulls%20%28armv7%29)
-![aarch64 image pulls](https://img.shields.io/docker/pulls/poeschl/ha-syncthing-aarch64?label=docker%20pulls%20%28amd64%29)
+![aarch64 image pulls](https://img.shields.io/docker/pulls/poeschl/ha-syncthing-aarch64?label=docker%20pulls%20%28aarch64%29)
 ![amd64 image pulls](https://img.shields.io/docker/pulls/poeschl/ha-syncthing-amd64?label=docker%20pulls%20%28amd64%29)
 ![i386 image pulls](https://img.shields.io/docker/pulls/poeschl/ha-syncthing-i386?label=docker%20pulls%20%28i386%29)
 
@@ -13,7 +13,7 @@ Syncthing is a continuous file synchronization program. It synchronizes files be
 
 When using this addon to permanently hold your data, put the synced folder inside `/data`. Otherwise it will be deleted on container restart.
 
-Also the `/share`, `/confg`, `/backup` and `/addons` folders is mapped inside. Your can use them as persistant storage, too.
+Also the `/share`, `/confg`, `/backup`, `/addons` and `/ssl` folders is mapped inside. Your can use them as persistant storage, too.
 They can also be used to backup the Home Assistant backups. 😉
 
 # Configuration

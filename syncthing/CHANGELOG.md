@@ -1,3 +1,8 @@
+## 1.4.0 - 2020-08-16
+
+* 🔼 Update syncthing to `1.8.0-r0` (except for aarch64, there its `1.7.1-r1`)
+* ➕ Map also `/ssl` folder inside
+
 ## 1.3.0 - 2020-06-15
 
 * 🔼 Update syncthing to `1.6.1-r0`
