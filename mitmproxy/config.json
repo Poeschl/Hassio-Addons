@@ -1,6 +1,6 @@
 {
   "name": "mitmproxy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "slug": "mitmproxy",
   "panel_icon": "mdi:lan-connect",
   "description": "A free and open source interactive HTTPS proxy for intercepting and inspecting network traffic",

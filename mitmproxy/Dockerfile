@@ -4,8 +4,8 @@ FROM $BUILD_FROM AS BUILD
 ENV mitmproxy_VERSION='5.1.1'
 
 RUN apk add -Uu --no-cache --purge \
-        python3=3.8.3-r0  \
-        python3-dev=3.8.3-r0 \
+        python3=3.8.5-r0  \
+        python3-dev=3.8.5-r0 \
         py3-pip=20.1.1-r0 \
         py3-wheel=0.34.2-r1 \
         py3-six=1.15.0-r0 \
