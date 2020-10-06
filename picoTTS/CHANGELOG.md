@@ -1,3 +1,12 @@
+## 1.0.9 - 2020-10-06
+
+* 🔼 Updated automake to `1.16.2-r0`
+* 🔼 Updated g++ to `9.3.0-r2`
+* 🔼 Updated git to `2.26.2-r0`
+* 🔼 Updated make to `4.3-r0`
+* 🔼 Updated python3 to `3.8.5-r0`
+
+
 ## 1.0.8 - 2020-05-22
 
 * ➕ Added docs file
