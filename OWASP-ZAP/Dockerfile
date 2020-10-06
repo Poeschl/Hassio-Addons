@@ -24,12 +24,12 @@ RUN wget -nv --content-disposition -O - "https://github.com/zaproxy/zaproxy/rele
 	# Accept ZAP license
 	&& touch /zap/AcceptedLicense
 
-RUN	wget -nv --content-disposition -O webswing.zip "https://bitbucket.org/meszarv/webswing/downloads/webswing-${WEBSWING_VERSION}.zip" \
+RUN	wget -nv --content-disposition -O webswing.zip "https://bitbucket.org/meszarv/webswing/get/${WEBSWING_VERSION}.zip" \
 	&& unzip webswing.zip \
 	&& rm webswing.zip \
-	&& mv webswing-* /webswing \
+	&& mv *-webswing-* /webswing \
 	# Remove demos
-	&& rm -R /webswing/demo/
+	&& rm -R /webswing/webswing-demo/
 
 
 FROM $BUILD_FROM AS BUILD
@@ -59,7 +59,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
 	net-tools=1.60+git20180626.aebd88e-1 \
 	python=2.7.16-1 \
 	python3=3.7.3-1 \
-	xvfb=2:1.20.4-1 \
+	xvfb=2:1.20.4-1+deb10u1 \
 	xauth=1:1.0.10-1 \
 	x11vnc=0.9.13-6 \
 	wget=1.20.1-1.1 \
