@@ -1,3 +1,8 @@
+## 2.2.1 - 2020-10-06
+
+* 🔼 Updated npm to `12.18.4-r0`
+
+
 ## 2.2.0 - 2020-07-29
 
 * 🔼 Updated ICantBelieveItsNotValetudo to latest commit `30945f9` to use the new map data format

@@ -6,7 +6,7 @@ ENV COMMIT_SHA '30945f99cea9a49680b460cc56bff0220d514670'
 
 RUN apk add --no-cache \
 	git=2.26.2-r0 \
-	npm=12.18.3-r0 \
+	npm=12.18.4-r0 \
 	python3=3.8.5-r0 \
 	pkgconf=1.7.2-r0 \
 	pixman-dev=0.40.0-r2 \
@@ -25,7 +25,7 @@ RUN npm install
 
 FROM $BUILD_FROM AS RUNNING
 
-RUN apk add --no-cache npm=12.18.3-r0 \
+RUN apk add --no-cache npm=12.18.4-r0 \
     pixman=0.40.0-r2 \
 	cairo=1.16.0-r2 \
 	pango=1.44.7-r2 \
