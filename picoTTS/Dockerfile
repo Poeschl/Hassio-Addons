@@ -3,13 +3,13 @@ FROM $BUILD_FROM AS BUILD
 
 RUN apk update && \
     apk add --no-cache \
-		'git=2.26.2-r0' \
-		'make=4.3-r0' \
-		'g++=9.3.0-r2' \
+		'git=2.24.3-r0' \
+		'make=4.2.1-r2' \
+		'g++=9.3.0-r0' \
 		'autoconf=2.69-r2' \
 		'libtool=2.4.6-r7' \
 		'popt-dev=1.16-r7' \
-		'automake=1.16.2-r0'
+		'automake=1.16.1-r0'
 
 ENV COMMIT_SHA '2f86050dc5da9ab68fc61510b594d8e6975c4d2d'
 # hadolint ignore=DL3003
