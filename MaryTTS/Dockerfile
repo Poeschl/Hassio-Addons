@@ -15,7 +15,7 @@ FROM $BUILD_FROM AS RUNNING
 ENV MARYTTS_VERSION 5.2
 
 RUN apk update && \
-    apk add --no-cache 'openjdk8=8.242.08-r0'
+    apk add --no-cache 'openjdk8=8.252.09-r0'
 
 COPY --from=BUILD /app /app
 

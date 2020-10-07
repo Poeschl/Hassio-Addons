@@ -5,7 +5,7 @@ RUN apk update && \
     apk add --no-cache \
 		'git=2.24.3-r0' \
 		'make=4.2.1-r2' \
-		'g++=9.2.0-r4' \
+		'g++=9.3.0-r0' \
 		'autoconf=2.69-r2' \
 		'libtool=2.4.6-r7' \
 		'popt-dev=1.16-r7' \
@@ -20,7 +20,7 @@ RUN git clone https://github.com/naggety/picotts.git -b master /build && \
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add --no-cache \
-			'python3=3.8.2-r0' \
+			'python3=3.8.2-r1' \
 			'popt=1.16-r7' && \
 	python3 -m ensurepip
 

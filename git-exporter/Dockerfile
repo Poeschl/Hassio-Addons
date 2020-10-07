@@ -19,7 +19,7 @@ RUN apk add --no-cache \
 			'rsync=3.1.3-r3' \
 			'grep=3.4-r0' \
 			'sed=4.8-r0' \
-			'python3=3.8.3-r0' \
+			'python3=3.8.5-r0' \
 			'py3-pip=20.1.1-r0' \
 			'findutils=4.7.0-r0' 
 

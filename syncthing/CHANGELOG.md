@@ -1,3 +1,8 @@
+## 1.5.0 - 2020-10-06
+
+* 🔼 Update syncthing to `1.10.0-r0` (except for aarch64, there its downgraded to `1.5.0-r0`)
+
+
 ## 1.4.0 - 2020-08-16
 
 * 🔼 Update syncthing to `1.8.0-r0` (except for aarch64, there its `1.7.1-r1`)

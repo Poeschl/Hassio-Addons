@@ -1,3 +1,9 @@
+## 1.0.9 - 2020-10-06
+
+* 🔼 Updated g++ to `9.3.0-r0`
+* 🔼 Updated python3 to `3.8.2-r1`
+
+
 ## 1.0.8 - 2020-05-22
 
 * ➕ Added docs file
