@@ -2,6 +2,8 @@
 
 * 🔼 Update python3 to `3.8.5-r0`
 * 🔼 Update python3-dev to `3.8.5-r0`
+* 🔼 Update ca-certificates to `20191127-r4`
+* 🔼 Update haproxy to `2.1.9-r0`
 
 
 ## 1.0.0 - 2020-07-05

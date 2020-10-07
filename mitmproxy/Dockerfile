@@ -31,9 +31,9 @@ RUN pip3 install --user --upgrade mitmproxy==5.1.1
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add -Uu --no-cache --purge \
-        python3=3.8.3-r0 \
-        ca-certificates=20191127-r3 \
-        haproxy=2.1.4-r0 \
+        python3=3.8.5-r0 \
+        ca-certificates=20191127-r4 \
+        haproxy=2.1.9-r0 \
     && rm -rf /var/cache/apk/* /tmp/*
 
 COPY --from=BUILD /root/.local /root/.local
