@@ -2,6 +2,7 @@
 
 * 🔼 Update python3 to `3.8.5-r0`
 * 🔼 Update python3-dev to `3.8.5-r0`
+* 🔼 Update py3-brotli to `1.0.9-r1`
 * 🔼 Update ca-certificates to `20191127-r4`
 * 🔼 Update haproxy to `2.1.9-r0`
 

@@ -13,7 +13,7 @@ RUN apk add -Uu --no-cache --purge \
         py3-certifi=2020.4.5.1-r0 \
         py3-setuptools=47.0.0-r0 \
         py3-cryptography=2.9.2-r0 \
-        py3-brotli=1.0.7-r5 \
+        py3-brotli=1.0.9-r1 \
         py3-sortedcontainers=2.1.0-r3 \
         py3-tornado=6.0.4-r0 \
         py3-urwid=2.1.0-r0 \
