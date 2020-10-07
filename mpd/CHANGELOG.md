@@ -1,6 +1,12 @@
+## 1.3.2 - 2020-10-06
+
+* ➕ Support `/media` folder
+
+
 ## 1.3.1 - 2020-05-26
 
 * 🐛 Fixed startup without custom config file
+
 
 ## 1.3.0 - 2020-05-22
 
