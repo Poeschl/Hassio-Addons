@@ -27,7 +27,7 @@ RUN wget -nv --content-disposition -O - "https://github.com/zaproxy/zaproxy/rele
 RUN	wget -nv --content-disposition -O webswing.zip "https://bitbucket.org/meszarv/webswing/get/${WEBSWING_VERSION}.zip" \
 	&& unzip webswing.zip \
 	&& rm webswing.zip \
-	&& mv *webswing-* /webswing \
+	&& mv meszarv-webswing-* /webswing \
 	# Remove demos
 	&& rm -R /webswing/webswing-demo/
 
