@@ -7,21 +7,6 @@ on:
 jobs:
   hadolint:
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     addon: [
-    #       "ICantBelieveItsNotValetudo"
-    #       "MaryTTS"
-    #       "picoTTS"
-    #       "pigpio"
-    #       "mpd"
-    #       "valetudo-mapper"
-    #       "ympd"
-    #       "git-exporter"
-    #       "syncthing"
-    #       "OWASP-ZAP"
-    #       "mitmproxy"
-    #     ]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -29,7 +14,7 @@ jobs:
         uses: reviewdog/action-hadolint@v1
         with:
           github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review
+          reporter: github-pr-check
           fail_on_error: true
 
   shellcheck:
@@ -41,7 +26,7 @@ jobs:
         uses: reviewdog/action-shellcheck@v1.0.0
         with:
           github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review
+          reporter: github-pr-check
           pattern: "*.sh"
 
   check-build:
@@ -49,10 +34,23 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        addon: ["mpd"]
+        addon: [
+          "ICantBelieveItsNotValetudo",
+          "MaryTTS",
+          "picoTTS",
+          "pigpio",
+          "mpd",
+          "valetudo-mapper",
+          "ympd",
+          "git-exporter",
+          "syncthing",
+          "OWASP-ZAP",
+          "mitmproxy"
+        ]
+    container:
+      image: homeassistant/amd64-builder:7.2.0
+      options: --rm --privileged
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
       - name: Detect chanced files
         id: files-check
         uses: dorny/paths-filter@v2.4.2
@@ -61,6 +59,12 @@ jobs:
           filters: |
             changed:
               - '**'
-      - run: echo "${{ steps.files-check.outputs.changed_files }}"
-      - if: contains( steps.files-check.outputs.changed_files, matrix.addon )
-        run: echo "MPD changed"
+      - name: Checkout
+        if: contains( steps.files-check.outputs.changed_files, matrix.addon )
+        uses: actions/checkout@v2
+      - name: Build addon
+        if: contains( steps.files-check.outputs.changed_files, matrix.addon )
+        run: >
+          /usr/bin/builder.sh 
+          $(jq -r '.arch // ["armv7", "armhf", "amd64", "aarch64", "i386"] | [.[] | "--" + .] | join(" ")' ${{ matrix.addon }}/config.json)
+          -t ${{ matrix.addon }} --test
