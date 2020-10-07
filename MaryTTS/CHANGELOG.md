@@ -1,7 +1,7 @@
 ## 1.0.1 - 2020-10-06
 
- * 🔼 Updated wget to `1.20.3-r1`
- * 🔼 Updated unzip to `6.0-r8`
+ * 🔼 Updated wget to `1.20.3-r0`
+ * 🔼 Updated unzip to `6.0-r6`
  * 🔼 Updated openjdk to `8.252.09-r0`
 
 
