@@ -62,9 +62,13 @@ jobs:
       - name: Checkout
         if: contains( steps.files-check.outputs.changed_files, matrix.addon )
         uses: actions/checkout@v2
+      - name: Get config
+        id: config
+        run: |
+          archs=$(jq -r '.arch // ["armv7", "armhf", "amd64", "aarch64", "i386"] | [.[] | .] | join(",")' "${{ matrix.addon }}/config.json")
+          archs_param=$(jq -r '.arch // ["armv7", "armhf", "amd64", "aarch64", "i386"] | [.[] | "--" + .] | join(" ")' ${addon}/config.json)
+          echo "Architectures: $archs"
+          echo "::set-output name=archs_param::$archs_param"
       - name: Build addon
         if: contains( steps.files-check.outputs.changed_files, matrix.addon )
-        run: >
-          /usr/bin/builder.sh 
-          $(jq -r '.arch // ["armv7", "armhf", "amd64", "aarch64", "i386"] | [.[] | "--" + .] | join(" ")' ${{ matrix.addon }}/config.json)
-          -t ${{ matrix.addon }} --test
+        run: /usr/bin/builder.sh ${{ stepts.config.outputs.archs_param }} -t ${{ matrix.addon }} --test
