@@ -1,0 +1,129 @@
+name: Deploy addons
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-image:
+    name: Build changed addons
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        addon: [
+          "ICantBelieveItsNotValetudo",
+          "MaryTTS",
+          "picoTTS",
+          "pigpio",
+          "mpd",
+          "valetudo-mapper",
+          "ympd",
+          "git-exporter",
+          "syncthing",
+          "OWASP-ZAP",
+          "mitmproxy"
+        ]
+      fail-fast: false
+    container:
+      image: homeassistant/amd64-builder:7.2.0
+      options: --rm --privileged
+    steps:
+      - name: Git install
+        run: |
+          add-apt-repository ppa:git-core/ppa -y
+          apt-get update && apt-get install -y --no-install-recommends git
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Detect chanced files
+        id: files-check
+        uses: dorny/paths-filter@v2.4.2
+        with:
+          filters: |
+            changed:
+              - ${{matrix.addon}}/**
+
+      - name: Get config
+        id: config
+        if: steps.files-check.outputs.changed == 'true'
+        shell: bash
+        run: |
+          IFS='/' read -r registry imagetemplate <<< "$(jq -r '.image' "${{ matrix.addon }}/config.json")"
+          version=$(jq -r '.version' "${{ matrix.addon }}/config.json")
+          archs=$(jq -r '.arch // ["armv7", "armhf", "amd64", "aarch64", "i386"] | [.[] | .] | join(" ")' "${{ matrix.addon }}/config.json")
+          archs_param=$(jq -r '.arch // ["armv7", "armhf", "amd64", "aarch64", "i386"] | [.[] | "--" + .] | join(" ")' ${{ matrix.addon }}/config.json)
+
+          image_names=""
+          if [[ "$imagetemplate" != 'null' ]]; then
+            for arch in ${archs}; do
+              image_names="${image_names} ${registry}/${imagetemplate/\{arch\}/$arch}"
+            done
+          fi
+
+          echo "Docker Registry: $registry"
+          echo "Imagetemplate: $imagetemplate"
+          echo "Version: $version"
+          echo "Architectures: $archs"
+          echo "Images: $image_names"
+
+          echo "::set-output name=registry::$registry"        
+          echo "::set-output name=imagetemplate::$imagetemplate"
+          echo "::set-output name=version::$version"
+          echo "::set-output name=archs_param::$archs_param"
+          echo "::set-output name=image_names::$image_names"
+
+      - name: Build addon images
+        if: steps.files-check.outputs.changed == 'true'
+        run: >
+          /usr/bin/builder.sh ${{ steps.config.outputs.archs_param }} 
+          -t ${{ matrix.addon }} 
+          -d ${{ steps.config.outputs.registry }} 
+          -i ${{ steps.config.outputs.imagetemplate }}
+          --test
+
+      - name: Check images
+        if: steps.files-check.outputs.changed == 'true'
+        shell: bash
+        run: |
+          missing=0
+          for image_name in ${{ steps.config.outputs.image_names }}; do
+            if [[ "$(docker images -q "$image_name:${{ steps.config.outputs.version }}" 2> /dev/null)" == "" ]]; then
+              echo "::error::No local image for $image_name found."
+              missing=$((missing + 1))
+            else
+              echo "Image $image_name found."
+            fi
+          done
+          if [ "$missing" -gt "0" ]; then
+            docker images
+            exit 1
+          fi
+
+      - name: Add repository labels
+        if: steps.files-check.outputs.changed == 'true'
+        shell: bash
+        run: |
+          for image_name in ${{ steps.config.outputs.image_names }}; do
+            echo "FROM $image_name:latest" | docker build --label org.opencontainers.image.source="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" -t "$image_name:latest" -
+            echo "FROM $image_name:${{ steps.config.outputs.version }}" | docker build --label org.opencontainers.image.source="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" \
+              -t "$image_name:${{ steps.config.outputs.version }}" -
+          done
+
+      - name: Docker Login
+        if: steps.files-check.outputs.changed == 'true'
+        uses: docker/login-action@v1.4.1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+
+      - name: Push images
+        if: steps.files-check.outputs.changed == 'true'
+        shell: bash
+        run: |
+          for image_name in ${{ steps.config.outputs.image_names }}; do
+            docker push "$image_name:${{ steps.config.outputs.version }}"
+            docker push "$image_name:latest"
+            echo "Pushed $image_name"
+          done

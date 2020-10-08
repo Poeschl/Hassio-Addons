@@ -14,7 +14,7 @@
   ],
   "startup": "system",
   "boot": "auto",
-  "image": "poeschl/hassio-picotts-{arch}",
+  "image": "ghcr.io/poeschl/ha-picotts-{arch}",
   "ports": {
     "59126/tcp": "59126"
   },

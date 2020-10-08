@@ -11,7 +11,7 @@
   ],
   "startup": "application",
   "boot": "manual",
-  "image": "poeschl/ha-owasp-zap-{arch}",
+  "image": "ghcr.io/poeschl/ha-owasp-zap-{arch}",
   "webui": "http://[HOST]:[PORT:8080]/zap",
   "ingress": false,
   "ingress_port": 8080,

@@ -1,3 +1,8 @@
+## 1.6.1 - 2020-10-08
+
+* 🔼 Update syncthing to `1.10.0-r1` (aarch64 still`1.5.0-r0`)
+
+
 ## 1.6.0 - 2020-10-07
 
 * ➕ Map also `/media` folder inside
