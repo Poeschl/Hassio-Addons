@@ -1,5 +1,5 @@
 # Poeschl Home Assistant Supervisor Add-ons 
-[![Travis master](https://img.shields.io/travis/com/Poeschl/Hassio-Addons/master.svg?maxAge=3600)](https://travis-ci.org/Poeschl/Hassio-Addons/)
+[![Master build](https://img.shields.io/github/workflow/status/Poeschl/Hassio-Addons/Deploy%20addons?maxAge=3600)](https://github.com/Poeschl/Hassio-Addons/actions?query=workflow%3A%22Deploy+addons%22)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Poeschl/Hassio-Addons)
 
 My repository with Add-ons for the [Home Assistant (former Hass.io) system](https://www.home-assistant.io/hassio/) 

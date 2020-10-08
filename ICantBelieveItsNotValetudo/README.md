@@ -1,11 +1,8 @@
 # ICantBelieveItsNotValetudo (Home Assistant Supervisor Addon)
-![armhf image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-icantbelieveitsnotvaletudo-armhf?label=docker%20pulls%20%28armhf%29)
-![armv7 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-icantbelieveitsnotvaletudo-armv7?label=docker%20pulls%20%28armv7%29)
-![aarch64 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-icantbelieveitsnotvaletudo-aarch64?label=docker%20pulls%20%28aarch64%29)
-![amd64 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-icantbelieveitsnotvaletudo-amd64?label=docker%20pulls%20%28amd64%29)
-![i386 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-icantbelieveitsnotvaletudo-i386?label=docker%20pulls%20%28i386%29)
 
 This is the adaption of [ICantBelieveItsNotValetudo](https://github.com/Hypfer/ICantBelieveItsNotValetudo) as a Supervisor addon.
+
+![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
 
 ## Config
 
@@ -23,3 +20,9 @@ The generated image will be served over the Supervisor Ingress feature. So the f
 (Make sure Autodiscovery is enabled!)
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white)](https://www.buymeacoffee.com/Poeschl)
+
+[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
+[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
+[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
+[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
