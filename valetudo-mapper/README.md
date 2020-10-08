@@ -1,11 +1,8 @@
 # Valetudo RE Mapper (Hass.io Addon)
-![armhf image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-valetudo-mapper-armhf?label=docker%20pulls%20%28armhf%29)
-![armv7 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-valetudo-mapper-armv7?label=docker%20pulls%20%28armv7%29)
-![aarch64 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-valetudo-mapper-aarch64?label=docker%20pulls%20%28aarch64%29)
-![amd64 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-valetudo-mapper-amd64?label=docker%20pulls%20%28amd64%29)
-![i386 image pulls](https://img.shields.io/docker/pulls/poeschl/hassio-valetudo-mapper-i386?label=docker%20pulls%20%28i386%29)
 
 This is the adaption of [valetudo-mapper](https://github.com/rand256/valetudo-mapper) as a Hass.io addon.
+
+![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
 
 ## Config
 
@@ -17,3 +14,9 @@ Is the mqtt broker also on your hass.io instance (like the Mosquitto Addon), you
 ## PNG image
 
 The generated image will be served over the Hass.io Ingress feature. So the floor plan can be accessed via the build-in side panel or the auto-configured mqtt camera.
+
+[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
+[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
+[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
+[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
