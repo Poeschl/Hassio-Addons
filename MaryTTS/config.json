@@ -14,7 +14,7 @@
   ],
   "startup": "system",
   "boot": "auto",
-  "image": "poeschl/hassio-marytts-{arch}",
+  "image": "ghcr.io/poeschl/ha-marytts-{arch}",
   "ports": {
     "59125/tcp": "59125"
   },

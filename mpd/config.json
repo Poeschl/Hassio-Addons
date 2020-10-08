@@ -16,7 +16,7 @@
   ],
   "startup": "system",
   "boot": "auto",
-  "image": "poeschl/hassio-mpd-{arch}",
+  "image": "ghcr.io/poeschl/ha-mpd-{arch}",
   "audio": true,
   "devices": ["/dev/snd:/dev/snd:rwm"],
   "map": ["share:rw", "media:rw"],

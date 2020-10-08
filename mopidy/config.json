@@ -18,7 +18,7 @@
   ],
   "startup": "system",
   "boot": "auto",
-  "image": "poeschl/hassio-mopidy-{arch}",
+  "image": "ghcr.io/poeschl/ha-mopidy-{arch}",
   "audio": true,
   "devices": ["/dev/snd:/dev/snd:rwm"],
   "map": ["share:rw"],

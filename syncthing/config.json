@@ -15,7 +15,7 @@
   "homeassistant": "0.115.0",
   "startup": "system",
   "boot": "auto",
-  "image": "poeschl/ha-syncthing-{arch}",
+  "image": "ghcr.io/poeschl/ha-syncthing-{arch}",
   "ports": {
     "8384/tcp": null,
     "22000/tcp": 22000,

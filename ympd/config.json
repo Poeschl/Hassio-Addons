@@ -16,7 +16,7 @@
   ],
   "startup": "services",
   "boot": "auto",
-  "image": "poeschl/hassio-ympd-{arch}",
+  "image": "ghcr.io/poeschl/ha-ympd-{arch}",
   "ports": {
     "6680/tcp": null
   },
