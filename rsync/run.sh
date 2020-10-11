@@ -1,11 +1,13 @@
-#!/usr/bin/with-contenv bashio
+#!/usr/bin/env bashio
+# shellcheck shell=bash
+
 set -e
 
 PRIVATE_KEY_FILE=$(bashio::config 'private_key_file')
 if [ ! -f "$PRIVATE_KEY_FILE" ]; then
 	bashio::log.info 'Generate keypair'
 
-	mkdir -p "$(dirname $PRIVATE_KEY_FILE)"
+	mkdir -p "$(dirname "$PRIVATE_KEY_FILE")"
 	ssh-keygen -t rsa -b 4096 -f "$PRIVATE_KEY_FILE" -N ''
 
 	bashio::log.info "Generated key-pair in $PRIVATE_KEY_FILE"
