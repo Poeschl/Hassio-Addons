@@ -17,6 +17,7 @@ My repository with Add-ons for the [Home Assistant (former Hass.io) system](http
 * Syncthing - A de-centralized file syncronisation program. Focused on privacy.
 * OWASP ZAP - A security testing tool with MITM funtionality.
 * mitmproxy - A simple MITM proxy to trace network requests.
+* rsync - Synces folders from Home Assistant to a other machine via rsync and ssh.
 
 More about the Add-ons can be found in their folders.
 
