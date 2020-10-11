@@ -47,7 +47,8 @@ jobs:
           "git-exporter",
           "syncthing",
           "OWASP-ZAP",
-          "mitmproxy"
+          "mitmproxy",
+          "rsync"
         ]
       fail-fast: false
     container:
