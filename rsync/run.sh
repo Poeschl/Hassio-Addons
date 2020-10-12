@@ -27,13 +27,20 @@ else
 	PORT=22
 fi
 
-for folder in $FOLDERS; do
-	PARENT_FOLDER="$(basename "$folder")"
+if bashio::config.has_value 'options'; then
+	OPTIONS=$(bashio::config 'options')
+	bashio::log.info "Use options $OPTIONS"
+else
+	OPTIONS='-archive --recursive --compress --delete --prune-empty-dirs'
+fi
 
-	bashio::log.info "Sync $folder -> ${REMOTE_FOLDER}/${PARENT_FOLDER}"
-	rsync -archive --recursive --compress --delete --checksum --prune-empty-dirs --progress \
+for folder in $FOLDERS; do
+
+	bashio::log.info "Sync $folder -> ${REMOTE_FOLDER}"
+	# shellcheck disable=SC2086
+	rsync ${OPTIONS} \
 	-e "ssh -p ${PORT} -i ${PRIVATE_KEY_FILE} -oStrictHostKeyChecking=no" \
-	"$folder" "${USERNAME}@${HOST}:${REMOTE_FOLDER}/${PARENT_FOLDER}"
+	"$folder" "${USERNAME}@${HOST}:${REMOTE_FOLDER}"
 done
 
 bashio::log.info "Synced all folders"

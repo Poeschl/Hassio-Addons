@@ -33,6 +33,14 @@ The username for the user on the remote machine the key is accepted.
 
 The list of folders you want to sync with the remote machine. Those locations are getting synced recursively.
 
+When a folder is specified with a slash at the end the content are directly copied inside the remote_folder.
+Without it a folder with the content is created.
+
+For example:
+
+* `- /config` would result into `/home/user/config`
+* `- /config/` would put the content of config into `/home/user`
+
 ### `remote_host`
 
 The ip or host of the remote machine you want to connect to.
@@ -44,3 +52,7 @@ The ssh port on the remote machine. If not set the default `22` is assumed.
 ### `remote_folder`
 
 The base folder on the remote machine for syncing the folders. Sub-folders with the folders from above will be created there
+
+### `options` (optional)
+
+Use your own options for rsync. This string is replacing the default one and get directly to rsync. The default is `-archive --recursive --compress --delete --prune-empty-dirs`.
