@@ -1,7 +1,7 @@
 
 {
   "name": "rsync",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "slug": "rsync",
   "description": "Sync folders to a remote machine via ssh and rsync.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/rsync",
@@ -32,7 +32,8 @@
     "folders":["str"],
     "remote_host":"str",
     "remote_port":"port?",
-    "remote_folder":"str"
+    "remote_folder":"str",
+    "options":"str?"
   },
   "options": {
     "private_key_file":"/ssl/rsync/id_rsa",
