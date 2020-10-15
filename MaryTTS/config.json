@@ -1,6 +1,6 @@
 {
   "name": "MaryTTS",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "slug": "marytts",
   "description": "The Mary TTS speech engine as a Hassio-Addon.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/MaryTTS",
