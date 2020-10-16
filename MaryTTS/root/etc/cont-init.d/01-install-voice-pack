@@ -1,4 +1,4 @@
-#!/usr/bin/env bashio
+#!/usr/bin/with-contenv bashio
 set -e
 
 bashio::log.info 'Setup voice'
@@ -35,6 +35,3 @@ if [ ! -f "/app/lib/${voice_pack_name}.jar" ]; then
 
 	bashio::log.info "Installed $voice_pack_name"
 fi
-
-bashio::log.info 'Start MaryTTS'
-bin/marytts-server

@@ -3,6 +3,7 @@
 * 🔼 Update alpine to `3.12`
 * 🔼 Update wget to `1.20.3-r1`
 * 🔼 Update unzip to `6.0-r8`
+* 🔨 Use S6-Overlay for execution
 
 
 ## 1.0.1 - 2020-10-06

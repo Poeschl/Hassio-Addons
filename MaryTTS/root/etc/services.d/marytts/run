@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bashio
+
+bashio::log.info 'Start MaryTTS (taking some time, will output the port when up)'
+cd /app
+bin/marytts-server

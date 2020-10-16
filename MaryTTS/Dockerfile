@@ -19,8 +19,4 @@ RUN apk update && \
 
 COPY --from=BUILD /app /app
 
-COPY run.sh /
-RUN chmod a+x /run.sh
-
-WORKDIR /app
-CMD [ "/run.sh" ]
+COPY root /
