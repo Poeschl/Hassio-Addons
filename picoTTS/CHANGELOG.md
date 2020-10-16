@@ -1,3 +1,14 @@
+## 1.1.0 - 2020-10-16
+
+* 🔼 Update alpine to `3.12`
+* 🔼 Update git to `2.26.2-r0`
+* 🔼 Update make to `4.3-r0`
+* 🔼 Update g++ to `9.3.0-r2`
+* 🔼 Update automake to `1.16.2-r0`
+* 🔼 Update python3 to `3.8.5-r0`
+* 🔨 Use S6-Overlay for execution
+
+
 ## 1.0.9 - 2020-10-06
 
 * 🔼 Updated g++ to `9.3.0-r0`

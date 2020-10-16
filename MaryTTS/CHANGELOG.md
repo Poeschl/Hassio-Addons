@@ -1,3 +1,11 @@
+## 1.1.0 - 2020-10-15
+
+* 🔼 Update alpine to `3.12`
+* 🔼 Update wget to `1.20.3-r1`
+* 🔼 Update unzip to `6.0-r8`
+* 🔨 Use S6-Overlay for execution
+
+
 ## 1.0.1 - 2020-10-06
 
  * 🔼 Updated openjdk to `8.252.09-r0`
