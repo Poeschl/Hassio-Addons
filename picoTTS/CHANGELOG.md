@@ -1,3 +1,9 @@
+## 1.2.0 - 2020-10-21
+
+* ➕ Icon and Logo 
+* 🔨 change startup to `application` level
+
+
 ## 1.1.0 - 2020-10-16
 
 * 🔼 Update alpine to `3.12`

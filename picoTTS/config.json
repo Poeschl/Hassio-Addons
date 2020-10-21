@@ -1,7 +1,7 @@
 
 {
   "name": "PicoTTS",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "slug": "picotts",
   "description": "Text to speech voice synthesizer from SVox, included in Android AOSP.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/picoTTS",
@@ -12,7 +12,7 @@
     "amd64",
     "i386"
   ],
-  "startup": "system",
+  "startup": "application",
   "boot": "auto",
   "image": "ghcr.io/poeschl/ha-picotts-{arch}",
   "ports": {
