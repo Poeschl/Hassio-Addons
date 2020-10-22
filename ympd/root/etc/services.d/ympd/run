@@ -1,8 +1,8 @@
-#!/usr/bin/env bashio
+#!/usr/bin/with-contenv bashio
 set -e
 
 host=$(bashio::config 'host')
 port=$(bashio::config 'port')
 
-bashio::log.info  'Start ympd'
+bashio::log.info 'Start ympd'
 ympd -w 6680 -h "$host" -p "$port"

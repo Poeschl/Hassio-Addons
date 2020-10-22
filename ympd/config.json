@@ -14,7 +14,7 @@
     "amd64",
     "i386"
   ],
-  "startup": "services",
+  "startup": "application",
   "boot": "auto",
   "image": "ghcr.io/poeschl/ha-ympd-{arch}",
   "ports": {
