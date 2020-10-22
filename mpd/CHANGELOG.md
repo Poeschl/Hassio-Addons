@@ -7,6 +7,7 @@
 * 🔨 Use S6-Overlay for execution
 * 🔨 Disable Avahi Discovery
 * 🔨 Change audio output to Pulseaudio
+* 🔨 Start mpd as `application` startup
 * ➖ Removed alsa-plugins-pulse
 
 
