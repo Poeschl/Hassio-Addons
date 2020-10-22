@@ -6,6 +6,8 @@
 * 🔼 Update mpc to `0.33-r2`
 * 🔨 Use S6-Overlay for execution
 * 🔨 Disable Avahi Discovery
+* 🔨 Change audio output to Pulseaudio
+* ➖ Removed alsa-plugins-pulse
 
 
 ## 1.3.2 - 2020-10-06
