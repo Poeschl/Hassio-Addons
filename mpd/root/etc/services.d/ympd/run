@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv bashio
+set -e
+bashio::net.wait_for 6600
+
+bashio::log.info  'Start ympd'
+ympd -w 6680

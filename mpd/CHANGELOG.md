@@ -1,3 +1,16 @@
+## 1.4.0 - 2020-10-20
+
+* 🔼 Update alpine to `3.12`
+* 🔼 Update mpd to `0.21.23-r0`
+* 🔼 Update ympd to `1.3.0-r9`
+* 🔼 Update mpc to `0.33-r2`
+* 🔨 Use S6-Overlay for execution
+* 🔨 Disable Avahi Discovery
+* 🔨 Change audio output to Pulseaudio
+* 🔨 Start mpd as `application` startup
+* ➖ Removed alsa-plugins-pulse
+
+
 ## 1.3.2 - 2020-10-06
 
 * ➕ Support `/media` folder
