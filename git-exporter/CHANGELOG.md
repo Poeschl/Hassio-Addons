@@ -1,3 +1,8 @@
+## 1.4.4 - 2020-10-22
+
+* 🔨 Disable S6-Overlay Init
+
+
 ## 1.4.3 - 2020-10-06
 
 * 🔼 Updated python3 to `3.8.5-r0`

@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bashio
+set -e
+
+bashio::log.info 'Setup config'
+mkdir -p /data/config

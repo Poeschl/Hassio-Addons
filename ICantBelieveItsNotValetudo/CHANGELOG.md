@@ -1,3 +1,8 @@
+## 2.2.2 - 2020-10-22
+
+* 🔨 Start as `application` startup type
+
+
 ## 2.2.1 - 2020-10-06
 
 * 🔼 Updated npm to `12.18.4-r0`

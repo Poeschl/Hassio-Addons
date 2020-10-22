@@ -3,7 +3,7 @@
 * 🔼 Update alpine to `3.12`
 * 🔼 Update ympd to `1.3.0-r9`
 * 🔨 Use S6-Overlay for execution
-* 🔨 Start mpd as `application` startup
+* 🔨 Start ympd as `application` startup
 
 
 ## 1.0.1 - 2020-05-22

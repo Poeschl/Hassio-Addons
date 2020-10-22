@@ -27,7 +27,6 @@ RUN pip3 install PyYAML==5.3.1 dotty-dict==1.2.1
 
 COPY --from=BUILD /usr/local/bin/git-secrets /usr/local/bin/git-secrets
 
-COPY run.sh /
-COPY utils /utils
+COPY root /
 RUN chmod a+x /run.sh /utils/*
-CMD [ "/run.sh" ]
+ENTRYPOINT [ "/run.sh" ]

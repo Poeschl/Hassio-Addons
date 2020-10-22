@@ -1,7 +1,7 @@
 
 {
   "name": "Syncthing",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "slug": "syncthing",
   "description": "Syncthing is a continuous file synchronization program in a de-centralized way. ",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/syncthing",
@@ -13,7 +13,7 @@
     "i386"
   ],
   "homeassistant": "0.115.0",
-  "startup": "system",
+  "startup": "application",
   "boot": "auto",
   "image": "ghcr.io/poeschl/ha-syncthing-{arch}",
   "ports": {

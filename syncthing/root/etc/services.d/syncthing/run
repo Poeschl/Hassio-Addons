@@ -1,7 +1,6 @@
-#!/usr/bin/env bashio
+#!/usr/bin/with-contenv bashio
 set -e
-bashio::log.info 'Setup config'
-mkdir -p /data/config
+
 export STNOUPGRADE=1
 
 bashio::log.info 'Start syncthing'

@@ -28,8 +28,5 @@ COPY --from=BUILD /usr/local/lib/python3.7/dist-packages/* /usr/local/lib/python
 # Point to the right libs
 RUN echo "/usr/local/lib" > /etc/ld.so.conf && ldconfig
 
-COPY run.sh /
-RUN chmod a+x /run.sh
-CMD [ "/run.sh" ]
+COPY root /
 
-EXPOSE 8888

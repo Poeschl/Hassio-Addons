@@ -1,3 +1,8 @@
+## 1.1.1 - 2020-10-22
+
+* 🔨 Start as `application` startup type
+
+
 ## 1.1.0 - 2020-10-15
 
 * 🔼 Update alpine to `3.12`
