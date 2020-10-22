@@ -12,7 +12,4 @@ RUN git clone https://github.com/rand256/valetudo-mapper -b master /app && \
 WORKDIR /app
 RUN npm install
 
-COPY valetudo-mapper.jq /app/config-template.jq
-COPY run.sh /
-RUN chmod a+x /run.sh
-CMD [ "/run.sh" ]
+COPY root /

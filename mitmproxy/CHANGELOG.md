@@ -1,3 +1,8 @@
+## 1.0.2 - 2020-10-22
+
+* 🔨 Start as `application` startup type
+
+
 ## 1.0.1 - 2020-10-06
 
 * 🔼 Update python3 to `3.8.5-r0`

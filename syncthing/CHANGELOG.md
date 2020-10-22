@@ -1,3 +1,9 @@
+## 1.6.2 - 2020-10-22
+
+* 🔨 Use S6-Overlay for execution
+* 🔨 Start as `application` startup type
+
+
 ## 1.6.1 - 2020-10-08
 
 * 🔼 Update syncthing to `1.10.0-r1` (aarch64 still`1.5.0-r0`)

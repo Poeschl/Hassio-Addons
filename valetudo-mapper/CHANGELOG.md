@@ -1,3 +1,9 @@
+## 1.5.0 - 2020-10-22
+
+* 🔨 Use S6-Overlay for execution
+* 🔨 Start as `application` startup type
+
+
 ## 1.4.0 - 2020-05-29
 
 * 🔼 Updated Valetudo-Mapper to commit `8e23ac2`

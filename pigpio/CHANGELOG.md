@@ -1,3 +1,10 @@
+## 1.0.0 - 2020-10-22
+
+* 🔨 Own versioning scheme
+* 🔨 Use S6-Overlay for execution
+* 🔨 Start as `service` startup type
+
+
 ## V71-2 - 2020-05-22
 
 * 🔨 Updated Changelog to new format
