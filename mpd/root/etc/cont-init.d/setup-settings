@@ -1,0 +1,13 @@
+#!/usr/bin/with-contenv bashio
+set -e
+
+bashio::log.info  'Setup settings'
+
+if [ "$(bashio::config 'volume_normalization')" == 'true' ]; then
+    sed -i "/^#volume_normalization/s/^#//" /etc/mpd.conf
+fi
+
+if [ "$(bashio::config 'custom_config')" != 'null' ]; then
+	bashio::log.info 'Use custom config'
+    cp "$(bashio::config 'custom_config')" '/etc/mpd.conf'
+fi

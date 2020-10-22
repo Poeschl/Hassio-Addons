@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bashio
+set -e
+
+bashio::log.info  'Setup Folders'
+
+mkdir -p /data/database \
+     /share/mpd/music \
+    /share/mpd/playlists

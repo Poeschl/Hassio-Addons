@@ -20,3 +20,14 @@ Working example:
 ...
 custom_config: /share/mpd/mpd.conf
 ```
+
+# Troubleshooting
+
+### `RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler`
+
+This error is shown on any none-glibc system like alpine linux is. MPD should work without it.
+More see here: [MPD Issue](https://github.com/MusicPlayerDaemon/MPD/issues/218)
+
+### `Failed to open '/data/database/mpd.db': No such file or directory`
+
+This error is shown on the first start, when no database exists. It will be there on the second run.
