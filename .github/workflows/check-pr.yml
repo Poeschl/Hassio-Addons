@@ -51,9 +51,6 @@ jobs:
           "rsync"
         ]
       fail-fast: false
-    container:
-      image: homeassistant/amd64-builder:7.2.0
-      options: --rm --privileged
     steps:
       - name: Detect chanced files
         id: files-check
@@ -89,12 +86,14 @@ jobs:
 
       - name: Build addon
         if: steps.files-check.outputs.changed == 'true'
-        run: >
-          /usr/bin/builder.sh ${{ steps.config.outputs.archs_param }} 
-          -t ${{ matrix.addon }} 
-          -d ${{ steps.config.outputs.registry }} 
-          -i ${{ steps.config.outputs.imagetemplate }}
-          --test
+        uses: home-assistant/builder@2020.10.0
+        with:
+          args: >
+            ${{ steps.config.outputs.archs_param }} 
+            -t /data/${{ matrix.addon }} 
+            -d ${{ steps.config.outputs.registry }} 
+            -i ${{ steps.config.outputs.imagetemplate }}
+            --test
 
       - name: Check images
         if: steps.files-check.outputs.changed == 'true'
