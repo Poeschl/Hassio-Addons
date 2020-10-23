@@ -89,9 +89,9 @@ jobs:
         uses: home-assistant/builder@2020.10.0
         with:
           args: >
-            ${{ steps.config.outputs.archs_param }} 
-            -t /data/${{ matrix.addon }} 
-            -d ${{ steps.config.outputs.registry }} 
+            ${{ steps.config.outputs.archs_param }}
+            -t /data/${{ matrix.addon }}
+            -d ${{ steps.config.outputs.registry }}
             -i ${{ steps.config.outputs.imagetemplate }}
             --cache-tag cache
             --no-latest
