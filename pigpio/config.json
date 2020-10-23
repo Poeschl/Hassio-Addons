@@ -8,7 +8,7 @@
     "armhf",
     "armv7"
   ],
-  "startup": "service",
+  "startup": "services",
   "boot": "auto",
   "gpio": true,
   "privileged": ["SYS_RAWIO"],
