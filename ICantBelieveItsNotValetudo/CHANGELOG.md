@@ -1,3 +1,13 @@
+## 2.3.0 - 2020-10-23
+
+* 🔼 Updated ICantBelieveItsNotValetudo to latest commit `67f86e2`
+
+### ⚠️ Breaking Change ⚠️
+
+* Colors are only supported as hex values. See [Colors](https://github.com/Hypfer/ICantBelieveItsNotValetudo#new-map-colors)
+* Colors are not optional anymore, they will be set to the defaults if not existing.
+
+
 ## 2.2.2 - 2020-10-22
 
 * 🔨 Start as `application` startup type

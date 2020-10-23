@@ -2,7 +2,6 @@ ARG BUILD_FROM
 FROM $BUILD_FROM AS BUILD
 
 ENV LANG C.UTF-8
-ENV COMMIT_SHA '30945f99cea9a49680b460cc56bff0220d514670'
 
 RUN apk add --no-cache \
 	git=2.26.2-r0 \
@@ -15,6 +14,7 @@ RUN apk add --no-cache \
 	build-base=0.5-r2 \
 	libjpeg-turbo-dev=2.0.5-r0
 
+ENV COMMIT_SHA '67f86e209f10791662f2503db1d5b841b0da12b0'
 # hadolint ignore=DL3003
 RUN git clone https://github.com/Hypfer/ICantBelieveItsNotValetudo.git -b master /app && \
     cd app && git checkout $COMMIT_SHA
