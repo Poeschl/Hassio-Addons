@@ -25,9 +25,6 @@ jobs:
           "rsync"
         ]
       fail-fast: false
-    container:
-      image: homeassistant/amd64-builder:7.2.0
-      options: --rm --privileged
     steps:
       - name: Git install
         run: |
@@ -74,14 +71,18 @@ jobs:
           echo "::set-output name=archs_param::$archs_param"
           echo "::set-output name=image_names::$image_names"
 
-      - name: Build addon images
+      - name: Build addon
         if: steps.files-check.outputs.changed == 'true'
-        run: >
-          /usr/bin/builder.sh ${{ steps.config.outputs.archs_param }} 
-          -t ${{ matrix.addon }} 
-          -d ${{ steps.config.outputs.registry }} 
-          -i ${{ steps.config.outputs.imagetemplate }}
-          --test
+        uses: home-assistant/builder@2020.10.0
+        with:
+          args: >
+            ${{ steps.config.outputs.archs_param }}
+            -t /data/${{ matrix.addon }}
+            -d ${{ steps.config.outputs.registry }}
+            -i ${{ steps.config.outputs.imagetemplate }}
+            --cache-tag cache
+            --no-latest
+            --test
 
       - name: Check images
         if: steps.files-check.outputs.changed == 'true'
@@ -101,14 +102,18 @@ jobs:
             exit 1
           fi
 
-      - name: Add repository labels
+      - name: Add docker image labels and tags
         if: steps.files-check.outputs.changed == 'true'
         shell: bash
         run: |
           for image_name in ${{ steps.config.outputs.image_names }}; do
-            echo "FROM $image_name:latest" | docker build --label org.opencontainers.image.source="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" -t "$image_name:latest" -
-            echo "FROM $image_name:${{ steps.config.outputs.version }}" | docker build --label org.opencontainers.image.source="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" \
+            echo "FROM $image_name:${{ steps.config.outputs.version }}" | docker build \
+              --label org.opencontainers.image.source="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" \
               -t "$image_name:${{ steps.config.outputs.version }}" -
+
+            echo "FROM $image_name:${{ steps.config.outputs.version }}" | docker build \
+              --label org.opencontainers.image.revision.name=cache \
+              -t "$image_name:cache" -
           done
 
       - name: Docker Login
@@ -125,6 +130,5 @@ jobs:
         run: |
           for image_name in ${{ steps.config.outputs.image_names }}; do
             docker push "$image_name:${{ steps.config.outputs.version }}"
-            docker push "$image_name:latest"
-            echo "Pushed $image_name"
+            docker push "$image_name:cache"
           done
