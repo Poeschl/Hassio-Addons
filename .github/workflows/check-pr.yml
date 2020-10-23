@@ -93,6 +93,8 @@ jobs:
             -t /data/${{ matrix.addon }} 
             -d ${{ steps.config.outputs.registry }} 
             -i ${{ steps.config.outputs.imagetemplate }}
+            --cache-tag cache
+            --no-latest
             --test
 
       - name: Check images
