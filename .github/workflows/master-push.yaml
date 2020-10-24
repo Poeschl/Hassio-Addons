@@ -25,11 +25,14 @@ jobs:
           "rsync"
         ]
       fail-fast: false
+    container:
+      image: homeassistant/amd64-builder:dev
+      options: --rm --privileged
     steps:
       - name: Git install
         run: |
-          sudo add-apt-repository ppa:git-core/ppa -y
-          sudo apt-get update && sudo apt-get install -y --no-install-recommends git
+          add-apt-repository ppa:git-core/ppa -y
+          apt-get update && apt-get install -y --no-install-recommends git
 
       - name: Checkout
         uses: actions/checkout@v2
@@ -65,7 +68,7 @@ jobs:
           echo "Architectures: $archs"
           echo "Images: $image_names"
 
-          echo "::set-output name=registry::$registry"        
+          echo "::set-output name=registry::$registry"
           echo "::set-output name=imagetemplate::$imagetemplate"
           echo "::set-output name=version::$version"
           echo "::set-output name=archs_param::$archs_param"
@@ -73,16 +76,15 @@ jobs:
 
       - name: Build addon
         if: steps.files-check.outputs.changed == 'true'
-        uses: home-assistant/builder@2020.10.0
-        with:
-          args: >
-            ${{ steps.config.outputs.archs_param }}
-            -t /data/${{ matrix.addon }}
-            -d ${{ steps.config.outputs.registry }}
-            -i ${{ steps.config.outputs.imagetemplate }}
-            --cache-tag cache
-            --no-latest
-            --test
+        run: >
+          /usr/bin/builder.sh
+          ${{ steps.config.outputs.archs_param }}
+          -t ${{ matrix.addon }}
+          -d ${{ steps.config.outputs.registry }}
+          -i ${{ steps.config.outputs.imagetemplate }}
+          --cache-tag cache
+          --no-latest
+          --test
 
       - name: Check images
         if: steps.files-check.outputs.changed == 'true'
