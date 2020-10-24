@@ -8,7 +8,16 @@ volume_normalization: false
 
 Enabled the build-in volume normalization feature.
 
-### `custom_config` (Optional)
+### `verbose` (optional)
+
+Make `mpd` verbose.
+
+```yaml
+verbose: true
+```
+
+
+### `custom_config` (optional)
 
 This option let you specify an custom configuration file for MPD.
 To keep all MPD files in one place I restricted the path prefix to `/share/mpd`
