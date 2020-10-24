@@ -7,6 +7,10 @@ if [ "$(bashio::config 'volume_normalization')" == 'true' ]; then
     sed -i "/^#volume_normalization/s/^#//" /etc/mpd.conf
 fi
 
+if [ "$(bashio::config 'verbose')" == 'true' ]; then
+    sed -i "/^log_level/s/default/verbose/" /etc/mpd.conf
+fi
+
 if [ "$(bashio::config 'custom_config')" != 'null' ]; then
 	bashio::log.info 'Use custom config'
     cp "$(bashio::config 'custom_config')" '/etc/mpd.conf'
