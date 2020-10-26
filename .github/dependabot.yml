@@ -6,4 +6,4 @@ updates:
     schedule:
       interval: "weekly"
     labels:
-      - "enhancement"
+      - "dependency-update"
