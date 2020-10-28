@@ -1,0 +1,38 @@
+
+{
+  "name": "rsync",
+  "version": "1.0.0",
+  "slug": "rsync-local",
+  "description": "Sync folders to a external usb drive with rsync.",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/rsync-local",
+  "arch": [
+    "armhf",
+    "armv7",
+    "aarch64",
+    "amd64",
+    "i386"
+  ],
+  "homeassistant": "0.115.0",
+  "startup": "application",
+  "boot": "manual",
+  "init":false,
+  "image": "ghcr.io/poeschl/ha-rsync-local-{arch}",
+  "ports": {},
+  "map": [
+    "share:rw",
+    "config:rw",
+    "backup:rw",
+    "addons:rw",
+    "ssl:rw",
+    "media:rw"
+  ],
+  "schema": {
+    "folders":["str"],
+    "external_folder":"str",
+    "options":"str?"
+  },
+  "options": {
+    "folders":["/config"],
+    "external_folder":"backup"
+  }
+}
