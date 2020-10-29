@@ -1,3 +1,8 @@
+## Security
+
+In order to mount your external device the integrated AppArmor feature is disabled.
+This addon has access to the devices with the path from the available `external_device` config option!
+
 ## Config
 
 Example config:
@@ -6,7 +11,7 @@ Example config:
 folders:
   - /config
 external_folder: backup
-
+external_device: ''
 ```
 
 ### `folders`
@@ -23,7 +28,17 @@ For example:
 
 ### `external_folder`
 
-The base folder on the external usb drive or usb stick for syncing the folders. Sub-folders with the folders from above will be created there
+The base folder on the external usb drive or usb stick for syncing the folders. Sub-folders with the folders from above will be created there.
+This path should not start with `/`.
+
+### `external_device`
+
+If you need to pin down a specific device to make your backup too, here is the option. Per default the device is `/dev/sda1`.
+Make sure to adjust it when for example running Home Assistant from a external drive. The `sda1` will be a partition of the Home Assistant drive.
+
+If no device is specified all available devices will be displayed in the log. No sync takes place without device.
+
+Available options: `/dev/sda1`, `/dev/sda2`, `/dev/sdb1`, `/dev/sdb2`
 
 ### `options` (optional)
 

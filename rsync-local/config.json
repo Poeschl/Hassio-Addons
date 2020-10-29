@@ -1,6 +1,6 @@
 
 {
-  "name": "rsync",
+  "name": "rsync local",
   "version": "1.0.0",
   "slug": "rsync-local",
   "description": "Sync folders to a external usb drive with rsync.",
@@ -26,13 +26,23 @@
     "ssl:rw",
     "media:rw"
   ],
+  "devices":[
+    "/dev/sda1:/dev/sda1:rwm",
+    "/dev/sda2:/dev/sda2:rwm",
+    "/dev/sdb1:/dev/sdb1:rwm",
+    "/dev/sdb2:/dev/sdb2:rwm"
+  ],
+  "privileged":["SYS_ADMIN"],
+  "apparmor": false,
   "schema": {
     "folders":["str"],
-    "external_folder":"str",
+    "external_folder":"match(^[^/].+)",
+    "external_device":"match(^(/dev/sd[a|b][1|2])?)",
     "options":"str?"
   },
   "options": {
     "folders":["/config"],
-    "external_folder":"backup"
+    "external_folder":"backup",
+    "external_device":""
   }
 }
