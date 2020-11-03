@@ -27,7 +27,7 @@ jobs:
         ]
       fail-fast: false
     container:
-      image: homeassistant/amd64-builder:dev
+      image: homeassistant/amd64-builder:2020.11.0
       options: --rm --privileged
     steps:
       - name: Git install
