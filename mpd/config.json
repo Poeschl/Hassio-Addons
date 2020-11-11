@@ -33,7 +33,7 @@
   },
   "schema": {
     "volume_normalization": "bool",
-    "verbose": "bool",
+    "verbose": "bool?",
     "custom_config": "match(/share/mpd/.+)?"
   }
 }
