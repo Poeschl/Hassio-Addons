@@ -8,6 +8,11 @@ volume_normalization: false
 
 Enabled the build-in volume normalization feature.
 
+### `httpd_output`
+
+Enables the httpd audio output.
+
+
 ### `verbose` (optional)
 
 Make `mpd` verbose.
