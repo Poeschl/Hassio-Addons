@@ -1,3 +1,9 @@
+## 1.4.2 - 2020-11-11
+
+* 🔨 Add httpd output config
+* 🐛 Make debug config optional
+
+
 ## 1.4.1 - 2020-10-24
 
 * ➕ Add `verbose` option
