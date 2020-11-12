@@ -58,7 +58,7 @@ jobs:
     steps:
       - name: Detect chanced files
         id: files-check
-        uses: dorny/paths-filter@v2.5.1
+        uses: dorny/paths-filter@v2.5.2
         with:
           filters: |
             changed:
