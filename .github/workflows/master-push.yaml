@@ -52,6 +52,8 @@ jobs:
         shell: bash
         run: |
           IFS='/' read -r registry imagetemplate <<< "$(jq -r '.image' "${{ matrix.addon }}/config.json")"
+          name=$(jq -r '.name' "${{ matrix.addon }}/config.json")
+          description=$(jq -r '.description' "${{ matrix.addon }}/config.json")
           version=$(jq -r '.version' "${{ matrix.addon }}/config.json")
           archs=$(jq -r '.arch // ["armv7", "armhf", "amd64", "aarch64", "i386"] | [.[] | .] | join(" ")' "${{ matrix.addon }}/config.json")
           archs_param=$(jq -r '.arch // ["armv7", "armhf", "amd64", "aarch64", "i386"] | [.[] | "--" + .] | join(" ")' ${{ matrix.addon }}/config.json)
@@ -69,6 +71,8 @@ jobs:
           echo "Architectures: $archs"
           echo "Images: $image_names"
 
+          echo "::set-output name=name::$name"
+          echo "::set-output name=description::$description"
           echo "::set-output name=registry::$registry"
           echo "::set-output name=imagetemplate::$imagetemplate"
           echo "::set-output name=version::$version"
@@ -111,11 +115,20 @@ jobs:
         run: |
           for image_name in ${{ steps.config.outputs.image_names }}; do
             echo "FROM $image_name:${{ steps.config.outputs.version }}" | docker build \
+              --label org.opencontainers.image.title="${{ steps.config.outputs.name }}" \
+              --label org.opencontainers.image.description="${{ steps.config.outputs.description }}" \
+              --label org.opencontainers.image.authors="Poeschl <Poeschl@users.noreply.github.com>" \
+              --label org.opencontainers.image.licenses="Apache License 2.0" \
+              --label org.opencontainers.image.url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" \
               --label org.opencontainers.image.source="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" \
+              --label org.opencontainers.image.documentation="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/${{ matrix.addon }}/README.md" \
+              --label org.opencontainers.image.created="$(date -Is)" \
+              --label org.opencontainers.image.revision="${GITHUB_SHA}" \
+              --label org.opencontainers.image.version="${{ steps.config.outputs.version }}" \
               -t "$image_name:${{ steps.config.outputs.version }}" -
 
             echo "FROM $image_name:${{ steps.config.outputs.version }}" | docker build \
-              --label org.opencontainers.image.revision.name=cache \
+              --label org.opencontainers.image.version=cache \
               -t "$image_name:cache" -
           done
 
