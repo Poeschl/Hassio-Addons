@@ -145,6 +145,6 @@ jobs:
         shell: bash
         run: |
           for image_name in ${{ steps.config.outputs.image_names }}; do
-            docker push "$image_name:${{ steps.config.outputs.version }}"
             docker push "$image_name:cache"
+            docker push "$image_name:${{ steps.config.outputs.version }}"
           done
