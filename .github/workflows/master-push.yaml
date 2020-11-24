@@ -120,8 +120,8 @@ jobs:
               --label org.opencontainers.image.authors="Poeschl <Poeschl@users.noreply.github.com>" \
               --label org.opencontainers.image.licenses="Apache License 2.0" \
               --label org.opencontainers.image.url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" \
-              --label org.opencontainers.image.source="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" \
-              --label org.opencontainers.image.documentation="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/${{ matrix.addon }}/README.md" \
+              --label org.opencontainers.image.source="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/master/${{ matrix.addon }}" \
+              --label org.opencontainers.image.documentation="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/master/${{ matrix.addon }}" \
               --label org.opencontainers.image.created="$(date -Is)" \
               --label org.opencontainers.image.revision="${GITHUB_SHA}" \
               --label org.opencontainers.image.version="${{ steps.config.outputs.version }}" \
