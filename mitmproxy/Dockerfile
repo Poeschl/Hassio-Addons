@@ -1,8 +1,6 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM AS BUILD
 
-ENV mitmproxy_VERSION='5.1.1'
-
 RUN apk add -Uu --no-cache --purge \
         python3=3.8.5-r0  \
         python3-dev=3.8.5-r0 \
