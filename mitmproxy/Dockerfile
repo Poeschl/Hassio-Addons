@@ -33,7 +33,7 @@ FROM $BUILD_FROM AS RUNNING
 RUN apk add -Uu --no-cache --purge \
         python3=3.8.5-r0 \
         ca-certificates=20191127-r4 \
-        haproxy=2.1.9-r0 \
+        haproxy=2.1.10-r0 \
     && rm -rf /var/cache/apk/* /tmp/*
 
 COPY --from=BUILD /root/.local /root/.local

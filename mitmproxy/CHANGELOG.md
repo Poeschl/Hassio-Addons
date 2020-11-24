@@ -1,3 +1,8 @@
+## 1.0.3
+
+* 🔼 Update haproxy to `2.1.10-r0`
+
+
 ## 1.0.2 - 2020-10-22
 
 * 🔨 Start as `application` startup type
