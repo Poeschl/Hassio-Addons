@@ -13,7 +13,7 @@
 
 ## 1.0.1 - 2020-10-06
 
- * 🔼 Updated openjdk to `8.252.09-r0`
+* 🔼 Updated openjdk to `8.252.09-r0`
 
 
 ## 1.0.0 - 2020-05-22
@@ -30,6 +30,7 @@
 ## 5.2-3 - 2020-02-24
 
 ### Added
+
 * ➕ Download voice packs according to language on demand
 
 

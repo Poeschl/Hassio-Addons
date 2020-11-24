@@ -1,7 +1,7 @@
 # Configuration
 
 ```yaml
-repository: 
+repository:
   url: <path to your repository>
   username: user
   password: pass
@@ -25,6 +25,7 @@ exclude:
   - tts/
 dry_run: false
 ```
+
 ### `repository.url`
 
 Any https url to your git repository. (For now _no_ SSH)
@@ -86,6 +87,7 @@ Add pattern for ip and mac addresses to the search.
 The files / folders which should be excluded from the config export.
 
 Following folders and files are excluded from the sync per default:
+
 * `secrets.yaml` (secrets are cleared)
 * `.cloud`
 * `.storage`

@@ -10,6 +10,7 @@ The configuration for the mitmproxy can be done via the key-value pairs in the a
 Just add an new pair to the `options` array. _Please add all settings as strings!_
 
 Example:
+
 ```yaml
 options:
   - name: "anticache"
@@ -34,6 +35,7 @@ If you want your own ca signing the traffic the `custom_ca` option can be used.
 For more about the ca certificate requirements see [here](https://docs.mitmproxy.org/stable/concepts-certificates/#ca-and-cert-files)
 
 Example:
+
 ```yaml
 options:
   - name: "anticache"

@@ -3,6 +3,7 @@
 ```yaml
 language: de
 ```
+
 ### `language`
 
 One of the languages `de`, `en`, `fr`, `it`, `in`, `tu` and `lu`. This should be the same as you configured in Home Assistant.
