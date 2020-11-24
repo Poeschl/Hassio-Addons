@@ -6,6 +6,7 @@
 ## 1.2.2 - 2020-02-09
 
 ### Changed
+
 * 🔨 Start mopidy as `system` startup
 
 
@@ -43,4 +44,4 @@
 
 * ➕ Put mopidy 2.2.3-1 inside the addon.
 * 🔨 Added device mapping for `/dev/snd`
-* 🔨 Adjust mopidy version for aarch64 systems. It will be the version `2.1.0-1` on those systems. 
+* 🔨 Adjust mopidy version for aarch64 systems. It will be the version `2.1.0-1` on those systems.

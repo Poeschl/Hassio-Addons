@@ -1,8 +1,6 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM AS BUILD
 
-ENV mitmproxy_VERSION='5.1.1'
-
 RUN apk add -Uu --no-cache --purge \
         python3=3.8.5-r0  \
         python3-dev=3.8.5-r0 \
@@ -33,7 +31,7 @@ FROM $BUILD_FROM AS RUNNING
 RUN apk add -Uu --no-cache --purge \
         python3=3.8.5-r0 \
         ca-certificates=20191127-r4 \
-        haproxy=2.1.9-r0 \
+        haproxy=2.1.10-r0 \
     && rm -rf /var/cache/apk/* /tmp/*
 
 COPY --from=BUILD /root/.local /root/.local

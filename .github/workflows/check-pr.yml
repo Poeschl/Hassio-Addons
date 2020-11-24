@@ -15,7 +15,7 @@ jobs:
         uses: reviewdog/action-hadolint@v1
         with:
           github_token: ${{ secrets.github_token }}
-          reporter: github-pr-check
+          reporter: github-pr-review
           fail_on_error: true
 
   shellcheck:
@@ -28,8 +28,20 @@ jobs:
         uses: reviewdog/action-shellcheck@v1.5
         with:
           github_token: ${{ secrets.github_token }}
-          reporter: github-pr-check
+          reporter: github-pr-review
           pattern: "*.sh"
+
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: markdownlint
+        uses: prologic/action-markdownlint@v0.1
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
 
   check-build:
     name: Check build

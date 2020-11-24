@@ -1,8 +1,9 @@
-# Poeschl Home Assistant Supervisor Add-ons 
+# Poeschl Home Assistant Supervisor Add-ons
+
 [![Master build](https://img.shields.io/github/workflow/status/Poeschl/Hassio-Addons/Deploy%20addons?maxAge=3600)](https://github.com/Poeschl/Hassio-Addons/actions?query=workflow%3A%22Deploy+addons%22)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Poeschl/Hassio-Addons)
 
-My repository with Add-ons for the [Home Assistant (former Hass.io) system](https://www.home-assistant.io/hassio/) 
+My repository with Add-ons for the [Home Assistant (former Hass.io) system](https://www.home-assistant.io/hassio/)
 
 ## Addons
 
@@ -12,8 +13,8 @@ My repository with Add-ons for the [Home Assistant (former Hass.io) system](http
 * pigpio - The pigpio led control for the Raspberry as addon.
 * MPD - A small media player with minimalistic web ui.
 * valetudo-mapper - Valetudo RE Companion for map generation
-* ympd - A very lightweight Web interface for controlling MPD music servers. 
-* Git Exporter - Exports your Home Assistant config to any git repository (secrets check included) 
+* ympd - A very lightweight Web interface for controlling MPD music servers.
+* Git Exporter - Exports your Home Assistant config to any git repository (secrets check included)
 * Syncthing - A de-centralized file syncronisation program. Focused on privacy.
 * OWASP ZAP - A security testing tool with MITM funtionality.
 * mitmproxy - A simple MITM proxy to trace network requests.
@@ -21,7 +22,7 @@ My repository with Add-ons for the [Home Assistant (former Hass.io) system](http
 
 More about the Add-ons can be found in their folders.
 
-### 🕸️ Depreciated 
+### 🕸️ Depreciated
 
 On thoes addons will be not developed anymore. Feel free to fork them.
 
@@ -34,9 +35,7 @@ To install those Add-ons add this repository in the Home Assistant Add-on store.
 
 Use the following URL to add this repository:
 
-```
-https://github.com/Poeschl/Hassio-Addons
-```
+`https://github.com/Poeschl/Hassio-Addons`
 
 ### Licence  ![Licence](https://img.shields.io/github/license/Poeschl/Hassio-Addons)
 

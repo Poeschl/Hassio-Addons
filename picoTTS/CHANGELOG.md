@@ -1,6 +1,6 @@
 ## 1.2.0 - 2020-10-21
 
-* ➕ Icon and Logo 
+* ➕ Icon and Logo
 * 🔨 change startup to `application` level
 
 
@@ -36,7 +36,7 @@
 * 🔼 Updated git to `2.24.2-r0`
 
 
-## 1.0.4 - 2019-10-15
+## 1.0.5 - 2019-10-15
 
 * 🔼 Update g++ to `9.2.0-r4`
 * 🔼 Update python to `3.8.2-r0`
