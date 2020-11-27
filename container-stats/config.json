@@ -1,0 +1,34 @@
+
+{
+  "name": "Docker Container Stats",
+  "version": "1.0.0",
+  "slug": "container-stats",
+  "description": "A web interface for viewing historical and current statistics per docker container",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/Container-stats",
+  "arch": [
+    "armhf",
+    "armv7",
+    "aarch64",
+    "amd64",
+    "i386"
+  ],
+  "ingress": true,
+  "ingress_port": 8080,
+  "panel_title": "Docker Container Stats",
+  "panel_icon": "mdi:chart-line",
+  "startup": "application",
+  "boot": "auto",
+  "docker_api": true,
+  "image": "ghcr.io/poeschl/ha-container-stats-{arch}",
+  "ports": {
+    "8080/tcp": null
+  },
+  "ports_description": {
+    "8080/tcp": "Web Interface (Not required for Supervisor Ingress)"
+  },
+  "map": [],
+  "schema": {
+    "update_interval": "int?"
+  },
+  "options": {}
+}
