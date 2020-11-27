@@ -23,7 +23,8 @@ jobs:
           "OWASP-ZAP",
           "mitmproxy",
           "rsync",
-          "rsync-local"
+          "rsync-local",
+          "container-stats"
         ]
       fail-fast: false
     container:
