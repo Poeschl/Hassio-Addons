@@ -19,9 +19,9 @@ RUN apk --update add --no-cache \
     make=4.3-r0 \
     g++=9.3.0-r2
 
-RUN mkdir /container-stats && \
-	cd /container-stats && \
-    npm update && \
+WORKDIR /container-stats
+
+RUN npm update && \
     npm install \
     	express@4.17.1 \
     	sqlite3@5.0.0 \
@@ -36,7 +36,6 @@ RUN apk --update add --no-cache \
     sqlite=3.32.1-r0
 
 RUN mkdir -p /container-stats/db
-
 
 COPY --from=BUILD /container-stats /container-stats
 COPY --from=REPOSITORY /container-stats/stats.js /container-stats
