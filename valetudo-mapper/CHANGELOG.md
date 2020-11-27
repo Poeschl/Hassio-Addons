@@ -1,3 +1,12 @@
+## 1.6.0 - 2020-11-27
+
+* 🔼 Update Valetudo-Mapper to commit `1ae822c`
+* 🔼 Update alpine to `3.12`
+* 🔼 Update git to `2.26.2-r0`
+* 🔼 Update npm to `12.18.4-r0`
+* ➕ Add rotation setting 
+
+
 ## 1.5.0 - 2020-10-22
 
 * 🔨 Use S6-Overlay for execution
