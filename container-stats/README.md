@@ -7,7 +7,10 @@ It contains [Docker Container Stats](https://github.com/virtualzone/docker-conta
 ## Security
 
 Since the addon accesses the docker api, the security rating is this low.
-This is needed to the the container statistics.
+Unfortunately there is now way to access the docker api without disabling the *Protection Mode* of the addon.
+Technically with disabling it, the addon can access and control other addons and the core on a HA supervised system.
+But without it we can not retrieve the statistics of the running container and this addon don't work at all.
+
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white)](https://www.buymeacoffee.com/Poeschl)
 
