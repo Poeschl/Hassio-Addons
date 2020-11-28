@@ -3,7 +3,9 @@ set -e
 
 bashio::log.info 'Start docker statistics'
 
-export STATS_UPDATE_INTERVAL=$(bashio::config 'update_interval')
+if bashio::config.has_value 'update_interval'; then
+	export STATS_UPDATE_INTERVAL=$(bashio::config 'update_interval')
+fi
 
 cd /container-stats
 node stats.js
