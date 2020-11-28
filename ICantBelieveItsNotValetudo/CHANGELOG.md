@@ -1,3 +1,7 @@
+## 2.4.0 - 2020-11-28
+
+* 🔼 Updated ICantBelieveItsNotValetudo to latest commit `4b4a62c`
+
 ## 2.3.0 - 2020-10-23
 
 * 🔼 Updated ICantBelieveItsNotValetudo to latest commit `67f86e2`
@@ -7,16 +11,13 @@
 * Colors are only supported as hex values. See [Colors](https://github.com/Hypfer/ICantBelieveItsNotValetudo#new-map-colors)
 * Colors are not optional anymore, they will be set to the defaults if not existing.
 
-
 ## 2.2.2 - 2020-10-22
 
 * 🔨 Start as `application` startup type
 
-
 ## 2.2.1 - 2020-10-06
 
 * 🔼 Updated npm to `12.18.4-r0`
-
 
 ## 2.2.0 - 2020-07-29
 
@@ -26,7 +27,6 @@
 * 🔼 Updated npm to `12.17.0-r0`
 * 🔨 Change build system to two-staged system for compiling needed npm packages outside of the running image
 * 🔨 Use S6 system
-
 
 ## 2.1.0 - 2020-05-29
 
@@ -40,17 +40,14 @@
 
 * 🔼 Updated git to `2.24.3-r0`
 
-
 ## 2.0.1 - 2020-04-16
 
 * 🔼 Updated git to `2.24.2-r0`
-
 
 ## 2.0.0 - 2020-02-27
 
 * 🔼 Updated ICantBelieveItsNotValetudo to latest commit `3cf4f8a`
 * ➕ Adjusted to new config structure (__Make sure to migrate your existing config!__)
-
 
 ## 1.0.0 - 2020-02-07
 
@@ -60,32 +57,26 @@
   * git `2.24.1-r0`
   * npm `12.15.0-r1`
 
-
 ## 0.2.0-5 - 2019-11-06
 
 * ➕ Added schema for optional cropping parameters
-
 
 ## 0.2.0-4 - 2019-10-19
 
 * 🔨 Switch to current master instead of latest version (thanks @Nickerchen)
 
-
 ## 0.2.0-3 - 2019-10-15
 
 * 🔼 Use alpine 3.9 as base image
-
 
 ## 0.2.0-2 - 2019-10-06
 
 * 🔨 Integration into new build setup
 
-
 ## 0.2.0-1 - 2019-09-02
 
 * ➕ Added HASS.io Ingress feature (#6)
 * 🔨 Ingress is now the default access method
-
 
 ## 0.2.0 - 2019-08-14
 
