@@ -19,6 +19,8 @@ My repository with Add-ons for the [Home Assistant (former Hass.io) system](http
 * OWASP ZAP - A security testing tool with MITM funtionality.
 * mitmproxy - A simple MITM proxy to trace network requests.
 * rsync - Synces folders from Home Assistant to a other machine via rsync and ssh.
+* rsync-local - Synces folders to local devices like usb-sticks.
+* Docker Container Stats - Lightwight monitoring of all the running docker containers.
 
 More about the Add-ons can be found in their folders.
 
