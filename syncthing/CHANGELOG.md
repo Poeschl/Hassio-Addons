@@ -1,3 +1,8 @@
+## 1.7.0 - 2020-12-11
+
+* 🔼 Update syncthing to `1.12.0-r0` (also for aarch64)
+
+
 ## 1.6.2 - 2020-10-22
 
 * 🔨 Use S6-Overlay for execution
