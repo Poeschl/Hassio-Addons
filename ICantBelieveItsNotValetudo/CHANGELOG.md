@@ -1,3 +1,8 @@
+## 2.5.0 - 2020-12-14
+
+* 🔨 Include small webserver to center the floorplan and apply the HA theme.
+* 🔼 Updated ICantBelieveItsNotValetudo to latest commit `bd687c1`
+
 ## 2.4.0 - 2020-11-28
 
 * 🔼 Updated ICantBelieveItsNotValetudo to latest commit `4b4a62c`
