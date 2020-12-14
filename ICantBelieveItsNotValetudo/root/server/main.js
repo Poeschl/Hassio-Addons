@@ -6,19 +6,19 @@ const index = `
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <style>
-    img {
+    #floorplan {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);  
     }
-    body{
-      background-color: var(--primary-background-color);
-    }
   </style>
 </head>
 <body>
-  <img src="/image">
+  <img id="floorplan" src="./image">
+  <script>
+      window.frameElement.style = 'background-color: var(--primary-background-color);'
+  </script>
 </body>
 </html>
 `
