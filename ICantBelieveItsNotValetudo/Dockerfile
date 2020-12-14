@@ -14,7 +14,7 @@ RUN apk add --no-cache \
 	build-base=0.5-r2 \
 	libjpeg-turbo-dev=2.0.5-r0
 
-ENV COMMIT_SHA '4b4a62c583307376efeb8478e103ccdc925e0e4f'
+ENV COMMIT_SHA 'bd687c11b6d35a2c98a22c548d64583988c0bd4c'
 # hadolint ignore=DL3003
 RUN git clone https://github.com/Hypfer/ICantBelieveItsNotValetudo.git -b master /app && \
     cd app && git checkout $COMMIT_SHA
