@@ -23,6 +23,17 @@ WORKDIR /app
 RUN npm install
 
 
+FROM $BUILD_FROM AS SERVER
+
+RUN apk add --no-cache \
+	npm=12.18.4-r0
+
+COPY root/server /server
+
+WORKDIR /server
+RUN npm install
+
+
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add --no-cache npm=12.18.4-r0 \
@@ -34,5 +45,6 @@ RUN apk add --no-cache npm=12.18.4-r0 \
 WORKDIR /app
 
 COPY --from=BUILD /app /app
+COPY --from=SERVER /server /server
 
 COPY root /
