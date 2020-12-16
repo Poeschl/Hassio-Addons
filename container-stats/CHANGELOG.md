@@ -1,3 +1,8 @@
+## 1.1.0 - 2020-12-16
+
+* 🔨 Make statistics persistant
+
+
 ## 1.0.1 - 2020-12-03
 
 * 🔨 Fixed link to Github
