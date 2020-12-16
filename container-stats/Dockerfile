@@ -35,11 +35,11 @@ RUN apk --update add --no-cache \
     docker=19.03.12-r0 \
     sqlite=3.32.1-r0
 
-RUN mkdir -p /data/db && ln -s /data/db /container-stats
-
 COPY --from=BUILD /container-stats /container-stats
 COPY --from=REPOSITORY /container-stats/stats.js /container-stats
 COPY --from=REPOSITORY /container-stats/httpd.js /container-stats
 COPY --from=REPOSITORY /container-stats/html /container-stats/html
+
+RUN mkdir -p /data/db && ln -s /data/db /container-stats/db
 
 COPY root /
