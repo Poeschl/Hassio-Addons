@@ -12,6 +12,10 @@ At the time of writing all docker related code is in `stats.js`.
 
 ## Config
 
+### `persistent`
+
+Enable persistence of the collected data. If disabled the data vanish on addon stop.
+
 ### `update_interval` (Optional)
 
 Set a custom update interval for the data in seconds. Defaults to `60` seconds.

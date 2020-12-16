@@ -40,6 +40,4 @@ COPY --from=REPOSITORY /container-stats/stats.js /container-stats
 COPY --from=REPOSITORY /container-stats/httpd.js /container-stats
 COPY --from=REPOSITORY /container-stats/html /container-stats/html
 
-RUN mkdir -p /data/db && ln -s /data/db /container-stats/db
-
 COPY root /

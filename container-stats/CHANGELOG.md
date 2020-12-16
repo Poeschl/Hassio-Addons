@@ -1,6 +1,12 @@
+## 1.1.1 - 2020-12-16
+
+* 🐛 Fix database location
+* 🔨 Create a persistence setting
+
+
 ## 1.1.0 - 2020-12-16
 
-* 🔨 Make statistics persistant
+* 🔨 Make statistics persistent
 
 
 ## 1.0.1 - 2020-12-03
