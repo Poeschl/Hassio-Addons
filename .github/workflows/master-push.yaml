@@ -135,7 +135,7 @@ jobs:
 
       - name: Docker Login
         if: steps.files-check.outputs.changed == 'true'
-        uses: docker/login-action@v1.6.0
+        uses: docker/login-action@v1.8.0
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
