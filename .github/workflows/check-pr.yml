@@ -70,7 +70,7 @@ jobs:
     steps:
       - name: Detect chanced files
         id: files-check
-        uses: dorny/paths-filter@v2.6.0
+        uses: dorny/paths-filter@v2.7.0
         with:
           filters: |
             changed:
