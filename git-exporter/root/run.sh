@@ -117,10 +117,12 @@ function export_addons {
     installed_addons=$(bashio::addons.installed)
     mkdir '/tmp/addons/'
     for addon in $installed_addons; do
-        bashio::log.info "Get ${addon} configs"
-        bashio::addon.options "$addon" >  /tmp/tmp.json
-        /utils/jsonToYaml.py /tmp/tmp.json
-        mv /tmp/tmp.yaml "/tmp/addons/${addon}.yaml"
+        if $(bashio::addons.installed "${addon}"); then
+            bashio::log.info "Get ${addon} configs"
+            bashio::addon.options "$addon" >  /tmp/tmp.json
+            /utils/jsonToYaml.py /tmp/tmp.json
+            mv /tmp/tmp.yaml "/tmp/addons/${addon}.yaml"
+        fi
     done
     bashio::log.info "Get addon repositories"
     bashio::addons false 'addons.repositorys' '.repositories | map(select(.source != null)) | map({(.name): {source,maintainer,slug}}) | add' > /tmp/tmp.json
