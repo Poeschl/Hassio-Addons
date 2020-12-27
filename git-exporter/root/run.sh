@@ -117,7 +117,7 @@ function export_addons {
     installed_addons=$(bashio::addons.installed)
     mkdir '/tmp/addons/'
     for addon in $installed_addons; do
-        if $(bashio::addons.installed "${addon}"); then
+        if [ "$(bashio::addons.installed "${addon}")" == 'true' ]; then
             bashio::log.info "Get ${addon} configs"
             bashio::addon.options "$addon" >  /tmp/tmp.json
             /utils/jsonToYaml.py /tmp/tmp.json
