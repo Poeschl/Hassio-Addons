@@ -1,3 +1,7 @@
+## 1.5.0 - 2020-12-29
+
+* 🐛 Fixed addon config export (#135), thanks @LiJu09
+
 ## 1.4.4 - 2020-10-22
 
 * 🔨 Disable S6-Overlay Init
