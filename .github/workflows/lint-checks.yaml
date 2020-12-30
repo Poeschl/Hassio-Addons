@@ -23,7 +23,7 @@ jobs:
 
       - name: Run hadolint
         if: steps.filter.outputs.dockerfile == 'true'
-        run: hadolint ${{ steps.filter.outputs.config_files }}
+        run: hadolint ${{ steps.filter.outputs.dockerfile_files }}
 
   shellcheck:
     runs-on: ubuntu-latest
@@ -75,14 +75,20 @@ jobs:
         with:
           list-files: 'shell'
           filters: |
-            config:
-              - '**/[!.]*'
+            changed:
+              - '**/*'
 
       - name: Check if version of changed addon is changed also
-        if: steps.filter.outputs.shell == 'true'
+        if: steps.filter.outputs.changed == 'true'
         run: |
-          for file in "${{ steps.filter.outputs.config_files }}"
+          for file in "${{ steps.filter.outputs.changed_files }}"
           do
             addon_folder=$(dirname $file)
-            git diff "$addon_folder/config.json" | grep -P '\+.+"version".+'
+            if [ -f "$addon_folder/config.json" ]; then
+              git diff master -- "$addon_folder/config.json" | grep -P '\+.+"version".+'
+              if [ $? -ne 0 ]; then
+                  echo "::error::$addon_folder didn't change the addon version."
+                  exit 1
+              fi
+            fi
           done

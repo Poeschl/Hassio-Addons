@@ -21,6 +21,7 @@ My repository with Add-ons for the [Home Assistant (former Hass.io) system](http
 * rsync - Synces folders from Home Assistant to a other machine via rsync and ssh.
 * rsync-local - Synces folders to local devices like usb-sticks.
 * Docker Container Stats - Lightwight monitoring of all the running docker containers.
+* VNC Viewer - A VNC viewer addon, to integrate VNC displays into HA.
 
 More about the Add-ons can be found in their folders.
 

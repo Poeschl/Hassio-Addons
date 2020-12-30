@@ -24,7 +24,8 @@ jobs:
           "mitmproxy",
           "rsync",
           "rsync-local",
-          "container-stats"
+          "container-stats",
+          "vnc-viewer"
         ]
       fail-fast: false
     container:
