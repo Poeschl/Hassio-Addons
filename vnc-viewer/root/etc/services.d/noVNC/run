@@ -1,0 +1,15 @@
+#!/usr/bin/with-contenv bashio
+set -e
+
+server_host=$(bashio::config 'vnc_server_host')
+
+server_port=5900
+if bashio::config.has_value 'vnc_server_port'; then
+    server_port=$(bashio::config 'vnc_server_port')
+fi
+
+server="${server_host}:${server_port}"
+
+bashio::log.info 'Start noVNC'
+bashio::log.info "Connecting to VNC $server"
+/noVNC/utils/launch.sh --listen 6080 --vnc $server

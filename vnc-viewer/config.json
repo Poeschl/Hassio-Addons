@@ -1,0 +1,29 @@
+{
+  "name": "VNC Viewer",
+  "version": "1.0.0",
+  "slug": "vnc",
+  "panel_icon": "mdi:remote-desktop",
+  "description": "A VNC client integrated in Home Assistant",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/vnc",
+  "ingress": true,
+  "ingress_port": 6080,
+  "ingress_entry":"vnc.html?autoconnect=true",
+  "arch": [
+    "armv7",
+    "armhf",
+    "aarch64",
+    "amd64",
+    "i386"
+  ],
+  "startup": "application",
+  "boot": "manual",
+  "hassio_api": true,
+  "image": "ghcr.io/poeschl/ha-vnc-{arch}",
+  "options": {
+    "vnc_server_host": "localhost"
+  },
+  "schema": {
+    "vnc_server_host": "str",
+    "vnc_server_port": "int?"
+  }
+}
