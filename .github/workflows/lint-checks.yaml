@@ -7,16 +7,13 @@ on:
 jobs:
   hadolint:
     runs-on: ubuntu-latest
+    container: hadolint/hadolint
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: hadolint
-        uses: reviewdog/action-hadolint@v1
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review
-          fail_on_error: true
+      - name: Run hadolint
+        run: hadolint ./**/*Dockerfile
 
   shellcheck:
     runs-on: ubuntu-latest
@@ -24,12 +21,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: shellcheck
-        uses: reviewdog/action-shellcheck@v1.5
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review
-          pattern: "*.sh"
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@1.0.0
 
   markdownlint:
     runs-on: ubuntu-latest
@@ -37,7 +30,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: markdownlint-cli
+      - name: Run markdownlint
         uses: nosborn/github-action-markdown-cli@v1.1.1
         with:
           files: .
