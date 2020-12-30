@@ -34,3 +34,31 @@ jobs:
         uses: nosborn/github-action-markdown-cli@v1.1.1
         with:
           files: .
+
+  versioncheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git install
+        run: |
+          add-apt-repository ppa:git-core/ppa -y
+          apt-get update && apt-get install -y --no-install-recommends git
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Detect chanced files
+        id: filter
+        uses: dorny/paths-filter@v2.7.0
+        with:
+          list-files: 'shell'
+          filters: |
+            config:
+              - **/[!.]*: 
+
+      - name: Check if version of changed addon is changed also
+        run: |
+          for file in "${{ steps.filter.outputs.config_files }}"
+          do
+            addon_folder=$(dirname $file)
+            git diff "$addon_folder/config.json" | grep -P '\+.+"version".+'
+          done
