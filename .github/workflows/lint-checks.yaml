@@ -1,0 +1,88 @@
+name: Lint / Syntax checks
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  hadolint:
+    runs-on: ubuntu-latest
+    container: hadolint/hadolint
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Detect chanced files
+        id: filter
+        uses: dorny/paths-filter@v2.7.0
+        with:
+          list-files: 'shell'
+          filters: |
+            dockerfile:
+              - '**/Dockerfile'
+
+      - name: Run hadolint
+        if: steps.filter.outputs.dockerfile == 'true'
+        run: hadolint ${{ steps.filter.outputs.config_files }}
+
+  shellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Detect chanced files
+        id: filter
+        uses: dorny/paths-filter@v2.7.0
+        with:
+          list-files: 'shell'
+          filters: |
+            shell:
+              - '**/*.sh'
+              - '**/cont-init.d/*'
+              - '**/services.d/*'
+
+      - name: Run ShellCheck
+        if: steps.filter.outputs.shell == 'true'
+        uses: ludeeus/action-shellcheck@1.0.0
+        with:
+          additional_files: ${{ steps.filter.outputs.shell_files }}
+
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run markdownlint
+        uses: nosborn/github-action-markdown-cli@v1.1.1
+        with:
+          files: .
+
+  versioncheck:
+    runs-on: ubuntu-latest
+    container: alpine:3.12
+    steps:
+      - name: Install required packages
+        run: apk add --no-cache git coreutils
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Detect chanced files
+        id: filter
+        uses: dorny/paths-filter@v2.7.0
+        with:
+          list-files: 'shell'
+          filters: |
+            config:
+              - '**/[!.]*'
+
+      - name: Check if version of changed addon is changed also
+        if: steps.filter.outputs.shell == 'true'
+        run: |
+          for file in "${{ steps.filter.outputs.config_files }}"
+          do
+            addon_folder=$(dirname $file)
+            git diff "$addon_folder/config.json" | grep -P '\+.+"version".+'
+          done
