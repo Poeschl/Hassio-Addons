@@ -23,7 +23,7 @@ jobs:
 
       - name: Run hadolint
         if: steps.filter.outputs.dockerfile == 'true'
-        run: hadolint ${{ steps.filter.outputs.config_files }}
+        run: hadolint ${{ steps.filter.outputs.dockerfile_files }}
 
   shellcheck:
     runs-on: ubuntu-latest
