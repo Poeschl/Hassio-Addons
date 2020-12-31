@@ -1,3 +1,8 @@
+## 1.1.0 - 2020-12-31
+
+* 🔼 Update pigpio to `V78`
+
+
 ## 1.0.0 - 2020-10-22
 
 * 🔨 Own versioning scheme
