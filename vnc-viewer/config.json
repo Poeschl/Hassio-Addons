@@ -1,6 +1,6 @@
 {
   "name": "VNC Viewer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "slug": "vnc",
   "panel_icon": "mdi:remote-desktop",
   "description": "A VNC client integrated in Home Assistant",
