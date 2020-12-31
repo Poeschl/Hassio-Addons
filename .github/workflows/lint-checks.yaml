@@ -66,8 +66,12 @@ jobs:
       - name: Install required packages
         run: apk add --no-cache git coreutils
 
-      - name: Checkout
+      - name: Fetch Repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Checkout branch
+        run: git checkout ${GITHUB_HEAD_REF}
 
       - name: Detect chanced files
         id: filter
@@ -81,11 +85,12 @@ jobs:
       - name: Check if version of changed addon is changed also
         if: steps.filter.outputs.changed == 'true'
         run: |
-          for file in "${{ steps.filter.outputs.changed_files }}"
+          for file in ${{ steps.filter.outputs.changed_files }}
           do
-            addon_folder=$(dirname $file)
+            addon_folder="${file%%/*}"
             if [ -f "$addon_folder/config.json" ]; then
-              git diff master -- "$addon_folder/config.json" | grep -P '\+.+"version".+'
+              echo "Compare file '$addon_folder/config.json'"
+              git diff origin/${GITHUB_BASE_REF}..${GITHUB_HEAD_REF} -- "$addon_folder/config.json" | grep -E '\+.+"version".+'
               if [ $? -ne 0 ]; then
                   echo "::error::$addon_folder didn't change the addon version."
                   exit 1
