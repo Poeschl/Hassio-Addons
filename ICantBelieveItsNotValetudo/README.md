@@ -8,10 +8,10 @@ This is the adaption of [ICantBelieveItsNotValetudo](https://github.com/Hypfer/I
 
 The configuration keys are identical to the [configuration of ICantBelieveItsNotValetudo](https://github.com/Hypfer/ICantBelieveItsNotValetudo/blob/master/README.md).
 Please get the meaning for them from there.
-Its normal that the structure of the addon differs from the official config file, this is nessesary because of the Supervisor Addon config structure.
+It's normal that the structure of the addon differs from the official config file, this is nessesary because of the Supervisor Addon config structure.
 For my sanity the `webserver` section is fixed to `{ "enabled": true, "port": 3000 }`.
 
-If you use the Mosquitto Addon in Home Assistant `core_mosquitto` can be used as broker address.
+If you use the Mosquitto Addon in Home Assistant `core_mosquitto` can be used as broker address like this: `mqtt://<user>:<password>@core_mosquitto`.
 To use images as underlay or overlay, the `share` folder is mounted in the addon. Just start your path with `/share` to access it (example `/share/valetudo/underlay.png`)
 
 ## PNG image
