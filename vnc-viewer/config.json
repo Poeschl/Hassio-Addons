@@ -4,7 +4,7 @@
   "slug": "vnc",
   "panel_icon": "mdi:remote-desktop",
   "description": "A VNC client integrated in Home Assistant",
-  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/vnc",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/vnc-viewer",
   "ingress": true,
   "ingress_port": 6080,
   "ingress_entry":"vnc.html?autoconnect=true",
