@@ -66,6 +66,11 @@ function check_secrets {
     if [ "$(bashio::config 'check.check_for_ips')" == 'true' ]; then
         git secrets --add '([0-9]{1,3}\.){3}[0-9]{1,3}'
         git secrets --add '([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})'
+
+        # Allow dummy / general ips and mac
+        git secrets --add -a 'AA:BB:CC:DD:EE:FF'
+        git secrets --add -a '123.456.789.123'
+        git secrets --add -a '0.0.0.0'
     fi
 
     bashio::log.info 'Add secrets from secrets.yaml'

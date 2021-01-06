@@ -1,5 +1,6 @@
 ## 1.6.0 - 2021-01-06
 
+* 🔨 Add dummy mac and ip adresses as allowed
 * 🐛 Exclude also all Node-Red backup files
 
 
