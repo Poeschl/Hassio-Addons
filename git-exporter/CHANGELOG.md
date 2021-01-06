@@ -1,3 +1,8 @@
+## 1.6.0 - 2021-01-06
+
+* 🐛 Exclude also all Node-Red backup files
+
+
 ## 1.5.0 - 2020-12-29
 
 * 🐛 Fixed addon config export (#135), thanks @LiJu09
