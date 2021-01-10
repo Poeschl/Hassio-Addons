@@ -24,6 +24,7 @@
   },
   "schema": {
     "vnc_server_host": "str",
-    "vnc_server_port": "int?"
+    "vnc_server_port": "int?",
+    "vnc_server_password":"str?"
   }
 }

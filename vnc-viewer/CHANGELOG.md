@@ -1,5 +1,6 @@
 ## 1.2.0 - 2012-01-10
 
+* ➕ Add password option, for not retyping the password every time
 * 🔨 Use noVNC icons since the addon is based on noVNC
 
 
