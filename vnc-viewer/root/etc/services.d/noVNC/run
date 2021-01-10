@@ -2,8 +2,8 @@
 set -e
 
 if bashio::config.has_value 'vnc_server_password'; then
-	bashio::log.info 'Inject vnc connection password'
-	password=$(bashio::config 'vnc_server_password')
+    bashio::log.info 'Inject vnc connection password'
+    password=$(bashio::config 'vnc_server_password')
     sed -i "s/WebUtil.getConfigVar('password');/'${password}';/" /noVNC/app/ui.js
 fi
 
