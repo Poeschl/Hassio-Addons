@@ -1,3 +1,8 @@
+## 1.2.0 - 2012-01-10
+
+* 🔨 Use noVNC icons since the addon is based on noVNC
+
+
 ## 1.1.1 - 2021-01-05
 
 * 🔨 Use rounded icons, thanks @LiJu09
