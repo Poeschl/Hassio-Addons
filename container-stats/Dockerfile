@@ -14,7 +14,7 @@ RUN git clone https://github.com/virtualzone/docker-container-stats.git -b maste
 FROM $BUILD_FROM AS BUILD
 
 RUN apk --update add --no-cache \
-    npm=12.18.4-r0 \
+    npm=12.20.1-r0 \
     python2=2.7.18-r0 \
     make=4.3-r0 \
     g++=9.3.0-r2
@@ -31,7 +31,7 @@ RUN npm update && \
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk --update add --no-cache \
-    nodejs=12.18.4-r0 \
+    nodejs=12.20.1-r0 \
     docker=19.03.12-r0 \
     sqlite=3.32.1-r0
 
