@@ -4,6 +4,12 @@ It contains [Docker Container Stats](https://github.com/virtualzone/docker-conta
 
 ![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
 
+## 🧪 Experimental Addon
+
+During long-term usage I noticed that the addon fills up all available memory when getting the data for a week.
+Especially on a Raspberry Pi with Home Assistant this means death in a few minutes.
+__Use this addon on your own risk!__
+
 ## Security
 
 Since the addon accesses the docker api, the security rating is this low.
