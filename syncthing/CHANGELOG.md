@@ -1,3 +1,10 @@
+## 1.8.0 - 2021-01-30
+
+* 🔼 Update alpine to `3.12`
+* 🔼 Update syncthing to `1.12.1-r0`
+* 🔨 Use Jemalloc for better memory handling
+
+
 ## 1.7.0 - 2020-12-11
 
 * 🔼 Update syncthing to `1.12.0-r0` (also for aarch64)
