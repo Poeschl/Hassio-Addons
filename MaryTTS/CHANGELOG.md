@@ -1,3 +1,11 @@
+## 1.2.0 - 2021-01-30
+
+* 🔼 Updated alpine image to `3.13`
+* 🔼 Updated wget to `1.21.1-r1`
+* 🔼 Updated openjdk8 to `8.272.10-r4`
+* 🔨 Use Jemalloc for better memory handling
+
+
 ## 1.1.1 - 2020-10-22
 
 * 🔨 Start as `application` startup type
