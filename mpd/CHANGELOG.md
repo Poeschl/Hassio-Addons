@@ -1,3 +1,10 @@
+## 1.5.0 - 2021-01-30
+
+* 🔼 Updated alpine image to `3.13`
+* 🔼 Updated mpd to `0.22.3-r0`
+* 🔨 Use Jemalloc for better memory handling
+
+
 ## 1.4.2 - 2020-11-11
 
 * 🔨 Add httpd output config
