@@ -1,3 +1,10 @@
+## 1.7.0 - 2021-01-30
+
+* 🔨 Use Jemalloc for better memory handling
+* 🔼 Update alpine to `3.13`
+* 🔼 Update git to `2.30.0-r0`
+* 🔼 Update npm to `14.15.4-r0`
+
 ## 1.6.1 - 2020-11-27
 
 * 🐛 fix rotation config
