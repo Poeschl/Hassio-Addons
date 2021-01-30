@@ -1,3 +1,15 @@
+## 2.6.0 - 2021-01-30
+
+* 🔼 Updated alpine image to `3.13`
+* 🔼 Updated git to `2.30.0-r0`
+* 🔼 Updated npm to `14.15.4-r0`
+* 🔼 Updated python3 to `3.8.7-r0`
+* 🔼 Updated pkgconf to `1.7.3-r0`
+* 🔼 Updated pango/pango-dev to `1.48.1-r0`
+* 🔼 Updated libjpeg-turbo/libjpeg-turbo-dev to `2.0.6-r0`
+* 🔨 Use Jemalloc for better memory handling
+
+
 ## 2.5.0 - 2020-12-14
 
 * 🔨 Include small webserver to center the floorplan and apply the HA theme.
