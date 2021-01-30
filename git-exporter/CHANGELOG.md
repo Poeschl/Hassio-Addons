@@ -1,3 +1,15 @@
+## 1.7.0 - 2021-01-30
+
+* 🔼 Updated to alpine `3.13`
+* 🔼 Updated git to `2.30.0-r0`
+* 🔼 Updated rsync to `3.2.3-r1`
+* 🔼 Updated grep to `3.6-r0`
+* 🔼 Updated python3 to `3.8.7-r0`
+* 🔼 Updated py3-pip to `20.3.4-r0`
+* 🔼 Updated findutils to `4.8.0-r0`
+* 🔨 Use Jemalloc for better memory handling
+
+
 ## 1.6.0 - 2021-01-06
 
 * 🔨 Add dummy mac and ip adresses as allowed
