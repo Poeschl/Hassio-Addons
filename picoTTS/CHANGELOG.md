@@ -1,3 +1,15 @@
+## 1.3.0 - 2021-01-30
+
+* 🔼 Updated alpine image to `3.13`
+* 🔼 Updated git to `2.30.0-r0`
+* 🔼 Updated g++ to `10.2.1_pre1-r3`
+* 🔼 Updated autoconf to `2.69-r3`
+* 🔼 Updated popt/popt-dev to `1.18-r0`
+* 🔼 Updated automake to `1.16.3-r0`
+* 🔼 Updated python3 to `3.8.7-r0`
+* 🔨 Use Jemalloc for better memory handling
+
+
 ## 1.2.0 - 2020-10-21
 
 * ➕ Icon and Logo
