@@ -1,3 +1,9 @@
+## 1.2.0 - 2021-01-30
+
+* 🔼 Update alpine to `3.13`
+* 🔨 Use Jemalloc for better memory handling
+
+
 ## 1.1.0 - 2020-10-22
 
 * 🔼 Update alpine to `3.12`

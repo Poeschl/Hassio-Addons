@@ -1,6 +1,9 @@
 #!/usr/bin/env bashio
 set -e
 
+# Enable Jemalloc for better memory handling
+export LD_PRELOAD="/usr/local/lib/libjemalloc.so.2"
+
 local_repository='/data/repository'
 pull_before_push="$(bashio::config 'repository.pull_before_push')"
 
