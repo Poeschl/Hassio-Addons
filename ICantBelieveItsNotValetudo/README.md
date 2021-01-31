@@ -11,7 +11,7 @@ Please get the meaning for them from there.
 It's normal that the structure of the addon differs from the official config file, this is nessesary because of the Supervisor Addon config structure.
 For my sanity the `webserver` section is fixed to `{ "enabled": true, "port": 3000 }`.
 
-If you use the Mosquitto Addon in Home Assistant `core_mosquitto` can be used as broker address like this: `mqtt://<user>:<password>@core_mosquitto`.
+If you use the Mosquitto Addon in Home Assistant `core_mosquitto` can be used as broker address like this: `mqtt://<user>:<password>@core_mosquitto` (`<user>` and `<password>` needs to be replaced with your mqtt credentials).
 To use images as underlay or overlay, the `share` folder is mounted in the addon. Just start your path with `/share` to access it (example `/share/valetudo/underlay.png`)
 
 ## PNG image
