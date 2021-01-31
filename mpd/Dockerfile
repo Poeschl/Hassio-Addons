@@ -1,10 +1,9 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-RUN apk add -Uu --no-cache --purge \
+RUN apk add --no-cache \
         mpc=0.33-r2 \
         mpd=0.22.3-r0 \
-        ympd=1.3.0-r9 \
-    && rm -rf /var/cache/apk/* /tmp/*
+        ympd=1.3.0-r9
 
 COPY root /
