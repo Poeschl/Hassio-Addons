@@ -1,3 +1,7 @@
+## 1.5.1 - 2021-01-30
+
+* 🐛 Fixed missing permissions on startup
+
 ## 1.5.0 - 2021-01-30
 
 * 🔼 Updated alpine image to `3.13`
