@@ -27,10 +27,10 @@
     "media:rw"
   ],
   "devices":[
-    "/dev/sda1:/dev/sda1:rwm",
-    "/dev/sda2:/dev/sda2:rwm",
-    "/dev/sdb1:/dev/sdb1:rwm",
-    "/dev/sdb2:/dev/sdb2:rwm"
+    "/dev/sda1",
+    "/dev/sda2",
+    "/dev/sdb1",
+    "/dev/sdb2"
   ],
   "privileged":["SYS_ADMIN"],
   "apparmor": false,
