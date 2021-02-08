@@ -20,7 +20,7 @@
   "boot": "auto",
   "image": "ghcr.io/poeschl/ha-mopidy-{arch}",
   "audio": true,
-  "devices": ["/dev/snd:/dev/snd:rwm"],
+  "devices": ["/dev/snd"],
   "map": ["share:rw"],
   "ports": {
     "6680/tcp": 6680,
