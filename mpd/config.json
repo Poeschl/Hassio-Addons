@@ -18,7 +18,7 @@
   "boot": "auto",
   "image": "ghcr.io/poeschl/ha-mpd-{arch}",
   "audio": true,
-  "devices": ["/dev/snd:/dev/snd:rwm"],
+  "devices": ["/dev/snd"],
   "map": ["share:rw", "media:rw"],
   "ports": {
     "6680/tcp": null,
