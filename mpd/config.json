@@ -1,6 +1,6 @@
 {
   "name": "MPD",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "slug": "mpd",
   "panel_icon": "mdi:music-circle",
   "description": "Music Player Daemon is a free and open source music player. It plays audio files, organizes playlists and maintains a music database",
@@ -18,7 +18,7 @@
   "boot": "auto",
   "image": "ghcr.io/poeschl/ha-mpd-{arch}",
   "audio": true,
-  "devices": ["/dev/snd:/dev/snd:rwm"],
+  "devices": ["/dev/snd"],
   "map": ["share:rw", "media:rw"],
   "ports": {
     "6680/tcp": null,

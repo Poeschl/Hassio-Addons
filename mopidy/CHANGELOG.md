@@ -1,3 +1,8 @@
+## 1.2.4 - 2021-02-09
+
+* 🔨 Migrate to new `devices` option format. Thanks @LiJu09
+
+
 ## 1.2.3 - 2020-05-22
 
 * 🔨 Updated Changelog to new format

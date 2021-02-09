@@ -1,6 +1,6 @@
 {
   "name": "pigpio",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "slug": "pigpio",
   "description": "Control your pwm leds with pigpio on Hass.io",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/pigpio",
@@ -12,7 +12,7 @@
   "boot": "auto",
   "gpio": true,
   "privileged": ["SYS_RAWIO"],
-  "devices":["/dev/mem:/dev/mem:rwm", "/dev/vcio:/dev/vcio:rw"],
+  "devices":["/dev/mem", "/dev/vcio"],
   "image": "ghcr.io/poeschl/ha-pigpio-{arch}",
   "ports": {
     "8888/tcp": "8888"

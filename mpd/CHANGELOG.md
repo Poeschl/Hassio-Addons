@@ -1,6 +1,12 @@
+## 1.5.2 - 2021-02-09
+
+* 🔨 Migrate to new `devices` option format. Thanks @LiJu09
+
+
 ## 1.5.1 - 2021-01-30
 
 * 🐛 Fixed missing permissions on startup
+
 
 ## 1.5.0 - 2021-01-30
 
