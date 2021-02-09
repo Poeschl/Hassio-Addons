@@ -1,3 +1,8 @@
+## 1.1.1 - 2021-02-09
+
+* 🔨 Migrate to new `devices` option format. Thanks @LiJu09
+
+
 ## 1.1.0 - 2020-12-31
 
 * 🔼 Update pigpio to `V78`

@@ -1,6 +1,6 @@
 {
   "name": "Mopidy",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "slug": "mopidy",
   "stage":"deprecated",
   "panel_icon": "mdi:music-circle",
