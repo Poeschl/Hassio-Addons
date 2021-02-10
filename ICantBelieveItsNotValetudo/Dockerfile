@@ -4,7 +4,7 @@ FROM $BUILD_FROM AS BUILD
 ENV LANG C.UTF-8
 
 RUN apk add --no-cache \
-	git=2.30.0-r0 \
+	git=2.30.1-r0 \
 	npm=14.15.4-r0 \
 	python3=3.8.7-r0 \
 	pkgconf=1.7.3-r0 \
