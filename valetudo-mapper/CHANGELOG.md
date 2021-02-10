@@ -1,3 +1,8 @@
+## 1.7.1 - 2021-02-10
+
+* 🔼 Updated git to `2.30.1-r0`
+
+
 ## 1.7.0 - 2021-01-30
 
 * 🔨 Use Jemalloc for better memory handling
