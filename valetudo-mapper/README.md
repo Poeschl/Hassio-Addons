@@ -9,7 +9,7 @@ This is the adaption of [valetudo-mapper](https://github.com/rand256/valetudo-ma
 The config of the addon is identical to the `mqtt` section described in the README of Valetudo Mapper.
 The `webserver` section is fixed to `{ "enabled": true, "port": 3000 }`
 
-If you use the Mosquitto Addon in Home Assistant `core_mosquitto` can be used as broker address.
+If you use the Mosquitto Addon in Home Assistant `core-mosquitto` can be used as broker address like this: `mqtt://<user>:<password>@core-mosquitto`.
 
 ## PNG image
 
