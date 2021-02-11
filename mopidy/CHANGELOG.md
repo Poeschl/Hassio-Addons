@@ -1,4 +1,4 @@
-## 1.2.4 - 2021-02-09
+## after 1.2.3
 
 * 🔨 Migrate to new `devices` option format. Thanks @LiJu09
 
