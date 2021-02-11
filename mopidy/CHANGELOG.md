@@ -8,6 +8,7 @@
 * 🔨 Updated Changelog to new format
 * 🕸️ Marked as deprecated
 
+
 ## 1.2.2 - 2020-02-09
 
 ### Changed
