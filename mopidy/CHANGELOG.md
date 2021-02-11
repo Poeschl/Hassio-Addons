@@ -46,7 +46,7 @@
 * 🐛 Fixed ALSA not forwarding sound correctly
 
 
-## 2.2.3 - 2019-10-06 (Old versioning)
+## 2.2.3 - 2019-10-06 (old versioning)
 
 * ➕ Put mopidy 2.2.3-1 inside the addon.
 * 🔨 Added device mapping for `/dev/snd`
