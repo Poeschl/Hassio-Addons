@@ -13,7 +13,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
 RUN git clone 'https://github.com/joan2937/pigpio.git' -b v78 /pigpio &&\
     cd /pigpio &&\
     echo 'Reroute "/dev/pig*" to "/tmp/pig*", to make pigpio addon compatible.' &&\
-    find -type f -exec sed -i -re 's#/dev/pig(pio|out|err)#/tmp/pig\1#g' {} \; &&\
+    find . -type f -exec sed -i -re 's#/dev/pig(pio|out|err)#/tmp/pig\1#g' {} \; &&\
     make  &&\
     make install
 
