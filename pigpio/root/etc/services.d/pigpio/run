@@ -2,4 +2,4 @@
 set -e
 
 bashio::log.info 'Started pigpio'
-pigpiod -g
+pigpiod -g -f

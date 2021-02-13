@@ -1,3 +1,9 @@
+## 1.2.0 - 2021-02-13
+
+* 🐛 Relocate pigpio's pipe files in `/dev` to make it work inside the addon environment ([#178](https://github.com/Poeschl/Hassio-Addons/issues/178)).
+* ➖ Disabled local fifo interface, since its not used
+
+
 ## 1.1.1 - 2021-02-09
 
 * 🔨 Migrate to new `devices` option format. Thanks @LiJu09
