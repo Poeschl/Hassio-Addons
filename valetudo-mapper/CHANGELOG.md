@@ -1,3 +1,8 @@
+## 1.8.0 - 2021-02-15
+
+* 🔨 Allow also anonymous access in mqtt broker url
+
+
 ## 1.7.1 - 2021-02-10
 
 * 🔼 Updated git to `2.30.1-r0`
