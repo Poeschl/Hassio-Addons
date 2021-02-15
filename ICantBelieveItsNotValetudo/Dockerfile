@@ -10,7 +10,7 @@ RUN apk add --no-cache \
 	pkgconf=1.7.3-r0 \
 	pixman-dev=0.40.0-r2 \
 	cairo-dev=1.16.0-r2 \
-	pango-dev=1.48.1-r0 \
+	pango-dev=1.48.2-r0 \
 	build-base=0.5-r2 \
 	libjpeg-turbo-dev=2.0.6-r0
 
@@ -39,7 +39,7 @@ FROM $BUILD_FROM AS RUNNING
 RUN apk add --no-cache npm=14.15.4-r0 \
     pixman=0.40.0-r2 \
 	cairo=1.16.0-r2 \
-	pango=1.48.1-r0 \
+	pango=1.48.2-r0 \
 	libjpeg-turbo=2.0.6-r0
 
 WORKDIR /app

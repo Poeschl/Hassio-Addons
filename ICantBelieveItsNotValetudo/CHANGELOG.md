@@ -1,3 +1,9 @@
+## 2.7.0 - 2021-02-15
+
+* 🔨 Allow also anonymous access in mqtt broker url
+* 🔼 Updated pango to `1.48.2-r0`
+
+
 ## 2.6.1 - 2021-02-10
 
 * 🔼 Updated git to `2.30.1-r0`
