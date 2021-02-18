@@ -1,3 +1,14 @@
+## 2.8.0 - 2021-02-18
+
+* 🔼 Updated ICantBelieveItsNotValetudo to latest commit `74b6c33`
+* 🔼 Updated npm to `14.15.5-r0`
+* 🔨 Unspecify version of pkgconf
+* ➖ Removed webserver since [no image is served anymore](https://github.com/Hypfer/ICantBelieveItsNotValetudo/commit/54cc0d96a6c03ee4dc92b86e533c0cd3999a7068#diff-b335630551682c19a781afebcf4d07bf978fb1f8ac04c6bf87428ed5106870f5L14)
+* ➖ Removed ingress since not needed anymore, since nothing to serve
+
+### 📌 No image will be served to the side panel anymore. The map is only available as mqtt camera. 📌
+
+
 ## 2.7.0 - 2021-02-15
 
 * 🔨 Allow also anonymous access in mqtt broker url
@@ -26,9 +37,11 @@
 * 🔨 Include small webserver to center the floorplan and apply the HA theme.
 * 🔼 Updated ICantBelieveItsNotValetudo to latest commit `bd687c1`
 
+
 ## 2.4.0 - 2020-11-28
 
 * 🔼 Updated ICantBelieveItsNotValetudo to latest commit `4b4a62c`
+
 
 ## 2.3.0 - 2020-10-23
 

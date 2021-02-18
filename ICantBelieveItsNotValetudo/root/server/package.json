@@ -1,9 +1,0 @@
-{
-  "name": "valetudo-mini-server",
-  "dependencies": {
-    "request": "^2.88.2"
-  },
-  "scripts": {
-    "start": "node main.js"
-  }
-}

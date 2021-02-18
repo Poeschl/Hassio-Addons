@@ -15,16 +15,8 @@
   "startup": "application",
   "boot": "auto",
   "image": "ghcr.io/poeschl/ha-icantbelieveitsnotvaletudo-{arch}",
-  "ports": {
-    "8080/tcp": null
-  },
-  "ports_description": {
-    "8080/tcp": "Port serving the floor plan (Not required for Supervisor Ingress)"
-  },
-  "ingress": true,
-  "ingress_port": 8080,
-  "panel_title": "Valetudo Floorplan",
-  "panel_icon": "mdi:floor-plan",
+  "ports": {},
+  "ports_description": {},
   "map": ["ssl", "share"],
   "schema": {
     "mapSettings": {
