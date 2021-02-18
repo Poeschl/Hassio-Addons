@@ -6,7 +6,8 @@
 * ➖ Removed webserver since [no image is served anymore](https://github.com/Hypfer/ICantBelieveItsNotValetudo/commit/54cc0d96a6c03ee4dc92b86e533c0cd3999a7068#diff-b335630551682c19a781afebcf4d07bf978fb1f8ac04c6bf87428ed5106870f5L14)
 * ➖ Removed ingress since not needed anymore, since nothing to serve
 
-### 📌 No image will be served to the side panel anymore. The map is only available as mqtt camera. 📌
+### 📌 Note 📌
+* No image will be served to the side panel anymore. The map is only available as mqtt camera.
 
 
 ## 2.7.0 - 2021-02-15
