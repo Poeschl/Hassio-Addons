@@ -7,6 +7,7 @@
 * ➖ Removed ingress since not needed anymore, since nothing to serve
 
 ### 📌 Note 📌
+
 * No image will be served to the side panel anymore. The map is only available as mqtt camera.
 
 
