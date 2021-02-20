@@ -1,3 +1,10 @@
+## 2.8.1 - 2021-02-20
+
+* 🔨 Changed the addon configuration to the current configuration of ICantBelieveItsNotValetudo (removing under/overlay images and cropping)
+* ➕ Add `homeassistantMapHack` notice
+* ➖ Removed `/share` mount
+
+
 ## 2.8.0 - 2021-02-18
 
 * 🔼 Updated ICantBelieveItsNotValetudo to latest commit `74b6c33`
