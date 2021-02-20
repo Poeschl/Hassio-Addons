@@ -1,6 +1,6 @@
 {
   "name": "ICantBelieveItsNotValetudo",
-  "version": "2.8.0",
+  "version": "2.8.1",
   "slug": "icantbelieveitsnotvaletudo",
   "description": "This is a simple companion service for valetudo which generates the map pngs.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/ICantBelieveItsNotValetudo",
@@ -16,31 +16,18 @@
   "image": "ghcr.io/poeschl/ha-icantbelieveitsnotvaletudo-{arch}",
   "ports": {},
   "ports_description": {},
-  "map": ["ssl", "share"],
+  "map": ["ssl"],
   "schema": {
     "mapSettings": {
       "drawPath": "bool",
       "drawCharger": "bool",
       "drawRobot": "bool",
       "scale": "int(0,)",
-      "rotate": "int(0,)",
-      "crop_x1": "int?",
-      "crop_x2": "int?",
-      "crop_y1": "int?",
-      "crop_y2": "int?",
-      "underlay_path": "match(^/share/.+)?",
-      "underlay_scale": "int(1,)?",
-      "underlay_x": "int(0,)?",
-      "underlay_y": "int(0,)?",
-      "overlay_path": "match(^/share/.+)?",
-      "overlay_scale": "int(1,)?",
-      "overlay_x": "int(0,)?",
-      "overlay_y": "int(0,)?"
+      "rotate": "int(0,)"
     },
     "mapColors": {
       "floor": "match(#(?:[0-9a-fA-F]{2}){2,4}$|(#[0-9a-fA-F]{3})$)",
-      "obstacle_weak": "match(#(?:[0-9a-fA-F]{2}){2,4}$|(#[0-9a-fA-F]{3})$)",
-      "obstacle_strong": "match(#(?:[0-9a-fA-F]{2}){2,4}$|(#[0-9a-fA-F]{3})$)",
+      "obstacle": "match(#(?:[0-9a-fA-F]{2}){2,4}$|(#[0-9a-fA-F]{3})$)",
       "path": "match(#(?:[0-9a-fA-F]{2}){2,4}$|(#[0-9a-fA-F]{3})$)"
     },
     "mqtt" : {
@@ -64,8 +51,7 @@
     },
     "mapColors": {
         "floor": "#0076ff",
-        "obstacle_weak": "#6699ff",
-        "obstacle_strong": "#52aeff",
+        "obstacle": "#52aeff",
         "path": "#ffffff"
     },
     "mqtt" : {
