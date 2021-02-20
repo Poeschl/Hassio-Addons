@@ -13,6 +13,8 @@ It's normal that the structure of the addon differs from the official config fil
 If you use the Mosquitto Addon in Home Assistant `core-mosquitto` can be used as broker address like this: `mqtt://<user>:<password>@core-mosquitto`.
 To use images as underlay or overlay, the `share` folder is mounted in the addon. Just start your path with `/share` to access it (example `/share/valetudo/underlay.png`)
 
+If you are running Valetudo 2021_02 the Homeassitant Map Hack (Settings/MQTT) needs to be disable!
+
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white)](https://www.buymeacoffee.com/Poeschl)
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
