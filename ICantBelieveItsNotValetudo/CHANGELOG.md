@@ -1,5 +1,6 @@
 ## 2.8.1 - 2021-02-20
 
+* 🔼 Updated python3 to `3.8.7-r1`
 * 🔨 Changed the addon configuration to the current configuration of ICantBelieveItsNotValetudo (removing under/overlay images and cropping)
 * ➕ Add `homeassistantMapHack` notice
 * ➖ Removed `/share` mount
