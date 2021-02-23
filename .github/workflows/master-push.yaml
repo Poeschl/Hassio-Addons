@@ -42,7 +42,7 @@ jobs:
 
       - name: Detect chanced files
         id: files-check
-        uses: dorny/paths-filter@v2.8.0
+        uses: dorny/paths-filter@v2.9.0
         with:
           filters: |
             changed:
