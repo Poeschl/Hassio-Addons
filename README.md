@@ -1,7 +1,10 @@
 # Poeschl Home Assistant Supervisor Add-ons
 
-[![Master build](https://img.shields.io/github/workflow/status/Poeschl/Hassio-Addons/Deploy%20addons?maxAge=3600)](https://github.com/Poeschl/Hassio-Addons/actions?query=workflow%3A%22Deploy+addons%22)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Poeschl/Hassio-Addons)
+[![Master build][build-badge]][build-url]
+![GitHub commit activity][commit-badge]
+![Licence][licence-badge]
+
+[![Donate][donation-badge]][donation-url]
 
 My repository with Add-ons for the [Home Assistant (former Hass.io) system](https://www.home-assistant.io/hassio/)
 
@@ -47,8 +50,13 @@ Use the following URL to add this repository:
 
 `https://github.com/Poeschl/Hassio-Addons`
 
-### Licence  ![Licence](https://img.shields.io/github/license/Poeschl/Hassio-Addons)
+### Licence
 
 The licence of the repository is inherited by the plugins, if not stated different.
 
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white)](https://www.buymeacoffee.com/Poeschl)
+[build-badge]: https://img.shields.io/github/workflow/status/Poeschl/Hassio-Addons/Deploy%20addons?style=for-the-badge
+[build-url]: https://github.com/Poeschl/Hassio-Addons/actions?query=workflow%3A%22Deploy+addons%22
+[commit-badge]: https://img.shields.io/github/commit-activity/m/Poeschl/Hassio-Addons?style=for-the-badge
+[licence-badge]: https://img.shields.io/github/license/Poeschl/Hassio-Addons?style=for-the-badge
+[donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white
+[donation-url]: https://www.buymeacoffee.com/Poeschl
