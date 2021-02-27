@@ -1,0 +1,17 @@
+# Those are the addon path filters used in the workflows to determine which addon needs to be build.
+#
+ICantBelieveItsNotValetudo: ICantBelieveItsNotValetudo/**
+MaryTTS: MaryTTS/**
+picoTTS: picoTTS/**
+pigpio: pigpio/**
+mpd: mpd/**
+valetudo-mapper: valetudo-mapper/**
+ympd: ympd/**
+git-exporter: git-exporter/**
+syncthing: syncthing/**
+OWASP-ZAP: OWASP-ZAP/**
+mitmproxy: mitmproxy/**
+rsync: rsync/**
+rsync-local: rsync-local/**
+container-stats: container-stats/**
+vnc-viewer: vnc-viewer/**

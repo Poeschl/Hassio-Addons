@@ -5,35 +5,35 @@ on:
       - master
 
 jobs:
+  check-addon-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      changedAddons: ${{ steps.filter.outputs.changes }}
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Detect chanced files
+      uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: .github/paths-filter.yml
+
   build-image:
     name: Build changed addons
     runs-on: ubuntu-latest
+    needs: check-addon-changes
     env:
       DOCKER_BUILDKIT: 1
     strategy:
       matrix:
-        addon: [
-          "ICantBelieveItsNotValetudo",
-          "MaryTTS",
-          "picoTTS",
-          "pigpio",
-          "mpd",
-          "valetudo-mapper",
-          "ympd",
-          "git-exporter",
-          "syncthing",
-          "OWASP-ZAP",
-          "mitmproxy",
-          "rsync",
-          "rsync-local",
-          "container-stats",
-          "vnc-viewer"
-        ]
-      fail-fast: false
+        addon: ${{ fromJSON(needs.check-addon-changes.outputs.changedAddons) }}
     container:
       image: homeassistant/amd64-builder:2021.02.0
       options: --rm --privileged
     steps:
+      
       - name: Git install
         run: |
           add-apt-repository ppa:git-core/ppa -y
