@@ -1,3 +1,14 @@
+## 1.3.0 - 2021-02-27
+
+* 🔼 Update alpine to `3.13`
+* 🔼 Update git to `2.30.1-r0`
+* 🔼 Update npm/nodejs to `14.16.0-r0`
+* 🔼 Update python2 to `2.7.18-r1`
+* 🔼 Update g++ to `20.10.3-r0`
+* 🔼 Update docker to `12.20.1-r0`
+* 🔼 Update sqlite to `3.34.1-r0`
+
+
 ## 1.2.0 - 2021-01-15
 
 * 🧪 Mark addon as experimental. It fills up all the available memory when running, see [Readme](https://github.com/Poeschl/Hassio-Addons/blob/master/container-stats/README.md).
