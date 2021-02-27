@@ -8,6 +8,8 @@ jobs:
   check-build:
     name: Check build
     runs-on: ubuntu-latest
+    env:
+      DOCKER_BUILDKIT: 1
     strategy:
       matrix:
         addon: [
@@ -29,7 +31,7 @@ jobs:
         ]
       fail-fast: false
     container:
-      image: homeassistant/amd64-builder:2021.01.1
+      image: homeassistant/amd64-builder:2021.02.0
       options: --rm --privileged
     steps:
       - name: Detect chanced files

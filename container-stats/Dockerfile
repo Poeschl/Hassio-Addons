@@ -3,7 +3,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM AS REPOSITORY
 
 RUN apk --update add --no-cache \
-    git=2.26.2-r0
+    git=2.30.1-r0
 
 ENV COMMIT_SHA '586ebebf16195bfab7ffd2b3dbc4344077e72a05'
 # hadolint ignore=DL3003
@@ -14,10 +14,10 @@ RUN git clone https://github.com/virtualzone/docker-container-stats.git -b maste
 FROM $BUILD_FROM AS BUILD
 
 RUN apk --update add --no-cache \
-    npm=12.20.1-r0 \
-    python2=2.7.18-r0 \
+    npm=14.16.0-r0 \
+    python2=2.7.18-r1 \
     make=4.3-r0 \
-    g++=9.3.0-r2
+    g++=10.2.1_pre1-r3
 
 WORKDIR /container-stats
 
@@ -31,9 +31,9 @@ RUN npm update && \
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk --update add --no-cache \
-    nodejs=12.20.1-r0 \
-    docker=19.03.12-r0 \
-    sqlite=3.32.1-r0
+    nodejs=14.16.0-r0 \
+    docker=20.10.3-r0 \
+    sqlite=3.34.1-r0
 
 COPY --from=BUILD /container-stats /container-stats
 COPY --from=REPOSITORY /container-stats/stats.js /container-stats
