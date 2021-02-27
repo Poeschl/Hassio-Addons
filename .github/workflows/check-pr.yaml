@@ -8,6 +8,8 @@ jobs:
   check-build:
     name: Check build
     runs-on: ubuntu-latest
+    env:
+      DOCKER_BUILDKIT: 1
     strategy:
       matrix:
         addon: [
