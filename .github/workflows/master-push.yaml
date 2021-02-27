@@ -8,6 +8,8 @@ jobs:
   build-image:
     name: Build changed addons
     runs-on: ubuntu-latest
+    env:
+      DOCKER_BUILDKIT: 1
     strategy:
       matrix:
         addon: [
