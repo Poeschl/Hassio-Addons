@@ -1,3 +1,10 @@
+## 3.0.0 - 2021-02-27
+
+* 🔼 Updated ICantBelieveItsNotValetudo to latest commit `73a7965` to make it fully compatible with Valetudo > 2021.02.1
+* 🔼 Updated npm to `14.16.0-r0`
+* ➖ Removed `homeassistantMapHack` notice
+
+
 ## 2.8.1 - 2021-02-20
 
 * 🔼 Updated python3 to `3.8.7-r1`
