@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM AS BUILD
 
-RUN apk add -Uu --no-cache --purge \
+RUN apk add --no-cache \
         python3=3.8.5-r1  \
         python3-dev=3.8.5-r1 \
         py3-pip=20.1.1-r0 \
@@ -23,12 +23,12 @@ RUN apk add -Uu --no-cache --purge \
         openssl=1.1.1j-r0 \
         openssl-dev=1.1.1j-r0
 
-RUN pip3 install --user --upgrade mitmproxy==5.1.1
+RUN pip3 install --no-cache-dir --user --upgrade mitmproxy==5.1.1
 
 
 FROM $BUILD_FROM AS RUNNING
 
-RUN apk add -Uu --no-cache --purge \
+RUN apk add --no-cache \
         python3=3.8.5-r1 \
         ca-certificates=20191127-r4 \
         haproxy=2.1.11-r0 \
