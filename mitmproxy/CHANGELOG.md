@@ -1,4 +1,13 @@
-## 1.0.3
+## 1.0.4 - 2020-03-04
+
+* 🔼 Update python3 to `3.8.5-r1`
+* 🔼 Update python3-dev to `3.8.5-r1`
+* 🔼 Update haproxy to `2.1.11-r0`
+* 🔼 Update openssl to `1.1.1j-r0`
+* 🔼 Update openssl-dev to `1.1.1j-r0`
+
+
+## 1.0.3 - 2020-11-24
 
 * 🔼 Update haproxy to `2.1.10-r0`
 
