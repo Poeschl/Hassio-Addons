@@ -1,3 +1,9 @@
+## 1.3.1 - 2021-03-04
+
+* 🔼 Updated git to `2.30.1-r0`
+* 🔼 Updated python3 to `3.8.7-r1`
+
+
 ## 1.3.0 - 2021-01-30
 
 * 🔼 Updated alpine image to `3.13`

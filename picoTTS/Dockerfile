@@ -3,7 +3,7 @@ FROM $BUILD_FROM AS BUILD
 
 RUN apk update && \
     apk add --no-cache \
-		'git=2.30.0-r0' \
+		'git=2.30.1-r0' \
 		'make=4.3-r0' \
 		'g++=10.2.1_pre1-r3' \
 		'autoconf=2.69-r3' \
@@ -13,14 +13,15 @@ RUN apk update && \
 
 ENV COMMIT_SHA '2f86050dc5da9ab68fc61510b594d8e6975c4d2d'
 # hadolint ignore=DL3003
-RUN git clone https://github.com/naggety/picotts.git -b master /build && \
+RUN git config --global advice.detachedHead false && \
+    git clone https://github.com/naggety/picotts.git -b master /build && \
     cd build && git checkout ${COMMIT_SHA} &&\
     cd pico && ./autogen.sh && ./configure && make install
 
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add --no-cache \
-			'python3=3.8.7-r0' \
+			'python3=3.8.7-r1' \
 			'popt=1.18-r0' && \
 	python3 -m ensurepip
 
