@@ -1,12 +1,11 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM AS BUILD
 
-ENV GIT_SECRET_VERSION 1.3.0
-
 RUN apk add --no-cache \
-		'git=2.30.0-r0' \
+		'git=2.30.1-r0' \
 		'make=4.3-r0'
 
+ENV GIT_SECRET_VERSION 1.3.0
 # hadolint ignore=DL3003
 RUN git config --global advice.detachedHead false && \
     git clone https://github.com/awslabs/git-secrets.git -b ${GIT_SECRET_VERSION} /git-secrets && \
@@ -15,11 +14,11 @@ RUN git config --global advice.detachedHead false && \
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add --no-cache \
-			'git=2.30.0-r0' \
+			'git=2.30.1-r0' \
 			'rsync=3.2.3-r1' \
 			'grep=3.6-r0' \
 			'sed=4.8-r0' \
-			'python3=3.8.7-r0' \
+			'python3=3.8.7-r1' \
 			'py3-pip=20.3.4-r0' \
 			'findutils=4.8.0-r0' 
 

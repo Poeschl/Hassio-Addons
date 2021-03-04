@@ -1,3 +1,7 @@
+## 1.2.1 - 2021-03-04
+
+* 🔼 Updated openjdk8 to `8.275.01-r0`
+
 ## 1.2.0 - 2021-01-30
 
 * 🔼 Updated alpine image to `3.13`
