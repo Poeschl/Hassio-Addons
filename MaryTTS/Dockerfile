@@ -16,6 +16,9 @@ FROM $BUILD_FROM AS RUNNING
 RUN apk update && \
     apk add --no-cache 'openjdk8=8.275.01-r0'
 
+#Used for the voice pack downloads
+ENV MARYTTS_VERSION 5.2
+
 COPY --from=BUILD /app /app
 
 COPY root /
