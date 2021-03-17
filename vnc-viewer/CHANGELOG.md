@@ -1,3 +1,8 @@
+## 1.2.1 - 2021-03-17
+
+* 🐛 Specifiy own S6 entrypoint, don't rely on the base image
+
+
 ## 1.2.0 - 2012-01-10
 
 * ➕ Add password option, for not retyping the password every time

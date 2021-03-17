@@ -6,4 +6,6 @@ RUN apk add --no-cache \
         mpd=0.22.3-r0 \
         ympd=1.3.0-r9
 
+ENTRYPOINT [ "/init" ]
+CMD []
 COPY root /

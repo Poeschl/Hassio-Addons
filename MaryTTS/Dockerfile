@@ -21,4 +21,6 @@ ENV MARYTTS_VERSION 5.2
 
 COPY --from=BUILD /app /app
 
+ENTRYPOINT [ "/init" ]
+CMD []
 COPY root /

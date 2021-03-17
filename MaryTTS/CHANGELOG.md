@@ -1,3 +1,8 @@
+## 1.2.3 - 2021-03-17
+
+* 🐛 Specifiy own S6 entrypoint, don't rely on the base image.
+
+
 ## 1.2.2 - 2021-03-10
 
 * 🐛 Recover missing environment variable to fix voice download (see #200)

@@ -1,3 +1,10 @@
+## 1.3.2 - 2021-03-17
+
+* 🐛 Specifiy own S6 entrypoint, don't rely on the base image.
+* 🔼 Updated git to `2.30.2-r0`
+* 🔼 Updated python3 to `3.8.8-r0`
+
+
 ## 1.3.1 - 2021-03-04
 
 * 🔼 Updated git to `2.30.1-r0`

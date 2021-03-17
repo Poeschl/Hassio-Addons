@@ -1,3 +1,8 @@
+## 1.2.1 - 2021-03-17
+
+* 🐛 Specifiy own S6 entrypoint, don't rely on the base image.
+
+
 ## 1.2.0 - 2021-02-13
 
 * 🐛 Relocate pigpio's pipe files in `/dev` to make it work inside the addon environment ([#178](https://github.com/Poeschl/Hassio-Addons/issues/178)).

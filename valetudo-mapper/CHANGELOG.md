@@ -1,3 +1,11 @@
+## 1.8.1 - 2021-03-17
+
+* 🐛 Specifiy own S6 entrypoint, don't rely on the base image.
+* 🔨 Use Multi-Stage Build to reduce download size
+* 🔼 Updated git to `2.30.2-r0`
+* 🔼 Updated npm to `14.16.0-r0`
+
+
 ## 1.8.0 - 2021-02-15
 
 * 🔨 Allow also anonymous access in mqtt broker url

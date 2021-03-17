@@ -1,3 +1,8 @@
+## 1.3.1 - 2021-03-17
+
+* 🐛 Specifiy own S6 entrypoint, don't rely on the base image.
+* 🔼 Update git to `2.30.2-r0`
+
 ## 1.3.0 - 2021-02-27
 
 * 🔼 Update alpine to `3.13`
