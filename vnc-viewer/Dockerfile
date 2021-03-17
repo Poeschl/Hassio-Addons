@@ -38,4 +38,6 @@ COPY --from=NO_VNC /noVNC /noVNC
 COPY --from=WEBSOCKIFY /usr/local/lib/python3.7/dist-packages/ /usr/local/lib/python3.7/dist-packages/
 COPY --from=WEBSOCKIFY /usr/local/bin/websockify /usr/local/bin/websockify
 
+ENTRYPOINT [ "/init" ]
+CMD []
 COPY root /

@@ -31,5 +31,7 @@ COPY --from=BUILD /usr/local/lib/python3.7/dist-packages/* /usr/local/lib/python
 # Point to the right libs
 RUN echo "/usr/local/lib" > /etc/ld.so.conf && ldconfig
 
+ENTRYPOINT [ "/init" ]
+CMD []
 COPY root /
 

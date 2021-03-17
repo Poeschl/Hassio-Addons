@@ -2,8 +2,8 @@ ARG BUILD_FROM
 FROM $BUILD_FROM AS BUILD
 
 RUN apk add --no-cache \
-        python3=3.8.5-r1  \
-        python3-dev=3.8.5-r1 \
+        python3=3.8.8-r0  \
+        python3-dev=3.8.8-r0 \
         py3-pip=20.1.1-r0 \
         py3-wheel=0.34.2-r1 \
         py3-six=1.15.0-r0 \
@@ -29,7 +29,7 @@ RUN pip3 install --no-cache-dir --user --upgrade mitmproxy==5.1.1
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add --no-cache \
-        python3=3.8.5-r1 \
+        python3=3.8.8-r0 \
         ca-certificates=20191127-r4 \
         haproxy=2.1.11-r0 \
     && rm -rf /var/cache/apk/* /tmp/*
@@ -39,4 +39,6 @@ COPY --from=BUILD /usr/lib/python3.8/site-packages /usr/lib/python3.8/site-packa
 
 ENV PATH /root/.local/bin:$PATH
 
+ENTRYPOINT [ "/init" ]
+CMD []
 COPY root /

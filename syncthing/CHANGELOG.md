@@ -1,3 +1,8 @@
+## 1.8.1 - 2021-03-17
+
+* 🐛 Specifiy own S6 entrypoint, don't rely on the base image.
+
+
 ## 1.8.0 - 2021-01-30
 
 * 🔼 Update alpine to `3.12`

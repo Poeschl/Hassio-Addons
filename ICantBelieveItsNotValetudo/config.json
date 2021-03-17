@@ -1,6 +1,6 @@
 {
   "name": "ICantBelieveItsNotValetudo",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "slug": "icantbelieveitsnotvaletudo",
   "description": "This is a simple companion service for valetudo which generates the map pngs.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/ICantBelieveItsNotValetudo",
@@ -28,7 +28,8 @@
     "mapColors": {
       "floor": "match(#(?:[0-9a-fA-F]{2}){2,4}$|(#[0-9a-fA-F]{3})$)",
       "obstacle": "match(#(?:[0-9a-fA-F]{2}){2,4}$|(#[0-9a-fA-F]{3})$)",
-      "path": "match(#(?:[0-9a-fA-F]{2}){2,4}$|(#[0-9a-fA-F]{3})$)"
+      "path": "match(#(?:[0-9a-fA-F]{2}){2,4}$|(#[0-9a-fA-F]{3})$)",
+      "segments": "match(#(?:[0-9a-fA-F]{2}){2,4}$|(#[0-9a-fA-F]{3})$)?"
     },
     "mqtt" : {
       "identifier": "str",

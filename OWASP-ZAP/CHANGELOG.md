@@ -1,3 +1,8 @@
+## 2.0.1 - 2021-03-17
+
+* 🐛 Specifiy own S6 entrypoint, don't rely on the base image.
+
+
 ## 2.0.0 - 2021-02-24
 
 * 🔼 Update OWASP ZAP to `2.10.0`

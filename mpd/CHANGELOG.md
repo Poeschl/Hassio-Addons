@@ -1,3 +1,8 @@
+## 1.5.3 - 2021-03-17
+
+* 🐛 Specifiy own S6 entrypoint, don't rely on the base image.
+
+
 ## 1.5.2 - 2021-02-09
 
 * 🔨 Migrate to new `devices` option format. Thanks @LiJu09

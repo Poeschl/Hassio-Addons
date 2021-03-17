@@ -3,7 +3,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM AS REPOSITORY
 
 RUN apk --update add --no-cache \
-    git=2.30.1-r0
+    git=2.30.2-r0
 
 ENV COMMIT_SHA '586ebebf16195bfab7ffd2b3dbc4344077e72a05'
 # hadolint ignore=DL3003
@@ -40,4 +40,6 @@ COPY --from=REPOSITORY /container-stats/stats.js /container-stats
 COPY --from=REPOSITORY /container-stats/httpd.js /container-stats
 COPY --from=REPOSITORY /container-stats/html /container-stats/html
 
+ENTRYPOINT [ "/init" ]
+CMD []
 COPY root /

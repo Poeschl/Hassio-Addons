@@ -3,7 +3,7 @@ FROM $BUILD_FROM AS BUILD
 
 RUN apk update && \
     apk add --no-cache \
-		'git=2.30.1-r0' \
+		'git=2.30.2-r0' \
 		'make=4.3-r0' \
 		'g++=10.2.1_pre1-r3' \
 		'autoconf=2.69-r3' \
@@ -21,7 +21,7 @@ RUN git config --global advice.detachedHead false && \
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add --no-cache \
-			'python3=3.8.7-r1' \
+			'python3=3.8.8-r0' \
 			'popt=1.18-r0' && \
 	python3 -m ensurepip
 
@@ -33,4 +33,6 @@ COPY wrapper/ /app
 WORKDIR /app
 RUN pip3 install --no-cache-dir -r requirements.txt
 
+ENTRYPOINT [ "/init" ]
+CMD []
 COPY root /

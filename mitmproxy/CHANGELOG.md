@@ -1,4 +1,10 @@
-## 1.0.4 - 2020-03-04
+## 1.0.5 - 2021-03-17
+
+* 🐛 Specifiy own S6 entrypoint, don't rely on the base image.
+* 🔼 Updated python3 to `3.8.8-r0`
+
+
+## 1.0.4 - 2021-03-04
 
 * 🔼 Update python3 to `3.8.5-r1`
 * 🔼 Update python3-dev to `3.8.5-r1`

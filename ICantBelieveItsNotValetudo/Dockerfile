@@ -4,9 +4,9 @@ FROM $BUILD_FROM AS BUILD
 ENV LANG C.UTF-8
 
 RUN apk add --no-cache \
-	git=2.30.1-r0 \
+	git=2.30.2-r0 \
 	npm=14.16.0-r0 \
-	python3=3.8.7-r1 \
+	python3=3.8.8-r0 \
 	pixman-dev=0.40.0-r2 \
 	cairo-dev=1.16.0-r2 \
 	pango-dev=1.48.2-r0 \
@@ -35,4 +35,6 @@ WORKDIR /app
 
 COPY --from=BUILD /app /app
 
+ENTRYPOINT [ "/init" ]
+CMD []
 COPY root /

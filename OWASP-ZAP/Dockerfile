@@ -23,4 +23,6 @@ ENV ZAP_PATH /zap/zap.sh
 ENV IS_CONTAINERIZED true
 ENV ZAP_PORT 8080
 
+ENTRYPOINT [ "/init" ]
+CMD []
 COPY root /
