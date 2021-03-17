@@ -32,12 +32,16 @@
   },
   "options": {
     "volume_normalization": false,
-    "httpd_output": false
+    "httpd_output": false,
+    "music_folder": "/share/mpd/music",
+    "playlist_folder": "/share/mpd/playlists"
   },
   "schema": {
     "volume_normalization": "bool",
     "verbose": "bool?",
     "custom_config": "match(/share/mpd/.+)?",
+    "music_folder": "match(\/share\/.+|\/media\/.+)",
+    "playlist_folder": "match(\/share\/.+|\/media\/.+)",
     "httpd_output": "bool"
   }
 }

@@ -26,3 +26,10 @@ if [ "$(bashio::config 'custom_config')" != 'null' ]; then
 	bashio::log.info 'Use custom config'
     cp "$(bashio::config 'custom_config')" '/etc/mpd.conf'
 fi
+
+
+bashio::log.info 'Set music folder'
+sed -i "s:music_directory.*:music_directory \"$(bashio::config 'music_folder')\":" /etc/mpd.conf
+
+bashio::log.info 'Set playlist folder'
+sed -i "s:playlist_directory.*:playlist_directory \"$(bashio::config 'playlist_folder')\":" /etc/mpd.conf

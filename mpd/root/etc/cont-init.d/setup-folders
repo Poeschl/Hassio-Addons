@@ -3,6 +3,9 @@ set -e
 
 bashio::log.info  'Setup Folders'
 
+MUSIC_FOLDER=$(bashio::config 'music_folder')
+PLAYLIST_FOLDER=$(bashio::config 'playlist_folder')
+
 mkdir -p /data/database \
-    /share/mpd/music \
-    /share/mpd/playlists
+    "${MUSIC_FOLDER}" \
+    "${PLAYLIST_FOLDER}"
