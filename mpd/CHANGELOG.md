@@ -92,3 +92,4 @@
 
 * ➕ Add MPD version `0.20.21`
 * ➕ Add ympd version `1.3.0`
+
