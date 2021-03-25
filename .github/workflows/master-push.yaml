@@ -34,8 +34,7 @@ jobs:
       
       - name: Git install
         run: |
-          add-apt-repository ppa:git-core/ppa -y
-          apt-get update && apt-get install -y --no-install-recommends git
+          apk add --no-cache git
 
       - name: Checkout
         uses: actions/checkout@v2
