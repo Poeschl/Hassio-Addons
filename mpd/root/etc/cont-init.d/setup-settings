@@ -29,7 +29,9 @@ fi
 
 
 bashio::log.info 'Set music folder'
-sed -i "s:music_directory.*:music_directory \"$(bashio::config 'music_folder')\":" /etc/mpd.conf
+MEDIA_FOLDER=$(bashio::config 'media_folder')
+sed -i "s/music_directory.*/music_directory \"${MEDIA_FOLDER//\//\\/}\"/" /etc/mpd.conf
 
 bashio::log.info 'Set playlist folder'
-sed -i "s:playlist_directory.*:playlist_directory \"$(bashio::config 'playlist_folder')\":" /etc/mpd.conf
+PLAYLIST_FOLDER=$(bashio::config 'playlist_folder')
+sed -i "s/playlist_directory.*/playlist_directory \"${PLAYLIST_FOLDER//\//\\/}\"/" /etc/mpd.conf

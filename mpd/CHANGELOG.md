@@ -1,3 +1,7 @@
+## 1.5.4 - 2021-03-25
+
+* ➕ Add `media_folder`, `playlist_folder` option. Thanks @LiJu09
+
 ## 1.5.3 - 2021-03-17
 
 * 🐛 Specifiy own S6 entrypoint, don't rely on the base image.
