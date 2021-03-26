@@ -41,6 +41,7 @@ custom_config: /share/mpd/mpd.conf
 This option let you specify an custom media folder.
 
 For example:
+
 ```yaml
 media_folder: /media/mpd/my_media
 ```
@@ -50,6 +51,7 @@ media_folder: /media/mpd/my_media
 This option let you specify an custom playlist folder.
 
 For example:
+
 ```yaml
 playlist_folder: /media/mpd/my_playlists
 ```
