@@ -36,6 +36,24 @@ Working example:
 custom_config: /share/mpd/mpd.conf
 ```
 
+### `media_folder` (optional)
+
+This option let you specify an custom media folder.
+
+For example:
+```yaml
+media_folder: /media/mpd/my_media
+```
+
+### `playlist_folder` (optional)
+
+This option let you specify an custom playlist folder.
+
+For example:
+```yaml
+playlist_folder: /media/mpd/my_playlists
+```
+
 # Troubleshooting
 
 ### `RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler`
