@@ -1,6 +1,6 @@
 ## 1.5.5 - 2021-03-26
 
-* ➕ 🐛 Fixed `media_folder`, `playlist_folder` options overwriting custom config. Thanks @LiJu09
+* 🐛 Fixed `media_folder`, `playlist_folder` options overwriting custom config. Thanks @LiJu09
 
 ## 1.5.4 - 2021-03-25
 
