@@ -37,8 +37,8 @@
     "httpd_output": false
   },
   "schema": {
-    "media_folder": "str",
-    "playlist_folder": "str",
+    "media_folder": "match(/share/.+|/media/.+|(smb|nfs)://.+)",
+    "playlist_folder": "match(/share/.+|/media/.+|(smb|nfs)://.+)",
     "volume_normalization": "bool",
     "httpd_output": "bool",
     "verbose": "bool?",
