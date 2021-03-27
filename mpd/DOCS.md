@@ -12,6 +12,27 @@ Enabled the build-in volume normalization feature.
 
 Enables the httpd audio output.
 
+### `media_folder`
+
+This option let you specify an custom media folder.
+But is ignored when custom config specified.
+
+For example:
+
+```yaml
+media_folder: /media/mpd/my_media
+```
+
+### `playlist_folder`
+
+This option let you specify an custom playlist folder.
+But is ignored when custom config specified.
+
+For example:
+
+```yaml
+playlist_folder: /media/mpd/my_playlists
+```
 
 ### `verbose` (optional)
 
@@ -34,26 +55,6 @@ Working example:
 ```yaml
 ...
 custom_config: /share/mpd/mpd.conf
-```
-
-### `media_folder` (optional)
-
-This option let you specify an custom media folder.
-
-For example:
-
-```yaml
-media_folder: /media/mpd/my_media
-```
-
-### `playlist_folder` (optional)
-
-This option let you specify an custom playlist folder.
-
-For example:
-
-```yaml
-playlist_folder: /media/mpd/my_playlists
 ```
 
 # Troubleshooting
