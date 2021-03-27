@@ -1,10 +1,10 @@
 # Configuration
 
 ```yaml
-volume_normalization: false
-httpd_output: false
 media_folder: /media/mpd/media
 playlist_folder: /media/mpd/playlists
+volume_normalization: false
+httpd_output: false
 ```
 
 If a custom configuration is specified, all other options are ignored.
