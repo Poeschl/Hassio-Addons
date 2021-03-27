@@ -7,8 +7,6 @@ volume_normalization: false
 httpd_output: false
 ```
 
-If a custom configuration is specified, all other options are ignored.
-
 ### `volume_normalization`
 
 Enables the built-in volume normalization feature.
@@ -34,6 +32,8 @@ verbose: true
 ```
 
 ### `custom_config` (optional)
+
+**If this is specified, all other options are ignored.**
 
 This option let you specify an custom configuration file for MPD.
 To keep all MPD files in one place I restricted the path prefix to `/share/mpd`
