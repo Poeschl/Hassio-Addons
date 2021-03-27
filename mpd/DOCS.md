@@ -1,6 +1,6 @@
 # Configuration
 
-All other options are ignored if custom config specified.
+If a custom configuration is specified, all other options are ignored.
 
 ### `volume_normalization`
 
