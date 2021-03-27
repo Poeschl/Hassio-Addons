@@ -1,42 +1,29 @@
 # Configuration
 
+```yaml
+volume_normalization: false
+httpd_output: false
+media_folder: /media/mpd/media
+playlist_folder: /media/mpd/playlists
+```
+
 If a custom configuration is specified, all other options are ignored.
 
 ### `volume_normalization`
 
 Enables the built-in volume normalization feature.
 
-```yaml
-volume_normalization: true
-```
-
 ### `httpd_output`
 
 Enables the httpd audio output.
-
-```yaml
-httpd_output: true
-```
 
 ### `media_folder`
 
 This option let you specify an custom media folder.
 
-For example:
-
-```yaml
-media_folder: /media/mpd/my_media
-```
-
 ### `playlist_folder`
 
 This option let you specify an custom playlist folder.
-
-For example:
-
-```yaml
-playlist_folder: /media/mpd/my_playlists
-```
 
 ### `verbose` (optional)
 

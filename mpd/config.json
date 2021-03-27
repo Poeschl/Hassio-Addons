@@ -31,17 +31,17 @@
     "8000/tcp": "HTTPd Connection (if enabled)"
   },
   "options": {
-    "volume_normalization": false,
-    "httpd_output": false,
     "media_folder": "/media/mpd/media",
-    "playlist_folder": "/media/mpd/playlists"
+    "playlist_folder": "/media/mpd/playlists",
+    "volume_normalization": false,
+    "httpd_output": false
   },
   "schema": {
-    "volume_normalization": "bool",
-    "verbose": "bool?",
-    "custom_config": "match(/share/mpd/.+)?",
     "media_folder": "str",
     "playlist_folder": "str",
-    "httpd_output": "bool"
+    "volume_normalization": "bool",
+    "httpd_output": "bool",
+    "verbose": "bool?",
+    "custom_config": "match(/share/mpd/.+)?"
   }
 }
