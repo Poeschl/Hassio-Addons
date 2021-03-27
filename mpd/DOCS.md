@@ -2,17 +2,21 @@
 
 All other options are ignored if custom config specified.
 
-```yaml
-volume_normalization: false
-```
-
 ### `volume_normalization`
 
-Enabled the build-in volume normalization feature.
+Enables the built-in volume normalization feature.
+
+```yaml
+volume_normalization: true
+```
 
 ### `httpd_output`
 
 Enables the httpd audio output.
+
+```yaml
+httpd_output: true
+```
 
 ### `media_folder`
 
