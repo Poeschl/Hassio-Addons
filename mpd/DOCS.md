@@ -1,5 +1,7 @@
 # Configuration
 
+All other options are ignored if custom config specified.
+
 ```yaml
 volume_normalization: false
 ```
@@ -15,7 +17,6 @@ Enables the httpd audio output.
 ### `media_folder`
 
 This option let you specify an custom media folder.
-But is ignored when custom config specified.
 
 For example:
 
@@ -26,7 +27,6 @@ media_folder: /media/mpd/my_media
 ### `playlist_folder`
 
 This option let you specify an custom playlist folder.
-But is ignored when custom config specified.
 
 For example:
 
@@ -41,7 +41,6 @@ Make `mpd` verbose.
 ```yaml
 verbose: true
 ```
-
 
 ### `custom_config` (optional)
 
