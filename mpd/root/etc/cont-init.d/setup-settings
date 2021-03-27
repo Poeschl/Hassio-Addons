@@ -22,17 +22,15 @@ if [ "$(bashio::config 'httpd_output')" == 'true' ]; then
 	bashio::log.info 'HTTPd output enabled'
 fi
 
-
-bashio::log.info 'Set media folder'
-MEDIA_FOLDER=$(bashio::config 'media_folder')
-sed -i "s/music_directory.*/music_directory \"${MEDIA_FOLDER//\//\\/}\"/" /etc/mpd.conf
-
-bashio::log.info 'Set playlist folder'
-PLAYLIST_FOLDER=$(bashio::config 'playlist_folder')
-sed -i "s/playlist_directory.*/playlist_directory \"${PLAYLIST_FOLDER//\//\\/}\"/" /etc/mpd.conf
-
-
 if [ "$(bashio::config 'custom_config')" != 'null' ]; then
 	bashio::log.info 'Use custom config'
     cp "$(bashio::config 'custom_config')" '/etc/mpd.conf'
+else
+	bashio::log.info 'Set media folder'
+	MEDIA_FOLDER=$(bashio::config 'media_folder')
+	sed -i "s/music_directory.*/music_directory \"${MEDIA_FOLDER//\//\\/}\"/" /etc/mpd.conf
+
+	bashio::log.info 'Set playlist folder'
+	PLAYLIST_FOLDER=$(bashio::config 'playlist_folder')
+	sed -i "s/playlist_directory.*/playlist_directory \"${PLAYLIST_FOLDER//\//\\/}\"/" /etc/mpd.conf
 fi
