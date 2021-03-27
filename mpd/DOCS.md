@@ -1,17 +1,27 @@
 # Configuration
 
 ```yaml
+media_folder: /media/mpd/media
+playlist_folder: /media/mpd/playlists
 volume_normalization: false
+httpd_output: false
 ```
 
 ### `volume_normalization`
 
-Enabled the build-in volume normalization feature.
+Enables the built-in volume normalization feature.
 
 ### `httpd_output`
 
 Enables the httpd audio output.
 
+### `media_folder`
+
+This option let you specify an custom media folder.
+
+### `playlist_folder`
+
+This option let you specify an custom playlist folder.
 
 ### `verbose` (optional)
 
@@ -21,8 +31,9 @@ Make `mpd` verbose.
 verbose: true
 ```
 
-
 ### `custom_config` (optional)
+
+**If this is specified, all other options are ignored.**
 
 This option let you specify an custom configuration file for MPD.
 To keep all MPD files in one place I restricted the path prefix to `/share/mpd`
