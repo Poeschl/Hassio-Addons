@@ -114,7 +114,7 @@ jobs:
 
               entrypoint=$(docker inspect "$image_name:${{ steps.config.outputs.version }}" | jq --raw-output '.[].Config.Entrypoint[]' 2>/dev/null || echo '')
               cmd=$(docker inspect "$image_name:${{ steps.config.outputs.version }}" | jq --raw-output '.[].Config.Cmd[]' 2>/dev/null || echo '')
-              if [ -n "$cmd" ] || ([ "$entrypoint" != "/init" ] && [ "$entrypoint" != "/run" ]); then
+              if [ -n "$cmd" ] || ([ "$entrypoint" != "/init" ] && [ "$entrypoint" != "/run.sh" ]); then
                 echo "::error::Invalid docker entrypoint found (Detected Entrypoint: '${entrypoint}', Detected Cmd: '${cmd}')"
                 exit 1
               fi
