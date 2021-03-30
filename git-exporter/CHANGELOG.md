@@ -115,3 +115,4 @@
 * ➕ ESPHome exports
 * ➕ Configurable Commit message
 * ➕ Configurable exports
+
