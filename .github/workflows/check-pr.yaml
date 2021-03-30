@@ -112,10 +112,10 @@ jobs:
             else
               echo "Image $image_name found."
 
-              entrypoint=$(docker inspect "$image_name:${{ steps.config.outputs.version }}" | jq --raw-output '.[].Config.Entrypoint[]' || echo '')
-              cmd=$(docker inspect "$image_name:${{ steps.config.outputs.version }}" | jq --raw-output '.[].Config.Cmd[]' || echo '')
+              entrypoint=$(docker inspect "$image_name:${{ steps.config.outputs.version }}" | jq --raw-output '.[].Config.Entrypoint[]' 2>/dev/null || echo '')
+              cmd=$(docker inspect "$image_name:${{ steps.config.outputs.version }}" | jq --raw-output '.[].Config.Cmd[]' 2>/dev/null || echo '')
               if [ -n "$cmd" ] || ([ "$entrypoint" != "/init" ] && [ "$entrypoint" != "/run" ]); then
-                echo "::error::Invalid docker entrypoint found"
+                echo "::error::Invalid docker entrypoint found (Detected Entrypoint: '${entrypoint}', Detected Cmd: '${cmd}')"
                 exit 1
               fi
               
