@@ -1,3 +1,10 @@
+# 1.8.0 - 2021-03-30
+
+* 🔨 URL encode git password to support special chars (see #219)
+* 🔼 Updated git to `2.30.2-r0`
+* 🔼 Updated python3 to `3.8.8-r0`
+
+
 ## 1.7.1 - 2021-03-04
 
 * 🔼 Updated git to `2.30.1-r0`
