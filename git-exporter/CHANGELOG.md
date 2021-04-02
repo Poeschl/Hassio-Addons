@@ -1,4 +1,9 @@
-# 1.8.0 - 2021-03-30
+## 1.9.0 - 2021-04-02
+
+* 🔨 Use ghcr.io/home-assistant for base images
+
+
+## 1.8.0 - 2021-03-30
 
 * 🔨 URL encode git password to support special chars (see #219)
 * 🔼 Updated git to `2.30.2-r0`

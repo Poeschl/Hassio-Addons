@@ -1,3 +1,8 @@
+## 1.4.0 - 2021-04-02
+
+* 🔨 Use ghcr.io/home-assistant for base images
+
+
 ## 1.3.2 - 2021-03-17
 
 * 🐛 Specifiy own S6 entrypoint, don't rely on the base image.

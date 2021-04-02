@@ -1,3 +1,11 @@
+## 1.1.0 - 2021-04-02
+
+* 🔨 Use ghcr.io/home-assistant for base images
+* 🔼 Update openssl to `1.1.1k-r0`
+* 🔼 Update openssl-dev to `1.1.1k-r0`
+* 🔼 Update haproxy to `2.1.12-r0`
+
+
 ## 1.0.5 - 2021-03-17
 
 * 🐛 Specifiy own S6 entrypoint, don't rely on the base image.

@@ -1,7 +1,7 @@
 
 {
   "name": "Docker Container Stats",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "slug": "container-stats",
   "description": "🧪 experimental | A web interface for viewing historical and current statistics per docker container",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/container-stats",

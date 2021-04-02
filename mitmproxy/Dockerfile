@@ -20,8 +20,8 @@ RUN apk add --no-cache \
         libffi=3.3-r2 \
         libffi-dev=3.3-r2 \
         libstdc++=9.3.0-r2 \
-        openssl=1.1.1j-r0 \
-        openssl-dev=1.1.1j-r0
+        openssl=1.1.1k-r0 \
+        openssl-dev=1.1.1k-r0
 
 RUN pip3 install --no-cache-dir --user --upgrade mitmproxy==5.1.1
 
@@ -31,7 +31,7 @@ FROM $BUILD_FROM AS RUNNING
 RUN apk add --no-cache \
         python3=3.8.8-r0 \
         ca-certificates=20191127-r4 \
-        haproxy=2.1.11-r0 \
+        haproxy=2.1.12-r0 \
     && rm -rf /var/cache/apk/* /tmp/*
 
 COPY --from=BUILD /root/.local /root/.local

@@ -1,9 +1,9 @@
 {
   "build_from": {
-    "armhf": "homeassistant/armhf-base-debian:buster",
-    "armv7": "homeassistant/armv7-base-debian:buster",
-    "aarch64": "homeassistant/aarch64-base-debian:buster",
-    "amd64": "homeassistant/amd64-base-debian:buster",
-    "i386": "homeassistant/i386-base-debian:buster"
+    "armhf": "ghcr.io/home-assistant/armhf-base-debian:buster",
+    "armv7": "ghcr.io/home-assistant/armv7-base-debian:buster",
+    "aarch64": "ghcr.io/home-assistant/aarch64-base-debian:buster",
+    "amd64": "ghcr.io/home-assistant/amd64-base-debian:buster",
+    "i386": "ghcr.io/home-assistant/i386-base-debian:buster"
   }
 }
