@@ -1,11 +1,18 @@
+## 1.7.0 - 2021-04-02
+
+* 🔨 Use ghcr.io/home-assistant for base images
+
+
 ## 1.6.0 - 2021-03-27
 
 * 🐛 Fixed `media_folder`, `playlist_folder` options overwriting custom config. Thanks @LiJu09
 * 🔨 Change how custom_config behave. Check docs. Thanks @LiJu09
 
+
 ## 1.5.4 - 2021-03-25
 
 * ➕ Add `media_folder`, `playlist_folder` option. Thanks @LiJu09
+
 
 ## 1.5.3 - 2021-03-17
 

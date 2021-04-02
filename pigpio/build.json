@@ -1,6 +1,6 @@
 {
   "build_from": {
-    "armhf": "homeassistant/armhf-base-debian:buster",
-    "armv7": "homeassistant/armv7-base-debian:buster"
+    "armhf": "ghcr.io/home-assistant/armhf-base-debian:buster",
+    "armv7": "ghcr.io/home-assistant/armv7-base-debian:buster"
   }
 }

@@ -1,7 +1,7 @@
 
 {
   "name": "rsync",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "slug": "rsync",
   "description": "Sync folders to a remote machine via ssh and rsync.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/rsync",

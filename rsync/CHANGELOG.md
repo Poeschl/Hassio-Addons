@@ -1,3 +1,8 @@
+## 1.3.0 - 2021-04-02
+
+* 🔨 Use ghcr.io/home-assistant for base images
+
+
 ## 1.2.0 - 2021-02-27
 
 * 🔼 Update rsync to `3.2.3-r1`
