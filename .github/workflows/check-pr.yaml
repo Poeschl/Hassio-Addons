@@ -55,7 +55,7 @@ jobs:
       matrix:
         addon: ${{ fromJSON(needs.check-addon-changes.outputs.changedAddons) }}
     container:
-      image: homeassistant/amd64-builder:2021.03.3
+      image: homeassistant/amd64-builder:2021.03.4
       options: --rm --privileged
     steps:
 
