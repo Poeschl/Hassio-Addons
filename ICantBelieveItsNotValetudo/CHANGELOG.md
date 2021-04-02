@@ -1,3 +1,9 @@
+## 3.2.0 - 2021-04-02
+
+* 🔼 Updated ICantBelieveItsNotValetudo to latest release `2021.3.1`
+* ➕ Bring back the png image via webserver.
+
+
 ## 3.1.0 - 2021-04-02
 
 * 🔨 Use ghcr.io/home-assistant for base images
