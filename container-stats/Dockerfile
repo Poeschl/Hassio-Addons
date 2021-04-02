@@ -32,7 +32,7 @@ FROM $BUILD_FROM AS RUNNING
 
 RUN apk --update add --no-cache \
     nodejs=14.16.0-r0 \
-    docker=20.10.3-r0 \
+    docker=20.10.3-r1 \
     sqlite=3.34.1-r0
 
 COPY --from=BUILD /container-stats /container-stats

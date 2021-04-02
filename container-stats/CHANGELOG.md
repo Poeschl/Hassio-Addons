@@ -1,6 +1,7 @@
 ## 1.4.0 - 2021-04-02
 
 * 🔨 Use ghcr.io/home-assistant for base images
+* 🔼 Update docker to `12.20.1-r1`
 
 
 ## 1.3.1 - 2021-03-17
