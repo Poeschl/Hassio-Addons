@@ -1,4 +1,8 @@
 {
   "mapSettings": (.mapSettings + {"colors": (.mapColors // {})}),
-  "mqtt" : .mqtt
+  "mqtt" : .mqtt,
+  "webserver": { 
+    "enabled": true,
+    "port": 3000 
+  }
 }

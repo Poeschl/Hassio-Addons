@@ -13,14 +13,23 @@ RUN apk add --no-cache \
 	build-base=0.5-r2 \
 	libjpeg-turbo-dev=2.0.6-r0
 
-ENV COMMIT_SHA '73a7965704027ec37a302545821d688e73df0c3e'
-# hadolint ignore=DL3003
 RUN git config --global advice.detachedHead false && \
-    git clone https://github.com/Hypfer/ICantBelieveItsNotValetudo.git -b master /app && \
-    cd app && git checkout $COMMIT_SHA
+    git clone https://github.com/Hypfer/ICantBelieveItsNotValetudo.git -b 2021.3.1 /app
 
 WORKDIR /app
 RUN npm install
+
+
+FROM $BUILD_FROM AS SERVER
+
+RUN apk add --no-cache \
+    npm=14.16.0-r0
+
+COPY root/server /server
+
+WORKDIR /server
+RUN npm install
+
 
 FROM $BUILD_FROM AS RUNNING
 
@@ -34,6 +43,7 @@ RUN apk add --no-cache \
 WORKDIR /app
 
 COPY --from=BUILD /app /app
+COPY --from=SERVER /server /server
 
 ENTRYPOINT [ "/init" ]
 CMD []
