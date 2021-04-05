@@ -44,7 +44,7 @@ jobs:
 
       - name: Run ShellCheck
         if: steps.filter.outputs.shell == 'true'
-        uses: ludeeus/action-shellcheck@1.0.0
+        uses: ludeeus/action-shellcheck@1.1.0
         with:
           additional_files: ${{ steps.filter.outputs.shell_files }}
 
