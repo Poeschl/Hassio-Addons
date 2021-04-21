@@ -2,9 +2,6 @@ name: Trivy security scan
 on:
   schedule:
     - cron:  '0 0 * * *'
-  pull_request: #Just for testing
-    branches:
-      - master
 
 jobs:
 
