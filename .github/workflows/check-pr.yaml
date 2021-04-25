@@ -120,6 +120,18 @@ jobs:
           echo "::set-output name=archs_param::$archs_param"
           echo "::set-output name=image_names::$image_names"
 
+      - name: Remove untagged images
+        shell: bash
+        env:
+          GHCR_TOKEN: ${{ secrets.CR_PAT }}
+        run: |
+          apk add --no-cache python3 py3-dateutil py3-requests
+          curl https://raw.githubusercontent.com/airtower-luna/hello-ghcr/main/ghcr-prune.py -o ghcr-prune.py
+
+          for image_name in ${{ steps.config.outputs.image_names }}; do
+            python3 ghcr-prune.py --prune-age 0 --container "$image_name" --dry-run
+          done
+
       - name: Build addon
         run: >
           /usr/bin/builder.sh
@@ -155,12 +167,3 @@ jobs:
             docker images
             exit 1
           fi
-
-      - name: Remove untagged images
-        shell: bash
-        run: |
-          curl https://raw.githubusercontent.com/airtower-luna/hello-ghcr/main/ghcr-prune.py -o ghcr-prune.py
-
-          for image_name in ${{ steps.config.outputs.image_names }}; do
-            python3 ghcr-prune.py --prune-age 0 --container "$image_name" --dry-run
-          done
