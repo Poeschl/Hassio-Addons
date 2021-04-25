@@ -1,3 +1,10 @@
+## 3.3.0 - 2021-04-25
+
+* 🔼 Updated ICantBelieveItsNotValetudo to latest release `2021.4.0`
+* 🔼 Updated libjpeg-turbo/libjpeg-turbo-dev to `2.1.0-r0`
+* 🔼 Updated npm to `14.16.1-r1`
+
+
 ## 3.2.0 - 2021-04-02
 
 * 🔼 Updated ICantBelieveItsNotValetudo to latest release `2021.3.1`
