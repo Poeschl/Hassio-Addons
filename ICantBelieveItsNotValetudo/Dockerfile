@@ -13,6 +13,8 @@ RUN apk add --no-cache \
 	build-base=0.5-r2 \
 	libjpeg-turbo-dev=2.1.0-r0
 
+# Splited RUN for better layer caching
+# hadolint ignore=DL3059
 RUN git config --global advice.detachedHead false && \
     git clone https://github.com/Hypfer/ICantBelieveItsNotValetudo.git -b 2021.4.0 /app
 
