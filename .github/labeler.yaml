@@ -1,0 +1,32 @@
+# Issue Labeler config
+
+ICantBelieveItsNotValetudo:
+  - '(ICantBelieveItsNotValetudo|ICBINV|Valetudo)'
+MaryTTS:
+  - '(MaryTTS)'
+OWASP-ZAP:
+  - '(OWASP-ZAP|ZAP)'
+container-stats:
+  - '(container-stats)'
+git-exporter:
+  - '(git-exporter)'
+mitmproxy:
+  - '(mitmproxy)'
+mpd:
+  - '(\s[mM]pd)'
+picoTTS:
+  - '(picoTTS)'
+pigpio:
+  - '(pigpio)'
+rsync:
+  - '(rsync\s)'
+rsync-local:
+  - '(rsync-local)'
+syncthing:
+  - '([sS]yncthing)'
+valetudo-mapper:
+  - '([vV]aletudo-[mM]apper|Valetudo)'
+vnc-viewer:
+  - '([vV]nc(-viewer)?)'
+ympd:
+  - '(ympd)'
