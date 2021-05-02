@@ -1,0 +1,17 @@
+name: Sync changed labels
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: micnncim/action-label-syncer@v1.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          manifest: .github/labels.yaml

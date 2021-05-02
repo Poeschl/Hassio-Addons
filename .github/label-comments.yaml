@@ -1,0 +1,21 @@
+comment:
+  header: Hi, there.
+  footer: |
+    ---
+
+    > This is an automated comment. Responding to the bot or mentioning it won't have any effect.
+
+labels:
+  - name: ICantBelieveItsNotValetudo
+    labeled:
+      issue:
+        body: |
+          Please make sure you have the right addon for your software.
+          The addon you mentioning is the companion for [ICantBelieveItsNotValetudo from Hypfer](https://github.com/Hypfer/ICantBelieveItsNotValetudo).
+  
+  - name: valetudo-mapper
+    labeled:
+      issue:
+        body: |
+          Please make sure you have the right addon for your software.
+          The addon you mentioning is the companion for [Valetudo RE from rand256](https://github.com/rand256/valetudo).

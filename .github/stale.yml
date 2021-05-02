@@ -4,7 +4,6 @@ daysUntilStale: 5
 daysUntilClose: 2
 # Issues with these labels will never be considered stale
 exemptLabels:
-  - will-be-implemented
   - question
   - enhancement
   - help wanted
