@@ -17,7 +17,8 @@ This is the adaption of [valetudo-mapper](https://github.com/rand256/valetudo-ma
 The config of the addon is identical to the `mqtt` section described in the README of Valetudo Mapper.
 The `webserver` section is fixed to `{ "enabled": true, "port": 3000 }`
 
-If you use the Mosquitto Addon in Home Assistant `core-mosquitto` can be used as broker address like this: `mqtt://<user>:<password>@core-mosquitto`.
+If you use the Mosquitto Addon in Home Assistant `core-mosquitto` can be used as broker address like this: `mqtt://<user>:<password>@core-mosquitto`. Keep in mind to set proper `mapDataTopic` value. As of Valetudo 2021.04.0, it's `${topicPrefix}/${identifier}/MapData/map-data`, which with default values is equal to `valetudo/rockrobo/MapData/map-data`.
+
 
 ## PNG image
 
