@@ -24,6 +24,7 @@ My repository with Add-ons for the [Home Assistant (former Hass.io) system](http
 * rsync - Synces folders from Home Assistant to a other machine via rsync and ssh.
 * rsync-local - Synces folders to local devices like usb-sticks.
 * VNC Viewer - A VNC viewer addon, to integrate VNC displays into HA.
+* Mopidy - A media player with web interface.
 
 More about the Add-ons can be found in their folders.
 
@@ -39,8 +40,7 @@ Those addons might not be stable at all. Use at your own risk!
 
 On thoes addons will be not developed anymore. Feel free to fork them.
 
-* Mopidy - A media player with web interface.
-
+🤷‍♂️
 
 ## Installation
 

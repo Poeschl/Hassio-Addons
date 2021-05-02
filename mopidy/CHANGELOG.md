@@ -1,6 +1,13 @@
-## after 1.2.3
+## 2.0.0 - 2020-05-02
 
+* ✨ Resurrect Mopidy
+* 🔼 Update Mopidy to `3.1.1-r3`
+* 🔨 Use Alpine as base image
 * 🔨 Migrate to new `devices` option format. Thanks @LiJu09
+
+### ⚠️ Breaking Change ⚠️
+
+When coming from a previous version validate your settings, since the addon got completly redone!
 
 
 ## 1.2.3 - 2020-05-22
