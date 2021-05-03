@@ -1,6 +1,6 @@
 {
   "name": "ICantBelieveItsNotValetudo",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "slug": "icantbelieveitsnotvaletudo",
   "description": "This is a simple companion service for valetudo which generates the map pngs.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/ICantBelieveItsNotValetudo",
@@ -69,7 +69,7 @@
       "autoconfPrefix": "homeassistant",
       "broker_url": "mqtt://user:pass@foobar.example",
       "caPath": "",
-      "mapDataTopic": "valetudo/rockrobo/map_data",
+      "mapDataTopic": "valetudo/rockrobo/MapData/map-data",
       "minMillisecondsBetweenMapUpdates": 10000,
       "publishMapImage": true
     }

@@ -1,3 +1,7 @@
+## 3.3.1 - 2021-05-03
+
+* 🔼 Updated ICantBelieveItsNotValetudo default mqtt path
+
 ## 3.3.0 - 2021-04-25
 
 * 🔼 Updated ICantBelieveItsNotValetudo to latest release `2021.4.0`
