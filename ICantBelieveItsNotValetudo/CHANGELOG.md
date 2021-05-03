@@ -1,6 +1,7 @@
 ## 3.3.1 - 2021-05-03
 
-* 🔼 Updated ICantBelieveItsNotValetudo default mqtt path
+* 🔼 Updated ICantBelieveItsNotValetudo default mqtt path, (@shalak)
+
 
 ## 3.3.0 - 2021-04-25
 

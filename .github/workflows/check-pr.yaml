@@ -108,8 +108,6 @@ jobs:
     container:
       image: homeassistant/amd64-builder:2021.03.4
       options: --rm --privileged
-    env:
-      DOCKER_BUILDKIT: 1
     steps:
 
       - name: Checkout
