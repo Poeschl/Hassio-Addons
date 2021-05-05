@@ -6,9 +6,8 @@ RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/c
       python3=3.9.4-r0 \
       py3-gst=1.18.4-r1 \
       py3-pip=20.3.4-r1 \
-      mopidy=3.1.1-r3
-
-RUN ln -s /usr/lib/libpython3.9.so.1.0 /usr/lib/libpython3.9.so
+      mopidy=3.1.1-r3 \
+      && ln -s /usr/lib/libpython3.9.so.1.0 /usr/lib/libpython3.9.so
 
 
 FROM build-base AS mopidy-iris
@@ -25,7 +24,7 @@ RUN pip3 install --no-cache-dir --user Mopidy-MPD==3.1.0 &&\
 
 FROM build-base AS mopidy-radionet
 
-RUN pip3 install --no-cache-dir --user Mopidy-RadioNet &&\
+RUN pip3 install --no-cache-dir --user Mopidy-RadioNet==0.2.2 &&\
       ls -al /root/.local/lib/python3.9/site-packages
 
 

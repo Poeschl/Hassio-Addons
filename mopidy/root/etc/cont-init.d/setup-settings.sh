@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
 set -e
 
 if [ "$(bashio::config 'custom_config')" != 'null' ]; then
