@@ -32,4 +32,6 @@ vnc-viewer:
   - '([vV]nc(-viewer)?)'
 ympd:
   - '(ympd)'
+mopidy:
+  - '([mM]opidy)'
   
