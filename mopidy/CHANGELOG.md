@@ -1,3 +1,9 @@
+## 2.1.0 - 2020-05-07
+
+* ➕ Include Mopidy-Spotify
+* ➖ Removed i386 support
+
+
 ## 2.0.0 - 2020-05-02
 
 * ✨ Resurrect Mopidy

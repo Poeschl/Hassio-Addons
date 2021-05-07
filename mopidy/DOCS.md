@@ -8,6 +8,12 @@ country: en
 radio_net:
   language: net
   favorite_radiostations: []
+spotify:
+  enabled: false
+  username: ''
+  password: ''
+  client_id: ''
+  client_secret: ''
 ```
 
 ### `media_folder`
@@ -28,14 +34,6 @@ Default is `en_US` A list of locale's is [here](https://github.com/umpirsky/loca
 Your country as two letter country code. This used for the ui and also some extensions.
 Default here is is the code `en`.
 
-### `radio_net/language`
-
-The language text information is shown for radio stations. Possible options are: `net`, `at`, `de` , `dk`, `es`, `fr`, `it`, `pl`, `pt`, `se`.
-
-### `radio_net/favorite_radiostations`
-
-Your favorite radio station slugs for the radio.net Extension. [More about that setting](https://github.com/plintx/mopidy-radionet#configuration).
-
 ### `custom_config` (optional)
 
 **If this is specified, all other options are ignored.**
@@ -51,6 +49,39 @@ Working example:
 custom_config: /share/mopidy/mopidy.conf
 ```
 
+### `radio_net/language`
+
+The language text information is shown for radio stations. Possible options are: `net`, `at`, `de` , `dk`, `es`, `fr`, `it`, `pl`, `pt`, `se`.
+
+### `radio_net/favorite_radiostations`
+
+Your favorite radio station slugs for the radio.net Extension. [More about that setting](https://github.com/plintx/mopidy-radionet#configuration).
+
+
+### `spotify/enabled`
+
+Enable the spotify extension for Mopidy. Default is `false`.
+
+### `spotify/username`
+
+Your Spotify Premium username. _Free accounts are not supported._
+
+### `spotify/password`
+
+Your Spotify Premium password.
+
+### `spotify/client_id`
+
+Your Spotify application client id. For how to get it look at the next setting.
+
+### `spotify/client_secret`
+
+Your Spotify application secret key. To get it use the button below.
+It will show you the login of spotify and shows your `client_id` and `client_secret` after login.
+Your data is never shared with this site.
+
+[![Authenticate Spotify][auth-badge]][auth-url]
+
 
 # Local Media
 
@@ -63,8 +94,8 @@ Since Mopidy-Iris don't play well (at least out-of-the-box) with the ingress fea
 
 ```yaml
 panel_iframe:
-  morpidy:
-    title: 'Morpidy'
+  mopidy:
+    title: 'Mopidy'
     icon: 'mdi:music-circle'
     url: 'http://<homeassistant-address>:6680/iris'
 ```
@@ -80,3 +111,6 @@ media_player:
     host: localhost
     port: 6600
 ```
+
+[auth-badge]: https://img.shields.io/badge/Authenticate%20with-Spotify-%231ED760?logo=spotify
+[auth-url]: https://auth.mopidy.com/spotify/

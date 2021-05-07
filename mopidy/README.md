@@ -17,13 +17,14 @@ It contains following extensions:
 * [Mopidy-Iris](https://github.com/jaedb/iris)
 * [Mopidy-MPD](https://github.com/mopidy/mopidy-mpd)
 * [Mopidy-RadioNet](https://github.com/plintx/mopidy-radionet)
+* [Mopidy-Spotify](https://github.com/mopidy/mopidy-spotify)
 
 
 [aarch64-badge]: https://img.shields.io/badge/aarch64-no-red.svg?style=for-the-badge
 [amd64-badge]: https://img.shields.io/badge/amd64-yes-green.svg?style=for-the-badge
 [armhf-badge]: https://img.shields.io/badge/armhf-yes-green.svg?style=for-the-badge
 [armv7-badge]: https://img.shields.io/badge/armv7-yes-green.svg?style=for-the-badge
-[i386-badge]: https://img.shields.io/badge/i386-yes-green.svg?style=for-the-badge
+[i386-badge]: https://img.shields.io/badge/i386-no-red.svg?style=for-the-badge
 [install-url]: https://my.home-assistant.io/redirect/supervisor_addon?addon=243ffc37_mopidy
 [stage-badge]: https://img.shields.io/badge/Addon%20stage-stable-green.svg?style=for-the-badge
 

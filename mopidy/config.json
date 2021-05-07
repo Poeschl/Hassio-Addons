@@ -1,6 +1,6 @@
 {
   "name": "Mopidy",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "slug": "mopidy",
   "panel_icon": "mdi:music-circle",
   "description": "Mopidy Music Server",
@@ -12,8 +12,7 @@
   "arch": [
     "armv7",
     "armhf",
-    "amd64",
-    "i386"
+    "amd64"
   ],
   "homeassistant": "0.115.0",
   "startup": "system",
@@ -38,6 +37,13 @@
     "radio_net": {
       "language": "net",
       "favorite_radiostations": ["radiobob"]
+    },
+    "spotify": {
+      "enabled": false,
+      "username": "",
+      "password": "",
+      "client_id": "",
+      "client_secret": ""
     }
   },
   "schema": {
@@ -49,6 +55,13 @@
     "radio_net": {
       "language": "list(net|at|de|dk|es|fr|it|pl|pt|se)",
       "favorite_radiostations": ["str"]
+    },
+    "spotify": {
+      "enabled": "bool",
+      "username": "str",
+      "password": "password",
+      "client_id": "str",
+      "client_secret": "str"
     }
   }
 }
