@@ -29,6 +29,7 @@ RUN pip3 install --no-cache-dir --user Mopidy-RadioNet==0.2.2 &&\
 
 FROM build-base AS mopidy-spotify
 
+# hadolint ignore=DL3003,SC2016
 RUN apk add --no-cache wget=1.21.1-r1 build-base=0.5-r2 libffi-dev=3.3-r2 py3-wheel=0.36.2-r0 &&\
       (([[ "$(uname -m)" == "armv7l" ]] && wget -q --show-progress https://mopidy.github.io/libspotify-archive/libspotify-12.1.51-Linux-armv7-release.tar.gz -O libspotify.tar.gz) ||\
       ([[ "$(uname -m)" == "x86_64" ]] && wget -q --show-progress https://mopidy.github.io/libspotify-archive/libspotify-12.1.51-Linux-x86_64-release.tar.gz -O libspotify.tar.gz)) &&\
@@ -36,6 +37,7 @@ RUN apk add --no-cache wget=1.21.1-r1 build-base=0.5-r2 libffi-dev=3.3-r2 py3-wh
       cd libspotify-* && sed -i 's|install -T|install|g;s|ldconfig|ldconfig $(prefix)/lib/libspotify.so\n\tldconfig $(prefix)/lib/libspotify.so.12\n\tldconfig $(prefix)/lib/libspotify.so.12.1.51|g' Makefile &&\
       make install prefix=/usr/local
 
+# hadolint ignore=DL3059
 RUN pip3 install --no-cache-dir --user \
       pyspotify==2.1.3 \
       Mopidy-Spotify==4.1.1 &&\
