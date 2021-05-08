@@ -1,3 +1,9 @@
+## 1.10.0 - 2021-04-02
+
+* 🔼 Update alpine to `3.13`
+* 🔼 Update syncthing to `1.16.0-r0`
+
+
 ## 1.9.0 - 2021-04-02
 
 * 🔨 Use ghcr.io/home-assistant for base images
