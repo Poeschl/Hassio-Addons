@@ -1,3 +1,9 @@
+## 1.10.0 - 2021-05-08
+
+* 🐛 Don't encode GitHub Tokens
+* 🔼 Updated python3 to `3.8.10-r0`
+
+
 ## 1.9.0 - 2021-04-02
 
 * 🔨 Use ghcr.io/home-assistant for base images

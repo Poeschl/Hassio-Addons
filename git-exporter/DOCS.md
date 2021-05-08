@@ -40,7 +40,7 @@ Your username for https authentication.
 
 ### `repository.password`
 
-Your password or __accesstoken__ for your repository.
+Your password or __access token__ for your repository.
 
 ### `repository.pull_before_push`
 

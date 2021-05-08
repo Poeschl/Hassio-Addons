@@ -11,8 +11,11 @@ function setup_git {
     repository=$(bashio::config 'repository.url')
     username=$(bashio::config 'repository.username')
     password=$(bashio::config 'repository.password')
-    encoded_password=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${password}'))")
     commiter_mail=$(bashio::config 'repository.email')
+
+    if [[ "$password" != "ghp_*" ]]; then
+        password=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${password}'))")
+    fi
 
     if [ ! -d $local_repository ]; then
         bashio::log.info 'Create local repository'
@@ -21,7 +24,7 @@ function setup_git {
     cd $local_repository
 
     if [ ! -d .git ]; then
-        fullurl="https://${username}:${encoded_password}@${repository##*https://}"
+        fullurl="https://${username}:${password}@${repository##*https://}"
         if [ "$pull_before_push" == 'true' ]; then
             bashio::log.info 'Clone existing repository'
             git clone "$fullurl" $local_repository
