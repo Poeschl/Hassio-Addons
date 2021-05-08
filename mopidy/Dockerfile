@@ -61,4 +61,7 @@ COPY --from=mopidy-spotify /usr/local/lib/libspotify.so.12.1.51 /usr/local/lib/l
 RUN echo "root ALL=NOPASSWD: /usr/lib/python3.9/site-packages/mopidy_iris/system.sh" >> /etc/sudoers \
       ln -sf  /usr/local/lib/libspotify.so.12.1.51  /usr/local/lib/libspotify.so.12 && ln -sf  /usr/local/lib/libspotify.so.12.1.51 /usr/local/lib/libspotify.so
 
+
+ENTRYPOINT [ "/init" ]
+CMD []
 COPY root /
