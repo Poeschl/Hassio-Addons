@@ -81,3 +81,6 @@
 - color: 039dfc
   name: mopidy
   description: mopidy Addon
+- color: 039dfc
+  name: asterisk
+  description: Asterisk Addon

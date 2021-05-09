@@ -1,0 +1,36 @@
+{
+  "name": "Asterisk",
+  "version": "1.0.0",
+  "slug": "asterisk",
+  "description": "Asterisk is an open source framework for building communications applications. Asterisk turns an ordinary computer into a communications server",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/asterisk",
+  "arch": [
+    "armv7",
+    "armhf",
+    "aarch64",
+    "amd64",
+    "i386"
+  ],
+  "startup": "application",
+  "boot": "auto",
+  "image": "ghcr.io/poeschl/ha-asterisk-{arch}",
+  "map": ["share","config"],
+  "ports": {
+    "5060/tcp": 5060,
+    "5060/udp": 5060,
+    "4569/udp": 4569,
+    "2727/udp": 2727
+  },
+  "ports_description": {
+    "5060/tcp": "Port for SIP",
+    "5060/udp": "Port for SIP",
+    "4569/udp": "Port for IAX2",
+    "2727/udp": "Port for MGCP"
+  },
+  "options": {
+    "config_files": []
+  },
+  "schema": {
+    "config_files": ["match(/(share|config)/.+)"]
+  }
+}
