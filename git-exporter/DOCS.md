@@ -95,3 +95,13 @@ Following folders and files are excluded from the sync per default:
 ### `dry_run`
 
 Only show the changes and don't commit or push.
+
+
+## Known limitations 
+
+`check_for_secrets` Uses a git plugin that does pattern matching using regexes.
+A limitation of this plugin is that using brackets (like `[`, `]`, `{`, `}` `(` and `)`) in secrets can result in unexpected behaviour and crashes.
+
+If the addon fails during secrets checking with errors originating from grep (I.E. `grep: Unmatched [, [^, [:, [., or [=`), 
+change the passwords that contain brackets or set `check_for_secrets` to `false`.
+
