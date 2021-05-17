@@ -1,7 +1,7 @@
 # Configuration
 
 ```yaml
-config_files: 
+config_files:
   - /config/asterisk/sip.conf
 ```
 

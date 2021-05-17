@@ -1,6 +1,6 @@
 # Asterisk
 
-[Asterisk](https://www.asterisk.org/) is an open source framework for building communications applications. Asterisk turns an ordinary computer into a communications server. 
+[Asterisk](https://www.asterisk.org/) is an open source framework for building communications applications. Asterisk turns an ordinary computer into a communications server.
 
 ![Addon Stage][stage-badge]
 ![Supports aarch64 Architecture][aarch64-badge]
