@@ -34,4 +34,6 @@ ympd:
   - '(ympd)'
 mopidy:
   - '([mM]opidy)'
+asterisk:
+  - '([aA]sterisk)'
   
