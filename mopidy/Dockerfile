@@ -3,7 +3,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM AS build-base
 
 RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main \
-      python3-dev=3.9.5-r0 \
+      python3-dev=3.9.5-r1 \
       py3-gst=1.18.4-r1 \
       py3-pip=20.3.4-r1 \
       mopidy=3.1.1-r3
@@ -47,7 +47,7 @@ RUN pip3 install --no-cache-dir --user \
 FROM $BUILD_FROM AS run
 
 RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main \
-      python3=3.9.5-r0 \
+      python3=3.9.5-r1 \
       py3-gst=1.18.4-r1 \
       mopidy=3.1.1-r3 \
       ca-certificates=20191127-r5 \

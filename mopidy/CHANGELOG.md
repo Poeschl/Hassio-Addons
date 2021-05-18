@@ -2,7 +2,7 @@
 
 * ➕ Include Mopidy-Spotify
 * ➖ Removed i386 support
-
+* 🔼 Update python3 to `3.9.5-r1`
 
 ## 2.0.0 - 2020-05-02
 
