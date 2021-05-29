@@ -76,11 +76,8 @@ Your Spotify application client id. For how to get it look at the next setting.
 
 ### `spotify/client_secret`
 
-Your Spotify application secret key. To get it use the button below.
+Your Spotify application secret key. Retrieve it [here](https://mopidy.com/ext/spotify/).
 It will show you the login of spotify and shows your `client_id` and `client_secret` after login.
-Your data is never shared with this site.
-
-[![Authenticate Spotify][auth-badge]][auth-url]
 
 
 # Local Media
