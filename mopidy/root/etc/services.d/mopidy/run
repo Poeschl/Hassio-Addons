@@ -1,8 +1,11 @@
 #!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
 set -e
 
 # Enable Jemalloc for better memory handling
 export LD_PRELOAD="/usr/local/lib/libjemalloc.so.2"
+
+export LD_LIBRARY_PATH="/usr/local/lib"
 
 bashio::log.info 'Start Mopidy....'
 mopidy --config /etc/mopidy.conf

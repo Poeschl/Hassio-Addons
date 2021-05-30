@@ -6,7 +6,8 @@ RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/c
       python3-dev=3.9.5-r1 \
       py3-gst=1.18.4-r1 \
       py3-pip=20.3.4-r1 \
-      mopidy=3.1.1-r3
+      mopidy=3.1.1-r3 && \
+      apk upgrade musl
 
 
 FROM build-base AS mopidy-iris
@@ -52,16 +53,19 @@ RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/c
       mopidy=3.1.1-r3 \
       ca-certificates=20191127-r5 \
       sudo=1.9.5p2-r0 \
-      && ln -s /usr/lib/libpython3.9.so.1.0 /usr/lib/libpython3.9.so
+      musl=1.2.2-r3 && \
+      ln -s /usr/lib/libpython3.9.so.1.0 /usr/lib/libpython3.9.so
 
 COPY --from=mopidy-iris /root/.local/lib/python3.9/site-packages /usr/lib/python3.9/site-packages/
 COPY --from=mopidy-mpd /root/.local/lib/python3.9/site-packages /usr/lib/python3.9/site-packages/
 COPY --from=mopidy-radionet /root/.local/lib/python3.9/site-packages /usr/lib/python3.9/site-packages/
 COPY --from=mopidy-spotify /root/.local/lib/python3.9/site-packages /usr/lib/python3.9/site-packages/
-COPY --from=mopidy-spotify /usr/local/lib/libspotify.so.12.1.51 /usr/local/lib/libspotify.so.12.1.51
+COPY --from=mopidy-spotify /usr/local/lib/libspotify.so.12.1.51 /usr/local/lib/
 
-RUN echo "root ALL=NOPASSWD: /usr/lib/python3.9/site-packages/mopidy_iris/system.sh" >> /etc/sudoers \
-      ln -sf  /usr/local/lib/libspotify.so.12.1.51  /usr/local/lib/libspotify.so.12 && ln -sf  /usr/local/lib/libspotify.so.12.1.51 /usr/local/lib/libspotify.so
+# hadolint ignore=DL3003
+RUN cd /usr/local/lib/ && \
+      ln -sf libspotify.so.12.1.51 libspotify.so.12 && \
+      ln -sf libspotify.so.12.1.51 libspotify.so
 
 
 ENTRYPOINT [ "/init" ]
