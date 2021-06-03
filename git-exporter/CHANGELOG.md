@@ -1,3 +1,8 @@
+## 1.10.1 - 2021-06-03
+
+* 📝 Add secrets corner case docs for secrets containing special regex chars. (thanks @fliphess)
+
+
 ## 1.10.0 - 2021-05-08
 
 * 🐛 Don't encode GitHub Tokens
