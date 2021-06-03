@@ -3,7 +3,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM AS build-base
 
 RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main \
-      python3=3.9.5-r0 \
+      python3=3.9.5-r1 \
       py3-gst=1.18.4-r1 \
       py3-pip=20.3.4-r1 \
       mopidy=3.1.1-r3 \
@@ -31,7 +31,7 @@ RUN pip3 install --no-cache-dir --user Mopidy-RadioNet==0.2.2 &&\
 FROM $BUILD_FROM AS run
 
 RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main \
-      python3=3.9.5-r0 \
+      python3=3.9.5-r1 \
       py3-gst=1.18.4-r1 \
       mopidy=3.1.1-r3 \
       ca-certificates=20191127-r5 \
@@ -44,4 +44,6 @@ COPY --from=mopidy-radionet /root/.local/lib/python3.9/site-packages /usr/lib/py
 
 RUN echo "root ALL=NOPASSWD: /usr/lib/python3.9/site-packages/mopidy_iris/system.sh" >> /etc/sudoers
 
+ENTRYPOINT [ "/init" ]
+CMD []
 COPY root /
