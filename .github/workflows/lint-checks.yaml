@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/hadolint/hadolint:latest-alpine
     steps:
-      - name: Checkout
+      - name: ↩️ Checkout
         uses: actions/checkout@v2
 
-      - name: Detect chanced files
+      - name: 📂 Detect chanced files
         id: filter
         uses: dorny/paths-filter@v2.9.0
         with:
@@ -21,17 +21,17 @@ jobs:
             dockerfile:
               - '**/Dockerfile'
 
-      - name: Run hadolint
+      - name: 🔎 Run hadolint
         if: steps.filter.outputs.dockerfile == 'true'
         run: hadolint ${{ steps.filter.outputs.dockerfile_files }}
 
   shellcheck:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: ↩️ Checkout
         uses: actions/checkout@v2
 
-      - name: Detect chanced files
+      - name: 📂 Detect chanced files
         id: filter
         uses: dorny/paths-filter@v2.9.0
         with:
@@ -42,7 +42,7 @@ jobs:
               - '**/cont-init.d/*'
               - '**/services.d/*'
 
-      - name: Run ShellCheck
+      - name: 🔎 Run ShellCheck
         if: steps.filter.outputs.shell == 'true'
         uses: ludeeus/action-shellcheck@1.1.0
         with:
@@ -51,10 +51,10 @@ jobs:
   markdownlint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: ↩️ Checkout
         uses: actions/checkout@v2
 
-      - name: Run markdownlint
+      - name: 🔎 Run markdownlint
         uses: nosborn/github-action-markdown-cli@v1.1.1
         with:
           files: .

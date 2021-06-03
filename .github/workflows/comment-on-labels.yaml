@@ -19,11 +19,12 @@ jobs:
   comment:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - name: ↩️ Checkout
+        uses: actions/checkout@v2
         with:
           ref: master
 
-      - name: Comment
+      - name: ✏️ Comment
         uses: peaceiris/actions-label-commenter@v1.8.2
         with:
           config_file: .github/label-comments.yaml

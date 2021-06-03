@@ -1,3 +1,9 @@
+## 2.0.1 - 2020-06-03
+
+* 🔼 Update python3 to `3.9.5-r1`
+* 🐛 Specifiy own S6 entrypoint, don't rely on the base image.
+
+
 ## 2.0.0 - 2020-05-02
 
 * ✨ Resurrect Mopidy
