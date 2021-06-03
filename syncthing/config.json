@@ -13,8 +13,6 @@
     "i386"
   ],
   "homeassistant": "0.115.0",
-  "startup": "application",
-  "boot": "auto",
   "image": "ghcr.io/poeschl/ha-syncthing-{arch}",
   "ports": {
     "8384/tcp": null,
@@ -26,7 +24,6 @@
     "22000/tcp": "Sync protocol",
     "21027/udp": "Discovery broadcast"
   },
-  "webui": "http://[HOST]:[PORT:8384]",
   "ingress": true,
   "ingress_port": 8384,
   "panel_title": "Syncthing",
@@ -38,7 +35,5 @@
     "addons:rw",
     "ssl:rw",
     "media:rw"
-  ],
-  "options": {},
-  "schema": {}
+  ]
 }
