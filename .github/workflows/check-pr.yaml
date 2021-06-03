@@ -140,7 +140,7 @@ jobs:
         with:
           path: /tmp/buildx-cache
           key: ${{ runner.os }}-buildx-${{ matrix.addon }}-${{ hashFiles('**/Dockerfile') }}
-          restore-keys: ${{ runner.os }}-buildx-${{ matrix.addon }}
+          restore-keys: ${{ runner.os }}-buildx-${{ matrix.addon }}-
 
       - name: 🔖 Create addon image tags
         id: tags
