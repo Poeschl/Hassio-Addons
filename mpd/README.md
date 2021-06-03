@@ -18,7 +18,7 @@ Inside this addon there is [ympd](https://ympd.org/), a simple web frontend for 
 The configuration is located under the Docs tab or [DOCS.md](https://github.com/Poeschl/Hassio-Addons/blob/master/mpd/DOCS.md).
 
 
-[aarch64-badge]: https://img.shields.io/badge/aarch64-no-red.svg?style=for-the-badge
+[aarch64-badge]: https://img.shields.io/badge/aarch64-yes-green.svg?style=for-the-badge
 [amd64-badge]: https://img.shields.io/badge/amd64-yes-green.svg?style=for-the-badge
 [armhf-badge]: https://img.shields.io/badge/armhf-yes-green.svg?style=for-the-badge
 [armv7-badge]: https://img.shields.io/badge/armv7-yes-green.svg?style=for-the-badge
