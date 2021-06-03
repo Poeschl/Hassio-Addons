@@ -197,6 +197,13 @@ jobs:
         with:
           path: "./${{ matrix.addon }}/"
 
+      - name: Cache docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/buildx-cache
+          key: ${{ runner.os }}-buildx-${{ matrix.addon }}-${{ hashFiles('**/Dockerfile') }}
+          restore-keys: ${{ runner.os }}-buildx-${{ matrix.addon }}
+
       - name: Create addon image tags
         id: tags
         shell: bash
@@ -254,10 +261,13 @@ jobs:
         with:
           context: ${{ matrix.addon }}
           push: false
+          load: true
           file: ${{ matrix.addon }}/Dockerfile
           tags: ${{ steps.tags.outputs.armhf }}
           labels: ${{ steps.labels.outputs.armhf }}
           build-args: ${{ steps.build_args.outputs.armhf }}
+          cache-from: type=local,src=/tmp/buildx-cache/armhf
+          cache-to: type=local,dest=/tmp/buildx-cache-new/armhf
 
       - name: Build Addon - armv7
         if: ${{ steps.information.outputs.armv7 == 'true' }}
@@ -265,10 +275,13 @@ jobs:
         with:
           context: ${{ matrix.addon }}
           push: false
+          load: true
           file: ${{ matrix.addon }}/Dockerfile
           tags: ${{ steps.tags.outputs.armv7 }}
           labels: ${{ steps.labels.outputs.armv7 }}
           build-args: ${{ steps.build_args.outputs.armv7 }}
+          cache-from: type=local,src=/tmp/buildx-cache/armv7
+          cache-to: type=local,dest=/tmp/buildx-cache-new/armv7
 
       - name: Build Addon - aarch64
         if: ${{ steps.information.outputs.aarch64 == 'true' }}
@@ -276,10 +289,13 @@ jobs:
         with:
           context: ${{ matrix.addon }}
           push: false
+          load: true
           file: ${{ matrix.addon }}/Dockerfile
           tags: ${{ steps.tags.outputs.aarch64 }}
           labels: ${{ steps.labels.outputs.aarch64 }}
           build-args: ${{ steps.build_args.outputs.aarch64 }}
+          cache-from: type=local,src=/tmp/buildx-cache/aarch64
+          cache-to: type=local,dest=/tmp/buildx-cache-new/aarch64
 
       - name: Build Addon - amd64
         if: ${{ steps.information.outputs.amd64 == 'true' }}
@@ -287,10 +303,13 @@ jobs:
         with:
           context: ${{ matrix.addon }}
           push: false
+          load: true
           file: ${{ matrix.addon }}/Dockerfile
           tags: ${{ steps.tags.outputs.amd64 }}
           labels: ${{ steps.labels.outputs.amd64 }}
           build-args: ${{ steps.build_args.outputs.amd64 }}
+          cache-from: type=local,src=/tmp/buildx-cache/amd64
+          cache-to: type=local,dest=/tmp/buildx-cache-new/amd64
       
       - name: Build Addon - i386
         if: ${{ steps.information.outputs.i386 == 'true' }}
@@ -298,7 +317,16 @@ jobs:
         with:
           context: ${{ matrix.addon }}
           push: false
+          load: true
           file: ${{ matrix.addon }}/Dockerfile
           tags: ${{ steps.tags.outputs.i386 }}
           labels: ${{ steps.labels.outputs.i386 }}
           build-args: ${{ steps.build_args.outputs.i386 }}
+          cache-from: type=local,src=/tmp/buildx-cache/i386
+          cache-to: type=local,dest=/tmp/buildx-cache-new/i386
+
+      # Fix for https://github.com/docker/build-push-action/issues/252
+      - name: Update cache Folder
+        run: |
+          rm -rf /tmp/buildx-cache
+          mv /tmp/buildx-cache-new /tmp/buildx-cache
