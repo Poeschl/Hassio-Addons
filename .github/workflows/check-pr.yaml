@@ -222,6 +222,11 @@ jobs:
         shell: bash
         run: |
           labels="io.hass.version=${{ steps.information.outputs.version }}"
+          labels=$(printf "$labels\nio.hass.name=${{ steps.information.outputs.name }}")
+          labels=$(printf "$labels\nio.hass.description=${{ steps.information.outputs.description }}")
+          labels=$(printf "$labels\nio.hass.type=addon")
+          labels=$(printf "$labels\nio.hass.url=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/master/${{ matrix.addon }}")
+
           labels=$(printf "$labels\norg.opencontainers.image.title=${{ steps.information.outputs.name }}")
           labels=$(printf "$labels\norg.opencontainers.image.description=${{ steps.information.outputs.description }}")
           labels=$(printf "$labels\norg.opencontainers.image.version=${{ steps.information.outputs.version }}")
