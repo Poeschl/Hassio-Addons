@@ -16,7 +16,7 @@ RUN apk add --no-cache \
 # Splited RUN for better layer caching
 # hadolint ignore=DL3059
 RUN git config --global advice.detachedHead false && \
-    git clone https://github.com/Hypfer/ICantBelieveItsNotValetudo.git -b 2021.4.0 /app
+    git clone https://github.com/Hypfer/ICantBelieveItsNotValetudo.git -b 2021.6.0 /app
 
 WORKDIR /app
 RUN npm install
