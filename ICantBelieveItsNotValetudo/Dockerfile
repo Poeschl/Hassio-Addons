@@ -6,7 +6,7 @@ ENV LANG C.UTF-8
 RUN apk add --no-cache \
 	git=2.30.2-r0 \
 	npm=14.16.1-r1 \
-	python3=3.8.8-r0 \
+	python3=3.8.10-r0 \
 	pixman-dev=0.40.0-r2 \
 	cairo-dev=1.16.0-r2 \
 	pango-dev=1.48.2-r0 \
@@ -16,7 +16,7 @@ RUN apk add --no-cache \
 # Splited RUN for better layer caching
 # hadolint ignore=DL3059
 RUN git config --global advice.detachedHead false && \
-    git clone https://github.com/Hypfer/ICantBelieveItsNotValetudo.git -b 2021.4.0 /app
+    git clone https://github.com/Hypfer/ICantBelieveItsNotValetudo.git -b 2021.6.0 /app
 
 WORKDIR /app
 RUN npm install
