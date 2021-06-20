@@ -11,8 +11,6 @@
     "amd64",
     "i386"
   ],
-  "startup": "application",
-  "boot": "auto",
   "image": "ghcr.io/poeschl/ha-icantbelieveitsnotvaletudo-{arch}",
   "ports": {
     "8080/tcp": null
