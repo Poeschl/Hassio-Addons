@@ -1,6 +1,7 @@
 ## 3.4.0 - 2021-06-20
 
-* 🔼 Updated ICantBelieveItsNotValetudo to latest release `2021.6.0`
+* 🔼 Updated ICantBelieveItsNotValetudo to latest release `2021.6.0` (thanks @ishioni)
+* 🔼 Updated python3 to `3.8.10-r0`
 
 ## 3.3.1 - 2021-05-03
 
