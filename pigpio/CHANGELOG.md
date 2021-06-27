@@ -1,3 +1,9 @@
+## 1.4.0 - 2021-06-27
+
+* 🏗️ Added `aarch64` architecture
+* 🔼 Update pigpio to `V79`
+
+
 ## 1.3.0 - 2021-04-02
 
 * 🔨 Use ghcr.io/home-assistant for base images

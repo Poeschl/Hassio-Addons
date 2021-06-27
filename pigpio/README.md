@@ -17,7 +17,7 @@ Wraps the C control lib [pigpio](https://github.com/joan2937/pigpio) in a Hass.i
 It accesses `/dev/mem` on the host and also has full access to the raw io data.
 
 
-[aarch64-badge]: https://img.shields.io/badge/aarch64-no-red.svg?style=for-the-badge
+[aarch64-badge]: https://img.shields.io/badge/aarch64-yes-green.svg?style=for-the-badge
 [amd64-badge]: https://img.shields.io/badge/amd64-no-red.svg?style=for-the-badge
 [armhf-badge]: https://img.shields.io/badge/armhf-yes-green.svg?style=for-the-badge
 [armv7-badge]: https://img.shields.io/badge/armv7-yes-green.svg?style=for-the-badge
