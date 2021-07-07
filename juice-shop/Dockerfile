@@ -15,7 +15,7 @@ RUN git config --global advice.detachedHead false && \
     git clone https://github.com/bkimminich/juice-shop.git -b v12.8.1 /app
 
 WORKDIR /app
-RUN npm install typescript ts-node && \
+RUN npm install typescript@4.3.5 ts-node@10.0.0 && \
 	npm install --production --unsafe-perm && \
 	npm dedupe && \
 	rm -rf frontend/node_modules
