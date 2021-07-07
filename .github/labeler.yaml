@@ -7,7 +7,7 @@ ICantBelieveItsNotValetudo:
 MaryTTS:
   - '(MaryTTS)'
 OWASP-ZAP:
-  - '(OWASP-ZAP|ZAP)'
+  - '(OWASP-?ZAP|ZAP|[oO]wasp-?[zZ]ap)'
 container-stats:
   - '(container-stats)'
 git-exporter:
