@@ -84,3 +84,6 @@
 - color: 039dfc
   name: asterisk
   description: Asterisk Addon
+- color: 039dfc
+  name: juice-shop
+  description: OWASP Juice Shop

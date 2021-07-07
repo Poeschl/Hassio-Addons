@@ -36,4 +36,6 @@ mopidy:
   - '([mM]opidy)'
 asterisk:
   - '([aA]sterisk)'
+juice-shop:
+  - '([jJ]uice-?[sS]hop)'
   
