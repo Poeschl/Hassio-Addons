@@ -26,6 +26,7 @@ My repository with Add-ons for the [Home Assistant (former Hass.io) system](http
 * VNC Viewer - A VNC viewer addon, to integrate VNC displays into HA.
 * Mopidy - A media player with web interface.
 * Asterisk - An open source framework for building communications applications.
+* OWASP Juice Shop - The most trustworthy online shop out there. A totally unsecure plattform.
 
 More about the Add-ons can be found in their folders.
 
