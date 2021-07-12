@@ -16,9 +16,9 @@ Syncthing is a continuous file synchronization program. It synchronizes files be
 
 # Folders available
 
-When using this addon to permanently hold your data, put the synced folder inside /data. Otherwise it will be deleted on container restart. Note that this folder and its contents will be included in each backup of the addon.
+When using this addon to permanently hold your data, put the synced folder inside `/data`. Otherwise it will be deleted on container restart. Note that this folder and its contents will be included in each backup of the addon.
 
-Also the /share, /confg, /backup, /addons and /ssl folders are mapped inside. You can use them as persistant storage. Some of those are not included in backups of the hassio configuration by default.
+Also the `/share`, `/confg`, `/backup`, `/addons` and `/ssl` folders are mapped inside. You can use them as persistant storage. Some of those are not included in backups of the hassio configuration by default.
 
 Syncing those folders can also be used to backup the Home Assistant backups, for example. 😉
 
