@@ -1,3 +1,9 @@
+## 1.12.0 - 2021-07-12
+
+* 🔼 Update syncthing to `1.18.0-r0`
+* 📝 Add notice about storage usage (thanks @kappuchino)
+
+
 ## 1.11.0 - 2021-06-03
 
 * 🔼 Update syncthing to `1.17.0-r0`
