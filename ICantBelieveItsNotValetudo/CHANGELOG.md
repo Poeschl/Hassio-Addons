@@ -1,3 +1,13 @@
+## 3.4.1 - 2021-07-27
+
+* 🔧 Added port of mqtt broker to schema validaton
+* 🔼 Update alpine to `3.14`
+* 🔼 Update git to `2.32.0-r0`
+* 🔼 Update npm to `7.17.0-r0`
+* 🔼 Update pango/pango-dev to `1.48.5-r0`
+* 🔼 Update cairo/cairo-dev to `1.16.0-r3`
+* 🔼 Updated python3 to `3.9.5-r1`
+
 ## 3.4.0 - 2021-06-20
 
 * 🔼 Updated ICantBelieveItsNotValetudo to latest release `2021.6.0` (thanks @ishioni)

@@ -1,10 +1,9 @@
 {
   "name": "Valetudo Mapper",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "slug": "valetudomapper",
   "description": "This is a simple companion service for Valetudo RE which generates the map pngs.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/valetudo-mapper",
-  "webui": "http://[HOST]:[PORT:3000]/api/map/image",
   "arch": [
     "armhf",
     "armv7",
@@ -12,8 +11,6 @@
     "amd64",
     "i386"
   ],
-  "startup": "application",
-  "boot": "auto",
   "image": "ghcr.io/poeschl/ha-valetudo-mapper-{arch}",
   "ports": {
     "3000/tcp": null
@@ -61,7 +58,7 @@
       "identifier": "str",
       "topicPrefix": "str",
       "autoconfPrefix": "str",
-      "broker_url": "match(^mqtts?://(.+:.+@)?[^:@]+$)",
+      "broker_url": "match(^mqtts?://(.+:.+@)?[^:@]+(:[0-9]+)?$)",
       "caPath": "str",
       "mapDataTopic": "str",
       "minMillisecondsBetweenMapUpdates": "int",

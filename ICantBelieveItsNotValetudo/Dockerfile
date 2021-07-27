@@ -4,12 +4,12 @@ FROM $BUILD_FROM AS BUILD
 ENV LANG C.UTF-8
 
 RUN apk add --no-cache \
-	git=2.30.2-r0 \
-	npm=14.16.1-r1 \
-	python3=3.8.10-r0 \
+	git=2.32.0-r0 \
+	npm=7.17.0-r0 \
+	python3=3.9.5-r1 \
 	pixman-dev=0.40.0-r2 \
-	cairo-dev=1.16.0-r2 \
-	pango-dev=1.48.2-r0 \
+	cairo-dev=1.16.0-r3 \
+	pango-dev=1.48.5-r0 \
 	build-base=0.5-r2 \
 	libjpeg-turbo-dev=2.1.0-r0
 
@@ -25,7 +25,7 @@ RUN npm install
 FROM $BUILD_FROM AS SERVER
 
 RUN apk add --no-cache \
-    npm=14.16.1-r1
+    npm=7.17.0-r0
 
 COPY root/server /server
 
@@ -36,10 +36,10 @@ RUN npm install
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add --no-cache \
-    npm=14.16.1-r1 \
+    npm=7.17.0-r0 \
     pixman=0.40.0-r2 \
-	cairo=1.16.0-r2 \
-	pango=1.48.2-r0 \
+	cairo=1.16.0-r3 \
+	pango=1.48.5-r0 \
 	libjpeg-turbo=2.1.0-r0
 
 WORKDIR /app
