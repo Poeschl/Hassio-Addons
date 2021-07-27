@@ -1,8 +1,10 @@
 ## 1.10.0 - 2021-07-27
 
-* 🔧 Added port of mqtt broker to schema validaton
+* 🔧 Add port of mqtt broker to schema validaton
 * 🔼 Update Valetudo-Mapper to commit `8500701`
-* 🔼 Updated npm to `14.17.3-r0`
+* 🔼 Update alpine to `3.14`
+* 🔼 Update git to `2.32.0-r0`
+* 🔼 Update npm to `7.17.0-r0`
 
 ## 1.9.0 - 2021-04-02
 
