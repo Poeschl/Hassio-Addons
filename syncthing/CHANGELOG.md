@@ -1,3 +1,10 @@
+## 1.13.0 - 2021-10-31
+
+* 🔼 Update alpine to `3.14`
+* 🔼 Update syncthing to `1.18.3-r0`
+* 🔨 Remove Jemalloc memory handling
+
+
 ## 1.12.0 - 2021-07-12
 
 * 🔼 Update syncthing to `1.18.0-r0`
