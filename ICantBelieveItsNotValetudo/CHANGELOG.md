@@ -1,3 +1,7 @@
+## 3.5.0 - 2021-10-31
+
+* 🔼 Updated ICantBelieveItsNotValetudo to latest release `2021.8.0`
+
 ## 3.4.1 - 2021-07-27
 
 * 🔧 Added port of mqtt broker to schema validaton
