@@ -1,5 +1,6 @@
 ## 1.11.0 - 2021-10-31
 
+* 🔨 Make branch configurable (see #272)
 * 🔼 Updated to alpine `3.14`
 * 🔼 Updated git to `2.30.0-r0`
 * 🔼 Updated rsync to `3.2.3-r4`
