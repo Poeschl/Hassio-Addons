@@ -20,9 +20,8 @@ RUN apk add --no-cache \
 			'sed=4.8-r0' \
 			'python3=3.9.5-r1' \
 			'py3-pip=20.3.4-r1' \
-			'findutils=4.8.0-r1' 
-
-RUN pip3 install --no-cache-dir PyYAML==6.0 dotty-dict==1.3.0
+			'findutils=4.8.0-r1' \
+	&& pip3 install --no-cache-dir PyYAML==6.0 dotty-dict==1.3.0
 
 COPY --from=BUILD /usr/local/bin/git-secrets /usr/local/bin/git-secrets
 
