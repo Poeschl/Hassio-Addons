@@ -1,3 +1,10 @@
+## 1.4.0 - 2021-10-31
+
+* 🔼 Updated alpine image to `3.14`
+* 🔼 Updated openjdk8 to `8.282.08-r1`
+* 🔼 Updated unzip to `6.0-r9`
+
+
 ## 1.3.0 - 2021-04-02
 
 * 🔨 Use ghcr.io/home-assistant for base images
