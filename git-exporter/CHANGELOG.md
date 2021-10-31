@@ -1,3 +1,16 @@
+## 1.11.0 - 2021-10-31
+
+* 🔼 Updated to alpine `3.14`
+* 🔼 Updated git to `2.30.0-r0`
+* 🔼 Updated rsync to `3.2.3-r4`
+* 🔼 Updated grep to `3.7-r0`
+* 🔼 Updated python3 to `3.9.5-r1`
+* 🔼 Updated py3-pip to `20.3.4-r1`
+* 🔼 Updated findutils to `4.8.0-r1`
+* 🔼 Updated PyYAML to `6.0`
+* 🔼 Updated dotty-dict to `1.3.0`
+
+
 ## 1.10.1 - 2021-06-03
 
 * 📝 Add secrets corner case docs for secrets containing special regex chars. (thanks @fliphess)
