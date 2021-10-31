@@ -12,11 +12,12 @@
     "amd64",
     "i386"
   ],
-  "startup": "application",
-  "boot": "auto",
   "image": "ghcr.io/poeschl/ha-marytts-{arch}",
   "ports": {
-    "59125/tcp": "59125"
+    "59125/tcp": 59125
+  },
+  "ports_description": {
+    "59125/tcp": "Port to access MaryTTS"
   },
   "options": {
     "language": "en"
