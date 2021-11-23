@@ -7,6 +7,7 @@ repository:
   password: pass
   pull_before_push: true
   commit_message: 'Home Assistant Git Exporter'
+  branch_name: 'main'
 export:
   lovelace: true
   addons: true
@@ -49,6 +50,10 @@ Should the repository be pulled first and commit the new state on top?
 ### `repository.commit_message`
 
 The commit message for the next commit.
+
+### `repository.branch_name`
+
+The working branch for the repository.
 
 
 ### `export.lovelace`

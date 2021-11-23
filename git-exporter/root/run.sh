@@ -12,6 +12,7 @@ function setup_git {
     username=$(bashio::config 'repository.username')
     password=$(bashio::config 'repository.password')
     commiter_mail=$(bashio::config 'repository.email')
+    branch=$(bashio::config 'repository.branch_name')
 
     if [[ "$password" != "ghp_*" ]]; then
         password=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${password}'))")
@@ -28,6 +29,7 @@ function setup_git {
         if [ "$pull_before_push" == 'true' ]; then
             bashio::log.info 'Clone existing repository'
             git clone "$fullurl" $local_repository
+            git checkout "$branch"
         else
             bashio::log.info 'Initialize new repository'
             git init $local_repository
@@ -45,7 +47,7 @@ function setup_git {
     if [ "$pull_before_push" == 'true' ]; then
         bashio::log.info 'Pull latest'
         git fetch
-        git reset --hard origin/master
+        git reset --hard "origin/$branch"
     fi
 }
 
@@ -187,7 +189,7 @@ else
     git commit -m "$(bashio::config 'repository.commit_message')"
 
     if [ ! "$pull_before_push" == 'true' ]; then
-        git push --set-upstream origin master -f
+        git push --set-upstream origin "$branch" -f
     else
         git push origin
     fi

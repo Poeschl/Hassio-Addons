@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM AS BUILD
 
 RUN apk add --no-cache \
-		'git=2.30.2-r0' \
+		'git=2.32.0-r0' \
 		'make=4.3-r0'
 
 ENV GIT_SECRET_VERSION 1.3.0
@@ -14,15 +14,14 @@ RUN git config --global advice.detachedHead false && \
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add --no-cache \
-			'git=2.30.2-r0' \
-			'rsync=3.2.3-r1' \
-			'grep=3.6-r0' \
+			'git=2.32.0-r0' \
+			'rsync=3.2.3-r4' \
+			'grep=3.7-r0' \
 			'sed=4.8-r0' \
-			'python3=3.8.10-r0' \
-			'py3-pip=20.3.4-r0' \
-			'findutils=4.8.0-r0' 
-
-RUN pip3 install --no-cache-dir PyYAML==5.3.1 dotty-dict==1.2.1
+			'python3=3.9.5-r1' \
+			'py3-pip=20.3.4-r1' \
+			'findutils=4.8.0-r1' \
+	&& pip3 install --no-cache-dir PyYAML==6.0 dotty-dict==1.3.0
 
 COPY --from=BUILD /usr/local/bin/git-secrets /usr/local/bin/git-secrets
 
