@@ -1,6 +1,6 @@
 {
   "name": "ICantBelieveItsNotValetudo",
-  "version": "3.6.0",
+  "version": "3.6.1",
   "slug": "icantbelieveitsnotvaletudo",
   "description": "This is a simple companion service for valetudo which generates the map pngs.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/ICantBelieveItsNotValetudo",
@@ -29,7 +29,15 @@
       "drawCharger": "bool",
       "drawRobot": "bool",
       "scale": "int(0,)",
-      "rotate": "int(0,)"
+      "rotate": "int(0,)",
+      "crop_top": "int(0,)?",
+      "crop_bottom": "int(0,)?",
+      "crop_left": "int(0,)?",
+      "crop_right": "int(0,)?",
+      "padding_top": "int(0,)?",
+      "padding_bottom": "int(0,)?",
+      "padding_right": "int(0,)?",
+      "padding_left": "int(0,)?"
     },
     "mapColors": {
       "floor": "match(#(?:[0-9a-fA-F]{2}){2,4}$|(#[0-9a-fA-F]{3})$)",

@@ -1,3 +1,7 @@
+## 3.6.1 - 2021-12-06
+
+* ➕ Add optional crop and padding settings
+
 ## 3.6.0 - 2021-12-06
 
 * 🔼 Updated python3 to `3.9.5-r2`
