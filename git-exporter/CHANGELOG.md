@@ -1,3 +1,8 @@
+## 1.12.0 - 2021-12-25
+
+* 🐛 Exclude log files (see #290)
+* 🔼 Updated python3 to `3.9.5-r2`
+
 ## 1.11.0 - 2021-10-31
 
 * 🔨 Make branch configurable (see #272)
