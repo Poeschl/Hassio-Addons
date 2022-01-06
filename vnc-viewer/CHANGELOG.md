@@ -1,3 +1,17 @@
+## 1.4.0 - 2022-01-06
+
+* 🐛 Let noVNC decide about the correct Home Assistant port. This will make it also work via https.
+* 🔼 Update noVNC to `1.3.0`
+* 🔼 Update websockify to `0.10.0`
+* 🔼 Update debian to `bookworm`
+* 🔼 Update git to `1:2.34.1-1`
+* 🔼 Update python3 to `3.9.7-1`
+* 🔼 Update python3-setuptools to `58.2.0-1`
+* 🔼 Update python3-numpy to `1:1.21.5-1`
+* 🔼 Update python3-pip to `20.3.4-4`
+* 🔼 Update procps to `2:3.3.17-5`
+* 🔼 Update Cython to `0.29.26`
+
 ## 1.3.0 - 2021-04-02
 
 * 🔨 Use ghcr.io/home-assistant for base images

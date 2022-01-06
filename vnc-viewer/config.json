@@ -1,6 +1,6 @@
 {
   "name": "VNC Viewer",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "slug": "vnc",
   "panel_icon": "mdi:remote-desktop",
   "description": "A noVNC client integrated in Home Assistant",
@@ -15,7 +15,6 @@
     "amd64",
     "i386"
   ],
-  "startup": "application",
   "boot": "manual",
   "hassio_api": true,
   "image": "ghcr.io/poeschl/ha-vnc-{arch}",

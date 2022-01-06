@@ -15,6 +15,8 @@ fi
 
 server="${server_host}:${server_port}"
 
+
 bashio::log.info 'Start noVNC'
 bashio::log.info "Connecting to VNC $server"
-/noVNC/utils/launch.sh --listen 6080 --vnc $server
+# shellcheck disable=SC2086
+/noVNC/utils/novnc_proxy --listen 6080 --vnc $server
