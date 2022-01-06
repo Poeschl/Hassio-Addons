@@ -15,7 +15,6 @@
     "amd64",
     "i386"
   ],
-  "startup": "application",
   "boot": "manual",
   "hassio_api": true,
   "image": "ghcr.io/poeschl/ha-vnc-{arch}",
