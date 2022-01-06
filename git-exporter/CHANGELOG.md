@@ -1,3 +1,7 @@
+## 1.12.1 - 2022-01-06
+
+* 🐛 Exclude log files over default config
+
 ## 1.12.0 - 2021-12-25
 
 * 🐛 Exclude log files (see #290)

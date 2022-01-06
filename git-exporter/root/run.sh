@@ -95,7 +95,7 @@ function check_secrets {
 function export_ha_config {
     bashio::log.info 'Get Home Assistant config'
     excludes=$(bashio::config 'exclude')
-    excludes=("secrets.yaml" ".storage" ".cloud" "esphome/" ".uuid" "node-red/" ".log." "${excludes[@]}")
+    excludes=("secrets.yaml" ".storage" ".cloud" "esphome/" ".uuid" "node-red/" "${excludes[@]}")
 
     # Cleanup existing esphome folder from config
     [ -d "${local_repository}/config/esphome" ] && rm -r "${local_repository}/config/esphome"
