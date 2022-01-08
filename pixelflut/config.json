@@ -15,11 +15,9 @@
     "amd64",
     "i386"
   ],
-  "startup": "application",
-  "boot": "auto",
   "image": "ghcr.io/poeschl/ha-pixelflut-{arch}",
   "ports": {
-    "1234/tcp": "1234",
+    "1234/tcp": 1234,
     "1235/tcp": null,
     "5900/tcp": null
   },

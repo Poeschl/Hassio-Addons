@@ -3,4 +3,4 @@ set -e
 
 bashio::log.info 'Set some defaults'
 
-sed -i "/UI.initSetting('show_dot'/ s/false/true/" /noVNC/app/ui.js
+sed -i "/UI.initSetting('view_only'/ s/false/true/; /UI.initSetting('view_clip'/ s/false/true/" /noVNC/app/ui.js
