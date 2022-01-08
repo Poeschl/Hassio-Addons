@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 set -e
-bashio::net.wait_for 1235
+bashio::net.wait_for 5900
 
 bashio::log.info 'Start noVNC'
 bashio::log.info "Binding to Pixelflut canvas"
