@@ -38,4 +38,6 @@ asterisk:
   - '([aA]sterisk)'
 juice-shop:
   - '([jJ]uice-?[sS]hop)'
+pixelflut:
+  - '([pP]ixelflut)'
   

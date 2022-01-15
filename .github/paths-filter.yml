@@ -18,3 +18,4 @@ vnc-viewer: vnc-viewer/**
 mopidy: mopidy/**
 asterisk: asterisk/**
 juice-shop: juice-shop/**
+pixelflut: pixelflut/**
