@@ -36,7 +36,7 @@ jobs:
 
       - name: ℹ️ Gather addon info
         id: information
-        uses: frenck/action-addon-information@v1.2
+        uses: frenck/action-addon-information@v1.3.1
         with:
           path: "./${{ matrix.addon }}/"
 
@@ -198,11 +198,11 @@ jobs:
           mv /tmp/buildx-cache-new /tmp/buildx-cache
 
       - name: 🔑 GHCR Login
-        uses: docker/login-action@v1.8.0
+        uses: docker/login-action@v1.12.0
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.CR_PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 🚀 Push images
         shell: bash
