@@ -1,6 +1,6 @@
 # pigpio
 
-Wraps the C control lib [pigpio](https://github.com/joan2937/pigpio) in a Hass.io addon to allow an easy installation.
+Wraps the C control lib [pigpio](https://github.com/joan2937/pigpio) in a Home Assistant addon to allow an easy installation.
 
 ![Addon Stage][stage-badge]
 ![Supports aarch64 Architecture][aarch64-badge]
@@ -11,6 +11,14 @@ Wraps the C control lib [pigpio](https://github.com/joan2937/pigpio) in a Hass.i
 
 [![Install on my Home Assistant][install-badge]][install-url]
 [![Donate][donation-badge]][donation-url]
+
+## Usage
+
+This addon runs the pigpio deamon which listens on http commands and control the GPIO on a Raspberry Pi accordingly.
+Running this and using the [remote_rpi_pgio integration](https://www.home-assistant.io/integrations/remote_rpi_gpio/) in your Home Assistant configuration pointing to `localhost` will connect both worlds.
+
+For additional options for the deamon use the optional addon setting `additional_options`.
+The options`-g -f` will be always set!
 
 ## Security
 

@@ -1,8 +1,8 @@
 {
   "name": "pigpio",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "slug": "pigpio",
-  "description": "Control your pwm leds with pigpio on Hass.io",
+  "description": "Control your pwm leds with pigpio on Home Assistant",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/pigpio",
   "arch": [
     "armhf",
@@ -19,5 +19,8 @@
   },
   "ports_description": {
     "8888/tcp": "The port to control pigpio"
+  },
+  "schema": {
+    "additional_options": "str?"
   }
 }
