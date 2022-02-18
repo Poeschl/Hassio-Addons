@@ -1,6 +1,14 @@
 ## 1.5.0 - 2022-02-18
 
 * ✨ Added option for additional pigpiod arguments
+* 🔼 Update debian to `bullseye`
+* 🔼 Update python2 to `2.7.18-3`
+* 🔼 Update python3 to `3.9.2-3`
+* 🔼 Update python-setuptools to `44.1.1-1`
+* 🔼 Update python3-setuptools to `52.0.0-4`
+* 🔼 Update git to `1:2.30.2-1`
+* 🔼 Update build-essential to `12.9`
+* 🔼 Update python3-minimal to `3.9.2-3`
 
 ## 1.4.0 - 2021-06-27
 
