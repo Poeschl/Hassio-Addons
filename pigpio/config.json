@@ -20,7 +20,6 @@
   "ports_description": {
     "8888/tcp": "The port to control pigpio"
   },
-  "options": {},
   "schema": {
     "additional_options": "str?"
   }
