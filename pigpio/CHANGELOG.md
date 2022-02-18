@@ -1,3 +1,7 @@
+## 1.5.0 - 2022-02-18
+
+* ✨ Added option for additional pigpiod arguments
+
 ## 1.4.0 - 2021-06-27
 
 * 🏗️ Added `aarch64` architecture
