@@ -1,7 +1,7 @@
 
 {
   "name": "Docker Container Stats",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "slug": "container-stats",
   "description": "🧪 experimental | A web interface for viewing historical and current statistics per docker container",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/container-stats",
@@ -16,9 +16,7 @@
   "ingress_port": 8080,
   "panel_title": "Docker Container Stats",
   "panel_icon": "mdi:chart-line",
-  "startup": "application",
   "stage": "experimental",
-  "boot": "auto",
   "docker_api": true,
   "image": "ghcr.io/poeschl/ha-container-stats-{arch}",
   "ports": {
