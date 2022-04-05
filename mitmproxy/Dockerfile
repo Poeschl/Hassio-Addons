@@ -21,9 +21,8 @@ RUN apk add --no-cache \
         libffi-dev=3.3-r2 \
         libstdc++=9.3.0-r2 \
         openssl=1.1.1n-r0 \
-        openssl-dev=1.1.1n-r0
-
-RUN pip3 install --no-cache-dir --user --upgrade mitmproxy==5.1.1
+        openssl-dev=1.1.1n-r0 &&\
+    pip3 install --no-cache-dir --user --upgrade mitmproxy==5.1.1
 
 
 FROM $BUILD_FROM AS RUNNING
