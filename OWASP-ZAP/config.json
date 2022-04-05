@@ -1,7 +1,7 @@
 
 {
   "name": "OWASP ZAP",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "slug": "owasp_zap",
   "description": "The OWASP Zed Attack Proxy (ZAP) is one of the world’s most popular free security tools and is actively maintained by a dedicated international team of volunteers.",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/OWASP-ZAP",
@@ -9,11 +9,9 @@
     "armv7",
     "amd64"
   ],
-  "startup": "application",
   "boot": "manual",
   "image": "ghcr.io/poeschl/ha-owasp-zap-{arch}",
   "webui": "http://[HOST]:[PORT:8080]/zap",
-  "ingress": false,
   "ingress_port": 8080,
   "ingress_entry": "zap/",
   "panel_title": "OWASP ZAP",
@@ -25,7 +23,5 @@
   "ports_description": {
     "8080/tcp": "Port for the web interface",
     "8090/tcp": "Proxy Port to accept requests which are traced."
-  },
-  "schema": {},
-  "options": {}
+  }
 }
