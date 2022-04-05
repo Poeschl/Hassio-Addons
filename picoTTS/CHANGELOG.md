@@ -1,3 +1,9 @@
+## 1.5.0 - 2022-04-05
+
+* 🔼 Updated python3 to `3.8.10-r0`
+* 📝 Updated config.json and Readme
+
+
 ## 1.4.0 - 2021-04-02
 
 * 🔨 Use ghcr.io/home-assistant for base images
