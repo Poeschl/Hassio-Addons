@@ -1,3 +1,8 @@
+## 1.7.1 - 2022-04-05
+
+* 📝 Updated config.json and Readme
+
+
 ## 1.7.0 - 2021-04-02
 
 * 🔨 Use ghcr.io/home-assistant for base images
