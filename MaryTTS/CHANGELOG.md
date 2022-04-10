@@ -1,3 +1,9 @@
+## 1.5.0 - 2022-04-10
+
+* 🔼 Updated openjdk8 to `8.302.08-r1`
+* 📝 Updated Readme
+
+
 ## 1.4.0 - 2021-10-31
 
 * 🔼 Updated alpine image to `3.14`
