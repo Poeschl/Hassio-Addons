@@ -1,3 +1,7 @@
+## 1.10.1 - 2022-04-10
+
+* 📝 Updated Readme
+
 ## 1.10.0 - 2021-07-27
 
 * 🔧 Add port of mqtt broker to schema validaton
