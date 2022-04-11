@@ -1,3 +1,9 @@
+## 2.1.1 - 2022-04-11
+
+* 🐛 Fix alpine package repositories
+* ➖ Removed fixed tornado version
+
+
 ## 2.1.0 - 2022-04-05
 
 * 🔼 Update alpine to `3.14`

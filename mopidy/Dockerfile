@@ -2,11 +2,10 @@ ARG BUILD_FROM
 
 FROM $BUILD_FROM AS build-base
 
-RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main \
+RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/v3.14/community --repository=https://dl-cdn.alpinelinux.org/alpine/v3.14/main \
       python3=3.9.5-r2 \
       py3-gst=1.18.4-r1 \
       py3-pip=20.3.4-r1 \
-      py3-tornado=6.1-r1 \
       mopidy=3.1.1-r3 \
       && ln -s /usr/lib/libpython3.9.so.1.0 /usr/lib/libpython3.9.so
 
@@ -31,10 +30,9 @@ RUN pip3 install --no-cache-dir --user Mopidy-RadioNet==0.2.2 &&\
 
 FROM $BUILD_FROM AS run
 
-RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main \
+RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/v3.14/community --repository=https://dl-cdn.alpinelinux.org/alpine/v3.14/main \
       python3=3.9.5-r2 \
       py3-gst=1.18.4-r1 \
-      py3-tornado=6.1-r1 \
       mopidy=3.1.1-r3 \
       ca-certificates=20211220-r0 \
       sudo=1.9.7_p1-r1 \
