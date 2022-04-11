@@ -1,3 +1,7 @@
+## 3.6.2 - 2022-04-10
+
+* 📝 Updated Readme
+
 ## 3.6.1 - 2021-12-06
 
 * ➕ Add optional crop and padding settings

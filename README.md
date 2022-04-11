@@ -46,6 +46,8 @@ On thoes addons will be not developed anymore. Feel free to fork them.
 
 ## Installation
 
+[![Add repository on my Home Assistant][repository-badge]][repository-url]
+
 To install those Add-ons add this repository in the Home Assistant Add-on store.
 
 Use the following URL to add this repository:
@@ -62,3 +64,5 @@ The licence of the repository is inherited by the plugins, if not stated differe
 [licence-badge]: https://img.shields.io/github/license/Poeschl/Hassio-Addons?style=for-the-badge
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white
 [donation-url]: https://www.buymeacoffee.com/Poeschl
+[repository-badge]: https://img.shields.io/badge/Add%20repository%20to%20my-Home%20Assistant-41BDF5?logo=home-assistant&style=for-the-badge
+[repository-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FPoeschl%2FHassio-Addons

@@ -1,6 +1,6 @@
 {
   "name": "pigpio",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "slug": "pigpio",
   "description": "Control your pwm leds with pigpio on Home Assistant",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/pigpio",

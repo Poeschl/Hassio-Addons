@@ -1,3 +1,14 @@
+## 1.2.0 - 2022-04-05
+
+* 🔼 Updated python3 to `3.8.10-r0`
+* 🔼 Updated python3-dev to `3.8.10-r0`
+* 🔼 Update openssl to `1.1.1n-r0`
+* 🔼 Update openssl-dev to `1.1.1n-r0`
+* 🔼 Update haproxy to `2.2.22-r0`
+* 🔼 Update ca-certificates to `20211220-r0`
+* 📝 Updated config.json and Readme
+
+
 ## 1.1.0 - 2021-04-02
 
 * 🔨 Use ghcr.io/home-assistant for base images

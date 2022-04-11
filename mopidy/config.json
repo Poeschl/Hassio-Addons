@@ -1,14 +1,11 @@
 {
   "name": "Mopidy",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "slug": "mopidy",
   "panel_icon": "mdi:music-circle",
   "description": "Mopidy Music Server",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/mopidy",
   "webui": "http://[HOST]:[PORT:6680]/iris",
-  "ingress": false,
-  "ingress_port": 6680,
-  "ingress_entry": "iris/",
   "arch": [
     "armv7",
     "armhf",
@@ -17,7 +14,6 @@
   ],
   "homeassistant": "0.115.0",
   "startup": "system",
-  "boot": "auto",
   "image": "ghcr.io/poeschl/ha-mopidy-{arch}",
   "audio": true,
   "devices": ["/dev/snd"],

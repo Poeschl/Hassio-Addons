@@ -1,3 +1,14 @@
+## 2.1.0 - 2022-04-05
+
+* 🔼 Update alpine to `3.14`
+* 🔼 Update Mopidy-Iris to `3.62.0`
+* 🔼 Update Mopidy-MPD to `3.2.0`
+* 🔼 Update python3 to `3.9.5-r2`
+* 🔼 Update ca-certificates to `20211220-r0`
+* 🔼 Update sudo to `1.9.7_p1-r1`
+* 📝 Updated config.json and Readme
+
+
 ## 2.0.1 - 2020-06-03
 
 * 🔼 Update python3 to `3.9.5-r1`

@@ -1,3 +1,10 @@
+## 2.2.0 - 2022-04-05
+
+* 🔼 Update Java to `11.0.14+9-1~deb10u1`
+* 🔼 Update xvfb to `2:1.20.4-1+deb10u4`
+* 📝 Updated config.json and Readme
+
+
 ## 2.1.0 - 2021-04-02
 
 * 🔨 Use ghcr.io/home-assistant for base images

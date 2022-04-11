@@ -1,3 +1,9 @@
+## 1.14.0 - 2022-04-10
+
+* 🔼 Updated syncthing to `1.19.2-r0`
+* 📝 Updated Readme
+
+
 ## 1.13.0 - 2021-10-31
 
 * 🔼 Update alpine to `3.14`

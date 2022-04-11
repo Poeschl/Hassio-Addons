@@ -1,3 +1,7 @@
+## 1.12.2 - 2022-04-10
+
+* 📝 Updated Readme
+
 ## 1.12.1 - 2022-01-06
 
 * 🐛 Exclude log files over default config

@@ -21,7 +21,7 @@ RUN git config --global advice.detachedHead false && \
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add --no-cache \
-			'python3=3.8.8-r0' \
+			'python3=3.8.10-r0' \
 			'popt=1.18-r0' && \
 	python3 -m ensurepip
 

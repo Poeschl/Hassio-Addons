@@ -1,3 +1,7 @@
+## 1.5.1 - 2022-04-10
+
+* 📝 Updated Readme
+
 ## 1.5.0 - 2022-02-18
 
 * ✨ Added option for additional pigpiod arguments

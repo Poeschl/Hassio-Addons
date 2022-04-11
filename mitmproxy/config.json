@@ -1,12 +1,10 @@
 {
   "name": "mitmproxy",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "slug": "mitmproxy",
   "panel_icon": "mdi:lan-connect",
   "description": "A free and open source interactive HTTPS proxy for intercepting and inspecting network traffic",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/mitmproxy",
-  "ingress": false,
-  "ingress_port": 8081,
   "arch": [
     "armv7",
     "armhf",
@@ -14,8 +12,6 @@
     "amd64",
     "i386"
   ],
-  "startup": "application",
-  "boot": "auto",
   "hassio_api": true,
   "image": "ghcr.io/poeschl/ha-mitmproxy-{arch}",
   "map": ["ssl", "share:rw"],

@@ -14,7 +14,7 @@ FROM $BUILD_FROM AS RUNNING
 
 
 RUN apk update && \
-    apk add --no-cache 'openjdk8=8.282.08-r1'
+    apk add --no-cache 'openjdk8=8.302.08-r1'
 
 #Used for the voice pack downloads
 ENV MARYTTS_VERSION 5.2
