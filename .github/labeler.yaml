@@ -15,7 +15,7 @@ git-exporter:
 mitmproxy:
   - '(mitmproxy)'
 mpd:
-  - '(\s[mM]pd)'
+  - '(\s[mM][pP][dD])'
 picoTTS:
   - '(picoTTS)'
 pigpio:
