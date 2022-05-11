@@ -43,6 +43,8 @@ options:
     - deps/
     - known_devices.yaml
     - tts/
+  secrets: []
+  allowed_secrets: []
   dry_run: false
 schema:
   repository:
@@ -63,5 +65,9 @@ schema:
     check_for_secrets: bool
     check_for_ips: bool
   exclude:
+    - str
+  secrets: 
+    - str
+  allowed_secrets: 
     - str
   dry_run: bool
