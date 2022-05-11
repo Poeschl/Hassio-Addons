@@ -49,6 +49,8 @@ function setup_git {
         git fetch
         git reset --hard "origin/$branch"
     fi
+
+    git clean -f -d
 }
 
 function check_secrets {
