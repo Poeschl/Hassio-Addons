@@ -1,6 +1,7 @@
 ## 1.14.0 - 2022-11-05
 
 * ✨ Allow customising secret patterns (thanks @bjeanes #316)
+* 🔨 Clean untracked files from working directory before syncing latest config (thanks @bjeanes #317)
 * 🔼 Updated git to `2.36.3-r0`
 * 🔼 Updated rsync to `3.2.7-r0`
 
@@ -177,4 +178,3 @@
 * ➕ ESPHome exports
 * ➕ Configurable Commit message
 * ➕ Configurable exports
-
