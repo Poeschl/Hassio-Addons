@@ -1,5 +1,0 @@
-#!/usr/bin/with-contenv bashio
-bashio::net.wait_for 9090
-
-bashio::log.info "Start Reverse proxy for frontend"
-haproxy -p /tmp/haproxy.pid -f /etc/haproxy/haproxy.cfg -db

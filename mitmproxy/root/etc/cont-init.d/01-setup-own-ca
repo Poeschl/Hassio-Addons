@@ -1,9 +1,0 @@
-#!/usr/bin/with-contenv bashio
-set -e
-CUSTOM_CA=$(bashio::config custom_ca)
-
-if [ "$CUSTOM_CA" != 'null' ] && [ ! -z "$CUSTOM_CA" ]; then
-	bashio::log.info "Use custom ca certificate $CUSTOM_CA"
-	rm /data/mitmproxy/mitmproxy-ca.pem /data/mitmproxy/mitmproxy-ca-cert.pem /data/mitmproxy/mitmproxy-ca-cert.p12 /data/mitmproxy/mitmproxy-ca-cert.cer
-	ln -s "$CUSTOM_CA" /data/mitmproxy/mitmproxy-ca.pem
-fi
