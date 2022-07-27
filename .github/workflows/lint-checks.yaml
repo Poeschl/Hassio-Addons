@@ -1,4 +1,4 @@
-name: Lint / Syntax checks
+name: Lint Checks
 on:
   pull_request:
     branches:
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       changedAddons: ${{ steps.filter.outputs.changes }}
-      changedChangelogFiles: ${{ steps.changed-files.outputs.changelogs_files }}
+      changedDockerfiles: ${{ steps.changed-files.outputs.dockerfile_files }}
     steps:
 
     - name: ↩️ Checkout
@@ -32,8 +32,8 @@ jobs:
       with:
         list-files: csv
         filters: |
-          changelogs:
-            - '**/CHANGELOG.md'
+          dockerfile:
+            - '**/Dockerfile.md'
 
   addon-linter:
     name: Addon linting
@@ -61,18 +61,9 @@ jobs:
       - name: ↩️ Checkout
         uses: actions/checkout@v2
 
-      - name: 📂 Detect chanced files
-        id: filter
-        uses: dorny/paths-filter@v2.9.0
-        with:
-          list-files: 'shell'
-          filters: |
-            dockerfile:
-              - '**/Dockerfile'
-
       - name: 🔎 Run hadolint
         if: steps.filter.outputs.dockerfile == 'true'
-        run: hadolint ${{ steps.filter.outputs.dockerfile_files }}
+        run: hadolint ${{ needs.check-addon-changes.outputs.changedDockerfiles }}
 
   shellcheck:
     runs-on: ubuntu-latest
