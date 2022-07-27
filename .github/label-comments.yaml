@@ -19,3 +19,9 @@ labels:
         body: |
           Please make sure you have the right addon for your software.
           The addon you mentioning is the companion for [Valetudo RE from rand256](https://github.com/rand256/valetudo).
+
+  - name: container-stats
+    labeled:
+      issue:
+        body: |
+          Note: The Container Stats addon is depreciated and will not recieve any updates.

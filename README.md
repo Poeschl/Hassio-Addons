@@ -35,14 +35,13 @@ More about the Add-ons can be found in their folders.
 
 Those addons might not be stable at all. Use at your own risk!
 
-* Docker Container Stats - Lightwight monitoring of all the running docker containers.
-
+*Nothing to see here*
 
 ### 🕸️ Depreciated
 
 On thoes addons will be not developed anymore. Feel free to fork them.
 
-🤷‍♂️
+* Docker Container Stats - Lightwight monitoring of all the running docker containers.
 
 ## Installation
 

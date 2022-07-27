@@ -13,7 +13,6 @@ OWASP-ZAP: OWASP-ZAP/**
 mitmproxy: mitmproxy/**
 rsync: rsync/**
 rsync-local: rsync-local/**
-container-stats: container-stats/**
 vnc-viewer: vnc-viewer/**
 mopidy: mopidy/**
 asterisk: asterisk/**

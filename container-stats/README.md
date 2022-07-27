@@ -1,5 +1,7 @@
 # Docker Container Stats (Home Assistant Addon)
 
+# 🕸️ Depreciated
+
 It contains [Docker Container Stats](https://github.com/virtualzone/docker-container-stats) to monitor all running containers / addons.
 
 ![Addon Stage][stage-badge]
