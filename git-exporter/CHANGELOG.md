@@ -1,5 +1,7 @@
 ## 1.13.0 - 2022-07-27
 
+* 🐛 Fixes issues with supervisor api for addon repository getting (#325).
+
 * 🔼 Updated to alpine `3.16`
 * 🔼 Updated git to `2.36.2-r0`
 * 🔼 Updated rsync to `3.2.4-r1`
