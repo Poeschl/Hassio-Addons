@@ -13,7 +13,7 @@
 [![Install on my Home Assistant][install-badge]][install-url]
 [![Donate][donation-badge]][donation-url]
 
-![Screenshots](https://raw.githubusercontent.com/bkimminich/juice-shop/master/screenshots/slideshow.gif)
+![Screenshots](https://raw.githubusercontent.com/bkimminich/juice-shop/main/screenshots/slideshow.gif)
 
 I ported it over as Home Assistant Addon as a fun project. Just in case you want to do the juice shop on your Home Assistant OS.
 

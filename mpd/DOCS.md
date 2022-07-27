@@ -37,7 +37,7 @@ verbose: true
 
 This option let you specify an custom configuration file for MPD.
 To keep all MPD files in one place I restricted the path prefix to `/share/mpd`
-Please use the default [mpd.conf of the addon](https://github.com/Poeschl/Hassio-Addons/blob/master/mpd/root/etc/mpd.conf) as starting point.
+Please use the default [mpd.conf of the addon](https://github.com/Poeschl/Hassio-Addons/blob/main/mpd/root/etc/mpd.conf) as starting point.
 In case you have issues with your configuration, the [MPD docs](https://www.musicpd.org/doc/html/user.html#configuration) might help you out.
 
 Working example:

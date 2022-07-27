@@ -1,8 +1,8 @@
-name: Check PR Build
+name: Check Addon Build
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   check-addon-changes:
@@ -24,77 +24,12 @@ jobs:
     - name: 📂 Detect chanced files
       uses: dorny/paths-filter@v2
       id: changed-files
+      
       with:
         list-files: csv
         filters: |
           changelogs:
             - '**/CHANGELOG.md'
-
-  check-changed-changelog:
-    name: Check if CHANGELOG.md changed
-    if: ${{ needs.check-addon-changes.outputs.changedAddons != '[]' }}
-    runs-on: ubuntu-latest
-    needs: check-addon-changes
-    strategy:
-      fail-fast: false
-      matrix:
-        addon: ${{ fromJSON(needs.check-addon-changes.outputs.changedAddons) }}
-    steps:
-
-      - name: 🔎 Check for updated CHANGELOG.md
-        shell: bash
-        run: |
-          if [[ ! "${{ needs.check-addon-changes.outputs.changedChangelogFiles }}" =~ "${{ matrix.addon }}/CHANGELOG.md" ]]; then
-              echo "::error::No new entries in ${{ matrix.addon }} CHANGELOG.md file!"
-              exit 1
-          fi
-
-  check-version-matching:
-    name: Check for same addon versions
-    if: ${{ needs.check-addon-changes.outputs.changedAddons != '[]' }}
-    runs-on: ubuntu-latest
-    needs: check-addon-changes
-    strategy:
-      fail-fast: false
-      matrix:
-        addon: ${{ fromJSON(needs.check-addon-changes.outputs.changedAddons) }}
-    steps:
-
-      - name: ↩️ Checkout
-        uses: actions/checkout@v2
-
-      - name: 🔎 Check if versions of CHANGELOG.md and config.json match
-        shell: bash
-        run: |
-          config_version=$(sed -nr "s/.*version.*\"(.+)\".*/\1/p" "${{ matrix.addon }}/config.json")
-          changelog_version=$(sed -nr "0,/#{1,2}\s+(\S+)\s+-.*/{s//\1/p}" "${{ matrix.addon }}/CHANGELOG.md")
-          if [[ ! "$config_version" = "$changelog_version" ]]; then
-              echo "::error::The config version does not match the latest Changelog version!"
-              exit 1
-          fi
-
-  check-addon-label:
-    name: Check for existance of the addon label
-    if: ${{ needs.check-addon-changes.outputs.changedAddons != '[]' }}
-    runs-on: ubuntu-latest
-    needs: check-addon-changes
-    strategy:
-      fail-fast: false
-      matrix:
-        addon: ${{ fromJSON(needs.check-addon-changes.outputs.changedAddons) }}
-    steps:
-
-      - name: ↩️ Checkout
-        uses: actions/checkout@v2
-
-      - name: 🔎 Check if a label for the addon exists
-        shell: bash
-        run: |
-          labeltext=$(sed -nr "s/name:\s(${{ matrix.addon }}).*/\1/p" '.github/labels.yaml')
-          if [[ -z "$labeltext" ]]; then
-              echo "::error::There is no label for this addon! Please add it to .github/labels.yaml and .github/labeler.yaml"
-              exit 1
-          fi 
 
   addon-linter:
     name: Addon linting
@@ -163,14 +98,14 @@ jobs:
           labels=$(printf "$labels\nio.hass.name=${{ steps.information.outputs.name }}")
           labels=$(printf "$labels\nio.hass.description=${{ steps.information.outputs.description }}")
           labels=$(printf "$labels\nio.hass.type=addon")
-          labels=$(printf "$labels\nio.hass.url=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/master/${{ matrix.addon }}")
+          labels=$(printf "$labels\nio.hass.url=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/main/${{ matrix.addon }}")
 
           labels=$(printf "$labels\norg.opencontainers.image.title=${{ steps.information.outputs.name }}")
           labels=$(printf "$labels\norg.opencontainers.image.description=${{ steps.information.outputs.description }}")
           labels=$(printf "$labels\norg.opencontainers.image.version=${{ steps.information.outputs.version }}")
           labels=$(printf "$labels\norg.opencontainers.image.authors=Poeschl <Poeschl@users.noreply.github.com>")
           labels=$(printf "$labels\norg.opencontainers.image.url=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}")
-          labels=$(printf "$labels\norg.opencontainers.image.source=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/master/${{ matrix.addon }}")
+          labels=$(printf "$labels\norg.opencontainers.image.source=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/main/${{ matrix.addon }}")
           labels=$(printf "$labels\norg.opencontainers.image.created=$(date -Is)")
           labels=$(printf "$labels\norg.opencontainers.image.revision=${GITHUB_SHA}")
 

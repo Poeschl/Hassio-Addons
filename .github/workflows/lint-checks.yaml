@@ -2,7 +2,8 @@ name: Lint / Syntax checks
 on:
   pull_request:
     branches:
-      - master
+      - main
+      - dev
 
 jobs:
   hadolint:

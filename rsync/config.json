@@ -4,7 +4,7 @@
   "version": "1.4.0",
   "slug": "rsync",
   "description": "Sync folders to a remote machine via ssh and rsync.",
-  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/rsync",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/rsync",
   "arch": [
     "armhf",
     "armv7",

@@ -1,0 +1,97 @@
+name: Check Versioning
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-addon-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      changedAddons: ${{ steps.filter.outputs.changes }}
+      changedChangelogFiles: ${{ steps.changed-files.outputs.changelogs_files }}
+    steps:
+
+    - name: ↩️ Checkout
+      uses: actions/checkout@v2
+
+    - name: 📂 Detect chanced addons
+      uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: .github/paths-filter.yml
+
+    - name: 📂 Detect chanced files
+      uses: dorny/paths-filter@v2
+      id: changed-files
+      with:
+        list-files: csv
+        filters: |
+          changelogs:
+            - '**/CHANGELOG.md'
+
+  check-changed-changelog:
+    name: Check if CHANGELOG.md changed
+    if: ${{ needs.check-addon-changes.outputs.changedAddons != '[]' }}
+    runs-on: ubuntu-latest
+    needs: check-addon-changes
+    strategy:
+      fail-fast: false
+      matrix:
+        addon: ${{ fromJSON(needs.check-addon-changes.outputs.changedAddons) }}
+    steps:
+
+      - name: 🔎 Check for updated CHANGELOG.md
+        shell: bash
+        run: |
+          if [[ ! "${{ needs.check-addon-changes.outputs.changedChangelogFiles }}" =~ "${{ matrix.addon }}/CHANGELOG.md" ]]; then
+              echo "::error::No new entries in ${{ matrix.addon }} CHANGELOG.md file!"
+              exit 1
+          fi
+
+  check-version-matching:
+    name: Check for same addon versions
+    if: ${{ needs.check-addon-changes.outputs.changedAddons != '[]' }}
+    runs-on: ubuntu-latest
+    needs: check-addon-changes
+    strategy:
+      fail-fast: false
+      matrix:
+        addon: ${{ fromJSON(needs.check-addon-changes.outputs.changedAddons) }}
+    steps:
+
+      - name: ↩️ Checkout
+        uses: actions/checkout@v2
+
+      - name: 🔎 Check if versions of CHANGELOG.md and config.json match
+        shell: bash
+        run: |
+          config_version=$(sed -nr "s/.*version.*\"(.+)\".*/\1/p" "${{ matrix.addon }}/config.json")
+          changelog_version=$(sed -nr "0,/#{1,2}\s+(\S+)\s+-.*/{s//\1/p}" "${{ matrix.addon }}/CHANGELOG.md")
+          if [[ ! "$config_version" = "$changelog_version" ]]; then
+              echo "::error::The config version does not match the latest Changelog version!"
+              exit 1
+          fi
+
+  check-addon-label:
+    name: Check for existance of the addon label
+    if: ${{ needs.check-addon-changes.outputs.changedAddons != '[]' }}
+    runs-on: ubuntu-latest
+    needs: check-addon-changes
+    strategy:
+      fail-fast: false
+      matrix:
+        addon: ${{ fromJSON(needs.check-addon-changes.outputs.changedAddons) }}
+    steps:
+
+      - name: ↩️ Checkout
+        uses: actions/checkout@v2
+
+      - name: 🔎 Check if a label for the addon exists
+        shell: bash
+        run: |
+          labeltext=$(sed -nr "s/name:\s(${{ matrix.addon }}).*/\1/p" '.github/labels.yaml')
+          if [[ -z "$labeltext" ]]; then
+              echo "::error::There is no label for this addon! Please add it to .github/labels.yaml and .github/labeler.yaml"
+              exit 1
+          fi 

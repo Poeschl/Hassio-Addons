@@ -4,7 +4,7 @@
   "version": "1.5.0",
   "slug": "picotts",
   "description": "Text to speech voice synthesizer from SVox, included in Android AOSP.",
-  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/picoTTS",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/picoTTS",
   "arch": [
     "armhf",
     "armv7",

@@ -11,7 +11,7 @@ A list of paths to your configuration files of asterisk.
 Every listed file will overwrite the template config file at `/etc/asterisk` on each addon start.
 The config files can be located on `/config` or`/share`.
 
-For the sample files take a look at the [official asterisk repository](https://github.com/asterisk/asterisk/blob/master/configs/samples).
+For the sample files take a look at the [official asterisk repository](https://github.com/asterisk/asterisk/blob/main/configs/samples).
 
 ## Testing
 

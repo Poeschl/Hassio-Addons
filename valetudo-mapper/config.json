@@ -3,7 +3,7 @@
   "version": "1.10.1",
   "slug": "valetudomapper",
   "description": "This is a simple companion service for Valetudo RE which generates the map pngs.",
-  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/valetudo-mapper",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/valetudo-mapper",
   "arch": [
     "armhf",
     "armv7",

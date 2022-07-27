@@ -4,7 +4,7 @@
   "slug": "pixelflut",
   "panel_icon": "mdi:waves",
   "description": "Bring a Pixelflut canvas into your Smart Home",
-  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/pixelflut",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/pixelflut",
   "ingress": true,
   "ingress_port": 6080,
   "ingress_entry":"vnc.html?autoconnect=true",

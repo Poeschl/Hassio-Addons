@@ -15,7 +15,7 @@ This is the adaption of [ICantBelieveItsNotValetudo](https://github.com/Hypfer/I
 
 ## Config
 
-The configuration keys are identical to the [configuration of ICantBelieveItsNotValetudo](https://github.com/Hypfer/ICantBelieveItsNotValetudo/blob/master/README.md).
+The configuration keys are identical to the [configuration of ICantBelieveItsNotValetudo](https://github.com/Hypfer/ICantBelieveItsNotValetudo/blob/main/README.md).
 Please get the meaning for them from there.
 It's normal that the structure of the addon differs from the official config file, this is nessesary because of the Supervisor Addon config structure.
 

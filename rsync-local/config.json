@@ -4,7 +4,7 @@
   "version": "1.4.0",
   "slug": "rsync-local",
   "description": "Sync folders to a external usb drive with rsync.",
-  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/rsync-local",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/rsync-local",
   "arch": [
     "armhf",
     "armv7",

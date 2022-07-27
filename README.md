@@ -1,6 +1,6 @@
 # Poeschl Home Assistant Supervisor Add-ons
 
-[![Master build][build-badge]][build-url]
+[![Main build][build-badge]][build-url]
 ![GitHub commit activity][commit-badge]
 ![Licence][licence-badge]
 
