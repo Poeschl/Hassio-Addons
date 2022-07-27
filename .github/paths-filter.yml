@@ -9,8 +9,6 @@ valetudo-mapper: valetudo-mapper/**
 ympd: ympd/**
 git-exporter: git-exporter/**
 syncthing: syncthing/**
-OWASP-ZAP: OWASP-ZAP/**
-mitmproxy: mitmproxy/**
 rsync: rsync/**
 rsync-local: rsync-local/**
 vnc-viewer: vnc-viewer/**

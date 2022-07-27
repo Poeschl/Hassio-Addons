@@ -25,3 +25,15 @@ labels:
       issue:
         body: |
           Note: The Container Stats addon is depreciated and will not recieve any updates.
+
+  - name: mitmproxy
+    labeled:
+      issue:
+        body: |
+          Note: The MITM Proxy addon is depreciated and will not recieve any updates.
+
+  - name: OWASP-ZAP
+    labeled:
+      issue:
+        body: |
+          Note: The OWASP-ZAP addon is depreciated and will not recieve any updates.
