@@ -1,3 +1,17 @@
+## 1.2.0 - 2022-07-31
+
+* 🔼 Updated vncmux to latest commit `b376f97`
+* 🔼 Updated python3 to `3.10.5-3`
+* 🔼 Updated python3-numpy to `1:1.21.5-1+b1`
+* 🔼 Updated python3-pip to `22.2+dfsg-1`
+* 🔼 Updated Cython to `0.29.32`
+* 🔼 Updated libvncserver/libvncserver-dev to `0.9.13+dfsg-4`
+* 🔼 Updated libvncclient/libvncclient-dev to `0.9.13+dfsg-4`
+* 🔼 Updated libsdl2/libsdl2-dev to `2.0.22+dfsg-6`
+* 🔼 Updated libfreetype6/libfreetype6-dev to `2.12.1+dfsg-3`
+* 🔨 Migrated to S6-Overlay `V3`
+* 📝 Updated to new repository structure + Yaml config
+
 ## 1.1.0 - 2022-04-10
 
 * 🔼 Update git to `1:2.35.1-1`

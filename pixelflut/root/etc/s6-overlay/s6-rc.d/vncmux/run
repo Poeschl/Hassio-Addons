@@ -1,6 +1,6 @@
-#!/usr/bin/with-contenv bashio
+#!/command/with-contenv bashio
 set -e
-bashio::net.wait_for 1235
+bashio::net.wait_for 5900
 
 width=$(bashio::config 'width')
 height=$(bashio::config 'height')
