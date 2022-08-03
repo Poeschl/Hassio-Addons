@@ -1,3 +1,13 @@
+## 1.6.0 - 2022-08-03
+
+* 🔼 Update python3 to `3.10.5-3`
+* 🔼 Update python3-pip to `22.2+dfsg-1`
+* 🔼 Update python3-numpy to `1:1.21.5-1+b1`
+* 🔼 Update Cython to `0.29.32`
+* 🔨 Migrated to S6-Overlay `V3`
+* 📝 Updated to new repository structure + Yaml config
+
+
 ## 1.5.0 - 2022-04-10
 
 * 🔼 Update git to `1:2.35.1-1`

@@ -1,5 +1,14 @@
-#!/usr/bin/with-contenv bashio
+#!/command/with-contenv bashio
 set -e
+
+bashio::log.info 'Set some defaults'
+sed -i "/UI.initSetting('show_dot'/ s/false/true/; /UI.initSetting('resize'/ s/off/scale/" /noVNC/app/ui.js
+
+bashio::log.info 'Prepare noVNC for Home Assistant ingress'
+host_port=$(bashio::core.port)
+ingress_url=$(bashio::addon.ingress_entry)
+
+sed -i "/UI.initSetting/ s@'websockify'@'${ingress_url:1}/websockify'@" /noVNC/app/ui.js
 
 if bashio::config.has_value 'vnc_server_password'; then
     bashio::log.info 'Inject vnc connection password'
