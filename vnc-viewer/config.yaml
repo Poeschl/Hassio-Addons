@@ -16,7 +16,7 @@ arch:
 boot: manual
 hassio_api: true
 image: ghcr.io/poeschl/ha-vnc-{arch}
-init: falses
+init: false
 options:
   vnc_server_host: localhost
 schema:
