@@ -33,7 +33,7 @@ More about the Add-ons can be found in their folders.
 
 Those addons might not be stable at all. Use at your own risk!
 
-*Nothing to see here*
+🏜️
 
 ### 🕸️ Depreciated
 
