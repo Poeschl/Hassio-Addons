@@ -1,3 +1,13 @@
+## 1.11.0 - 2022-08-03
+
+* 🔼 Update Valetudo-Mapper to commit `bd97779`
+* 🔼 Update alpine to `3.16`
+* 🔼 Update git to `2.36.2-r0`
+* 🔼 Update npm to `8.10.0-r0`
+* 🔨 Migrated to S6-Overlay `V3`
+* 📝 Updated to new repository structure + Yaml config
+
+
 ## 1.10.1 - 2022-04-10
 
 * 📝 Updated Readme
