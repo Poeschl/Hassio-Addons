@@ -1,0 +1,25 @@
+#!/command/with-contenv bashio
+set -e
+
+# Enable Jemalloc for better memory handling
+export LD_PRELOAD="/usr/local/lib/libjemalloc.so.2"
+
+bashio::log.info 'Create media folder if not existing'
+MEDIA_FOLDER=$(bashio::config 'media_folder')
+PLAYLIST_FOLDER=$(bashio::config 'playlist_folder')
+
+mkdir -p /data/database \
+    "${MEDIA_FOLDER}" \
+    "${PLAYLIST_FOLDER}"
+
+if [ "$(bashio::config 'custom_config')" != 'null' ]; then
+	bashio::log.info 'Use custom config'
+    cp "$(bashio::config 'custom_config')" '/etc/mopidy.conf'
+else
+
+  bashio::log.info 'Apply addon settings'
+  tempio -conf /data/options.json -template /etc/mopidy-template.conf -out /etc/mopidy.conf
+fi
+
+bashio::log.info 'Start Mopidy....'
+mopidy --config /etc/mopidy.conf
