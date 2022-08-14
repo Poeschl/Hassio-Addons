@@ -1,8 +1,8 @@
-# Syncthing Addon
+# Syncthing Add-on
 
-[Syncthing](https://syncthing.net/) wrapped inside a Homeassistant supervisor addon.
+[**Syncthing**](https://syncthing.net/) wrapped inside a [Home Assistant Supervisor add-on](https://www.home-assistant.io/addons/).
 
-Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers in real time, safely protected from prying eyes. Your data is your data alone and you deserve to choose where it is stored, whether it is shared with some third party, and how it's transmitted over the internet.
+> Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers in real time, safely protected from prying eyes. Your data is your data alone and you deserve to choose where it is stored, whether it is shared with some third party, and how it's transmitted over the internet.
 
 ![Addon Stage][stage-badge]
 ![Supports aarch64 Architecture][aarch64-badge]
@@ -15,17 +15,28 @@ Syncthing is a continuous file synchronization program. It synchronizes files be
 [![Install on my Home Assistant][install-badge]][install-url]
 [![Donate][donation-badge]][donation-url]
 
-# Folders available
+## Available directories
 
-When using this addon to permanently hold your data, put the synced folder inside `/data`. Otherwise it will be deleted on container restart. Note that this folder and its contents will be included in each backup of the addon.
+When using this add-on to permanently hold your data, put the synced folders inside one of the following directories:
 
-Also the `/share`, `/confg`, `/backup`, `/addons` and `/ssl` folders are mapped inside. You can use them as persistant storage. Some of those are not included in backups of the hassio configuration by default.
+- `/data`
+- `/media`
+- `/share`
+- `/config`
+- `/ssl`
+- `/addons`
 
-Syncing those folders can also be used to backup the Home Assistant backups, for example. 😉
+Only the above directories are mapped into the add-on container. If you put synced folders in any other directory (like `/root` or `/mnt`), the synced data will be deleted on container restart.
 
-# Configuration
+Furthermore, note that
 
-The configuration is done via the web ui. Start the addon and configure it there.
+- a backup of the syncthing add-on will include the `/data` directory and its contents.
+- a [*full* Home Assistant backup](https://www.home-assistant.io/common-tasks/os/#backups) will include the `/media`, `/share`, `/config`, `/ssl` and `/addons` directories and their contents. Create a *partial* backup to specifically exclude any of them.
+- syncing the `/backup` directory (preferably in [send only mode](https://docs.syncthing.net/users/foldertypes.html#send-only-folder)) is a simple way to automatically backup the Home Assistant backups to any of your other Syncthing devices. 😉
+
+## Configuration
+
+The configuration is done via the web UI. Start the add-on and configure it there.
 
 
 [aarch64-badge]: https://img.shields.io/badge/aarch64-yes-green.svg?style=for-the-badge
