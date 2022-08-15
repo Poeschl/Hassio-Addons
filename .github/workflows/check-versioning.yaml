@@ -63,10 +63,16 @@ jobs:
       - name: ↩️ Checkout
         uses: actions/checkout@v2
 
-      - name: 🔎 Check if versions of CHANGELOG.md and config.json match
+      - name: ℹ️ Gather addon info
+        id: information
+        uses: frenck/action-addon-information@v1
+        with:
+          path: "./${{ matrix.addon }}/"
+
+      - name: 🔎 Check if versions of CHANGELOG.md and config match
         shell: bash
         run: |
-          config_version=$(sed -nr "s/.*version.*\"(.+)\".*/\1/p" "${{ matrix.addon }}/config.json")
+          config_version=${{ steps.information.outputs.version }}
           changelog_version=$(sed -nr "0,/#{1,2}\s+(\S+)\s+-.*/{s//\1/p}" "${{ matrix.addon }}/CHANGELOG.md")
           if [[ ! "$config_version" = "$changelog_version" ]]; then
               echo "::error::The config version does not match the latest Changelog version!"
