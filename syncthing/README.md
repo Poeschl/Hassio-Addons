@@ -123,7 +123,7 @@ Furthermore, note that
     ```
     </details>
     
-    The above udev rule has to be placed under `/etc/udev/rules.d/` in the Home Assistant OS *host*. This requires either [SSH access to the host](https://developers.home-assistant.io/docs/operating-system/debugging/#ssh-access-to-the-host) or a [`CONFIG` USB drive](https://github.com/home-assistant/operating-system/blob/dev/Documentation/configuration.md#configuration) where you create the file `udev/80-mount-usb-to-media-by-label.rules` with the above content. Step-by-step instructions for the latter can be found [on the Home Assistant community forum](https://community.home-assistant.io/t/solved-mount-usb-drive-in-hassio-to-be-used-on-the-media-folder-with-udev-customization/258406/5).
+    The above udev rule has to be placed under `/etc/udev/rules.d/` in the Home Assistant OS *host*. This requires either [SSH access to the host](https://developers.home-assistant.io/docs/operating-system/debugging/#ssh-access-to-the-host) or a [`CONFIG` USB drive](https://github.com/home-assistant/operating-system/blob/dev/Documentation/configuration.md#configuration) where you create the file `udev/80-mount-usb-to-media-by-label.rules` with the above content. Further information and discussion can be found [on the Home Assistant community forum](https://community.home-assistant.io/t/solved-mount-usb-drive-in-hassio-to-be-used-on-the-media-folder-with-udev-customization/258406).
 
 ## Configuration
 
