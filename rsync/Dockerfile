@@ -1,11 +1,11 @@
-    ARG BUILD_FROM
+ARG BUILD_FROM
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk update && \
     apk add --no-cache \
-		'rsync=3.2.3-r4' \
-		'openssh-client=8.4_p1-r4' \
-		'coreutils=8.32-r2'
+		'rsync=3.2.4-r2' \
+		'openssh-client-default=9.0_p1-r2' \
+		'coreutils=9.1-r0'
 
 COPY run.sh /
 RUN chmod a+x /run.sh
