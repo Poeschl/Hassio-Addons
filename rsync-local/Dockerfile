@@ -6,7 +6,7 @@ RUN apk update && \
 		'rsync=3.2.4-r2' \
 		'coreutils=9.1-r0'
 
-COPY run.sh /
+COPY root /
 RUN chmod a+x /run.sh
 ENTRYPOINT [ "/run.sh" ]
 

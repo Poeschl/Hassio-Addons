@@ -7,7 +7,7 @@ RUN apk update && \
 		'openssh-client-default=9.0_p1-r2' \
 		'coreutils=9.1-r0'
 
-COPY run.sh /
+COPY root /
 RUN chmod a+x /run.sh
 ENTRYPOINT [ "/run.sh" ]
 

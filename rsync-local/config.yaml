@@ -32,12 +32,12 @@ privileged:
 apparmor: false
 schema:
   folders:
-    - str
+    - source: str
+      options: str?
   external_folder: match(^[^/].+)
   external_device: match(^(/dev/sd[a|b][1|2])?)
-  options: str?
 options:
   folders:
-    - /config
+    - source: /config
   external_folder: backup
   external_device: ""

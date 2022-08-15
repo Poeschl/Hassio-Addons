@@ -4,7 +4,12 @@
 * 🔼 Updated rsync to `3.2.4-r2`
 * 🔼 Update coreutils to `9.1-r0`
 * 🔼 Update openssh-client-default to `9.0_p1-r2`
+* 🔨 Change the config to seperate options and destination per folder (#276)
 * 📝 Updated to new repository structure + Yaml config
+
+### ⚠️ Breaking Change ⚠️
+
+Your addon config needs to be changed to the new per-folder options and destinations.
 
 
 ## 1.4.0 - 2022-04-05
