@@ -1,3 +1,18 @@
+## 3.7.0 - 2022-07-28
+
+* 🔼 Updated ICantBelieveItsNotValetudo to latest release `2022.05.0`
+* 🔼 Update alpine to `3.16`
+* 🔼 Update git to `2.36.2-r0`
+* 🔼 Update npm to `8.10.0-r0`
+* 🔼 Update pixman/pixman-dev to `0.40.0-r3`
+* 🔼 Update pango/pango-dev to `1.50.7-r0`
+* 🔼 Update cairo/cairo-dev to `1.17.4-r2`
+* 🔼 Updated python3 to `3.10.5-r0`
+* 🔼 Updated build-base to `0.5-r3`
+* 🔼 Updated libjpeg-turbo/libjpeg-turbo-dev to `2.1.3-r1`
+* 🔨 Migrated to S6-Overlay `V3`
+* 📝 Updated to new repository structure + Yaml config
+
 ## 3.6.2 - 2022-04-10
 
 * 📝 Updated Readme

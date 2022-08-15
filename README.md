@@ -1,6 +1,6 @@
 # Poeschl Home Assistant Supervisor Add-ons
 
-[![Master build][build-badge]][build-url]
+[![Main build][build-badge]][build-url]
 ![GitHub commit activity][commit-badge]
 ![Licence][licence-badge]
 
@@ -19,8 +19,6 @@ My repository with Add-ons for the [Home Assistant (former Hass.io) system](http
 * ympd - A very lightweight Web interface for controlling MPD music servers.
 * Git Exporter - Exports your Home Assistant config to any git repository (secrets check included)
 * Syncthing - A de-centralized file syncronisation program. Focused on privacy.
-* OWASP ZAP - A security testing tool with MITM funtionality.
-* mitmproxy - A simple MITM proxy to trace network requests.
 * rsync - Synces folders from Home Assistant to a other machine via rsync and ssh.
 * rsync-local - Synces folders to local devices like usb-sticks.
 * VNC Viewer - A VNC viewer addon, to integrate VNC displays into HA.
@@ -35,14 +33,15 @@ More about the Add-ons can be found in their folders.
 
 Those addons might not be stable at all. Use at your own risk!
 
-* Docker Container Stats - Lightwight monitoring of all the running docker containers.
-
+🏜️
 
 ### 🕸️ Depreciated
 
 On thoes addons will be not developed anymore. Feel free to fork them.
 
-🤷‍♂️
+* Docker Container Stats - Lightwight monitoring of all the running docker containers.
+* OWASP ZAP - A security testing tool with MITM funtionality.
+* mitmproxy - A simple MITM proxy to trace network requests.
 
 ## Installation
 

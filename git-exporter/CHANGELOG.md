@@ -1,3 +1,16 @@
+## 1.13.0 - 2022-07-27
+
+* 🐛 Fixes issues with supervisor api for addon repository getting (#325).
+
+* 🔼 Updated to alpine `3.16`
+* 🔼 Updated git to `2.36.2-r0`
+* 🔼 Updated rsync to `3.2.4-r2`
+* 🔼 Updated python3 to `3.10.5-r0`
+* 🔼 Updated py3-pip to `22.1.1-r0`
+* 🔼 Updated findutils to `4.9.0-r0`
+* 🔼 Updated dotty-dict to `1.3.1`
+* 📝 Updated to new repository structure + Yaml config
+
 ## 1.12.2 - 2022-04-10
 
 * 📝 Updated Readme

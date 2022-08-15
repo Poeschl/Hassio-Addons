@@ -1,3 +1,16 @@
+## 1.6.0 - 2022-07-28
+
+* 🔼 Updated Alpine to `3.16`
+* 🔼 Updated git to `2.36.2-r0`
+* 🔼 Updated build-base to `0.5-r3`
+* 🔼 Updated autoconf to `2.71-r0`
+* 🔼 Updated libtool to `2.4.7-r0`
+* 🔼 Updated automake to `1.16.5-r0`
+* 🔼 Updated python3 to `3.10.5-r0`
+* 🔨 Migrated to S6-Overlay `V3`
+* 📝 Updated to new repository structure + Yaml config
+
+
 ## 1.5.0 - 2022-04-05
 
 * 🔼 Updated python3 to `3.8.10-r0`

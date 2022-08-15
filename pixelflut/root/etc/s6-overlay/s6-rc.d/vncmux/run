@@ -1,0 +1,9 @@
+#!/command/with-contenv bashio
+set -e
+bashio::net.wait_for 5900
+
+width=$(bashio::config 'width')
+height=$(bashio::config 'height')
+
+bashio::log.info 'Start vncmux'
+vncmux -l 5900 -w "$width" -h "$height" localhost 5901

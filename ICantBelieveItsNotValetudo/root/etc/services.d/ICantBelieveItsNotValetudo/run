@@ -1,9 +1,0 @@
-#!/usr/bin/with-contenv bashio
-set -e
-
-# Enable Jemalloc for better memory handling
-export LD_PRELOAD="/usr/local/lib/libjemalloc.so.2"
-
-bashio::log.info 'Start ICantBelieveItsNotValetudo'
-cd /app
-npm start

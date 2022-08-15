@@ -1,7 +1,0 @@
-#!/usr/bin/with-contenv bashio
-set -e
-
-export STNOUPGRADE=1
-
-bashio::log.info 'Start syncthing'
-syncthing -no-browser -no-restart -home=/data/config -gui-address=0.0.0.0:8384

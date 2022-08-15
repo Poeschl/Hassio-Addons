@@ -1,5 +1,7 @@
 # OWASP ZAP Home Assistant Addon
 
+# 🕸️ Depreciated
+
 The world's most popular free web security tool, now as Home Assistant addon.
 I personally use it to occasionally check data of IoT devices.
 

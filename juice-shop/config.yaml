@@ -1,0 +1,17 @@
+name: OWASP Juice Shop
+version: 1.2.0
+slug: juice-shop
+description: The most trustworthy online shop out there.
+url: https://github.com/Poeschl/Hassio-Addons/tree/main/juice-shop
+arch:
+  - amd64
+image: ghcr.io/poeschl/ha-juice-shop-{arch}
+init: false
+ports:
+  3000/tcp:
+ports_description:
+  3000/tcp: Port serving the Juice Shop (Not required for Supervisor Ingress)
+ingress: true
+ingress_port: 3000
+panel_title: OWASP Juice Shop
+panel_icon: mdi:basket

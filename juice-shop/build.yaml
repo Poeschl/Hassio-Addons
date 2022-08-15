@@ -1,0 +1,2 @@
+build_from:
+  amd64: ghcr.io/home-assistant/amd64-base:3.16

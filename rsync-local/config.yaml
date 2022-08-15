@@ -1,0 +1,43 @@
+name: rsync local
+version: 1.5.0
+slug: rsync-local
+description: Sync folders to a external usb drive with rsync.
+url: https://github.com/Poeschl/Hassio-Addons/tree/main/rsync-local
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+homeassistant: 0.115.0
+boot: manual
+init: false
+image: ghcr.io/poeschl/ha-rsync-local-{arch}
+ports: {}
+ports_description: {}
+map:
+  - share:rw
+  - config:rw
+  - backup:rw
+  - addons:rw
+  - ssl:rw
+  - media:rw
+devices:
+  - /dev/sda1
+  - /dev/sda2
+  - /dev/sdb1
+  - /dev/sdb2
+privileged:
+  - SYS_ADMIN
+apparmor: false
+schema:
+  folders:
+    - source: str
+      options: str?
+  external_folder: match(^[^/].+)
+  external_device: match(^(/dev/sd[a|b][1|2])?)
+options:
+  folders:
+    - source: /config
+  external_folder: backup
+  external_device: ""

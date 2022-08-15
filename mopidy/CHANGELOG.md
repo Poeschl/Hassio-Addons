@@ -1,3 +1,17 @@
+## 2.2.0 - 2022-08-07
+
+* 🔼 Update alpine to `3.16`
+* 🔼 Update Mopidy to `3.3.0-r0`
+* 🔼 Update Mopidy-Iris to `3.64.1`
+* 🔼 Update Mopidy-MPD to `3.3.0`
+* 🔼 Update python3 to `3.10.5-r0`
+* 🔼 Update py3-gst to `1.20.3-r0`
+* 🔼 Update py3-pip to `22.1.1-r0`
+* 🔼 Update ca-certificates to `20220614-r0`
+* 🔼 Update sudo to `1.9.10-r0`
+* 🔨 Migrated to S6-Overlay `V3`
+* 📝 Updated to new repository structure + Yaml config
+
 ## 2.1.1 - 2022-04-11
 
 * 🐛 Fix alpine package repositories

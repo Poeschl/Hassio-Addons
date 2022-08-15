@@ -1,0 +1,67 @@
+name: Home Assistant Git Exporter
+version: 1.13.0
+slug: git-exporter
+description: Export all of your Home Assistant configuration to a git repository of your choice.
+url: https://github.com/Poeschl/Hassio-Addons/tree/main/git-exporter
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+startup: once
+boot: manual
+init: false
+image: ghcr.io/poeschl/ha-git-exporter-{arch}
+hassio_api: true
+hassio_role: manager
+map:
+  - config
+options:
+  repository:
+    url: ''
+    username: ''
+    password: ''
+    pull_before_push: true
+    commit_message: Home Assistant Git Exporter
+    branch_name: main
+  export:
+    lovelace: true
+    addons: true
+    esphome: true
+    node_red: true
+  check:
+    enabled: true
+    check_for_secrets: true
+    check_for_ips: true
+  exclude:
+    - '*.db'
+    - '*.log*'
+    - __pycache__
+    - ._*
+    - .DS_Store
+    - deps/
+    - known_devices.yaml
+    - tts/
+  dry_run: false
+schema:
+  repository:
+    url: match(https://.*)
+    email: match(.+@.+)?
+    username: str
+    password: password
+    pull_before_push: bool
+    commit_message: str
+    branch_name: str
+  export:
+    lovelace: bool
+    addons: bool
+    esphome: bool
+    node_red: bool
+  check:
+    enabled: bool
+    check_for_secrets: bool
+    check_for_ips: bool
+  exclude:
+    - str
+  dry_run: bool

@@ -1,3 +1,12 @@
+## 1.15.0 - 2022-08-03
+
+* 🔼 Updated syncthing to `1.20.1-r3`
+* 🔼 Update alpine to `3.16`
+* 🔨 Migrated to S6-Overlay `V3`
+* 📝 Updated to new repository structure + Yaml config
+* 📝 Updated Readme (thanks @salim-b | #330)
+
+
 ## 1.14.0 - 2022-04-10
 
 * 🔼 Updated syncthing to `1.19.2-r0`

@@ -1,9 +1,9 @@
 {
   "name": "Asterisk",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "slug": "asterisk",
   "description": "Asterisk is an open source framework for building communications applications. Asterisk turns an ordinary computer into a communications server",
-  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/asterisk",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/asterisk",
   "arch": [
     "armv7",
     "armhf",

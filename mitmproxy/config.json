@@ -4,7 +4,7 @@
   "slug": "mitmproxy",
   "panel_icon": "mdi:lan-connect",
   "description": "A free and open source interactive HTTPS proxy for intercepting and inspecting network traffic",
-  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/mitmproxy",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/mitmproxy",
   "arch": [
     "armv7",
     "armhf",

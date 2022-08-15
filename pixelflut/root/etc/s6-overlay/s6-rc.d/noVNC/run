@@ -1,0 +1,7 @@
+#!/command/with-contenv bashio
+set -e
+bashio::net.wait_for 5900
+
+bashio::log.info 'Start noVNC'
+bashio::log.info "Binding to Pixelflut canvas"
+/noVNC/utils/novnc_proxy --listen 6080 --vnc localhost:5900

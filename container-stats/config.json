@@ -4,7 +4,7 @@
   "version": "1.5.0",
   "slug": "container-stats",
   "description": "🧪 experimental | A web interface for viewing historical and current statistics per docker container",
-  "url": "https://github.com/Poeschl/Hassio-Addons/tree/master/container-stats",
+  "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/container-stats",
   "arch": [
     "armhf",
     "armv7",

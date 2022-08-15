@@ -21,7 +21,7 @@ This option let you specify an custom playlist folder.
 ### `locale`
 
 Your locale as 2x2 format. This used for the ui and also some extensions.
-Default is `en_US` A list of locale's is [here](https://github.com/umpirsky/locale-list/blob/master/data/en_US/locales.yaml).
+Default is `en_US` A list of locale's is [here](https://github.com/umpirsky/locale-list/blob/main/data/en_US/locales.yaml).
 
 ### `country`
 
@@ -42,7 +42,7 @@ Your favorite radio station slugs for the radio.net Extension. [More about that 
 
 This option let you specify an custom configuration file for mopidy.
 To keep all MPD files in one place I restricted the path prefix to `/share/mopidy`
-Please use the default [mopidy.conf of the addon](https://github.com/Poeschl/Hassio-Addons/blob/master/mopidy/root/etc/mopidy-template.conf) as starting point.
+Please use the default [mopidy.conf of the addon](https://github.com/Poeschl/Hassio-Addons/blob/main/mopidy/root/etc/mopidy-template.conf) as starting point.
 
 Working example:
 
