@@ -15,7 +15,7 @@ FROM $BUILD_FROM AS RUNNING
 
 RUN apk add --no-cache \
 			'git=2.36.2-r0' \
-			'rsync=3.2.4-r1' \
+			'rsync=3.2.4-r2' \
 			'grep=3.7-r0' \
 			'sed=4.8-r0' \
 			'python3=3.10.5-r0' \
