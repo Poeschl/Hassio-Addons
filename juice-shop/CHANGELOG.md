@@ -8,9 +8,10 @@
 * 🔼 Updated build-base to `0.5-r3`
 * 🔼 Updated typescript to `4.7.4`
 * 🔼 Updated ts-node to `10.9.1`
+* 🔥 Remove support for armhf, armv7, aarch64 architectures (literally Pi's)
 * 🔨 Migrated to S6-Overlay `V3`
 * 📝 Updated to new repository structure + Yaml config
-
+s
 
 ## 1.1.0 - 2022-04-10
 

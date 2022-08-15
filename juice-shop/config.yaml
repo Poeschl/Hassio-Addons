@@ -4,9 +4,6 @@ slug: juice-shop
 description: The most trustworthy online shop out there.
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/juice-shop
 arch:
-  - armhf
-  - armv7
-  - aarch64
   - amd64
 image: ghcr.io/poeschl/ha-juice-shop-{arch}
 init: false
