@@ -1,0 +1,24 @@
+name: pigpio
+version: 1.5.2
+slug: pigpio
+description: Control your pwm leds with pigpio on Home Assistant
+url: https://github.com/Poeschl/Hassio-Addons/tree/main/pigpio
+arch:
+  - armhf
+  - armv7
+  - aarch64
+startup: services
+gpio: true
+privileged:
+  - SYS_RAWIO
+devices:
+  - /dev/mem
+  - /dev/vcio
+image: ghcr.io/poeschl/ha-pigpio-{arch}
+init: false
+ports:
+  8888/tcp: 8888
+ports_description:
+  8888/tcp: The port to control pigpio
+schema:
+  additional_options: str?
