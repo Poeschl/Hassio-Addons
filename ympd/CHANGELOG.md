@@ -1,3 +1,10 @@
+## 1.4.0 - 2022-08-17
+
+* 🔼 Update alpine to `3.16`
+* 🔼 Update ympd to `1.3.0-r10`
+* 🔨 Migrated to S6-Overlay `V3`
+* 📝 Updated to new repository structure + Yaml config
+
 ## 1.3.1 - 2022-04-05
 
 * 📝 Updated config.json and Readme
