@@ -12,6 +12,7 @@
 * 🔨 Migrated to S6-Overlay `V3`
 * 📝 Updated to new repository structure + Yaml config
 
+
 ## 2.1.1 - 2022-04-11
 
 * 🐛 Fix alpine package repositories
