@@ -1,3 +1,9 @@
+## 1.5.2 - 2022-08-17
+
+* 🔨 Migrated to S6-Overlay `V3`
+* 📝 Updated to new repository structure + Yaml config
+
+
 ## 1.5.1 - 2022-04-10
 
 * 📝 Updated Readme

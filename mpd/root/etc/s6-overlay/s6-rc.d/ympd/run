@@ -1,0 +1,12 @@
+#!/command/with-contenv bashio
+set -e
+bashio::net.wait_for 6600
+
+# Enable Jemalloc for better memory handling
+export LD_PRELOAD="/usr/local/lib/libjemalloc.so.2"
+
+chown root:root /usr/bin/ympd
+chmod 0774 /usr/bin/ympd
+
+bashio::log.info  'Start ympd'
+ympd -w 6680

@@ -1,0 +1,26 @@
+name: ympd
+version: 1.4.0
+slug: ympd
+panel_icon: mdi:play-circle-outline
+description: A simple webfrontend for any mpd compatible music player.
+url: https://github.com/Poeschl/Hassio-Addons/tree/main/ympd
+ingress: true
+ingress_port: 6680
+arch:
+  - armv7
+  - armhf
+  - aarch64
+  - amd64
+  - i386
+image: ghcr.io/poeschl/ha-ympd-{arch}
+init: false
+ports:
+  6680/tcp: 
+ports_description:
+  6680/tcp: Web Frontend (Not needed with ingress feature)
+options:
+  host: localhost
+  port: "6600"
+schema:
+  host: str
+  port: port

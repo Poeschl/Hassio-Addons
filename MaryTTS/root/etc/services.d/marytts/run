@@ -1,8 +1,0 @@
-#!/usr/bin/with-contenv bashio
-
-# Enable Jemalloc for better memory handling
-export LD_PRELOAD="/usr/local/lib/libjemalloc.so.2"
-
-bashio::log.info 'Start MaryTTS (taking some time, will output the port when up)'
-cd /app
-bin/marytts-server

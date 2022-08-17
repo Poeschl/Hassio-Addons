@@ -1,0 +1,56 @@
+#!/command/with-contenv bashio
+set -e
+
+# Enable Jemalloc for better memory handling
+export LD_PRELOAD="/usr/local/lib/libjemalloc.so.2"
+
+bashio::log.info  'Setup Folders'
+
+MEDIA_FOLDER=$(bashio::config 'media_folder')
+PLAYLIST_FOLDER=$(bashio::config 'playlist_folder')
+
+mkdir -p /data/database \
+    "${MEDIA_FOLDER}" \
+    "${PLAYLIST_FOLDER}"
+
+bashio::log.info  'Setup settings'
+
+if [ "$(bashio::config 'custom_config')" != 'null' ]; then
+	bashio::log.info 'Use custom config'
+    cp "$(bashio::config 'custom_config')" '/etc/mpd.conf'
+else
+	bashio::log.info 'Set media folder'
+	MEDIA_FOLDER=$(bashio::config 'media_folder')
+	sed -i "s/music_directory.*/music_directory \"${MEDIA_FOLDER//\//\\/}\"/" /etc/mpd.conf
+
+	bashio::log.info 'Set playlist folder'
+	PLAYLIST_FOLDER=$(bashio::config 'playlist_folder')
+	sed -i "s/playlist_directory.*/playlist_directory \"${PLAYLIST_FOLDER//\//\\/}\"/" /etc/mpd.conf
+
+	if [ "$(bashio::config 'volume_normalization')" == 'true' ]; then
+		sed -i "/^#volume_normalization/s/^#//" /etc/mpd.conf
+	fi
+
+	if [ "$(bashio::config 'verbose')" == 'true' ]; then
+		sed -i "/^log_level/s/default/verbose/" /etc/mpd.conf
+	fi
+
+	if [ "$(bashio::config 'httpd_output')" == 'true' ]; then
+		printf '\n
+		audio_output { \n
+			type		"httpd" \n
+			name		"HTTPd Output" \n 
+			port		"8000" \n
+			bitrate		"192" \n
+		}' >> /etc/mpd.conf
+		bashio::log.info 'HTTPd output enabled'
+	fi
+fi
+
+chown root:root /usr/bin/mpd
+chown root:root /usr/bin/mpc
+chmod 0774 /usr/bin/mpd
+chmod 0774 /usr/bin/mpc
+
+bashio::log.info 'Start MPD'
+mpd --stdout --no-daemon

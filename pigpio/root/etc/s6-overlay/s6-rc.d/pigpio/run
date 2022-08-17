@@ -1,0 +1,8 @@
+#!/command/with-contenv bashio
+set -e
+
+additional_options=$(bashio::config 'additional_options')
+
+bashio::log.info 'Started pigpio'
+# shellcheck disable=SC2086
+pigpiod -g -f $additional_options

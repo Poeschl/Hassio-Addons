@@ -1,0 +1,43 @@
+name: MPD
+version: 1.7.2
+slug: mpd
+panel_icon: mdi:music-circle
+description: Music Player Daemon is a free and open source music player. It
+  plays audio files, organizes playlists and maintains a music database
+url: https://github.com/Poeschl/Hassio-Addons/tree/main/mpd
+ingress: true
+ingress_port: 6680
+arch:
+  - armv7
+  - armhf
+  - aarch64
+  - amd64
+  - i386
+image: ghcr.io/poeschl/ha-mpd-{arch}
+init: false
+audio: true
+devices:
+  - /dev/snd
+map:
+  - share:rw
+  - media:rw
+ports:
+  6680/tcp: null
+  6600/tcp: 6600
+  8000/tcp: null
+ports_description:
+  6680/tcp: Web Frontend (Not needed with ingress feature)
+  6600/tcp: MDP Connection
+  8000/tcp: HTTPd Connection (if enabled)
+options:
+  media_folder: /media/mpd/media
+  playlist_folder: /media/mpd/playlists
+  volume_normalization: false
+  httpd_output: false
+schema:
+  media_folder: match(/share/.+|/media/.+|(smb|nfs)://.+)
+  playlist_folder: match(/share/.+|/media/.+|(smb|nfs)://.+)
+  volume_normalization: bool
+  httpd_output: bool
+  verbose: bool?
+  custom_config: match(/share/mpd/.+)?

@@ -15,30 +15,6 @@
 [![Install on my Home Assistant][install-badge]][install-url]
 [![Donate][donation-badge]][donation-url]
 
-## Available directories
-
-When using this add-on to permanently hold your data, put the synced folders inside one of the following directories:
-
-- `/data`
-- `/media`
-- `/share`
-- `/config`
-- `/ssl`
-- `/addons`
-
-Only the above directories are mapped into the add-on container. If you put synced folders in any other directory (like `/root` or `/mnt`), the synced data will be deleted on container restart.
-
-Furthermore, note that
-
-- a backup of the syncthing add-on will include the `/data` directory and its contents.
-- a [*full* Home Assistant backup](https://www.home-assistant.io/common-tasks/os/#backups) will include the `/media`, `/share`, `/config`, `/ssl` and `/addons` directories and their contents. Create a *partial* backup to specifically exclude any of them.
-- syncing the `/backup` directory (preferably in [send only mode](https://docs.syncthing.net/users/foldertypes.html#send-only-folder)) is a simple way to automatically backup the Home Assistant backups to any of your other Syncthing devices. 😉
-
-## Configuration
-
-The configuration is done via the web UI. Start the add-on and configure it there.
-
-
 [aarch64-badge]: https://img.shields.io/badge/aarch64-yes-green.svg?style=for-the-badge
 [amd64-badge]: https://img.shields.io/badge/amd64-yes-green.svg?style=for-the-badge
 [armhf-badge]: https://img.shields.io/badge/armhf-yes-green.svg?style=for-the-badge
