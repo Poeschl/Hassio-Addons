@@ -1,3 +1,9 @@
+## 1.5.1 - 2022-08-17
+
+* 🔨 Migrated to S6-Overlay `V3`
+* 📝 Updated to new repository structure + Yaml config
+
+
 ## 1.5.0 - 2022-04-10
 
 * 🔼 Updated openjdk8 to `8.302.08-r1`

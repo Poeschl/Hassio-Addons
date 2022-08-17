@@ -1,5 +1,7 @@
-#!/usr/bin/with-contenv bashio
-set -e
+#!/command/with-contenv bashio
+
+# Enable Jemalloc for better memory handling
+export LD_PRELOAD="/usr/local/lib/libjemalloc.so.2"
 
 bashio::log.info 'Setup voice'
 if [ -n "$(bashio::config 'voice')" ] && [ ! "$(bashio::config 'voice')" == 'null' ]; then
@@ -35,3 +37,7 @@ if [ ! -f "/app/lib/${voice_pack_name}.jar" ]; then
 
 	bashio::log.info "Installed $voice_pack_name"
 fi
+
+bashio::log.info 'Start MaryTTS (taking some time, will output the port when up)'
+cd /app
+bin/marytts-server
