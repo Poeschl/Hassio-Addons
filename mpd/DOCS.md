@@ -57,3 +57,14 @@ More see here: [MPD Issue](https://github.com/MusicPlayerDaemon/MPD/issues/218)
 ### `Failed to open '/data/database/mpd.db': No such file or directory`
 
 This error is shown on the first start, when no database exists. It will be there on the second run.
+
+# MPD
+
+To connect from Home Assistant use the following configuration:
+
+```yaml
+media_player:
+  - platform: mpd
+    host: 243ffc37-mpd
+    port: 6600
+```
