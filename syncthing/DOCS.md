@@ -110,7 +110,7 @@ Furthermore, note that
     LABEL="abort_rule"
     ```
 
-    [Source](https://gist.github.com/eklex/c5fac345de5be9d9bc420510617c86b5")
+    [Source](https://gist.github.com/eklex/c5fac345de5be9d9bc420510617c86b5)
 
     </details>
 
