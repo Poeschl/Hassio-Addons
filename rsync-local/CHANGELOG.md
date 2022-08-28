@@ -1,3 +1,7 @@
+## 1.5.1 - 2022-08-28
+
+* 🐛 Fix Copy-Paste code for local rsync execution
+
 ## 1.5.0 - 2022-08-15
 
 * 🔼 Updated to alpine `3.16`
