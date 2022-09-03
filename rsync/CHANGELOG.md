@@ -1,3 +1,7 @@
+## 1.5.1 - 2022-09-03
+
+* 📝 Updated docs to new addon config
+
 ## 1.5.0 - 2022-08-15
 
 * 🔼 Updated to alpine `3.16`

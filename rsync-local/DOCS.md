@@ -9,22 +9,24 @@ Example config:
 
 ```yaml
 folders:
-  - /config
+  - source: /config
+  - source: /media/playlists
+    options: '-archive --recursive --compress'
 external_folder: backup
 external_device: ''
 ```
 
 ### `folders`
 
-The list of folders you want to sync with the remote machine. Those locations are getting synced recursively.
+The list of folders you want to sync with the remote machine.
 
-When a folder is specified with a slash at the end the content are directly copied inside the remote_folder.
-Without it a folder with the content is created.
+### `folders` - `source`
 
-For example:
+The source folder for rsync.
 
-* `- /config` would result into `/home/user/config`
-* `- /config/` would put the content of config into `/home/user`
+### `folders` - `options` (optional)
+
+Use your own options for rsync. This string is replacing the default one and get directly to rsync. The default is `-archive --recursive --compress --delete --prune-empty-dirs`.
 
 ### `external_folder`
 
@@ -39,7 +41,3 @@ Make sure to adjust it when for example running Home Assistant from a external d
 If no device is specified all available devices will be displayed in the log. No sync takes place without device.
 
 Available options: `/dev/sda1`, `/dev/sda2`, `/dev/sdb1`, `/dev/sdb2`
-
-### `options` (optional)
-
-Use your own options for rsync. This string is replacing the default one and get directly to rsync. The default is `-archive --recursive --compress --delete --prune-empty-dirs`.

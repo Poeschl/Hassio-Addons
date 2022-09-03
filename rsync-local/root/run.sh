@@ -29,7 +29,6 @@ else
     bashio::log.info "Sync ${local} -> ${EXTERNAL_DEVICE}/${EXTERNAL_FOLDER} with options \"${options}\""
     # shellcheck disable=SC2086
     rsync ${options} \
-    -e "ssh -p ${PORT} -i ${PRIVATE_KEY_FILE} -oStrictHostKeyChecking=no" \
     "$local" "/external/${EXTERNAL_FOLDER}"
   done
 
