@@ -1,6 +1,7 @@
 ## 1.5.1 - 2022-08-28
 
 * 🐛 Fix Copy-Paste code for local rsync execution
+* 📝 Updated docs to new addon config
 
 ## 1.5.0 - 2022-08-15
 
