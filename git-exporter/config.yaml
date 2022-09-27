@@ -34,6 +34,7 @@ options:
     enabled: true
     check_for_secrets: true
     check_for_ips: true
+    check_ssl: true
   exclude:
     - '*.db'
     - '*.log*'
@@ -62,6 +63,7 @@ schema:
     enabled: bool
     check_for_secrets: bool
     check_for_ips: bool
+    check_ssl: bool
   exclude:
     - str
   dry_run: bool

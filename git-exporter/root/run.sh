@@ -155,7 +155,25 @@ function export_node-red {
     chmod 644 -R ${local_repository}/node-red
 }
 
+function disable_check_ssl {
+    bashio::log.info 'Disable SSL verification in git repositories'
+    git config --global http.sslVerify false
+}
+
+function enable_check_ssl {
+    bashio::log.info 'Enable SSL verification in git repositories'
+    git config --global http.sslVerify true
+}
+
 bashio::log.info 'Start git export'
+
+if [ "$(bashio::config 'check.check_ssl')" == 'false' ]; then
+    disable_check_ssl
+fi
+
+if [ "$(bashio::config 'check.check_ssl')" == 'true' ]; then
+    enable_check_ssl
+fi
 
 setup_git
 
@@ -180,7 +198,6 @@ fi
 if [ "$(bashio::config 'check.enabled')" == 'true' ]; then
     check_secrets
 fi
-
 
 if [ "$(bashio::config 'dry_run')" == 'true' ]; then
     git status
