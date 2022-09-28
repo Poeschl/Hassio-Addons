@@ -1,3 +1,8 @@
+## 1.13.1 - 2022-09-30
+
+* 🐛 Exclude SQLite temporary files
+* 🐛 Exclude compresed files (*.gz)
+
 ## 1.13.0 - 2022-07-27
 
 * 🐛 Fixes issues with supervisor api for addon repository getting (#325).
