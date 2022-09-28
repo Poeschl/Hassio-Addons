@@ -1,3 +1,9 @@
+## 1.13.1 - 2022-09-28
+
+* 🐛 Add option to disable SSL verification in git repositories with self-signed certificates (#305).
+
+* 🔼 Updated rsync to `3.2.5-r0`
+
 ## 1.13.0 - 2022-07-27
 
 * 🐛 Fixes issues with supervisor api for addon repository getting (#325).
