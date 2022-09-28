@@ -24,6 +24,8 @@ exclude:
   - deps/
   - known_devices.yaml
   - tts/
+  - '*.db-shm'
+  - '*.db-wal'
 dry_run: false
 ```
 
