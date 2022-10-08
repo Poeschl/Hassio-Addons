@@ -1,6 +1,6 @@
 ## 1.16
 
-* 🔼 Updated syncthing to `1.21.0-r1`
+* 🔼 Updated syncthing to `1.22.0-r0`
 
 
 ## 1.15.1 - 2022-08-17
