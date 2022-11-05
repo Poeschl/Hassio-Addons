@@ -57,6 +57,10 @@ The commit message for the next commit.
 
 The working branch for the repository.
 
+### `repository.ssl_verification` (Optional, default: true)
+
+Use this to disable the ssl verification. Can be used for self-signed certificates. __Use this only when you know what you are doing__
+
 
 ### `export.lovelace`
 

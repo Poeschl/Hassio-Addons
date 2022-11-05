@@ -13,6 +13,7 @@ function setup_git {
     password=$(bashio::config 'repository.password')
     commiter_mail=$(bashio::config 'repository.email')
     branch=$(bashio::config 'repository.branch_name')
+    ssl_verify=$(bashio::config 'repository.ssl_verification')
 
     if [[ "$password" != "ghp_*" ]]; then
         password=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${password}'))")
@@ -23,6 +24,11 @@ function setup_git {
         mkdir -p $local_repository
     fi
     cd $local_repository
+
+    if [ "${ssl_verify:-true}" == 'false' ]; then
+        bashio::log.info 'Disabling SSL verification for git repositories'
+        git config --global http.sslVerify false
+    fi
 
     if [ ! -d .git ]; then
         fullurl="https://${username}:${password}@${repository##*https://}"

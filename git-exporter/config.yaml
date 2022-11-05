@@ -55,6 +55,7 @@ schema:
     pull_before_push: bool
     commit_message: str
     branch_name: str
+    ssl_verification: bool?
   export:
     lovelace: bool
     addons: bool
