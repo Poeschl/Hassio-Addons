@@ -1,3 +1,9 @@
+## 4.0.0 - 2022-09-11
+
+* 🔨 Changed OS from alpine to debian (glibc is now required)
+* 🔥 Remove support for armhf architecture since [ICantBelieveItsNotValetudo does not support
+     it right now](https://github.com/Hypfer/ICantBelieveItsNotValetudo/issues/85)
+
 ## 3.7.0 - 2022-07-28
 
 * 🔼 Updated ICantBelieveItsNotValetudo to latest release `2022.05.0`

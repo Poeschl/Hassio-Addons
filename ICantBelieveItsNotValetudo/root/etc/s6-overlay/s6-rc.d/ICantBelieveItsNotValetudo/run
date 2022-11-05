@@ -1,8 +1,6 @@
 #!/command/with-contenv bashio
+# shellcheck shell=bash
 set -e
-
-# Enable Jemalloc for better memory handling
-export LD_PRELOAD="/usr/local/lib/libjemalloc.so.2"
 
 bashio::log.info 'Setup config'
 jq -f /app/config-template.jq /data/options.json > /app/config.json
