@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM AS BUILD
 
 RUN apk add --no-cache \
-		'git=2.36.2-r0' \
+		'git=2.36.3-r0' \
 		'make=4.3-r0'
 
 ENV GIT_SECRET_VERSION 1.3.0
@@ -14,8 +14,8 @@ RUN git config --global advice.detachedHead false && \
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add --no-cache \
-			'git=2.36.2-r0' \
-			'rsync=3.2.4-r2' \
+			'git=2.36.3-r0' \
+			'rsync=3.2.7-r0' \
 			'grep=3.7-r0' \
 			'sed=4.8-r0' \
 			'python3=3.10.5-r0' \

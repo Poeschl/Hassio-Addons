@@ -13,6 +13,7 @@ function setup_git {
     password=$(bashio::config 'repository.password')
     commiter_mail=$(bashio::config 'repository.email')
     branch=$(bashio::config 'repository.branch_name')
+    ssl_verify=$(bashio::config 'repository.ssl_verification')
 
     if [[ "$password" != "ghp_*" ]]; then
         password=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${password}'))")
@@ -23,6 +24,11 @@ function setup_git {
         mkdir -p $local_repository
     fi
     cd $local_repository
+
+    if [ "${ssl_verify:-true}" == 'false' ]; then
+        bashio::log.info 'Disabling SSL verification for git repositories'
+        git config --global http.sslVerify false
+    fi
 
     if [ ! -d .git ]; then
         fullurl="https://${username}:${password}@${repository##*https://}"
@@ -49,6 +55,8 @@ function setup_git {
         git fetch
         git reset --hard "origin/$branch"
     fi
+
+    git clean -f -d
 }
 
 function check_secrets {
@@ -77,14 +85,30 @@ function check_secrets {
         git secrets --add '([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})'
 
         # Allow dummy / general ips and mac
-        git secrets --add -a 'AA:BB:CC:DD:EE:FF'
-        git secrets --add -a '123.456.789.123'
-        git secrets --add -a '0.0.0.0'
+        git secrets --add -a --literal 'AA:BB:CC:DD:EE:FF'
+        git secrets --add -a --literal '123.456.789.123'
+        git secrets --add -a --literal '0.0.0.0'
     fi
 
     bashio::log.info 'Add secrets from secrets.yaml'
     prohibited_patterns=$(git config --get-all secrets.patterns)
     bashio::log.info "Prohibited patterns:\n${prohibited_patterns//\\n/\\\\n}"
+
+    custom_secrets=$(bashio::config 'secrets')
+    if [ ${#custom_secrets[@]} -gt 0 ]; then
+        bashio::log.info 'Add custom secrets'
+        for secret in "${custom_secrets[@]}"; do
+            git secrets --add "$secret"
+        done
+    fi
+
+    custom_allowed_secrets=$(bashio::config 'allowed_secrets')
+    if [ ${#custom_allowed_secrets[@]} -gt 0 ]; then
+        bashio::log.info 'Add custom allowed secrets'
+        for allowed_secret in "${custom_allowed_secrets[@]}"; do
+            git secrets --add -a "$allowed_secret"
+        done
+    fi
 
     bashio::log.info 'Checking for secrets'
     # shellcheck disable=SC2046

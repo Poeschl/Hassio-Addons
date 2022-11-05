@@ -1,3 +1,8 @@
+## 1.16.0 - 2022-11-05
+
+* 🔼 Updated syncthing to `1.22.1-r0`
+
+
 ## 1.15.1 - 2022-08-17
 
 * 📝 Updated Docs with more information about external storage (thanks @salim-b | #332)

@@ -24,6 +24,11 @@ exclude:
   - deps/
   - known_devices.yaml
   - tts/
+  - '*.db-shm'
+  - '*.db-wal'
+  - '*.gz'
+secrets: []
+allowed_secrets: []
 dry_run: false
 ```
 
@@ -54,6 +59,10 @@ The commit message for the next commit.
 ### `repository.branch_name`
 
 The working branch for the repository.
+
+### `repository.ssl_verification` (Optional, default: true)
+
+Use this to disable the ssl verification. Can be used for self-signed certificates. __Use this only when you know what you are doing__
 
 
 ### `export.lovelace`
@@ -96,6 +105,16 @@ Following folders and files are excluded from the sync per default:
 * `secrets.yaml` (secrets are cleared)
 * `.cloud`
 * `.storage`
+
+### `secrets`
+
+Additional secrets which will be checked for.
+
+
+### `allowed_secrets`
+
+Additional allowed secrets which will not make the secret check fail.
+
 
 ### `dry_run`
 
