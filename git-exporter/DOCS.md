@@ -97,6 +97,16 @@ Following folders and files are excluded from the sync per default:
 * `.cloud`
 * `.storage`
 
+### `secrets`
+
+Additional secrets which will be checked for.
+
+
+### `allowed_secrets`
+
+Additional allowed secrets which will not make the secret check fail.
+
+
 ### `dry_run`
 
 Only show the changes and don't commit or push.
