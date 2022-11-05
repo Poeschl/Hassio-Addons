@@ -24,6 +24,9 @@ exclude:
   - deps/
   - known_devices.yaml
   - tts/
+  - '*.db-shm'
+  - '*.db-wal'
+  - '*.gz'
 secrets: []
 allowed_secrets: []
 dry_run: false

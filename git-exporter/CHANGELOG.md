@@ -3,6 +3,7 @@
 * ✨ Allow customising secret patterns (thanks @bjeanes #316)
 * ✨ Option to disable ssl verification for git (thanks @Wolvverine #350)
 * 🔨 Clean untracked files from working directory before syncing latest config (thanks @bjeanes #317)
+* 🔧 Exclude database temporary files on default (thanks @Wolvverine #351)
 * 🔼 Updated git to `2.36.3-r0`
 * 🔼 Updated rsync to `3.2.7-r0`
 
