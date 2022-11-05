@@ -1,3 +1,8 @@
+## 1.14.0 - 2022-11-05
+
+* ✨ Allow customising secret patterns (thanks @bjeanes #316)
+
+
 ## 1.13.0 - 2022-07-27
 
 * 🐛 Fixes issues with supervisor api for addon repository getting (#325).
