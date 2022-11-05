@@ -24,6 +24,8 @@ exclude:
   - deps/
   - known_devices.yaml
   - tts/
+secrets: []
+allowed_secrets: []
 dry_run: false
 ```
 
