@@ -1,5 +1,5 @@
 name: Pixelflut
-version: 1.2.0
+version: 1.2.1
 slug: pixelflut
 panel_icon: mdi:waves
 description: Bring a Pixelflut canvas into your Smart Home
@@ -14,6 +14,7 @@ arch:
   - amd64
   - i386
 image: ghcr.io/poeschl/ha-pixelflut-{arch}
+init: false
 ports:
   1234/tcp: 1234
   1235/tcp: null
