@@ -1,3 +1,18 @@
+## 1.2.1 - 2023-01-08
+
+* 🐛 Fix init for S6 (#355)
+* 🔼 Update git to `1:2.39.0-1`
+* 🔼 Updated libvncserver/libvncserver-dev to `0.9.13+dfsg-5`
+* 🔼 Updated libvncclient/libvncclient-dev to `0.9.13+dfsg-5`
+* 🔼 Updated pkg-config to `1.8.0-12`
+* 🔼 Updated python3 to `3.10.6-3+b1`
+* 🔼 Updated python3-numpy to `1:1.23.5-2`
+* 🔼 Updated python3-setuptools to `65.5.0-1.1`
+* 🔼 Updated python3-pip to `22.3.1+dfsg-1`
+* 🔼 Update procps to `2:4.0.2-3`
+* 🔼 Update libsdl2-2.0-0 / libsdl2-dev to `2.0.20+dfsg-2`
+* 🔼 Update libnuma1 / libnuma-dev to `2.0.16-1`
+
 ## 1.2.0 - 2022-07-31
 
 * 🔼 Updated vncmux to latest commit `b376f97`
