@@ -1,7 +1,7 @@
-## 1.16.1 - 2022-12-??
+## 1.16.1 - 2023-01-08
 
 * 🔼 Updated syncthing to `1.23.0-r0`
-
+* 🔨 Make syncthing recognize the cli parameter
 
 ## 1.16.0 - 2022-11-05
 
