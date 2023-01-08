@@ -2,7 +2,7 @@
 # shellcheck shell=bash
 set -e
 
-FOLDERS=$(bashio::config 'folders')
+FOLDERS=$(bashio::addon.config | jq -r ".folders")
 EXTERNAL_FOLDER=$(bashio::config 'external_folder')
 
 if ! bashio::config.has_value 'external_device'; then
@@ -22,14 +22,17 @@ else
   mkdir -p /external
   mount "${EXTERNAL_DEVICE}" /external
 
-  for folder in $FOLDERS; do
+  folder_count=$(echo "$FOLDERS" | jq -r '. | length')
+  for (( i=0; i<folder_count; i=i+1 )); do
 
-    local=$(echo "$folder" | jq -r '.source')
-    options=$(echo "$folder" | jq -r '.options // "-archive --recursive --compress --delete --prune-empty-dirs"')
+    local=$(echo "$FOLDERS" | jq -r ".[$i].source")
+    options=$(echo "$FOLDERS" | jq -r ".[$i].options // \"-archive --recursive --compress --delete --prune-empty-dirs\"")
     bashio::log.info "Sync ${local} -> ${EXTERNAL_DEVICE}/${EXTERNAL_FOLDER} with options \"${options}\""
+    set -x
     # shellcheck disable=SC2086
     rsync ${options} \
     "$local" "/external/${EXTERNAL_FOLDER}"
+    set +x
   done
 
   umount /external
