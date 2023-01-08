@@ -1,3 +1,8 @@
+## 1.6.0 - 2023-01-08
+
+* 🔼 Updated rsync to `3.2.7-r0`
+* 🐛 Fix broken options (#344)
+
 ## 1.5.1 - 2022-09-03
 
 * 📝 Updated docs to new addon config

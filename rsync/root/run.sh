@@ -1,6 +1,5 @@
 #!/usr/bin/env bashio
 # shellcheck shell=bash
-
 set -e
 
 PRIVATE_KEY_FILE=$(bashio::config 'private_key_file')
@@ -17,7 +16,7 @@ fi
 
 HOST=$(bashio::config 'remote_host')
 USERNAME=$(bashio::config 'username')
-FOLDERS=$(bashio::config 'folders')
+FOLDERS=$(bashio::addon.config | jq -r ".folders")
 
 if bashio::config.has_value 'remote_port'; then
   PORT=$(bashio::config 'remote_port')
@@ -25,17 +24,19 @@ if bashio::config.has_value 'remote_port'; then
 else
   PORT=22
 fi
+folder_count=$(echo "$FOLDERS" | jq -r '. | length')
+for (( i=0; i<folder_count; i=i+1 )); do
 
-for folder in $FOLDERS; do
-
-  local=$(echo "$folder" | jq -r '.source')
-  remote=$(echo "$folder" | jq -r '.destination')
-  options=$(echo "$folder" | jq -r '.options // "-archive --recursive --compress --delete --prune-empty-dirs"')
+  local=$(echo "$FOLDERS" | jq -r ".[$i].source")
+  remote=$(echo "$FOLDERS" | jq -r ".[$i].destination")
+  options=$(echo "$FOLDERS" | jq -r ".[$i].options // \"-archive --recursive --compress --delete --prune-empty-dirs\"")
   bashio::log.info "Sync ${local} -> ${remote} with options \"${options}\""
+  set -x
   # shellcheck disable=SC2086
   rsync ${options} \
   -e "ssh -p ${PORT} -i ${PRIVATE_KEY_FILE} -oStrictHostKeyChecking=no" \
   "$local" "${USERNAME}@${HOST}:${remote}"
+  set +x
 done
 
 bashio::log.info "Synced all folders"
