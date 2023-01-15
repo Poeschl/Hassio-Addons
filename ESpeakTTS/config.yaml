@@ -1,0 +1,17 @@
+name: ESpeakTTS
+version: 1.0.0
+slug: espeaktts
+description: Text to speech voice synthesizer with ESpeak
+url: https://github.com/Poeschl/Hassio-Addons/tree/main/ESpeakTTS
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+image: ghcr.io/poeschl/ha-espeaktts-{arch}
+init: false
+ports:
+  59126/tcp: 59126
+ports_description:
+  59126/tcp: Http interface of the REST wrapper
