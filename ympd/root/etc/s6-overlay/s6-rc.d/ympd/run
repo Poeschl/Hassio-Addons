@@ -1,8 +1,5 @@
-#!/command/with-contenvs bashio
+#!/command/with-contenv bashio
 set -e
-
-# Enable Jemalloc for better memory handling
-export LD_PRELOAD="/usr/local/lib/libjemalloc.so.2"
 
 host=$(bashio::config 'host')
 port=$(bashio::config 'port')
