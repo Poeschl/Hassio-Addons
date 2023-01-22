@@ -1,3 +1,9 @@
+## 1.15.0 - 2023-01-25
+
+* 🐛 Fixes issue with unbound variable (#361)
+* 🔼 Updated git to `2.36.4-r0`
+* 🔼 Updated python3 to `3.10.9-r0`
+
 ## 1.14.0 - 2022-11-05
 
 * ✨ Allow customising secret patterns (thanks @bjeanes #316)
