@@ -1,9 +1,16 @@
+## 1.5.0 - 2023-01-22
+
+* 🐛 Fixed wrong shebang
+* 🔨 Removed jemalloc memory handling
+
+
 ## 1.4.0 - 2022-08-17
 
 * 🔼 Update alpine to `3.16`
 * 🔼 Update ympd to `1.3.0-r10`
 * 🔨 Migrated to S6-Overlay `V3`
 * 📝 Updated to new repository structure + Yaml config
+
 
 ## 1.3.1 - 2022-04-05
 
