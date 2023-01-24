@@ -15,7 +15,7 @@ function setup_git {
     branch=$(bashio::config 'repository.branch_name')
     ssl_verify=$(bashio::config 'repository.ssl_verification')
 
-    if [[ "$password" != "ghp_*" ]]; then
+    if [[ "$password" != "ghp_*" ]]  && [[ "$password" != "github_pat_*" ]]; then
         password=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${password}'))")
     fi
 
