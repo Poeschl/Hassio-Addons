@@ -1,3 +1,8 @@
+## 1.16.0 - 2023-01-25
+
+* 🔨 Also detect the new GitHub access token and don't encode it then
+
+
 ## 1.15.0 - 2023-01-25
 
 * 🐛 Fixes issue with unbound variable (#361)

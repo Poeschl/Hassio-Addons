@@ -1,5 +1,5 @@
 name: Home Assistant Git Exporter
-version: 1.15.0
+version: 1.16.0
 slug: git-exporter
 description: Export all of your Home Assistant configuration to a git repository of your choice.
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/git-exporter
