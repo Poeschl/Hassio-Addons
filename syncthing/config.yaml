@@ -1,5 +1,5 @@
 name: Syncthing
-version: "1.16.1"
+version: "1.16.2"
 slug: syncthing
 description: "Syncthing is a continuous file synchronization program in a
   de-centralized way. "
