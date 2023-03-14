@@ -1,8 +1,8 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-RUN apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
-		"syncthing=1.23.1-r0"
+RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
+		"syncthing=1.23.2-r0"
 
 ENTRYPOINT [ "/init" ]
 CMD []
