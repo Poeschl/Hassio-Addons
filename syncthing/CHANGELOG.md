@@ -1,6 +1,6 @@
-## 1.16.2 - 2023-03-XX
+## 1.16.2 - 2023-04-XX
 
-* 🔼 Updated syncthing to `1.23.2-r0`
+* 🔼 Updated syncthing to `1.23.4-r0`
 * 🔨 Use HTTP**S** for repository URL
 
 ## 1.16.1 - 2023-01-08
