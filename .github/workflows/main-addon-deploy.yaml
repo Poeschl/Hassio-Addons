@@ -12,7 +12,7 @@ jobs:
     steps:
 
     - name: ↩️ Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: 📂 Detect chanced files
       uses: dorny/paths-filter@v2
@@ -32,7 +32,7 @@ jobs:
     steps:
 
       - name: ↩️ Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: ℹ️ Gather addon info
         id: information
