@@ -25,6 +25,6 @@ jobs:
           ref: main
 
       - name: ✏️ Comment
-        uses: peaceiris/actions-label-commenter@v1.8.2
+        uses: peaceiris/actions-label-commenter@v1.10.0
         with:
           config_file: .github/label-comments.yaml
