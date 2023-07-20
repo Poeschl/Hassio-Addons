@@ -12,7 +12,7 @@ jobs:
       
     steps:
       - name: ↩️ Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: 🔁 Sync labels
         uses: micnncim/action-label-syncer@v1.2.0
