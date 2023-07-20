@@ -12,10 +12,10 @@ jobs:
       
     steps:
       - name: ↩️ Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: 🔁 Sync labels
-        uses: micnncim/action-label-syncer@v1.2.0
+        uses: micnncim/action-label-syncer@v1.3.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

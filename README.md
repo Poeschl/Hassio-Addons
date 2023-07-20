@@ -6,7 +6,7 @@
 
 [![Donate][donation-badge]][donation-url]
 
-My repository with Add-ons for the [Home Assistant (former Hass.io) system](https://www.home-assistant.io/hassio/)
+My repository with Add-ons for the [Home Assistant (former Hass.io) system](https://www.home-assistant.io/hassio/).
 
 ## Addons
 
@@ -18,7 +18,7 @@ My repository with Add-ons for the [Home Assistant (former Hass.io) system](http
 * valetudo-mapper - Valetudo RE Companion for map generation
 * ympd - A very lightweight Web interface for controlling MPD music servers.
 * Git Exporter - Exports your Home Assistant config to any git repository (secrets check included)
-* Syncthing - A de-centralized file syncronisation program. Focused on privacy.
+* Syncthing - A de-centralized file synchronisation program. Focused on privacy.
 * rsync - Synces folders from Home Assistant to a other machine via rsync and ssh.
 * rsync-local - Synces folders to local devices like usb-sticks.
 * VNC Viewer - A VNC viewer addon, to integrate VNC displays into HA.
@@ -26,7 +26,7 @@ My repository with Add-ons for the [Home Assistant (former Hass.io) system](http
 * Asterisk - An open source framework for building communications applications.
 * OWASP Juice Shop - The most trustworthy online shop out there. A totally unsecure plattform.
 
-More about the Add-ons can be found in their folders.
+Further informatione about the add-ons can be found in their folders.
 
 
 ### 🧪 Experimental
@@ -35,9 +35,9 @@ Those addons might not be stable at all. Use at your own risk!
 
 🏜️
 
-### 🕸️ Depreciated
+### 🕸️ Deprecated
 
-On thoes addons will be not developed anymore. Feel free to fork them.
+These addons will not be updated anymore. Feel free to fork them.
 
 * Docker Container Stats - Lightwight monitoring of all the running docker containers.
 * OWASP ZAP - A security testing tool with MITM funtionality.
@@ -45,23 +45,27 @@ On thoes addons will be not developed anymore. Feel free to fork them.
 
 ## Installation
 
-[![Add repository on my Home Assistant][repository-badge]][repository-url]
+To install any of the add-ons offered in this repository, you must first add its repository URL to your Home Assistant instance. To do so, click the following button
 
-To install those Add-ons add this repository in the Home Assistant Add-on store.
+[![Add repository to your Home Assistant instance.][repository-badge]][repository-url]
 
-Use the following URL to add this repository:
+or manually add the the following repository URL in the Home Assistant add-on store:
 
 `https://github.com/Poeschl/Hassio-Addons`
 
+Then search for any of the add-ons in [![Open your Home Assistant instance and show the Supervisor add-on store.][addon-store-badge]][addon-store-url] to install them.
+
 ### Licence
 
-The licence of the repository is inherited by the plugins, if not stated different.
+The licence of the repository is inherited by the plugins, if not stated differently.
 
+[addon-store-url]: https://my.home-assistant.io/redirect/supervisor_store/
+[addon-store-badge]: https://my.home-assistant.io/badges/supervisor_store.svg
 [build-badge]: https://img.shields.io/github/actions/workflow/status/Poeschl/Hassio-Addons/main-addon-deploy.yaml?branch=main&style=for-the-badge
 [build-url]: https://github.com/Poeschl/Hassio-Addons/actions?query=workflow%3A%22Deploy+addons%22
 [commit-badge]: https://img.shields.io/github/commit-activity/m/Poeschl/Hassio-Addons?style=for-the-badge
 [licence-badge]: https://img.shields.io/github/license/Poeschl/Hassio-Addons?style=for-the-badge
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee-%23d32f2f?logo=buy-me-a-coffee&style=for-the-badge&logoColor=white
 [donation-url]: https://www.buymeacoffee.com/Poeschl
-[repository-badge]: https://img.shields.io/badge/Add%20repository%20to%20my-Home%20Assistant-41BDF5?logo=home-assistant&style=for-the-badge
+[repository-badge]: https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg
 [repository-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FPoeschl%2FHassio-Addons
