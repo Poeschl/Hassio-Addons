@@ -1,3 +1,7 @@
+## 1.16.4 - 2023-08-??
+
+* 🔼 Updated syncthing to `1.23.6-r2`
+
 ## 1.16.3 - 2023-07-20
 
 * 🔼 Updated syncthing to `1.23.6-r1`  (thanks @salim-b | #394)
