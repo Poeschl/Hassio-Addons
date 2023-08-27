@@ -1,6 +1,6 @@
 ## Configuration
 
-The configuration is done via the web UI. Start the add-on and configure it there.
+Configuration is done via [Syncthing's web UI](/hassio/ingress/243ffc37_syncthing) (embedded into Home Assistant). First start the add-on from the [*Info* tab](/hassio/addon/243ffc37_syncthing/info) and then click <kbd>OPEN WEB UI</kbd>.
 
 ## Available directories
 
