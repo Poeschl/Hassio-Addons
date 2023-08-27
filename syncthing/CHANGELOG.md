@@ -1,3 +1,7 @@
+## 1.xx.x - 2023-xx-xx
+
+* 🔨Set gui-address to first IP in container (#426)
+
 ## 1.16.3 - 2023-07-20
 
 * 🔼 Updated syncthing to `1.23.6-r1`  (thanks @salim-b | #394)
