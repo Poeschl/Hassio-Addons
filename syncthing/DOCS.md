@@ -2,6 +2,14 @@
 
 The configuration is done via the web UI. Start the add-on and configure it there.
 
+## Syncthing Home Assistant Integration
+
+If you want to monitor the Syncthing add-on via the [Home Assistant Syncthing integration](https://www.home-assistant.io/integrations/syncthing/), you will need to expose the Web frontend. It should be noted this may have security implications, depending on how your Home Assistant install is exposed (to the local network or the wider internet). Consider setting a `GUI Authentication User` and `GUI Authentication Password` in the Syncthing Settings. See [Security Principles](https://docs.syncthing.net/users/security) for further information.
+
+To do this, go to the Configuration tab and enter a port (`8384` as per the default may be simplest) in the box labelled "Web frontend (not needed with Ingress)". Click save and restart the add-on.
+
+You can then follow the [prequisites](https://www.home-assistant.io/integrations/syncthing/#prerequisites) and [configuration](https://www.home-assistant.io/integrations/syncthing/#configuration).
+
 ## Available directories
 
 When using this add-on to permanently hold your data, put the synced folders inside one of the following directories:
