@@ -1,3 +1,7 @@
+## 1.xx.xx - 2023-xx-xx
+
+* 🔨 DOCS.md: Improve Configuration section (#419)
+
 ## 1.16.3 - 2023-07-20
 
 * 🔼 Updated syncthing to `1.23.6-r1`  (thanks @salim-b | #394)
