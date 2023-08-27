@@ -2,7 +2,7 @@ name: Syncthing
 version: "1.16.3"
 slug: syncthing
 description: "Syncthing is a continuous file synchronization program in a
-  de-centralized way. "
+  de-centralized way"
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/syncthing
 arch:
   - armhf
