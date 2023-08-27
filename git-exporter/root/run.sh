@@ -115,7 +115,7 @@ function check_secrets {
     bashio::log.info 'Checking for secrets'
     # shellcheck disable=SC2046
     git secrets --scan $(find $local_repository -name '*.yaml' -o -name '*.yml' -o -name '*.json' -o -name '*.disabled') \
-    || (bashio::log.error 'Found secrets in files!!! Fix them to be able to commit!' && exit 1)
+    || (bashio::log.error 'Found secrets in files!!! Fix them to be able to commit! See https://www.home-assistant.io/docs/configuration/secrets/ for more information!' && exit 1)
 }
 
 function export_ha_config {
