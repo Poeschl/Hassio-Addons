@@ -1,3 +1,7 @@
+## 1.x.x - 2023-xx-xx
+
+* 🔨 Make external_devices more permissive (#427)
+
 ## 1.6.0 - 2023-01-08
 
 * 🔼 Updated rsync to `3.2.7-r0`
