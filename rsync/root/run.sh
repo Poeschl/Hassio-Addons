@@ -29,7 +29,7 @@ for (( i=0; i<folder_count; i=i+1 )); do
 
   local=$(echo "$FOLDERS" | jq -r ".[$i].source")
   remote=$(echo "$FOLDERS" | jq -r ".[$i].destination")
-  options=$(echo "$FOLDERS" | jq -r ".[$i].options // \"-archive --recursive --compress --delete --prune-empty-dirs\"")
+  options=$(echo "$FOLDERS" | jq -r ".[$i].options // \"--archive --recursive --compress --delete --prune-empty-dirs\"")
   bashio::log.info "Sync ${local} -> ${remote} with options \"${options}\""
   set -x
   # shellcheck disable=SC2086
