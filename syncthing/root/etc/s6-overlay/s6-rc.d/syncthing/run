@@ -7,5 +7,14 @@ export STNOUPGRADE=1
 bashio::log.info 'Setup config'
 mkdir -p /data/config
 
+ip=$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}' | head -n 1)
+
+if [ -z "$ip" ]
+then
+      ip=0.0.0.0
+fi
+
+bashio::log.info "Detected IP Address: $ip"
+
 bashio::log.info 'Start syncthing'
-syncthing --no-browser --no-restart --home=/data/config --gui-address=0.0.0.0:8384
+syncthing --no-browser --no-restart --home=/data/config --gui-address="$ip:8384"

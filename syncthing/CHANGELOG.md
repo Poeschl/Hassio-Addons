@@ -1,5 +1,6 @@
 ## 1.16.4 - 2023-10-??
 
+* 🔨 Set gui-address to first IP in container (thanks @reedy | #426)
 * 🔨 DOCS.md: Add information about HA Syncthing Integration (thanks @reedy & @salim-b | #420)
 * 🔨 DOCS.md: Improve Configuration section (thanks @reedy | #419)
 * 🔼 Updated syncthing to `1.25.0-r0` (thanks @salim-b | #412)
