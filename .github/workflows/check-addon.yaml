@@ -17,7 +17,7 @@ jobs:
     steps:
 
     - name: ↩️ Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: 📂 Detect chanced addons
       uses: dorny/paths-filter@v2
@@ -47,7 +47,7 @@ jobs:
     steps:
 
       - name: ↩️ Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: ℹ️ Gather addon info
         id: information
