@@ -18,7 +18,7 @@ jobs:
     steps:
 
     - name: ↩️ Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: 📂 Detect chanced addons
       uses: dorny/paths-filter@v2
@@ -48,7 +48,7 @@ jobs:
     steps:
 
       - name: ↩️ Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: 🔎 Run Home Assistant Add-on Lint
         uses: frenck/action-addon-linter@v2
@@ -60,7 +60,7 @@ jobs:
     container: ghcr.io/hadolint/hadolint:latest-alpine
     steps:
       - name: ↩️ Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: 🔎 Run hadolint
         if: steps.filter.outputs.dockerfile == 'true'
@@ -70,7 +70,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ↩️ Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: 📂 Detect chanced files
         id: filter
@@ -85,7 +85,7 @@ jobs:
 
       - name: 🔎 Run ShellCheck
         if: steps.filter.outputs.shell == 'true'
-        uses: ludeeus/action-shellcheck@1.1.0
+        uses: ludeeus/action-shellcheck@2.0.0
         with:
           additional_files: ${{ steps.filter.outputs.shell_files }}
 
@@ -93,7 +93,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ↩️ Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: 🔎 Run markdownlint
         uses: nosborn/github-action-markdown-cli@v3.3.0
