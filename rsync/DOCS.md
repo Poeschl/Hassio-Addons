@@ -47,7 +47,7 @@ The destination folder for rsync
 
 ### `folders` - `options` (optional)
 
-Use your own options for rsync. This string is replacing the default one and get directly to rsync. The default is `-archive --recursive --compress --delete --prune-empty-dirs`.
+Use your own options for rsync. This string is replacing the default one and get directly to rsync. The default is `--archive --recursive --compress --delete --prune-empty-dirs`.
 
 ### `remote_host`
 

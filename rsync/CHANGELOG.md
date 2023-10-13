@@ -1,6 +1,10 @@
-## 1.x.x - 2023-xx-xx
+## 1.7.0 - 2023-10-13
 
-* 🔨 Correct --archive argument (#380, #418)
+* 🔨 Correct --archive argument (thanks @reedy | #418)
+* 🔼 Updated to alpine `3.18`
+* 🔼 Updated rsync to `3.2.7-r4`
+* 🔼 Update coreutils to `9.3-r1`
+* 🔼 Update openssh-client-default to `9.3_p2-r0`
 
 ## 1.6.0 - 2023-01-08
 
