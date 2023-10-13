@@ -1,4 +1,4 @@
-## 1.16.4 - 2023-10-??
+## 1.17.0 - 2023-10-13
 
 * 🔨 Set gui-address to first IP in container (thanks @reedy | #426)
 * 🔨 DOCS.md: Add information about HA Syncthing Integration (thanks @reedy & @salim-b | #420)
