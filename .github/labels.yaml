@@ -21,6 +21,9 @@
 - color: '072540'
   name: hacktoberfest
   description: Not too heavy to lift. A nice thing for newcommers.
+- color: '072540'
+  name: hacktoberfest-accepted
+  description: This PR will count towards your hacktoberfest score, even if not merged.
 - color: ffffff
   name: stale
   description: No interactions for quite some time
