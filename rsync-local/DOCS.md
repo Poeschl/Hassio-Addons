@@ -11,7 +11,7 @@ Example config:
 folders:
   - source: /config
   - source: /media/playlists
-    options: '-archive --recursive --compress'
+    options: '--archive --recursive --compress'
 external_folder: backup
 external_device: ''
 ```
@@ -26,7 +26,7 @@ The source folder for rsync.
 
 ### `folders` - `options` (optional)
 
-Use your own options for rsync. This string is replacing the default one and get directly to rsync. The default is `-archive --recursive --compress --delete --prune-empty-dirs`.
+Use your own options for rsync. This string is replacing the default one and get directly to rsync. The default is `--archive --recursive --compress --delete --prune-empty-dirs`.
 
 ### `external_folder`
 
@@ -40,4 +40,4 @@ Make sure to adjust it when for example running Home Assistant from a external d
 
 If no device is specified all available devices will be displayed in the log. No sync takes place without device.
 
-Available options: `/dev/sda1`, `/dev/sda2`, `/dev/sdb1`, `/dev/sdb2`
+Available options: `/dev/sd[a-e][1-5]`
