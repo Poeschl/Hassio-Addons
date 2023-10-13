@@ -1,6 +1,16 @@
 ## Configuration
 
-Configuration is done via [Syncthing's web UI](/hassio/ingress/243ffc37_syncthing) (embedded into Home Assistant). First start the add-on from the [*Info* tab](/hassio/addon/243ffc37_syncthing/info) and then click <kbd>OPEN WEB UI</kbd>.
+Configuration is done via [Syncthing's web UI](/hassio/ingress/243ffc37_syncthing) (embedded into Home Assistant). First start the add-on from the [*Info* tab](/hassio/addon/243ffc37_syncthing/info) and then click `OPEN WEB UI`.
+
+## Syncthing Home Assistant integration
+
+If you want to monitor the Syncthing add-on via Home Assistant's [**Syncthing** integration](https://www.home-assistant.io/integrations/syncthing/), you need to expose Syncthing's web UI to the (local) network rather than only to the [Home Assistant Supervisor](https://developers.home-assistant.io/docs/supervisor).
+
+To do so, go to the add-on's [*Configuration* tab](/hassio/addon/243ffc37_syncthing/config), toggle `Show disabled ports` and enter a port number in the field labelled *Web frontend (not needed with Ingress)* (`8384`, as per the default, is fine). Click `SAVE`, switch to the [*Info* tab](/hassio/addon/243ffc37_syncthing/info) and click `RESTART`.
+
+To finish the setup, follow the sections [*Prerequisites*](https://www.home-assistant.io/integrations/syncthing/#prerequisites) and [*Configuration*](https://www.home-assistant.io/integrations/syncthing/#configuration) from the integration's documentation.
+
+NOTE that if your Home Assistant installation is reachable from the internet (e.g. because you enabled [remote access](https://www.home-assistant.io/docs/configuration/remote/)), setting the above port has security implications. It's strongly advised to set a `GUI Authentication User` and a strong `GUI Authentication Password` via Syncthing's settings in that case. See [*Security Principles*](https://docs.syncthing.net/users/security) for further information.
 
 ## Available directories
 
