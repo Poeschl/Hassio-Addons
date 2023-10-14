@@ -1,3 +1,7 @@
+## 1.12.0 - 2023-10-14
+
+* 🔼 Update Valetudo-Mapper to latest version
+
 ## 1.11.0 - 2022-08-03
 
 * 🔼 Update Valetudo-Mapper to commit `bd97779`
