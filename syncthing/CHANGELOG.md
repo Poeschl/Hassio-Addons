@@ -1,3 +1,7 @@
+## 1.17.1 - 2023-10-??
+
+* 🔼 Updated syncthing to `1.25.0-r2`
+
 ## 1.17.0 - 2023-10-13
 
 * 🔨 Set gui-address to first IP in container (thanks @reedy | #426)
