@@ -1,6 +1,6 @@
 ## 1.12.0 - 2023-10-14
 
-* 🔼 Update Valetudo-Mapper to latest version
+* 🔼 Update Valetudo-Mapper to commit `54aba35`
 
 ## 1.11.0 - 2022-08-03
 
