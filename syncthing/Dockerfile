@@ -9,7 +9,7 @@ COPY root /
 ENV STCONFDIR=/config \
     STDATADIR=/data \
     STNODEFAULTFOLDER=1 \
-		STNORESTART=1 \
+    STNORESTART=1 \
     STNOUPGRADE=1
 
 ENTRYPOINT [ "/init" ]
