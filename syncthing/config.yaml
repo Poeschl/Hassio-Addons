@@ -26,9 +26,9 @@ ingress_port: 8384
 panel_title: Syncthing
 panel_icon: mdi:sync
 map:
-  - share:rw
-  - config:rw
-  - backup:rw
+  - addon_config:rw
   - addons:rw
-  - ssl:rw
+  - backup:rw
   - media:rw
+  - share:rw
+  - ssl:rw
