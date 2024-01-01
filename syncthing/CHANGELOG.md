@@ -1,5 +1,6 @@
-## 1.17.1 - 2024-01-??
+## 1.18.0 - 2024-?-?
 
+* 🔨 Configure Syncthing via environment variables instead of CLI arguments where possible and properly separate config and database/state directories (thanks @salim-b | #450)
 * 🔼 Updated syncthing to `1.27.2-r0`
 
 ## 1.17.0 - 2023-10-13
