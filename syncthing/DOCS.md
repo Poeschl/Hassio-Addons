@@ -19,7 +19,6 @@ When using this add-on to permanently hold your data, put the synced folders ins
 - `/data`
 - `/media`
 - `/share`
-- `/config`
 - `/ssl`
 - `/addons`
 
