@@ -1,6 +1,7 @@
 ## 1.18.0 - 2024-?-?
 
 * 🔨 Configure Syncthing via environment variables instead of CLI arguments where possible and properly separate config and database/state directories (thanks @salim-b | #450)
+* 🔨 Set `/share` as default folder path fallback (fixes #447, @salim-b).
 
 ## 1.17.0 - 2023-10-13
 
