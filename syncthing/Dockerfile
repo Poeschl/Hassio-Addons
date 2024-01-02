@@ -6,7 +6,8 @@ RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/c
 
 COPY root /
 
-ENV STCONFDIR=/config \
+ENV HOME=/share \
+    STCONFDIR=/config \
     STDATADIR=/data \
     STNODEFAULTFOLDER=1 \
     STNORESTART=1 \
