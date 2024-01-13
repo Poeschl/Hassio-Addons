@@ -27,3 +27,6 @@ fi
 
 bashio::log.info 'Starting Syncthing'
 syncthing --gui-address="$ip:8384" --no-browser
+
+# alleviate GUI authentication warning, cf. https://github.com/Poeschl/Hassio-Addons/issues/340
+syncthing cli config gui insecure-admin-access set true
