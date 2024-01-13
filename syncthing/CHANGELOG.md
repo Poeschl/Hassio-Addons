@@ -1,3 +1,7 @@
+## 1.18.2 - 2024-01-13
+
+* 🐛 Fix migration issue (again)
+
 ## 1.18.1 - 2024-01-13
 
 * 🐛 Fix migration issue
