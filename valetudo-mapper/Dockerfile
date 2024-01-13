@@ -3,7 +3,7 @@ FROM $BUILD_FROM AS BUILD
 
 ENV LANG C.UTF-8
 
-RUN apk add --no-cache git=2.36.2-r0 npm=8.10.0-r0
+RUN apk add --no-cache git=2.36.6-r0 npm=8.10.0-r0
 
 ENV COMMIT_SHA '54aba3534e9e797b9a22c0e134fa2706effd2e9d'
 # hadolint ignore=DL3003
