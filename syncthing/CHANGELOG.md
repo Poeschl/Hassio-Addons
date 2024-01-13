@@ -1,3 +1,7 @@
+## 1.18.1 - 2024-01-13
+
+* 🐛 Fix migration issue
+
 ## 1.18.0 - 2024-01-13
 
 * 🔨 Configure Syncthing via environment variables instead of CLI arguments where possible and properly separate config and database/state directories (thanks @salim-b | #450)
