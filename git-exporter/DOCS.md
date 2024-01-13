@@ -46,7 +46,7 @@ Your username for https authentication.
 
 ### `repository.password`
 
-Your password or __access token__ for your repository.
+Your password or [__access token__](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) for your repository.
 
 ### `repository.pull_before_push`
 

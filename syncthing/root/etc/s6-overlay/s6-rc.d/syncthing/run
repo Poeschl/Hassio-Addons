@@ -2,19 +2,28 @@
 # shellcheck shell=bash
 set -e
 
-export STNOUPGRADE=1
+bashio::log.info 'Intializing Syncthing'
 
-bashio::log.info 'Setup config'
-mkdir -p /data/config
-
+# determine IP address to serve Syncthing's GUI on
 ip=$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{sub("addr:",""); print $2}' | head -n 1)
 
 if [ -z "$ip" ]
 then
-      ip=0.0.0.0
+  ip=0.0.0.0
+  bashio::log.info "Couldn't detect IP address. Falling back to: $ip"
+else
+  bashio::log.info "Detected IP address: $ip"
 fi
 
-bashio::log.info "Detected IP Address: $ip"
+# move config and DB state from old to new locations if necessary, cf. https://github.com/Poeschl/Hassio-Addons/pull/450
+if [ -d /data/config ]
+then
+  for CONF_FILE in config.xml cert.pem key.pem https-cert.pem https-key.pem
+  do
+    [ -f "/data/config/${CONF_FILE}" ] && mv -fu "/data/config/${CONF_FILE}" /config/ && rm -f "/data/config/${CONF_FILE}"
+  done
+  mv -fu /data/config/* /data/ && rm -f /data/config
+fi
 
-bashio::log.info 'Start syncthing'
-syncthing --no-browser --no-restart --home=/data/config --gui-address="$ip:8384"
+bashio::log.info 'Starting Syncthing'
+syncthing --gui-address="$ip:8384" --no-browser

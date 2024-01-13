@@ -1,7 +1,13 @@
+## 1.17.0 - 2024-01-13
+
+* ⬆️ Updated python3 to `3.10.13-r0`
+* ⬆️ Updated git to `2.36.6-r0`
+* ⬇️ Downgraded PyYAML to `5.3.1` to avoid issues with the build (see [GitHub issue](https://github.com/yaml/pyyaml/issues/723#issuecomment-1638583120))
+* 📝 Updated some texts and hints (thanks @reedy #421 #422 #424 #425)
+
 ## 1.16.0 - 2023-01-25
 
 * 🔨 Also detect the new GitHub access token and don't encode it then
-
 
 ## 1.15.0 - 2023-01-25
 

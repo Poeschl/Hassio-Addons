@@ -1,3 +1,8 @@
+## 1.12.0 - 2024-01-13
+
+* 🔼 Update Valetudo-Mapper to commit `54aba35` (thanks @gerard33 #442)
+* 🔼 Update git to `2.36.6-r0`
+
 ## 1.11.0 - 2022-08-03
 
 * 🔼 Update Valetudo-Mapper to commit `bd97779`

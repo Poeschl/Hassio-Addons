@@ -1,5 +1,5 @@
 name: Syncthing
-version: "1.17.0"
+version: "1.18.0"
 slug: syncthing
 description: "Syncthing is a continuous file synchronization program in a
   de-centralized way"
@@ -26,9 +26,9 @@ ingress_port: 8384
 panel_title: Syncthing
 panel_icon: mdi:sync
 map:
-  - share:rw
-  - config:rw
-  - backup:rw
+  - addon_config:rw
   - addons:rw
-  - ssl:rw
+  - backup:rw
   - media:rw
+  - share:rw
+  - ssl:rw
