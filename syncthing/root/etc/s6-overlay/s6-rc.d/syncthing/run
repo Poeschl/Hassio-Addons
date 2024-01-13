@@ -20,9 +20,9 @@ if [ -d /data/config ]
 then
   for CONF_FILE in config.xml cert.pem key.pem https-cert.pem https-key.pem
   do
-    [ -f "/data/config/${CONF_FILE}" ] && mv -fu "/data/config/${CONF_FILE}" /config/ && rm -f "/data/config/${CONF_FILE}"
+    [ -f "/data/config/${CONF_FILE}" ] && mv -fn "/data/config/${CONF_FILE}" /config/ && rm -f "/data/config/${CONF_FILE}"
   done
-  mv -fu /data/config/* /data/ && rm -f /data/config
+  mv -fn /data/config/* /data/ && rm -f /data/config
 fi
 
 bashio::log.info 'Starting Syncthing'
