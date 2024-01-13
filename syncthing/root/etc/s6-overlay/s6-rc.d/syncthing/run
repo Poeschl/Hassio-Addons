@@ -22,7 +22,7 @@ then
   do
     [ -f "/data/config/${CONF_FILE}" ] && mv -fn "/data/config/${CONF_FILE}" /config/ && rm -f "/data/config/${CONF_FILE}"
   done
-  mv -fn /data/config/* /data/ && rm -f /data/config
+  mv -fn /data/config/* /data/ && rm -rf /data/config
 fi
 
 bashio::log.info 'Starting Syncthing'
