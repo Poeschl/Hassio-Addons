@@ -16,13 +16,14 @@ NOTE that if your Home Assistant installation is reachable from the internet (e.
 
 When using this add-on to permanently hold your data, put the synced folders inside one of the following directories:
 
-- `/data`
-- `/media`
-- `/share`
-- `/ssl`
 - `/addons`
+- `/backups`
+- `/data` (not recommended; intended for add-on-internal data)
+- `/media`
+- `/share` (default)
+- `/ssl`
 
-Only the above directories are mapped into the add-on container. If you put synced folders in any other directory (like `/root` or `/mnt`), the synced data will be deleted on container restart.
+Only the above directories are mapped into the add-on container. If you put synced folders in any other directory (like `/root` or `/mnt`), the synced data will be deleted on container restart. We recommend to put synced folders under either **`/share`** or **`/media`**. Both of these directories are shared between add-ons, so you could access synced folders via the *Terminal & SSH* add-on for example.
 
 Furthermore, note that
 
