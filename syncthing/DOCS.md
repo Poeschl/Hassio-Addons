@@ -23,7 +23,7 @@ When using this add-on to permanently hold your data, put the synced folders ins
 - `/share` (default)
 - `/ssl`
 
-Only the above directories are mapped into the add-on container. If you put synced folders in any other directory (like `/root` or `/mnt`), the synced data will be deleted on container restart. We recommend to put synced folders under either **`/share`** or **`/media`**. Both of these directories are shared between add-ons, so you could access synced folders via the *Terminal & SSH* add-on for example.
+Only the above directories are mapped into the add-on container. If you put synced folders in any other directory (like `/root` or `/mnt`), the synced data will be deleted on container restart. We recommend to put synced folders under either **`/share`** or **`/media`**. Both of these directories are shared between add-ons, so you could access synced folders via the *Terminal & SSH* add-on, for example.
 
 Furthermore, note that
 
