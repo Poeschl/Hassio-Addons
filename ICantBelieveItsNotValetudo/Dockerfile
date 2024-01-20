@@ -16,7 +16,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
 # Splited RUN for better layer caching
 # hadolint ignore=DL3059
 RUN git config --global advice.detachedHead false && \
-    git clone https://github.com/Hypfer/ICantBelieveItsNotValetudo.git -b 2022.05.0 /app
+    git clone https://github.com/Hypfer/ICantBelieveItsNotValetudo.git -b 2023.08.0 /app
 
 WORKDIR /app
 RUN npm install
