@@ -1,6 +1,6 @@
 ## 1.18.3 - 2024-02-??
 
-* 🔼 Updated syncthing to `1.27.3-r0`
+* 🔼 Updated syncthing to `1.27.4-r0`
 
 ## 1.18.2 - 2024-01-13
 
