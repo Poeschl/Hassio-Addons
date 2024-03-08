@@ -16,7 +16,7 @@ Note that if your Home Assistant installation is reachable from the internet (e.
 
 To permanently hold your data, synced folders must be put under one of the following paths:
 
-| Path | Description | 
+| Path | Description |
 | ---- | ----------- |
 | `/addon_configs` | Configuration of all Home Assistant add-ons. |
 | `/addons` | Local Home Assistant add-ons. |
