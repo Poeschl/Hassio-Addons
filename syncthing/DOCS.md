@@ -16,17 +16,17 @@ Note that if your Home Assistant installation is reachable from the internet (e.
 
 To permanently hold your data, synced folders must be put under one of the following paths:
 
-| Path | Description |
-| ---- | ----------- |
-| `/addon_configs` | Configuration of all Home Assistant add-ons. |
-| `/addons` | Local Home Assistant add-ons. |
-| `/backups` | Home Assistant backups. |
-| `/config` | Syncthing's own configuration. |
-| `/data` | Syncthing's own internal data (state). Not recommended to store synced folders. |
-| `/homeassistant` | Home Assistant's own configuration. |
-| **`/media`**| Media files to be shared between add-ons and Home Assistant. See below for a possible way to automatically mount external storage devices under this path. |
-| ***`/share`*** | Data to be shared between add-ons and Home Assistant. This is the default path for synced folders. |
-| `/ssl` | TLS/SSL certificates. |
+| Path             | Description                                                                                                                                                |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `/addon_configs` | Configuration of all Home Assistant add-ons.                                                                                                               |
+| `/addons`        | Local Home Assistant add-ons.                                                                                                                              |
+| `/backups`       | Home Assistant backups.                                                                                                                                    |
+| `/config`        | Syncthing's own configuration.                                                                                                                             |
+| `/data`          | Syncthing's own internal data (state). Not recommended to store synced folders.                                                                            |
+| `/homeassistant` | Home Assistant's own configuration.                                                                                                                        |
+| **`/media`**     | Media files to be shared between add-ons and Home Assistant. See below for a possible way to automatically mount external storage devices under this path. |
+| ***`/share`***   | Data to be shared between add-ons and Home Assistant. This is the default path for synced folders.                                                         |
+| `/ssl`           | TLS/SSL certificates.                                                                                                                                      |
 
 Only the above directories are mapped into the add-on container. If you put synced folders under any other directory (like `/root` or `/mnt`), the synced data is deleted on add-on restart. We recommend to put synced folders under either **`/share`** or **`/media`**. Both of these directories are intended to be shared between add-ons, so you can access synced folders via the [Terminal & SSH](/hassio/addon/core_ssh/info) add-on, for example.
 
