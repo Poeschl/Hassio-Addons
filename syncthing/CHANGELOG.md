@@ -1,3 +1,7 @@
+## 1.18.3 - 2024-03-??
+
+* 🔼 Updated syncthing to `1.27.4-r2`
+
 ## 1.18.2 - 2024-01-13
 
 * 🐛 Fix migration issue (again)
