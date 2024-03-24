@@ -74,7 +74,7 @@ jobs:
 
       - name: 📂 Detect chanced files
         id: filter
-        uses: dorny/paths-filter@v3.9.0
+        uses: dorny/paths-filter@v3
         with:
           list-files: 'shell'
           filters: |
