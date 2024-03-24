@@ -1,5 +1,5 @@
 name: Syncthing
-version: "1.18.2"
+version: "1.19.0"
 slug: syncthing
 description: "Syncthing is a continuous file synchronization program in a
   de-centralized way"
@@ -28,7 +28,9 @@ panel_icon: mdi:sync
 map:
   - addon_config:rw
   - addons:rw
+  - all_addon_configs:rw
   - backup:rw
+  - homeassistant_config:rw
   - media:rw
   - share:rw
   - ssl:rw

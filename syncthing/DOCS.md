@@ -2,6 +2,12 @@
 
 Configuration is done via [Syncthing's web UI](/hassio/ingress/243ffc37_syncthing) (embedded into Home Assistant). First start the add-on from the [*Info* tab](/hassio/addon/243ffc37_syncthing/info) and then click `OPEN WEB UI`.
 
+After starting up, Syncthing displays a notice (in a yellow box at the top) saying
+
+> Insecure admin access is enabled.
+
+This can safely be ignored since it [does not apply to this add-on](https://github.com/Poeschl/Hassio-Addons/issues/340).
+
 ## Syncthing Home Assistant integration
 
 If you want to monitor the Syncthing add-on via Home Assistant's [**Syncthing** integration](https://www.home-assistant.io/integrations/syncthing/), you need to expose Syncthing's web UI to the (local) network rather than only to the [Home Assistant Supervisor](https://developers.home-assistant.io/docs/supervisor).
@@ -10,24 +16,30 @@ To do so, go to the add-on's [*Configuration* tab](/hassio/addon/243ffc37_syncth
 
 To finish the setup, follow the sections [*Prerequisites*](https://www.home-assistant.io/integrations/syncthing/#prerequisites) and [*Configuration*](https://www.home-assistant.io/integrations/syncthing/#configuration) from the integration's documentation.
 
-NOTE that if your Home Assistant installation is reachable from the internet (e.g. because you enabled [remote access](https://www.home-assistant.io/docs/configuration/remote/)), setting the above port has security implications. It's strongly advised to set a `GUI Authentication User` and a strong `GUI Authentication Password` via Syncthing's settings in that case. See [*Security Principles*](https://docs.syncthing.net/users/security) for further information.
+Note that if your Home Assistant installation is reachable from the internet (e.g. because you enabled [remote access](https://www.home-assistant.io/docs/configuration/remote/)), setting the above port has security implications. It's strongly advised to set a `GUI Authentication User` and a strong `GUI Authentication Password` via Syncthing's settings in that case. See [*Security Principles*](https://docs.syncthing.net/users/security) for further information.
 
 ## Available directories
 
-When using this add-on to permanently hold your data, put the synced folders inside one of the following directories:
+To permanently hold your data, synced folders must be put under one of the following paths:
 
-- `/data`
-- `/media`
-- `/share`
-- `/ssl`
-- `/addons`
+| Path             | Description                                                                                                                                                |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `/addon_configs` | Configuration of all Home Assistant add-ons.                                                                                                               |
+| `/addons`        | Local Home Assistant add-ons.                                                                                                                              |
+| `/backups`       | Home Assistant backups.                                                                                                                                    |
+| `/config`        | Syncthing's own configuration.                                                                                                                             |
+| `/data`          | Syncthing's own internal data (state). Not recommended to store synced folders.                                                                            |
+| `/homeassistant` | Home Assistant's own configuration.                                                                                                                        |
+| **`/media`**     | Media files to be shared between add-ons and Home Assistant. See below for a possible way to automatically mount external storage devices under this path. |
+| ***`/share`***   | Data to be shared between add-ons and Home Assistant. This is the default path for synced folders.                                                         |
+| `/ssl`           | TLS/SSL certificates.                                                                                                                                      |
 
-Only the above directories are mapped into the add-on container. If you put synced folders in any other directory (like `/root` or `/mnt`), the synced data will be deleted on container restart.
+Only the above directories are mapped into the add-on container. If you put synced folders under any other directory (like `/root` or `/mnt`), the synced data is deleted on add-on restart. We recommend to put synced folders under either **`/share`** or **`/media`**. Both of these directories are intended to be shared between add-ons, so you can access synced folders via the [Terminal & SSH](/hassio/addon/core_ssh/info) add-on, for example.
 
 Furthermore, note that
 
-- a backup of the syncthing add-on will include the `/data` directory and its contents.
-- a [*full* Home Assistant backup](https://www.home-assistant.io/common-tasks/os/#backups) will include the `/media`, `/share`, `/config`, `/ssl` and `/addons` directories and their contents. Create a *partial* backup to specifically exclude any of them.
+- a backup of the Syncthing add-on will include its `/data` directory where its internal state is stored. This folder can take up several GiB of data.
+- a [*full* Home Assistant backup](https://www.home-assistant.io/common-tasks/os/#backups) will include the `/addons`, `/config`, `/media`, `/share` and`/ssl` directories and their contents. Create a *partial* backup to specifically exclude any of them.
 - syncing the `/backup` directory (preferably in [send only mode](https://docs.syncthing.net/users/foldertypes.html#send-only-folder)) is a simple way to automatically backup the Home Assistant backups to any of your other Syncthing devices. 😉
 - syncing data to memory cards (eMMC, SD, etc.) might be a bad idea due to rapid wearout, or even impossible to begin with if the synced data is too large. This problem can be remedied either
   - by [configuring Home Assistant to use an external data disk](https://www.home-assistant.io/common-tasks/os/#using-external-data-disk), or
