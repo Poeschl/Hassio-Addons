@@ -2,6 +2,12 @@
 
 Configuration is done via [Syncthing's web UI](/hassio/ingress/243ffc37_syncthing) (embedded into Home Assistant). First start the add-on from the [*Info* tab](/hassio/addon/243ffc37_syncthing/info) and then click `OPEN WEB UI`.
 
+After starting up, Syncthing displays a notice (in a yellow box at the top) saying
+
+> Insecure admin access is enabled.
+
+This can safely be ignored since it [does not apply to this add-on](https://github.com/Poeschl/Hassio-Addons/issues/340).
+
 ## Syncthing Home Assistant integration
 
 If you want to monitor the Syncthing add-on via Home Assistant's [**Syncthing** integration](https://www.home-assistant.io/integrations/syncthing/), you need to expose Syncthing's web UI to the (local) network rather than only to the [Home Assistant Supervisor](https://developers.home-assistant.io/docs/supervisor).
