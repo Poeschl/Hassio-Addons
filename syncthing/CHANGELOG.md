@@ -1,5 +1,6 @@
 ## 1.18.3 - 2024-03-??
 
+* 🔨 Mount all available directories into add-on container and improve documentation. Home Assistant's config folder is now available under `/homeassistant` and the configuration of all Home Assistant add-ons under `/addon_configs` (fixes #460, @salim-b | #467).
 * 🔼 Updated syncthing to `1.27.4-r2`
 
 ## 1.18.2 - 2024-01-13
