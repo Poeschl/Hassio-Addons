@@ -1,4 +1,4 @@
-## 1.18.3 - 2024-03-??
+## 1.19.0 - 2024-03-24
 
 * 🔨 Mount all available directories into add-on container and improve documentation. Home Assistant's config folder is now available under `/homeassistant` and the configuration of all Home Assistant add-ons under `/addon_configs` (fixes #460, @salim-b | #467).
 * 🔨 Hide authentication warnings inside addon. For further discussion see #340 (thanks @salim-b | #457)
