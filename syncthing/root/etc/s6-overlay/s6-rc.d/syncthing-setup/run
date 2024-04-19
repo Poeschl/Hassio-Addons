@@ -16,5 +16,4 @@ fi
 bashio::net.wait_for 8384 "$ip"
 bashio::log.info 'Post-Start syncthing setup'
 
-apikey=$(grep -o '<apikey>[^<]*' /config/config.xml | sed 's/<apikey>//;s/<\/apikey>//')
-syncthing cli --gui-address="$ip:8384" --gui-apikey="$apikey" config gui insecure-admin-access set true
+syncthing cli config gui insecure-admin-access set true
