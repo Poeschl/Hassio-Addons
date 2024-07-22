@@ -26,7 +26,7 @@ To permanently hold your data, synced folders must be put under one of the follo
 | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | `/addon_configs` | Configuration of all Home Assistant add-ons.                                                                                                               |
 | `/addons`        | Local Home Assistant add-ons.                                                                                                                              |
-| `/backups`       | Home Assistant backups.                                                                                                                                    |
+| `/backup`       | Home Assistant backups.                                                                                                                                    |
 | `/config`        | Syncthing's own configuration.                                                                                                                             |
 | `/data`          | Syncthing's own internal data (state). Not recommended to store synced folders.                                                                            |
 | `/homeassistant` | Home Assistant's own configuration.                                                                                                                        |
