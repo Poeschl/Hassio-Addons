@@ -1,8 +1,7 @@
 name: Deploy addons
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    
 
 jobs:
   check-addon-changes:

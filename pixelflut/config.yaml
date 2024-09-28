@@ -2,7 +2,7 @@ name: Pixelflut
 version: 1.2.1
 slug: pixelflut
 panel_icon: mdi:waves
-description: Bring a Pixelflut canvas into your Smart Home
+description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/pixelflut
 ingress: true
 ingress_port: 6080
@@ -13,7 +13,7 @@ arch:
   - aarch64
   - amd64
   - i386
-image: ghcr.io/poeschl/ha-pixelflut-{arch}
+image: ghcr.io/poeschl-homeassistant-addons/pixelflut-{arch}
 init: false
 ports:
   1234/tcp: 1234

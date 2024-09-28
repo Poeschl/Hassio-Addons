@@ -1,7 +1,7 @@
 name: MaryTTS
 version: 1.5.2
 slug: marytts
-description: The Mary TTS speech engine as a Hassio-Addon.
+description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/MaryTTS
 webui: http://[HOST]:[PORT:59125]
 arch:
@@ -10,7 +10,7 @@ arch:
   - aarch64
   - amd64
   - i386
-image: ghcr.io/poeschl/ha-marytts-{arch}
+image: ghcr.io/poeschl-homeassistant-addons/marytts-{arch}
 init: false
 ports:
   59125/tcp: 59125

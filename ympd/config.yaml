@@ -2,7 +2,7 @@ name: ympd
 version: 1.5.0
 slug: ympd
 panel_icon: mdi:play-circle-outline
-description: A simple webfrontend for any mpd compatible music player.
+description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/ympd
 ingress: true
 ingress_port: 6680
@@ -12,7 +12,7 @@ arch:
   - aarch64
   - amd64
   - i386
-image: ghcr.io/poeschl/ha-ympd-{arch}
+image: ghcr.io/poeschl-homeassistant-addons/ympd-{arch}
 init: false
 ports:
   6680/tcp: 

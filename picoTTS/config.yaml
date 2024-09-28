@@ -1,7 +1,7 @@
 name: PicoTTS
 version: 1.6.0
 slug: picotts
-description: Text to speech voice synthesizer from SVox, included in Android AOSP.
+description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/picoTTS
 arch:
   - armhf
@@ -9,7 +9,7 @@ arch:
   - aarch64
   - amd64
   - i386
-image: ghcr.io/poeschl/ha-picotts-{arch}
+image: ghcr.io/poeschl-homeassistant-addons/picotts-{arch}
 init: false
 ports:
   59126/tcp: 59126

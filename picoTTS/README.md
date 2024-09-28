@@ -1,3 +1,11 @@
+# 🚨 Addons are moved 🚚
+
+__I moved my addons to a own organisation for easier maintaining and maybe allowing contributers to maintain one addon as well. Please switch to the new repository to get future updates.__
+
+This repository will be archived and won't get any updates after this.
+
+---
+
 # PicoTTS (Hass.io Addon)
 
 The [naggety/picotts](https://github.com/naggety/picotts) as Home Assistant Supervisor addon. (Useable on Raspberry Pi 3-)

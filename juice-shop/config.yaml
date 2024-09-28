@@ -1,11 +1,11 @@
 name: OWASP Juice Shop
 version: 1.2.0
 slug: juice-shop
-description: The most trustworthy online shop out there.
+description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/juice-shop
 arch:
   - amd64
-image: ghcr.io/poeschl/ha-juice-shop-{arch}
+image: ghcr.io/poeschl-homeassistant-addons/juice-shop-{arch}
 init: false
 ports:
   3000/tcp:

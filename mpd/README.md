@@ -1,3 +1,11 @@
+# 🚨 Addons are moved 🚚
+
+__I moved my addons to a own organisation for easier maintaining and maybe allowing contributers to maintain one addon as well. Please switch to the new repository to get future updates.__
+
+This repository will be archived and won't get any updates after this.
+
+---
+
 # MPD
 
 [MPD](https://www.musicpd.org/) is a free and open source music player. It plays audio files, organizes playlists and maintains a music database. For interaction client software is needed.

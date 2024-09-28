@@ -1,3 +1,11 @@
+# 🚨 Addons are moved 🚚
+
+__I moved my addons to a own organisation for easier maintaining and maybe allowing contributers to maintain one addon as well. Please switch to the new repository to get future updates.__
+
+This repository will be archived and won't get any updates after this.
+
+---
+
 # VNC Viewer
 
 Bundles the noVNC application inside an Home Assistant Addon. This allows the integration of any VNC server into Home Assistant.

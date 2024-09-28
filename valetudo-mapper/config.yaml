@@ -1,8 +1,7 @@
 name: Valetudo Mapper
 version: 1.12.0
 slug: valetudomapper
-description: This is a simple companion service for Valetudo RE which generates
-  the map pngs.
+description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/valetudo-mapper
 arch:
   - armhf
@@ -10,7 +9,7 @@ arch:
   - aarch64
   - amd64
   - i386
-image: ghcr.io/poeschl/ha-valetudo-mapper-{arch}
+image: ghcr.io/poeschl-homeassistant-addons/valetudo-mapper-{arch}
 init: false
 ports:
   3000/tcp: null
