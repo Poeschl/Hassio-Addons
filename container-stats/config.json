@@ -3,7 +3,7 @@
   "name": "Docker Container Stats",
   "version": "1.5.0",
   "slug": "container-stats",
-  "description": "🧪 experimental | A web interface for viewing historical and current statistics per docker container",
+  "description": "🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/container-stats",
   "arch": [
     "armhf",
@@ -18,7 +18,7 @@
   "panel_icon": "mdi:chart-line",
   "stage": "experimental",
   "docker_api": true,
-  "image": "ghcr.io/poeschl/ha-container-stats-{arch}",
+  "image": "ghcr.io/poeschl-homeassistant-addons/container-stats-{arch}",
   "ports": {
     "8080/tcp": null
   },

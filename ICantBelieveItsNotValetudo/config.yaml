@@ -1,14 +1,14 @@
 name: ICantBelieveItsNotValetudo
 version: 4.0.0
 slug: icantbelieveitsnotvaletudo
-description: This is a simple companion service for valetudo which generates the map pngs.
+description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/ICantBelieveItsNotValetudo
 arch:
   - armv7
   - aarch64
   - amd64
   - i386
-image: ghcr.io/poeschl/ha-icantbelieveitsnotvaletudo-{arch}
+image: ghcr.io/poeschl-homeassistant-addons/icantbelieveitsnotvaletudo-{arch}
 ports:
   8080/tcp:
 ports_description:

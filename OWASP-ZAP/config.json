@@ -3,14 +3,14 @@
   "name": "OWASP ZAP",
   "version": "2.2.0",
   "slug": "owasp_zap",
-  "description": "The OWASP Zed Attack Proxy (ZAP) is one of the world’s most popular free security tools and is actively maintained by a dedicated international team of volunteers.",
+  "description": "🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/OWASP-ZAP",
   "arch": [
     "armv7",
     "amd64"
   ],
   "boot": "manual",
-  "image": "ghcr.io/poeschl/ha-owasp-zap-{arch}",
+  "image": "ghcr.io/poeschl-homeassistant-addons/owasp-zap-{arch}",
   "webui": "http://[HOST]:[PORT:8080]/zap",
   "ingress_port": 8080,
   "ingress_entry": "zap/",

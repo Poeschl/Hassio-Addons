@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "slug": "mitmproxy",
   "panel_icon": "mdi:lan-connect",
-  "description": "A free and open source interactive HTTPS proxy for intercepting and inspecting network traffic",
+  "description": "🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/mitmproxy",
   "arch": [
     "armv7",
@@ -13,7 +13,7 @@
     "i386"
   ],
   "hassio_api": true,
-  "image": "ghcr.io/poeschl/ha-mitmproxy-{arch}",
+  "image": "ghcr.io/poeschl-homeassistant-addons/mitmproxy-{arch}",
   "map": ["ssl", "share:rw"],
   "ports": {
     "8081/tcp": 8081,

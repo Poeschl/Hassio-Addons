@@ -2,7 +2,7 @@ name: Mopidy
 version: 2.2.0
 slug: mopidy
 panel_icon: mdi:music-circle
-description: Mopidy Music Server
+description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/mopidy
 webui: http://[HOST]:[PORT:6680]/iris
 arch:
@@ -12,7 +12,7 @@ arch:
   - i386
 homeassistant: 0.115.0
 startup: system
-image: ghcr.io/poeschl/ha-mopidy-{arch}
+image: ghcr.io/poeschl-homeassistant-addons/mopidy-{arch}
 init: false
 audio: true
 devices:

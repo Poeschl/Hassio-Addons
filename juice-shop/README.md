@@ -1,3 +1,11 @@
+# 🚨 Addons are moved 🚚
+
+__I moved my addons to a own organisation for easier maintaining and maybe allowing contributers to maintain one addon as well. Please switch to the new repository to get future updates.__
+
+This repository will be archived and won't get any updates after this.
+
+---
+
 # OWASP Juice Shop (Home Assistant Addon)
 
 [OWASP Juice Shop](https://owasp.org/www-project-juice-shop/) is probably the most modern and sophisticated insecure web application! It can be used in security trainings, awareness demos, CTFs and as a guinea pig for security tools! Juice Shop encompasses vulnerabilities from the entire OWASP Top Ten along with many other security flaws found in real-world applications!

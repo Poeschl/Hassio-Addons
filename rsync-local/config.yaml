@@ -1,7 +1,7 @@
 name: rsync local
 version: 1.7.0
 slug: rsync-local
-description: Sync folders to a external usb drive with rsync.
+description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/rsync-local
 arch:
   - armhf
@@ -12,7 +12,7 @@ arch:
 homeassistant: 0.115.0
 boot: manual
 init: false
-image: ghcr.io/poeschl/ha-rsync-local-{arch}
+image: ghcr.io/poeschl-homeassistant-addons/rsync-local-{arch}
 ports: {}
 ports_description: {}
 map:

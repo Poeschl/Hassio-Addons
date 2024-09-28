@@ -1,3 +1,11 @@
+# 🚨 Addons are moved 🚚
+
+__I moved my addons to a own organisation for easier maintaining and maybe allowing contributers to maintain one addon as well. Please switch to the new repository to get future updates.__
+
+This repository will be archived and won't get any updates after this.
+
+---
+
 # rsync local (Home Assistant Addon)
 
 Sync folders to a external usb drive with rsync.
