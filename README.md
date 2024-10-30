@@ -4,6 +4,8 @@ __I moved my addons to a own organisation for easier maintaining and maybe allow
 
 This repository will be archived and won't get any updates after this.
 
+To the new repository: https://github.com/Poeschl-HomeAssistant-Addons/repository
+
 ---
 
 # Poeschl Home Assistant Supervisor Add-ons
