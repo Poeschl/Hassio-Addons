@@ -1,5 +1,5 @@
 name: Valetudo Mapper
-version: 1.12.0
+version: 1.12.0-migrate
 slug: valetudomapper
 description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/valetudo-mapper
@@ -83,3 +83,4 @@ options:
     minMillisecondsBetweenMapUpdates: 10000
     publishMapImage: true
     publishMapData: false
+homeassistant_api: true

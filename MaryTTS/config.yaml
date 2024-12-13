@@ -1,5 +1,5 @@
 name: MaryTTS
-version: 1.5.2
+version: 1.5.2-migrate
 slug: marytts
 description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/MaryTTS
@@ -21,3 +21,4 @@ options:
 schema:
   language: list(de|en|fr|it|in|tu|lu)
   voice: match(^https?://.+\.zip)?
+homeassistant_api: true

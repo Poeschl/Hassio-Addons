@@ -1,5 +1,5 @@
 name: rsync
-version: 1.7.0
+version: 1.7.1-migrate
 slug: rsync
 description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/rsync
@@ -38,3 +38,4 @@ options:
     - source: /config
       destination: /home/user
   remote_host: ""
+homeassistant_api: true

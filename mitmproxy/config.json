@@ -1,6 +1,6 @@
 {
   "name": "mitmproxy",
-  "version": "1.2.0",
+  "version": "1.2.0-migrate",
   "slug": "mitmproxy",
   "panel_icon": "mdi:lan-connect",
   "description": "🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository",
@@ -27,7 +27,8 @@
     "options": [{ "name": "anticache", "value": "true" }]
   },
   "schema": {
-    "options": [{ "name": "str", "value": "str" }],    
+    "options": [{ "name": "str", "value": "str" }],
     "custom_ca": "match(^/ssl/.*)?"
-  }
+  },
+  "homeassistant_api": "true"
 }

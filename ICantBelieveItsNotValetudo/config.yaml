@@ -1,5 +1,5 @@
 name: ICantBelieveItsNotValetudo
-version: 4.0.0
+version: 4.1.0-migrate
 slug: icantbelieveitsnotvaletudo
 description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/ICantBelieveItsNotValetudo
@@ -69,3 +69,4 @@ options:
     mapDataTopic: valetudo/rockrobo/MapData/map-data
     minMillisecondsBetweenMapUpdates: 10000
     publishMapImage: true
+homeassistant_api: true

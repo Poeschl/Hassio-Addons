@@ -1,5 +1,5 @@
 name: PicoTTS
-version: 1.6.0
+version: 1.6.1-migrate
 slug: picotts
 description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/picoTTS
@@ -15,3 +15,4 @@ ports:
   59126/tcp: 59126
 ports_description:
   59126/tcp: Http interface of the REST wrapper
+homeassistant_api: true

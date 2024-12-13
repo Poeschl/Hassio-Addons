@@ -1,5 +1,5 @@
 name: pigpio
-version: 1.5.2
+version: 1.5.3-migrate
 slug: pigpio
 description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/pigpio
@@ -22,3 +22,4 @@ ports_description:
   8888/tcp: The port to control pigpio
 schema:
   additional_options: str?
+homeassistant_api: true

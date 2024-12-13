@@ -1,5 +1,5 @@
 name: Syncthing
-version: "1.19.0"
+version: "1.19.3-migrate"
 slug: syncthing
 description: "🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository"
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/syncthing
@@ -33,3 +33,4 @@ map:
   - media:rw
   - share:rw
   - ssl:rw
+homeassistant_api: true

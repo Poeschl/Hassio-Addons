@@ -1,5 +1,5 @@
 name: Home Assistant Git Exporter
-version: 1.17.0
+version: 1.17.1-migrate
 slug: git-exporter
 description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/git-exporter
@@ -70,8 +70,9 @@ schema:
     check_for_ips: bool
   exclude:
     - str
-  secrets: 
+  secrets:
     - str
-  allowed_secrets: 
+  allowed_secrets:
     - str
   dry_run: bool
+homeassistant_api: true

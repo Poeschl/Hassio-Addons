@@ -1,5 +1,5 @@
 name: MPD
-version: 1.7.2
+version: 1.7.3-migrate
 slug: mpd
 panel_icon: mdi:music-circle
 description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
@@ -40,3 +40,4 @@ schema:
   httpd_output: bool
   verbose: bool?
   custom_config: match(/share/mpd/.+)?
+homeassistant_api: true

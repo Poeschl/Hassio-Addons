@@ -1,5 +1,5 @@
 name: OWASP Juice Shop
-version: 1.2.0
+version: 1.2.1-migrate
 slug: juice-shop
 description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
 url: https://github.com/Poeschl/Hassio-Addons/tree/main/juice-shop
@@ -15,3 +15,4 @@ ingress: true
 ingress_port: 3000
 panel_title: OWASP Juice Shop
 panel_icon: mdi:basket
+homeassistant_api: true

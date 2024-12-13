@@ -1,5 +1,5 @@
 name: VNC Viewer
-version: 1.6.0
+version: 1.6.2-migrate
 slug: vnc
 panel_icon: mdi:remote-desktop
 description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
@@ -23,3 +23,4 @@ schema:
   vnc_server_host: str
   vnc_server_port: int?
   vnc_server_password: str?
+homeassistant_api: true

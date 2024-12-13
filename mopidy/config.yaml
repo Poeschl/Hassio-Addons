@@ -1,5 +1,5 @@
 name: Mopidy
-version: 2.2.0
+version: 2.2.1-migrate
 slug: mopidy
 panel_icon: mdi:music-circle
 description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
@@ -45,3 +45,4 @@ schema:
     language: list(net|at|de|dk|es|fr|it|pl|pt|se)
     favorite_radiostations:
       - str
+homeassistant_api: true

@@ -1,5 +1,5 @@
 name: Pixelflut
-version: 1.2.1
+version: 1.2.2-migrate
 slug: pixelflut
 panel_icon: mdi:waves
 description: 🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository
@@ -31,3 +31,4 @@ schema:
   width: int(0,)
   height: int(0,)
   description: str
+homeassistant_api: true

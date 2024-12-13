@@ -1,7 +1,7 @@
 
 {
   "name": "OWASP ZAP",
-  "version": "2.2.0",
+  "version": "2.2.0-migrate",
   "slug": "owasp_zap",
   "description": "🚨 Addons are moved to https://github.com/Poeschl-HomeAssistant-Addons/repository",
   "url": "https://github.com/Poeschl/Hassio-Addons/tree/main/OWASP-ZAP",
@@ -23,5 +23,6 @@
   "ports_description": {
     "8080/tcp": "Port for the web interface",
     "8090/tcp": "Proxy Port to accept requests which are traced."
-  }
+  },
+  "homeassistant_api": "true"
 }
