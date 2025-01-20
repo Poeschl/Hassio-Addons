@@ -96,6 +96,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: 🔎 Run markdownlint
-        uses: nosborn/github-action-markdown-cli@v3.3.0
+        uses: nosborn/github-action-markdown-cli@v3.4.0
         with:
           files: .
